@@ -2,10 +2,11 @@ import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import StarIcon from "../icons/StarIcon";
-import LocationIcon from "../icons/LocationIcon";
+import LocationBlock from "../common/LocationBlock";
+import RatingBlock from "../common/RatingBlock";
 
 function ProductCard(props) {
-  const { image, name, address, rating, reviews, category, price } = props;
+  const { image, name, location, rating, reviews, category, price } = props;
 
   return (
     <Col>
@@ -20,19 +21,8 @@ function ProductCard(props) {
               {category}
             </Card.Text>
             <hr />
-            <div className="product-card__content-box">
-              <StarIcon />
-              <p className="product-card__text product-card__text--rating">
-                {rating}
-              </p>
-              <p className="product-card__text">({reviews} reviews)</p>
-            </div>
-            <div className="product-card__content-box">
-              <LocationIcon />
-              <p className="product-card__text product-card__text--location">
-                {address}
-              </p>
-            </div>
+            <RatingBlock rating={rating} reviews={reviews} />
+            <LocationBlock location={location}/>
           </Card.Body>
           <div className="product-card__bottom">{price} NOK</div>
         </Link>

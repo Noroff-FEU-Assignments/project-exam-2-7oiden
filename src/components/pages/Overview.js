@@ -25,7 +25,7 @@ function Overview() {
               key="33"
               image={hotel1}
               name="Radisson Blu Royal"
-              address="Dreggsallmenningen 1"
+              location="Dreggsallmenningen 1"
               rating="4.62"
               reviews="32"
               category="Hotel"
@@ -35,7 +35,7 @@ function Overview() {
               key="34"
               image={hotel2}
               name="Scandic Ørnen"
-              address="Lars Hilles gate 18"
+              location="Lars Hilles gate 18"
               rating="4.85"
               reviews="24"
               category="Hotel"
@@ -45,7 +45,7 @@ function Overview() {
               key="35"
               image={hotel3}
               name="Augustin Hotel"
-              address="C.Sundts Gate 22"
+              location="C.Sundts Gate 22"
               rating="4.71"
               reviews="41"
               category="Hotel"

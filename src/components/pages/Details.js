@@ -1,11 +1,11 @@
 import Layout from "../layout/Layout";
 import Wrapper from "../layout/Wrapper";
 import Heading from "../layout/Heading";
-import StarIcon from "../icons/StarIcon";
-import LocationIcon from "../icons/LocationIcon";
 import hotel1 from "../../images/hotel-1.jpg";
-import Button from "react-bootstrap/Button";
 import DetailsCard from "../products/DetailsCard";
+import BookingModal from "../modals/BookingModal";
+import LocationBlock from "../common/LocationBlock";
+import RatingBlock from "../common/RatingBlock";
 
 function Details() {
   return (
@@ -19,25 +19,14 @@ function Details() {
             <Heading size="1" cssClass="details-heading">
               Radisson Blu Royal
             </Heading>
-            <div className="product-card__content-box">
-              <StarIcon />
-              <p className="product-card__text product-card__text--rating">
-                4.75
-              </p>
-              <p className="product-card__text">(32 reviews)</p>
-            </div>
-            <div className="product-card__content-box">
-              <LocationIcon />
-              <p className="product-card__text product-card__text--location">
-                Dreggsallmenningen 1
-              </p>
-            </div>
+            <RatingBlock rating="4.62" reviews="32" />
+            <LocationBlock location="Dreggsallmenningen 1" />
           </div>
           <div className="details__block-2">
             <div>
               <p className="details__price">1500 NOK / night</p>
             </div>
-            <Button className="primary-button">Book now</Button>
+            <BookingModal />
           </div>
         </div>
         <div className="details__column-2">

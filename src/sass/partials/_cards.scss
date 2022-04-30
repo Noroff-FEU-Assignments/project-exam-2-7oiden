@@ -61,30 +61,6 @@
         padding-bottom: 0.25rem;
     }
 
-    &__content-box {
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        margin-top: 0.25rem;
-        margin-bottom: 0.25rem;
-    }
-
-    &__text {
-        @extend .base-margin;
-
-        &--category {
-            font-weight: bold;
-        }
-
-        &--rating {
-            font-weight: bold;
-        }
-
-        &--location {
-            color: getColor(textGray);
-        }
-    }
-
     &__bottom {
         font-size: 1.25rem;
         font-weight: bold;

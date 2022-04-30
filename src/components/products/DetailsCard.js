@@ -1,5 +1,5 @@
 import Heading from "../layout/Heading";
-import LocationIcon from "../icons/LocationIcon";
+import LocationBlock from "../common/LocationBlock";
 
 function DetailsCard() {
   return (
@@ -45,12 +45,7 @@ function DetailsCard() {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        <div className="product-card__content-box">
-          <LocationIcon />
-          <p className="product-card__text product-card__text--location">
-            Dreggsallmenningen 1
-          </p>
-        </div>
+        <LocationBlock location="Dreggsallmenningen 1" />
       </div>
     </div>
   );
