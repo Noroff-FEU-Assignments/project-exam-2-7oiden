@@ -1,0 +1,98 @@
+.contact {
+  &__heading {
+      font-family: $serif-headings;
+      margin-bottom: 1rem;
+  }
+}
+
+.faq__link {
+    display: inline;
+    font-weight: 600;
+    color: getColor(linkCol)
+}
+
+.faq__list-item {
+    padding-bottom: 0.5rem;
+}
+
+.form-error {
+    color: red;
+
+    &::before {
+        content: "* "
+    }
+}
+
+.custom-input-container {
+    position: relative;
+    min-width: 350px;
+    max-width: 400px;
+}
+
+.custom-input {
+    border-radius: 25px;
+    margin-top: 0.5rem;
+    height: 2.8125rem;
+    padding-left: 1.5rem;
+}
+
+.custom-input-icon-box {
+    width: 3rem;
+    height: 3rem;
+    background-color: getColor(primaryCol);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1.40625rem;
+    right: 1.40625rem;
+    transform: translate(50%, 50%);
+}
+
+.form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: getBreakpoint(small)) {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.form-check-fieldset {
+    margin-top: 1rem;
+}
+
+.form-check-wrapper {
+    display: flex;
+    gap: 3rem;
+    
+
+    @media (min-width: getBreakpoint(small)) {
+        flex-direction: row;
+        gap: 4rem;
+    }
+}
+
+legend {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.mb-3 {
+    width: 100%;
+}
+
+.relative-input {
+    position: relative;
+}
+
+.input-prefix {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: getColor(textDark);
+    color: getColor(textLight);
+    padding: 0.45rem 0.75rem;
+    border-radius: 0 4px 4px 0;
+}
+

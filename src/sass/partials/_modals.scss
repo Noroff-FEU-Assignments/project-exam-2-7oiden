@@ -1,0 +1,16 @@
+.modal-title {
+    font-family: $sans-serif-headings;
+    font-weight: 800;
+
+    @media (min-width: getBreakpoint(small)) {
+        padding-left: 2rem;
+    }
+}
+
+.modal-body {
+    padding: 1rem 1rem 2.5rem 1rem;
+
+    @media (min-width: getBreakpoint(small)) {
+        padding: 1rem 3rem 2.5rem 3rem;
+    }
+}

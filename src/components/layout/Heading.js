@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-function Heading({ size = "1", children }) {
+function Heading({ size = "1", cssClass, children }) {
   const VariableHeading = `h${size}`;
-  return <VariableHeading>{children}</VariableHeading>;
+  return <VariableHeading className={cssClass}>{children}</VariableHeading>;
 }
 
 Heading.propTypes = {

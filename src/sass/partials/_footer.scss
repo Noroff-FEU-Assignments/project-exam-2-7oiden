@@ -1,0 +1,53 @@
+.footer {
+    background-color: getColor(footerBg);
+    color: getColor(textLight);
+    
+    &__heading {
+        @extend .base-margin;
+        font-family: $sans-serif-headings;
+        font-size: 1.125rem;
+        color: getColor(textFooter);
+        margin-bottom: 0.625rem;
+    }
+
+    &__list {
+        @extend .base-margin;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-left: 1rem;
+    }
+
+    &__icon-list {
+        @extend .base-margin;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    &__icon {
+        list-style: none;
+    }
+
+    &__link {
+        color: getColor(textLight)
+    }
+
+    &__link:hover {
+        color: getColor(textLight)
+    }
+
+    &__bottom {
+        background-color: getColor(textDark);
+        color: getColor(subtleGray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    &__bottom-icon {
+        width: 1rem;
+    }
+}

@@ -1,0 +1,71 @@
+.ceo-card__quote-symbol {
+    width: 2rem;
+
+    path {
+        fill: getColor(primaryCol);
+    }
+}
+
+svg.navbar__account-icon {
+    width: 2.5rem;
+
+    path {
+        fill: getColor(textDark);
+    }
+
+    // @media (min-width: getBreakpoint(large)) {
+    //     right: 0;
+    // }
+}
+
+svg.navbar__search-icon {
+    width: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    path {
+        fill: getColor(textLight);
+    }
+}
+
+.social-media-icon {
+    width: 2rem;
+
+    path {
+        fill: getColor(textLight);
+    }
+}
+
+.chevron {
+    width: 1.5rem;
+
+    path {
+        fill: getColor(linkCol);
+    }
+}
+
+.star-icon {
+    width: 1.25rem;
+
+    path {
+        fill: getColor(primaryCol);
+    }
+}
+
+.location-icon {
+    width: 1.25rem;
+    
+    path {
+        fill: getColor(borderCol);
+    }
+}
+
+.bullet-icon {
+    width: 1.5rem;
+    
+    path {
+        fill: getColor(textDark);
+    }
+}

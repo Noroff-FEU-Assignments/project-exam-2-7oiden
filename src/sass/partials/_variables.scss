@@ -1,0 +1,63 @@
+$sans-serif-headings: "soleil",
+tahoma,
+sans-serif;
+$serif-headings: "ff-tisa-web-pro",
+georgia,
+serif;
+$body-text: "ff-tisa-sans-web-pro",
+arial,
+sans-serif;
+$button-text: "sofia-pro-soft",
+verdana,
+sans-serif;
+$navbar-links: "sofia-pro";
+
+$colors: (
+    primaryCol: #db504a,
+    secondaryCol: #084c61,
+    adminCol: #29919E,
+    linkCol: #053d4f,
+    primaryBg: #ffffff,
+    secondaryBg: #f7f7f7,
+    footerBg: #353535,
+    textDark: #222222,
+    textLight: #ffffff,
+    textGray: #707070,
+    textFooter: #cbc278,
+    borderCol: #707070,
+    subtleGray: #d2d2d2,
+);
+
+@function getColor($color) {
+    @return map-get($colors, $color);
+}
+
+$breakpoints: (
+    small: 576px,
+    medium: 768px,
+    large: 992px,
+    xlarge: 1200px,
+    xxlarge: 1400px,
+    xxxlarge: 1600px,
+);
+
+@function getBreakpoint($breakpoint) {
+    @return map-get($breakpoints, $breakpoint);
+}
+
+$fontSizes: (
+    heroHeadingSmall: 3.5rem,
+    heroHeadingLarge: 5.5rem,
+    mainHeadingSmall: 2rem,
+    mainHeadingLarge: 2.5rem,
+    mainSubHeadingSmall: 1.875rem,
+    mainSubHeadingLarge: 2.25rem,
+    buttonSmall: 1.25rem,
+    buttonLarge: 1.375rem,
+    heroButtonSmall: 1.375rem,
+    heroButtonLarge: 1.5rem,
+);
+
+@function getFontSize($fontSize) {
+    @return map-get($fontSizes, $fontSize);
+}

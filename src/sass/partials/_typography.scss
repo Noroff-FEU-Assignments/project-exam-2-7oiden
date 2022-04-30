@@ -1,0 +1,76 @@
+em {
+    color: getColor(primaryCol);
+    text-decoration: underline;
+    font-style: normal;
+}
+
+strong {
+    color: getColor(primaryCol)
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend .base-margin;
+}
+
+.category-heading, .support-heading {
+    font-family: $sans-serif-headings;
+    font-size: 2rem;
+    font-weight: 800;
+    padding-left: 4.5%;
+
+    @media (min-width: getBreakpoint(large)) {
+        font-size: 2.5rem;
+        padding-left: 0;
+    }
+}
+
+.details-heading {
+    font-family: $sans-serif-headings;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.about__heading {
+    font-family: $sans-serif-headings;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.about__text {
+    color: getColor(textGray)
+}
+
+.about__slogan {
+    font-family: $serif-headings;
+    font-weight: 600;
+    color: getColor(primaryCol);
+    position: absolute;
+    max-width: 250px;
+    left: 1.5rem;
+    top: 1rem;
+
+    @media (min-width: getBreakpoint(large)) {
+        left: 2rem;
+        top: 1.5rem;
+    }
+}
+
+.form-heading {
+    font-family: $sans-serif-headings;
+    margin-bottom: 1rem;
+}
+
+.accordion-heading {
+    background-color: getColor(textDark);
+    color: getColor(textLight);
+    font-family: $sans-serif-headings;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 3px 3px 0 0;
+}
+
+.card-text {
+    @extend .base-margin;
+    
+}
