@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button"
+import Button from "react-bootstrap/Button";
 import BookingForm from "../forms/BookingForm";
 import LocationBlock from "../common/LocationBlock";
 
@@ -23,20 +23,15 @@ export default function BookingModal() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Radisson Blu Royal</Modal.Title>
-          <LocationBlock location="Dreggsallmenningen 1" />
+            <Modal.Title>Radisson Blu Royal</Modal.Title>
+            <LocationBlock location="Dreggsallmenningen 1" />
         </Modal.Header>
         <Modal.Body>
           <BookingForm />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" className="primary-button">
-            Understood
-          </Button>
-        </Modal.Footer>
+        {/* <Modal.Footer>
+          <Button className="primary-button">Send</Button>
+        </Modal.Footer> */}
       </Modal>
     </>
   );

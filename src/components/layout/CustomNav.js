@@ -68,7 +68,7 @@ function CustomNav() {
                       : "navbar__link"
                   }
                 >
-                  {auth ? "Admin-dashboard" : ""}
+                  {auth ? "Admin" : ""}
                 </NavLink>
               </Nav>
             </Navbar.Collapse>
