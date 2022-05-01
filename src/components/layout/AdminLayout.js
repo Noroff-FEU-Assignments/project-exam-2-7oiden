@@ -1,8 +1,7 @@
+import Copyright from "./Copyright";
 import CustomNav from "./CustomNav";
-import Footer from "./Footer";
-import Newsletter from "./Newsletter";
 
-function Layout({ children }) {
+function AdminLayout({ children }) {
   return (
     <>
       <header>
@@ -11,9 +10,10 @@ function Layout({ children }) {
       <div className="sticky-footer-wrapper">
         <main>{children}</main>
       </div>
-      <Newsletter />
-      <Footer />
+      <footer>
+          <Copyright />
+      </footer>
     </>
   );
 }
-export default Layout;
+export default AdminLayout;

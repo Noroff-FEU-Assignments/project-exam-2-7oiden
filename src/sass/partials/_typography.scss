@@ -75,6 +75,15 @@ input {
 }
 
 .card-text {
-    @extend .base-margin;
-    
+    @extend .base-margin;  
+}
+
+.form-error {
+    display: inline-block;
+    color: getColor(dangerCol);
+    margin-top: 0.25rem;
+
+    &::before {
+        content: "* "
+    }
 }

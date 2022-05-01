@@ -17,18 +17,14 @@
     padding-bottom: 0.5rem;
 }
 
-.form-error {
-    color: red;
-
-    &::before {
-        content: "* "
-    }
-}
-
 .custom-input-container {
     position: relative;
-    min-width: 320px;
+    width: 100%;
     max-width: 400px;
+
+    @media (min-width: getBreakpoint(small)) {
+        min-width: 350px;
+    }
 }
 
 .custom-input {
@@ -44,9 +40,9 @@
     background-color: getColor(primaryCol);
     border-radius: 50%;
     position: absolute;
-    bottom: 1.40625rem;
+    top: -0.09375rem;
     right: 1.40625rem;
-    transform: translate(50%, 50%);
+    transform: translateX(50%);
 }
 
 .form-input-wrapper {

@@ -27,6 +27,9 @@ $colors: (
     textFooter: #cbc278,
     borderCol: #707070,
     subtleGray: #d2d2d2,
+    dangerCol: #dc3545,
+    warningCol: #ffc107,
+    successCol: #198754,
 );
 
 @function getColor($color) {

@@ -150,6 +150,7 @@
 .admin-main-wrapper {
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 6rem;
 
     @media (min-width: getBreakpoint(large)) {
         width: 85%;
@@ -342,4 +343,13 @@
 
 .accordion-container {
     width: 100%;
+}
+
+.col {
+    align-items: center;
+    justify-self: center;
+}
+
+.row {
+
 }

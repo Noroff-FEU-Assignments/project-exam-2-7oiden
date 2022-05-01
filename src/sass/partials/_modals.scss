@@ -17,15 +17,18 @@
 .modal__header-box {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
-    
+    align-items: flex-start; 
 }
 
 .modal-body {
     padding: 1rem 1rem 2.5rem 1rem;
 
     @media (min-width: getBreakpoint(small)) {
-        padding: 1rem 3rem 2.5rem 3rem;
+        padding: 1.5rem 3rem 2.5rem 3rem;
     }
+}
+
+.logout-modal__body {
+    display: flex;
+    justify-content: space-between;
 }

@@ -17,7 +17,7 @@ function Hero() {
             </Heading>
           </div>
         </hgroup>
-        <ButtonLink cssClass="primary-button hero__button" linkTo="/overview">Browse all</ButtonLink>
+        <ButtonLink cssClass="btn-primary hero__button" linkTo="/overview">Browse all</ButtonLink>
       </Wrapper>
     </div>
   );

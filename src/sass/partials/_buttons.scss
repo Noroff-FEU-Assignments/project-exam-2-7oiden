@@ -1,4 +1,4 @@
-.primary-button {
+.btn-primary {
     font-family: $button-text;
     text-decoration: none;
     display: inline-block;
@@ -22,21 +22,12 @@
 }
 
 .admin-button {
-    font-family: $button-text;
-    text-decoration: none;
-    display: inline-block;
     background-color: getColor(adminCol);
     color: getColor(textLight);
-    font-size: 1.25rem;
-    border: none;
-    border-radius: 100px;
-    padding: 0.5rem 2rem;
-    outline: none;
     max-width: 275px;
     min-width: 125px;
 
     &:hover {
-        opacity: 0.75;
         background-color: getColor(adminCol);
         color: getColor(textLight);
     }
@@ -46,20 +37,17 @@
     }
 }
 
-.secondary-button {
+.btn-secondary {
     font-family: $button-text;
     text-decoration: none;
-    display: inline-block;
     background-color: getColor(primaryBg);
     color: getColor(textDark);
     font-size: 1.25rem;
-    border: none;
+    border: 2px solid getColor(textDark);
     border-radius: 100px;
     padding: 0.5rem 2rem;
-    text-decoration: underline;
     outline: none;
     opacity: 1;
-    margin-left: 1rem;
 
     &:hover {
         opacity: 0.75;
@@ -94,4 +82,13 @@
     position: absolute;
     right: 1rem;
     top: 1rem;
+}
+
+.log-button {
+    font-size: 1.125rem;
+}
+
+.newsletter-button {
+    background-color: transparent;
+    border: none;
 }

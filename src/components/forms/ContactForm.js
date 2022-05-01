@@ -118,7 +118,7 @@ export default function ContactForm() {
           {errors.message && <FormError>{errors.message.message}</FormError>}
         </Form.Group>
 
-        <Button className="primary-button form-button" type="submit">
+        <Button className="form-button" type="submit">
           Submit
         </Button>
       </Form>

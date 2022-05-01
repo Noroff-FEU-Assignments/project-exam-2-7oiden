@@ -20,7 +20,7 @@ function Overview() {
           <SearchForm />
         </div>
         <Container fluid>
-          <Row className="gy-5 gx-5">
+          <Row className="gy-5">
             <ProductCard
               key="33"
               image={hotel1}
@@ -40,6 +40,36 @@ function Overview() {
               reviews="24"
               category="Hotel"
               price="2249"
+            />
+            <ProductCard
+              key="35"
+              image={hotel3}
+              name="Augustin Hotel"
+              location="C.Sundts Gate 22"
+              rating="4.71"
+              reviews="41"
+              category="Hotel"
+              price="1340"
+            />
+            <ProductCard
+              key="35"
+              image={hotel3}
+              name="Augustin Hotel"
+              location="C.Sundts Gate 22"
+              rating="4.71"
+              reviews="41"
+              category="Hotel"
+              price="1340"
+            />
+            <ProductCard
+              key="35"
+              image={hotel3}
+              name="Augustin Hotel"
+              location="C.Sundts Gate 22"
+              rating="4.71"
+              reviews="41"
+              category="Hotel"
+              price="1340"
             />
             <ProductCard
               key="35"

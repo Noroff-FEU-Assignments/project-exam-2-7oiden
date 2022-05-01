@@ -1,7 +1,7 @@
 import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import Layout from "../layout/Layout";
+import AdminLayout from "../layout/AdminLayout";
 import Heading from "../layout/Heading";
 import Wrapper from "../layout/Wrapper";
 import ButtonLink from "../common/ButtonLink";
@@ -16,11 +16,14 @@ function Admin() {
   }
 
   return (
-    <Layout>
+    <AdminLayout>
       <Wrapper cssClass="admin-header-wrapper">
         <div className="admin__header">
           <Heading size="1">Admin Dashboard</Heading>
-          <ButtonLink cssClass="admin-button" linkTo="/add-establishment">
+          <ButtonLink
+            cssClass="admin-button btn-primary"
+            linkTo="/add-establishment"
+          >
             Add new establishment
           </ButtonLink>
         </div>
@@ -35,7 +38,7 @@ function Admin() {
           </div>
         </div>
       </Wrapper>
-    </Layout>
+    </AdminLayout>
   );
 }
 export default Admin;

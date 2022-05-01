@@ -40,12 +40,12 @@ export default function LoginModal() {
         <Modal.Header closeButton>
           <Modal.Title>Do you want to log out?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <Button onClick={handleLogout} className="primary-button">
-            Log out
-          </Button>
-          <Button onClick={handleClose} className="secondary-button">
+        <Modal.Body className="logout-modal__body">
+          <Button variant="secondary" onClick={handleClose} className="secondary-button log-button">
             Stay logged in
+          </Button>
+          <Button onClick={handleLogout} className="primary-button log-button">
+            Log out
           </Button>
         </Modal.Body>
       </Modal>

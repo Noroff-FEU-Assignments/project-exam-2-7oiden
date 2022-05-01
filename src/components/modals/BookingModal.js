@@ -12,7 +12,7 @@ export default function BookingModal() {
 
   return (
     <>
-      <Button className="primary-button" onClick={handleShow}>
+      <Button onClick={handleShow}>
         Book Now
       </Button>
 
@@ -29,9 +29,6 @@ export default function BookingModal() {
         <Modal.Body>
           <BookingForm />
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button className="primary-button">Send</Button>
-        </Modal.Footer> */}
       </Modal>
     </>
   );
