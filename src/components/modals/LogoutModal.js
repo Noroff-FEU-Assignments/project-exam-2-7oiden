@@ -4,7 +4,8 @@ import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import LoginIcon from "../icons/LoginIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function LoginModal() {
   const history = useNavigate();
@@ -25,10 +26,11 @@ export default function LoginModal() {
 
   return (
     <>
-      <button onClick={handleShow} className="login-button">
-        <LoginIcon />
-      </button>
-
+      <FontAwesomeIcon
+        icon={faCircleUser}
+        onClick={handleShow}
+        class="font-awesome-icon admin-logged-in"
+      />
       <Modal
         show={show}
         onHide={handleClose}

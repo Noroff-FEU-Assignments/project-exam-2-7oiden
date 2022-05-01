@@ -69,6 +69,7 @@ function LoginForm() {
             placeholder="Username"
             {...register("username")}
           />
+          {errors.username && <FormError>{errors.username.message}</FormError>}
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>

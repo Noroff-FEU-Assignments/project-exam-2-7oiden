@@ -72,8 +72,10 @@ function CustomNav() {
                 </NavLink>
               </Nav>
             </Navbar.Collapse>
-            <SearchModal />
-            {auth ? <LogoutModal /> : <LoginModal />}
+            <div className="navbar__icon-box">
+              <SearchModal />
+              {auth ? <LogoutModal /> : <LoginModal />}
+            </div>
           </Container>
         </Navbar>
       </Wrapper>

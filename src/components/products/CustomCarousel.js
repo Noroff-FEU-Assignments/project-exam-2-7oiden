@@ -6,6 +6,7 @@ import hotel3 from "../../images/hotel-3.jpg";
 import customer1 from "../../images/customer-1.jpg";
 import customer2 from "../../images/customer-2.jpg";
 import customer3 from "../../images/customer-3.jpg";
+import StarIcon from "../icons/StarIcon";
 
 function CustomCarousel() {
   return (
@@ -40,36 +41,11 @@ function CustomCarousel() {
                 </div>
               </div>
               <div className="customer__icons">
-                <svg viewBox="0 0 24 24" className="customer__star-icon">
-                  <path
-                    fill="currentColor"
-                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                  />
-                </svg>
-                <svg viewBox="0 0 24 24" className="customer__star-icon">
-                  <path
-                    fill="currentColor"
-                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                  />
-                </svg>
-                <svg viewBox="0 0 24 24" className="customer__star-icon">
-                  <path
-                    fill="currentColor"
-                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                  />
-                </svg>
-                <svg viewBox="0 0 24 24" className="customer__star-icon">
-                  <path
-                    fill="currentColor"
-                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                  />
-                </svg>
-                <svg viewBox="0 0 24 24" className="customer__star-icon">
-                  <path
-                    fill="currentColor"
-                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
-                  />
-                </svg>
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
               </div>
               <p className="customer__comment">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

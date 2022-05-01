@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import LoginIcon from "../icons/LoginIcon";
 import LoginForm from "../forms/LoginForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function LoginModal() {
   const [show, setShow] = useState(false);
@@ -11,10 +12,11 @@ export default function LoginModal() {
 
   return (
     <>
-      <button onClick={handleShow} className="login-button">
-        <LoginIcon />
-      </button>
-
+      <FontAwesomeIcon
+        icon={faCircleUser}
+        onClick={handleShow}
+        class="font-awesome-icon"
+      />
       <Modal
         show={show}
         onHide={handleClose}

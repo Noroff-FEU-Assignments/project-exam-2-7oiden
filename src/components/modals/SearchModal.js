@@ -11,7 +11,7 @@ export default function SearchModal() {
 
   return (
     <>
-      <button onClick={handleShow} className="navbar__icon-box">
+      <button onClick={handleShow} className="navbar__search-icon-box">
         <SearchIcon />
       </button>
 

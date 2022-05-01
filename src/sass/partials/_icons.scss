@@ -6,19 +6,16 @@
     }
 }
 
-svg.navbar__account-icon {
+.navbar__search-icon-box {
     width: 2.5rem;
-
-    path {
-        fill: getColor(textDark);
-    }
-
-    // @media (min-width: getBreakpoint(large)) {
-    //     right: 0;
-    // }
+    height: 2.5rem;
+    background-color: getColor(primaryCol);
+    border: none;
+    border-radius: 50%;
+    position: relative;
 }
 
-svg.navbar__search-icon {
+.navbar__search-icon {
     width: 2rem;
     position: absolute;
     top: 50%;
@@ -67,5 +64,26 @@ svg.navbar__search-icon {
     
     path {
         fill: getColor(textDark);
+    }
+}
+
+.navbar-toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.font-awesome-icon {
+    width: 2.5rem;
+    cursor: pointer;
+
+    path {
+        fill: getColor(textDark);
+    }
+}
+
+.admin-logged-in {
+    path {
+        fill: getColor(adminCol);
     }
 }
