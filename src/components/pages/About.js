@@ -6,13 +6,13 @@ import ceo from "../../images/ceo.jpg";
 function About() {
   return (
     <Layout>
-      <div className="about-outer-wrapper">
+      <div className="about__outer-wrapper">
         <div className="about__bg-image">
           <Heading size="2" cssClass="about__slogan">
             Easy, Convenient & Reliable
           </Heading>
         </div>
-        <Wrapper cssClass="about-wrapper">
+        <Wrapper cssClass="about__wrapper">
           <div className="about__container">
             <Heading size="1" cssClass="about__heading">
               About Holidaze

@@ -12,17 +12,17 @@ function Home() {
   return (
     <Layout>
       <Hero />
-      <Wrapper cssClass="category-wrapper">
-        <Heading size="3" cssClass="category-heading">
+      <Wrapper cssClass="category__wrapper">
+        <Heading size="3" cssClass="category__heading">
           Browse by category
         </Heading>
-        <div className="category-flexbox">
+        <div className="category__flexbox">
           <CategoryCard title="Hotels" image={hotels} />
           <CategoryCard title="Bed & Breakfast" image={bab} />
           <CategoryCard title="Apartments" image={apartments} />
         </div>
       </Wrapper>
-      <Wrapper cssClass="carousel-wrapper">
+      <Wrapper cssClass="carousel__wrapper">
         <CustomCarousel />
       </Wrapper>
     </Layout>

@@ -50,8 +50,12 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media (min-width: getBreakpoint(small)) {
+    @media (min-width: getBreakpoint(xsmall)) {
         flex-direction: row;
+        gap: 1rem;
+    }
+
+    @media (min-width: getBreakpoint(xsmall)) {
         gap: 2rem;
     }
 }

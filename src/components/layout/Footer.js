@@ -9,7 +9,7 @@ import Copyright from "./Copyright";
 function Footer() {
   return (
     <footer className="footer">
-      <Wrapper cssClass="footer-wrapper">
+      <Wrapper cssClass="footer__wrapper">
         <div className="footer__container">
           <div className="footer__block">
             <p className="footer__heading">Follow us on</p>

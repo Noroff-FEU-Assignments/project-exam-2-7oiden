@@ -17,7 +17,7 @@ function Add() {
 
   return (
     <AdminLayout>
-      <Wrapper cssClass="add-wrapper">
+      <Wrapper cssClass="add__wrapper">
         <AddForm />
         <ButtonLink cssClass="back-link" linkTo="/admin">
           <Icon path={mdiChevronLeft} className="chevron" color />

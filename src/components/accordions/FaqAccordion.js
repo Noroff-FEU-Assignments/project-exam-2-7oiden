@@ -4,7 +4,7 @@ import Heading from "../layout/Heading";
 function FaqAccordion() {
   return (
     <div className="faq__container">
-      <Heading size="2" cssClass="contact__heading">
+      <Heading size="2" cssClass="faq__heading">
         FAQ
       </Heading>
       <ul>

@@ -15,7 +15,7 @@ function CustomNav() {
 
   return (
     <header>
-      <Wrapper cssClass="nav-wrapper">
+      <Wrapper cssClass="nav__wrapper">
         <Navbar bg="white" expand="lg">
           <Container fluid>
             <Navbar.Brand>

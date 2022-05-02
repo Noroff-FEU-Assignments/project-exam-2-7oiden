@@ -50,7 +50,7 @@ export default function AddForm() {
   }
 
   return (
-    <div className="contact__container">
+    <div className="add__container">
       <Heading size="1" cssClass="form-heading">
         Add establishment
       </Heading>

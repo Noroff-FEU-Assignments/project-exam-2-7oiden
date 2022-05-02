@@ -5,10 +5,10 @@ import Newsletter from "./Newsletter";
 function Layout({ children }) {
   return (
     <>
-      <header>
-        <CustomNav />
-      </header>
       <div className="sticky-footer-wrapper">
+        <header>
+          <CustomNav />
+        </header>
         <main>{children}</main>
       </div>
       <Newsletter />

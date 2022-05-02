@@ -1,8 +1,6 @@
-.carousel-container {
+.carousel__container {
     background-color: getColor(primaryBg);
-    // border-radius: 25px;
     margin-top: 3rem;
-    margin-bottom: 3rem;
     padding-top: 1.5rem;
 
     @media (min-width: getBreakpoint(large)) {
@@ -81,7 +79,6 @@
 }
 
 .customer {
-
  &__header {
      display: flex;
      gap: 1.5rem;

@@ -14,7 +14,7 @@ function Overview() {
   return (
     <Layout>
       <div className="overview__bg-image"></div>
-      <Wrapper cssClass="overview-wrapper">
+      <Wrapper cssClass="overview__wrapper">
         <div className="overview__header">
           <Heading size="1">Establishment overview</Heading>
           <SearchForm />

@@ -4,14 +4,14 @@ import CustomNav from "./CustomNav";
 function AdminLayout({ children }) {
   return (
     <>
-      <header>
-        <CustomNav />
-      </header>
       <div className="sticky-footer-wrapper">
+        <header>
+          <CustomNav />
+        </header>
         <main>{children}</main>
       </div>
       <footer>
-          <Copyright />
+        <Copyright />
       </footer>
     </>
   );

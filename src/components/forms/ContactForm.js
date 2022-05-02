@@ -55,7 +55,7 @@ export default function ContactForm() {
 
   return (
     <div className="contact__container" id="contact-section">
-      <Heading size="2" cssClass="form-heading">
+      <Heading size="3" cssClass="form-heading">
         Contact
       </Heading>
       <Form onSubmit={handleSubmit(onSubmit)}>

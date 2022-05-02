@@ -5,7 +5,7 @@ import Wrapper from "./Wrapper";
 function Newsletter() {
   return (
     <div className="newsletter">
-      <Wrapper cssClass="newsletter-wrapper">
+      <Wrapper cssClass="newsletter__wrapper">
         <div className="newsletter__container">
           <div className="newsletter__block">
             <Heading size="5" cssClass="newsletter__heading">

@@ -10,7 +10,7 @@ import StarIcon from "../icons/StarIcon";
 
 function CustomCarousel() {
   return (
-    <div className="carousel-container">
+    <div className="carousel__container">
       <Heading size="5" cssClass="carousel__heading">
         Customer recommandations
       </Heading>

@@ -4,8 +4,8 @@ import Wrapper from "./Wrapper";
 
 function Hero() {
   return (
-    <div className="hero">
-      <Wrapper cssClass="hero-wrapper">
+    <div className="hero hero__bg-image">
+      <Wrapper cssClass="hero__wrapper">
         <hgroup>
           <Heading size="1" cssClass="hero__heading">
             Let <em>us</em> take care of your stay in <strong>Bergen.</strong>

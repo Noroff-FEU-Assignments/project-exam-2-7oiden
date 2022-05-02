@@ -16,7 +16,7 @@ input {
     font-family: $input-text;
 }
 
-.category-heading, .support-heading {
+.category__heading, .support__heading {
     font-family: $sans-serif-headings;
     font-size: 2rem;
     font-weight: 800;
@@ -26,6 +26,11 @@ input {
         font-size: 2.5rem;
         padding-left: 0;
     }
+}
+
+.support__heading {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid getColor(subtleGray);
 }
 
 .details-heading {
@@ -86,4 +91,9 @@ input {
     &::before {
         content: "* "
     }
+}
+
+.faq__heading {
+    font-family: $sans-serif-headings;
+    margin-bottom: 0.5rem;
 }

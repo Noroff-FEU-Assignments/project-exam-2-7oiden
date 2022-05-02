@@ -10,7 +10,7 @@ import RatingBlock from "../common/RatingBlock";
 function Details() {
   return (
     <Layout>
-      <Wrapper cssClass="details-wrapper">
+      <Wrapper cssClass="details__wrapper">
         <div className="details__column-1">
           <figure className="details__image">
             <img src={hotel1} alt="placeholder" className="details__image" />
