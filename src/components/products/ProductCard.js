@@ -38,4 +38,5 @@ function ProductCard(props) {
     </Col>
   );
 }
+
 export default ProductCard;

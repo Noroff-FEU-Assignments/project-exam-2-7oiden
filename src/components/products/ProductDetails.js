@@ -13,6 +13,7 @@ import RatingBlock from "../common/RatingBlock";
 import LocationBlock from "../common/LocationBlock";
 import BookingModal from "../modals/BookingModal";
 import FacilitiesList from "./FacilitiesItem";
+import StreetMap from "../layout/StreetMap";
 
 export default function ProductDetails() {
   const [product, setproduct] = useState([]);
@@ -27,7 +28,7 @@ export default function ProductDetails() {
     history("/");
   }
 
-  const detailsUrl = PRODUCTS_URL + "/" + id + CONSUMER_KEY + CONSUMER_SECRET
+  const detailsUrl = PRODUCTS_URL + "/" + id + CONSUMER_KEY + CONSUMER_SECRET;
 
   useEffect(
     function () {
@@ -77,13 +78,16 @@ export default function ProductDetails() {
             rating={product.average_rating}
             reviews={product.rating_count}
           />
-          <LocationBlock location={product.sku} />
+          <LocationBlock location={product.attributes[0].options[0]} />
         </div>
         <div className="details__block-2">
           <div>
             <p className="details__price">{product.price} /night</p>
           </div>
-          <BookingModal name={product.name} location={product.sku} />
+          <BookingModal
+            name={product.name}
+            location={product.attributes[0].options[0]}
+          />
         </div>
       </div>
       <div className="details__column-2">
@@ -111,6 +115,7 @@ export default function ProductDetails() {
             <Heading size="2" cssClass="details-card__heading">
               Location:
             </Heading>
+              {/* <StreetMap /> */}
             <iframe
               className="details-card__map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.8678772197686!2d5.320126316257603!3d60.39786003193164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x463cfc1d9b94f045%3A0x837f6fb8975ce764!2sDreggsallmenningen%201%2C%205003%20Bergen!5e0!3m2!1sen!2sno!4v1651259885994!5m2!1sen!2sno"
@@ -119,7 +124,7 @@ export default function ProductDetails() {
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-            <LocationBlock location={product.sku} />
+            <LocationBlock location={product.attributes[0].options[0]} />
           </div>
         </div>
       </div>

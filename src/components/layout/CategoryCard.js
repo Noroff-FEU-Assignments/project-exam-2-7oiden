@@ -1,7 +1,6 @@
-import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-// import hotels from "./hotels.jpg"
+
 
 function CategoryCard(props) {
   const { title, image, id } = props;

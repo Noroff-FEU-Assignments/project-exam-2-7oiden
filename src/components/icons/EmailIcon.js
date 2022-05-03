@@ -1,7 +1,6 @@
 import Icon from "@mdi/react";
 import { mdiEmailOutline } from "@mdi/js"; 
 
-
 function EmailIcon() {
   return (
     <Icon
