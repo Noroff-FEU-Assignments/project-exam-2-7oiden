@@ -15,7 +15,7 @@ export default function LoginModal() {
       <FontAwesomeIcon
         icon={faCircleUser}
         onClick={handleShow}
-        class="font-awesome-icon"
+        className="font-awesome-icon"
       />
       <Modal
         show={show}

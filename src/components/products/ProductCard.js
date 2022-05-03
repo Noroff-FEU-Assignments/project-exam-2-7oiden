@@ -8,19 +8,20 @@ function ProductCard(props) {
   const { id, image, name, location, category, price, rating, reviews } = props;
 
   return (
-    <Col
-      sm={12}
-      md={6}
-      xl={4}
-      className="d-flex justify-content-center"
-    >
+    <Col sm={12} md={6} xl={4} className="d-flex justify-content-center">
       <Card style={{ width: "20rem" }} className="product-card">
         <Link
           to={`/details/${id}`}
           className="card-link"
           style={{ textDecoration: "none" }}
         >
-          <Card.Img variant="top" src={image} className="product-card__image" />
+          <figure className="test">
+            <Card.Img
+              variant="top"
+              src={image}
+              className="product-card__image"
+            />
+          </figure>
           <Card.Body className="product-card__body">
             <Card.Title as="h2" className="product-card__title">
               {name}

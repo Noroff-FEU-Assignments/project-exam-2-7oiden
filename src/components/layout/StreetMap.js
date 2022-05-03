@@ -1,20 +1,32 @@
 import React from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: "200px",
-  height: "200px",
-};
+function StreetMap({latitude, longitude}) {
+    const containerStyle = {
+      maxWidth: "400px",
+      height: "267px",
+      borderRadius: "25px",
+    };
 
-const center = {
-  lat: 53.339688,
-  lng: -6.236688,
-};
+    const lat = parseFloat(latitude);
+    const lng = parseFloat(longitude);
+    
+    const center = {
+        lat: lat,
+        lng: lng,
+    }
 
-function StreetMap() {
+    //  console.log(center);
+
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCx_GIww0-PXBYV-hoJZazRioCLgWMSXFA">
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+    <LoadScript googleMapsApiKey="AIzaSyDeBgWNvAla1OxecdgJaF7pBiqBoIPu9I4">
+      <GoogleMap
+        className="details-card__map"
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={15}
+        loading="lazy"
+      >
         {/* Child components, such as markers, info windows, etc. */}
         <></>
       </GoogleMap>
@@ -22,4 +34,6 @@ function StreetMap() {
   );
 }
 
-export default React.memo(StreetMap);
+export default StreetMap;
+
+

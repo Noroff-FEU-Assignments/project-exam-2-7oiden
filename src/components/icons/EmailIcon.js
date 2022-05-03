@@ -6,7 +6,7 @@ function EmailIcon() {
     <Icon
       path={mdiEmailOutline}
       className="navbar__search-icon"
-      color
+      color=""
     />
   );
 }

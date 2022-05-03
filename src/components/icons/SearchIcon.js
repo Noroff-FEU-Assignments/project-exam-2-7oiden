@@ -7,7 +7,7 @@ function SearchIcon() {
         path={mdiMagnify}
         title="User Profile"
         className="navbar__search-icon"
-        color
+        color=""
       />
   );
 }

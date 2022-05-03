@@ -29,7 +29,7 @@ export default function LoginModal() {
       <FontAwesomeIcon
         icon={faCircleUser}
         onClick={handleShow}
-        class="font-awesome-icon admin-logged-in"
+        className="font-awesome-icon admin-logged-in"
       />
       <Modal
         show={show}

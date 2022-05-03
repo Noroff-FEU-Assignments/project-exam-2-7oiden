@@ -1,21 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCity } from "@fortawesome/free-solid-svg-icons";
-import { faMugSaucer } from "@fortawesome/free-solid-svg-icons";
-import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-
-// let icon = "";
-
+import {
+  faCity,
+  faMugSaucer,
+  faUtensils,
+  faWifi,
+  faTv,
+  faMartiniGlass,
+  faCar,
+  faDog,
+  faCircleDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 function FacilitiesItem({ facility }) {
-
-//   if (facility.toLowerCase() === "central") {
-//     icon = faCity 
-//     } else {
-//       icon = faMugSaucer
-//     }
-
-//     console.log(facility.toLowerCase)
-
   let icon = facility.toLowerCase();
 
   switch (icon) {
@@ -27,14 +23,29 @@ function FacilitiesItem({ facility }) {
       break;
     case "restaurant":
       icon = faUtensils;
-      break;  
-      default:
-      icon = faCity;  
-  }  
+      break;
+    case "wifi":
+      icon = faWifi;
+      break;
+    case "television":
+      icon = faTv;
+      break;
+    case "bar":
+      icon = faMartiniGlass;
+      break;
+    case "parking":
+      icon = faCar;
+      break;
+    case "pets allowed":
+      icon = faDog;
+      break;
+    default:
+      icon = faCircleDot;
+  }
 
   return (
-    <li className={facility.toLowerCase()}>
-      <FontAwesomeIcon icon={icon} />
+    <li className="details-card__list-item">
+      <FontAwesomeIcon icon={icon} className="facility-icon"/>
       {facility}
     </li>
   );
