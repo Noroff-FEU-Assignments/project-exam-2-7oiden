@@ -64,23 +64,15 @@ function Overview() {
               return (
                 <ProductCard
                   key={item.id}
+                  id={item.id}
                   name={item.name}
+                  location={item.sku}
                   image={item.images[0].src}
                   category={item.categories[0].name}
                   price={item.prices.price}
                 />
               );
             })}
-            <ProductCard
-              key="35"
-              image={hotel3}
-              name="Augustin Hotel"
-              location="C.Sundts Gate 22"
-              rating="4.71"
-              reviews="41"
-              category="Hotel"
-              price="1340"
-            />
           </Row>
         </Container>
       </Wrapper>

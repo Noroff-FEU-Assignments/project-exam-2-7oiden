@@ -5,7 +5,7 @@ import LocationBlock from "../common/LocationBlock";
 import RatingBlock from "../common/RatingBlock";
 
 function ProductCard(props) {
-  const { image, name, location, rating, reviews, category, price } = props;
+  const { id, image, name, location, rating, reviews, category, price } = props;
 
   return (
     <Col
@@ -17,7 +17,7 @@ function ProductCard(props) {
     >
       <Card style={{ width: "18rem" }} className="product-card">
         <Link
-          to="/details"
+          to={`/details/${id}`}
           className="card-link"
           style={{ textDecoration: "none" }}
         >
