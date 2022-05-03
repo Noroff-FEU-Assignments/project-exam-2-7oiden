@@ -1,6 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { PRODUCTS_URL } from "../../constants/api";
+import {
+  PRODUCTS_URL,
+  CONSUMER_KEY,
+  CONSUMER_SECRET,
+} from "../../constants/api";
 import axios from "axios";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
@@ -8,6 +12,7 @@ import Heading from "../layout/Heading";
 import RatingBlock from "../common/RatingBlock";
 import LocationBlock from "../common/LocationBlock";
 import BookingModal from "../modals/BookingModal";
+import FacilitiesList from "./FacilitiesItem";
 
 export default function ProductDetails() {
   const [product, setproduct] = useState([]);
@@ -22,7 +27,7 @@ export default function ProductDetails() {
     history("/");
   }
 
-  const detailsUrl = PRODUCTS_URL + "/" + id;
+  const detailsUrl = PRODUCTS_URL + "/" + id + CONSUMER_KEY + CONSUMER_SECRET
 
   useEffect(
     function () {
@@ -58,20 +63,27 @@ export default function ProductDetails() {
     <>
       <div className="details__column-1">
         <figure className="details__image">
-          <img src={product.images[0].src} alt="placeholder" className="details__image" />
+          <img
+            src={product.images[0].src}
+            alt="placeholder"
+            className="details__image"
+          />
         </figure>
         <div className="details__block-1">
           <Heading size="1" cssClass="details-heading">
             {product.name}
           </Heading>
-          <RatingBlock rating={product.average_rating} reviews={product.review_count} />
+          <RatingBlock
+            rating={product.average_rating}
+            reviews={product.rating_count}
+          />
           <LocationBlock location={product.sku} />
         </div>
         <div className="details__block-2">
           <div>
-            <p className="details__price">{product.prices.price} /night</p>
+            <p className="details__price">{product.price} /night</p>
           </div>
-          <BookingModal />
+          <BookingModal name={product.name} location={product.sku} />
         </div>
       </div>
       <div className="details__column-2">
@@ -81,14 +93,9 @@ export default function ProductDetails() {
               Facilities:
             </Heading>
             <ul className="details-card__list">
-              <li>WIFI</li>
-              <li>Television</li>
-              <li>Parking</li>
-              <li>Central</li>
-              <li>Free breakfast</li>
-              <li>Refridgerator</li>
-              <li>Bar</li>
-              <li>Pets allowed</li>
+              {product.tags.map((item) => {
+                return <FacilitiesList key={item.id} facility={item.name} />;
+              })}
             </ul>
           </div>
           <div className="details-card__block">

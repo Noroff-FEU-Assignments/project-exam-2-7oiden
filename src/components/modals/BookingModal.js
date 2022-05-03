@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import BookingForm from "../forms/BookingForm";
 import LocationBlock from "../common/LocationBlock";
 
-export default function BookingModal() {
+export default function BookingModal({ name, location }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,9 +12,7 @@ export default function BookingModal() {
 
   return (
     <>
-      <Button onClick={handleShow}>
-        Book Now
-      </Button>
+      <Button onClick={handleShow}>Book Now</Button>
 
       <Modal
         show={show}
@@ -23,8 +21,8 @@ export default function BookingModal() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-            <Modal.Title>Radisson Blu Royal</Modal.Title>
-            <LocationBlock location="Dreggsallmenningen 1" />
+          <Modal.Title>{name}</Modal.Title>
+          <LocationBlock location={location} />
         </Modal.Header>
         <Modal.Body>
           <BookingForm />

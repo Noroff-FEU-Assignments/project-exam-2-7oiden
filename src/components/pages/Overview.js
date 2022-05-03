@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { PRODUCTS_URL } from "../../constants/api";
+import { PRODUCTS_URL, CONSUMER_KEY, CONSUMER_SECRET } from "../../constants/api";
 import axios from "axios";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
@@ -10,17 +10,13 @@ import Row from "react-bootstrap/Row";
 import Heading from "../layout/Heading";
 import SearchForm from "../forms/SearchForm";
 import ProductCard from "../products/ProductCard";
-// import { NavItem } from "react-bootstrap";
-import hotel1 from "../../images/hotel-1.jpg";
-import hotel2 from "../../images/hotel-2.jpg";
-import hotel3 from "../../images/hotel-3.jpg";
 
 function Overview() {
   const [product, setproduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const url = PRODUCTS_URL;
+  const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
 
   useEffect(function () {
     async function getproduct() {
@@ -69,7 +65,9 @@ function Overview() {
                   location={item.sku}
                   image={item.images[0].src}
                   category={item.categories[0].name}
-                  price={item.prices.price}
+                  price={item.price}
+                  rating={item.average_rating}
+                  reviews={item.rating_count}
                 />
               );
             })}

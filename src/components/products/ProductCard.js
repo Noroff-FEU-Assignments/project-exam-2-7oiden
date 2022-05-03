@@ -5,17 +5,16 @@ import LocationBlock from "../common/LocationBlock";
 import RatingBlock from "../common/RatingBlock";
 
 function ProductCard(props) {
-  const { id, image, name, location, rating, reviews, category, price } = props;
+  const { id, image, name, location, category, price, rating, reviews } = props;
 
   return (
     <Col
       sm={12}
       md={6}
       xl={4}
-      xxl={3}
       className="d-flex justify-content-center"
     >
-      <Card style={{ width: "18rem" }} className="product-card">
+      <Card style={{ width: "20rem" }} className="product-card">
         <Link
           to={`/details/${id}`}
           className="card-link"
