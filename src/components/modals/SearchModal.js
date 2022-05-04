@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import SearchIcon from "../icons/SearchIcon";
-import SearchForm from "../forms/SearchForm";
+import SearchModalList from "./SearchModalList";
 
 export default function SearchModal() {
   const [show, setShow] = useState(false);
@@ -14,18 +14,12 @@ export default function SearchModal() {
       <button onClick={handleShow} className="navbar__search-icon-box">
         <SearchIcon />
       </button>
-
       <Modal show={show} onHide={handleClose} className="login">
         <Modal.Header closeButton>
-          <Modal.Title>Search all</Modal.Title>
+          <Modal.Title>Search all establishments</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <SearchForm />
-          <ul>
-            <li>search item 1</li>
-            <li>search item 2</li>
-            <li>search item 3</li>
-          </ul>
+          <SearchModalList />
         </Modal.Body>
       </Modal>
     </>

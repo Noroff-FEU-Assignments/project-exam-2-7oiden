@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   PRODUCTS_URL,
@@ -23,6 +23,9 @@ export default function ProductDetails() {
   let history = useNavigate();
 
   const { id } = useParams();
+
+  console.log(id);
+  // console.log(useLocation());
 
   if (!id) {
     history("/");

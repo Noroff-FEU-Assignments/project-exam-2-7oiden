@@ -1,16 +1,17 @@
 import Form from "react-bootstrap/Form";
 import SearchIcon from "../icons/SearchIcon";
 
-function SearchForm({setQuery}) {
+function SearchForm({ setQuery, loading }) {
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicSearch">
         <div className="custom-input-container">
           <Form.Control
-            onChange={(event) => setQuery(event.target.value)}
+            onKeyUp={(event) => setQuery(event.target.value)}
             className="custom-input"
             type="text"
             placeholder="Start searching..."
+            disabled={loading}
           />
           <div className="custom-input-icon-box">
             <SearchIcon />
@@ -20,4 +21,4 @@ function SearchForm({setQuery}) {
     </Form>
   );
 }
-export default SearchForm
+export default SearchForm;

@@ -54,7 +54,7 @@ function ProductsList() {
     <>
       <div className="overview__header">
         <Heading size="1">Establishment overview</Heading>
-        <SearchForm setQuery={setQuery}/>
+        <SearchForm setQuery={setQuery} />
       </div>
       <Container fluid>
         <Row className="gy-5">
