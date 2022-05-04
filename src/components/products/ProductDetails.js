@@ -13,6 +13,7 @@ import RatingBlock from "../common/RatingBlock";
 import LocationBlock from "../common/LocationBlock";
 import BookingModal from "../modals/BookingModal";
 import FacilitiesList from "./FacilitiesItem";
+import LocationMap from "../layout/LocationMap";
 
 export default function ProductDetails() {
   const [product, setproduct] = useState([]);
@@ -58,8 +59,6 @@ export default function ProductDetails() {
         message="An error occured when trying to fetch the page"
       />
     );
-
-    console.log(product.attributes[2].options[0]);
 
   return (
     <>
@@ -116,14 +115,15 @@ export default function ProductDetails() {
             <Heading size="2" cssClass="details-card__heading">
               Location:
             </Heading>
-            <iframe
+            <LocationMap address={product.attributes[0].options[0]} />
+            {/* <iframe
               className="details-card__map"
               src={product.attributes[2].options[0]}
               title="address"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            ></iframe> */}
             <LocationBlock location={product.attributes[0].options[0]} />
           </div>
         </div>

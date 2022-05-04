@@ -10,3 +10,8 @@ export const CONSUMER_KEY =
 
 export const CONSUMER_SECRET =
   "&consumer_secret=cs_e2bab28a5350c4b9e4743a32d56c5f7585525190";
+
+  export const MAP_URL =
+    "https://www.google.com/maps/embed/v1/place?";
+
+    export const MAP_API_KEY = "key=AIzaSyDeBgWNvAla1OxecdgJaF7pBiqBoIPu9I4";
