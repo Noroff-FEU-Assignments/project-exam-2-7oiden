@@ -26,9 +26,9 @@ const schema = yup.object().shape({
     .required("Please enter the establishments street address")
     .min(5, "Street address must be at least 5 characters"),
 
-  beds: yup.string().required("Please select number of beds"),
+  beds: yup.number().required("Please select number of beds"),
 
-  category: yup.string().required("Please select number of beds"),
+  category: yup.string().required("Please select number a category"),
 
   price: yup
     .number()
@@ -42,7 +42,23 @@ const schema = yup.object().shape({
     .required("Please enter the establishments street address")
     .min(10, "Please add a description of the establishment"),
 
-  image: yup.string().required("Please enter the establishments name"),
+  image: yup.string().required("Please provide a image URL"),
+
+  wifi: yup.string(),
+
+  television: yup.string(),
+
+  central: yup.string(),
+
+  parking: yup.string(),
+
+  breakfast: yup.string(),
+
+  pets: yup.string(),
+
+  bar: yup.string(),
+
+  restaurant: yup.string(),
 });
 
 export default function AddForm() {
@@ -72,8 +88,6 @@ export default function AddForm() {
 
     let categoryId = 34;
 
-    console.log(data.category);
-
     if (data.category.toLowerCase() === "hotel") {
       categoryId = 35;
     } else if (data.category.toLowerCase() === "bed and breakfast") {
@@ -82,11 +96,19 @@ export default function AddForm() {
       categoryId = 37;
     }
 
+    // data.tags.forEach(element => {
+    //   console.log(element);
+    // });
+
+    console.log(data.beds);
+
     const jsonData = {
       name: data.name,
       sku: data.address,
       regular_price: data.price.toString(),
       description: data.description,
+      manage_stock: true,
+      stock_quantity: data.beds,
       categories: [
         {
           id: categoryId,
@@ -97,6 +119,11 @@ export default function AddForm() {
           src: data.image,
         },
       ],
+      // tags: [
+      //   {
+      //     name: data
+      //   }
+      // ]
     };
 
     console.log(jsonData);
@@ -168,6 +195,7 @@ export default function AddForm() {
               <Form.Label>Number of beds</Form.Label>
               <Form.Select
                 aria-label="Default select example"
+                type="number"
                 {...register("beds")}
               >
                 <option value="">Number of beds</option>
@@ -257,9 +285,9 @@ export default function AddForm() {
                   />
                   <Form.Check
                     type={type}
-                    id="refridgerator"
-                    label="Refridgerator"
-                    {...register("refridgerator")}
+                    id="restaurant"
+                    label="restaurant"
+                    {...register("restaurant")}
                   />
                   <Form.Check
                     type={type}

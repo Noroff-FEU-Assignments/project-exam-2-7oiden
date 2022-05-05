@@ -3,12 +3,12 @@ import { mdiMagnify } from "@mdi/js";
 
 function SearchIcon() {
   return (
-      <Icon
-        path={mdiMagnify}
-        title="User Profile"
-        className="navbar__search-icon"
-        color=""
-      />
+    <Icon
+      path={mdiMagnify}
+      title="User Profile"
+      className="navbar__search-icon"
+      color="default"
+    />
   );
 }
 

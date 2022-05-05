@@ -78,16 +78,20 @@ export default function ProductDetails() {
           <Heading size="1" cssClass="details-heading">
             {product.name}
           </Heading>
-          {/* <p className="details__category">{product.categories[0].name}</p> */}
+          <p className="details__category">{product.categories[0].name}</p>
           <div className="details__info-wrapper">
-            {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
-            <LocationBlock location={product.sku} />
             <RatingBlock
               rating={product.average_rating}
               reviews={product.rating_count}
             />
-            {/* <BedsBlock beds={product.attributes[1].options[0]} /> */}
+            <div>—</div>
+            <BedsBlock beds={product.stock_quantity} />
           </div>
+          {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
+
+          {/* <LocationBlock location={product.sku} /> */}
+
+          {/* <BedsBlock beds={product.attributes[1].options[0]} /> */}
         </div>
         <div className="details__block-2">
           <div>
@@ -111,12 +115,12 @@ export default function ProductDetails() {
               })}
             </ul>
           </div>
-          <div className="details-card__block details-card__block--flex">
+          {/* <div className="details-card__block details-card__block--flex">
             <Heading size="2" cssClass="details-card__heading">
               Category:
             </Heading>
             <p className="details-card__text">{product.categories[0].name}</p>
-          </div>
+          </div> */}
           <div className="details-card__block">
             <Heading size="2" cssClass="details-card__heading">
               Description:

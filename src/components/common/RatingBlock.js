@@ -1,12 +1,17 @@
 import StarIcon from "../icons/StarIcon";
 
-function RatingBlock({rating, reviews}) {
+function RatingBlock({ rating, reviews }) {
   return (
     <div className="info-block">
       <StarIcon />
-      <p className="info-block__text info-block__text--bold">{rating}</p>
-      <p className="info-block__text">({reviews} reviews)</p>
+      <p className="info-block__text info-block__text--bold">
+        {rating !== "0.00" ? rating : "No reviews yet"}
+      </p>
+      <div></div>
+      <p className="info-block__text">
+        {rating !== "0.00" ? "(" + reviews + " reviews)" : ""}
+      </p>
     </div>
   );
 }
-export default RatingBlock
+export default RatingBlock;

@@ -1,16 +1,17 @@
 .details {
     &__category {
         @extend .base-margin;
-        font-family: $serif-headings;
         font-weight: bold;
+        text-transform: uppercase;
         color: getColor(secondaryCol);
-        font-size: 1.25rem;
+        font-size: 1.125rem;
     }
 
     &__info-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: 0 1rem;
+        align-items: center;
+        gap: 0 0.75rem;
     }
 
     &__column-1 {

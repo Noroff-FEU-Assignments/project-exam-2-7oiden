@@ -2,7 +2,7 @@ import Icon from "@mdi/react";
 import { mdiCircleSmall } from "@mdi/js";
 
 function BulletIcon() {
-  return <Icon path={mdiCircleSmall} className="bullet-icon" color="" />;
+  return <Icon path={mdiCircleSmall} className="bullet-icon" color="default" />;
 }
 
 export default BulletIcon;
