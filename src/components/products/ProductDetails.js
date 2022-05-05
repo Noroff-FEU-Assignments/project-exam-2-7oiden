@@ -80,12 +80,13 @@ export default function ProductDetails() {
           </Heading>
           {/* <p className="details__category">{product.categories[0].name}</p> */}
           <div className="details__info-wrapper">
-            <LocationBlock location={product.attributes[0].options[0]} />
+            {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
+            <LocationBlock location={product.sku} />
             <RatingBlock
               rating={product.average_rating}
               reviews={product.rating_count}
             />
-            <BedsBlock beds={product.attributes[1].options[0]} />
+            {/* <BedsBlock beds={product.attributes[1].options[0]} /> */}
           </div>
         </div>
         <div className="details__block-2">
@@ -94,7 +95,7 @@ export default function ProductDetails() {
           </div>
           <BookingModal
             name={product.name}
-            location={product.attributes[0].options[0]}
+            // location={product.attributes[0].options[0]}
           />
         </div>
       </div>
@@ -129,8 +130,10 @@ export default function ProductDetails() {
             <Heading size="2" cssClass="details-card__heading">
               Location:
             </Heading>
-            <LocationMap address={product.attributes[0].options[0]} />
-            <LocationBlock location={product.attributes[0].options[0]} />
+            {/* <LocationMap address={product.attributes[0].options[0]} /> */}
+            <LocationMap address={product.sku} />
+            {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
+            <LocationBlock location={product.sku} />
           </div>
         </div>
       </div>
