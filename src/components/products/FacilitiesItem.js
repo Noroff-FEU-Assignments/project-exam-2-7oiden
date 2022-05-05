@@ -6,7 +6,7 @@ import {
   faWifi,
   faTv,
   faMartiniGlass,
-  faCar,
+  faSquareParking,
   faDog,
   faCircleDot,
 } from "@fortawesome/free-solid-svg-icons";
@@ -34,7 +34,7 @@ function FacilitiesItem({ facility }) {
       icon = faMartiniGlass;
       break;
     case "parking":
-      icon = faCar;
+      icon = faSquareParking;
       break;
     case "pets allowed":
       icon = faDog;

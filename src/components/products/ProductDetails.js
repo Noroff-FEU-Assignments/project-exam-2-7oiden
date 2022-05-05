@@ -14,6 +14,7 @@ import LocationBlock from "../common/LocationBlock";
 import BookingModal from "../modals/BookingModal";
 import FacilitiesList from "./FacilitiesItem";
 import LocationMap from "../layout/LocationMap";
+import BedsBlock from "../common/BedsBlock";
 
 export default function ProductDetails() {
   const [product, setproduct] = useState([]);
@@ -50,7 +51,7 @@ export default function ProductDetails() {
       getDetails();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [id]
   );
 
   if (loading) return <Loader />;
@@ -77,11 +78,15 @@ export default function ProductDetails() {
           <Heading size="1" cssClass="details-heading">
             {product.name}
           </Heading>
-          <RatingBlock
-            rating={product.average_rating}
-            reviews={product.rating_count}
-          />
-          <LocationBlock location={product.attributes[0].options[0]} />
+          {/* <p className="details__category">{product.categories[0].name}</p> */}
+          <div className="details__info-wrapper">
+            <LocationBlock location={product.attributes[0].options[0]} />
+            <RatingBlock
+              rating={product.average_rating}
+              reviews={product.rating_count}
+            />
+            <BedsBlock beds={product.attributes[1].options[0]} />
+          </div>
         </div>
         <div className="details__block-2">
           <div>
@@ -105,6 +110,12 @@ export default function ProductDetails() {
               })}
             </ul>
           </div>
+          <div className="details-card__block details-card__block--flex">
+            <Heading size="2" cssClass="details-card__heading">
+              Category:
+            </Heading>
+            <p className="details-card__text">{product.categories[0].name}</p>
+          </div>
           <div className="details-card__block">
             <Heading size="2" cssClass="details-card__heading">
               Description:
@@ -119,14 +130,6 @@ export default function ProductDetails() {
               Location:
             </Heading>
             <LocationMap address={product.attributes[0].options[0]} />
-            {/* <iframe
-              className="details-card__map"
-              src={product.attributes[2].options[0]}
-              title="address"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe> */}
             <LocationBlock location={product.attributes[0].options[0]} />
           </div>
         </div>

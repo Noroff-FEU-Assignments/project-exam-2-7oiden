@@ -68,3 +68,28 @@ hr {
 .test {
     @extend .base-margin;
 }
+
+.list-item-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.list-item-name {
+    text-decoration: underline;
+}
+
+.list-item-category {
+  color: getColor(textGray)
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 4px;
+    color: getColor(linkCol);
+    padding: 0.75rem 1rem;
+
+    &:hover {
+        background-color: getColor(secondaryBg);
+    }
+}

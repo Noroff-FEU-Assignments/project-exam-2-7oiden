@@ -76,6 +76,7 @@ function ProductsList() {
                 id={item.id}
                 name={item.name}
                 location={item.attributes[0].options[0]}
+                beds={item.attributes[1].options[0]}
                 image={item.images[0].src}
                 category={item.categories[0].name}
                 price={item.price}

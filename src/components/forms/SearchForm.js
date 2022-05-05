@@ -10,7 +10,7 @@ function SearchForm({ setQuery, loading }) {
             onKeyUp={(event) => setQuery(event.target.value)}
             className="custom-input"
             type="text"
-            placeholder="Start searching..."
+            placeholder={loading ? "Please wait" : "Start typing..."}
             disabled={loading}
           />
           <div className="custom-input-icon-box">

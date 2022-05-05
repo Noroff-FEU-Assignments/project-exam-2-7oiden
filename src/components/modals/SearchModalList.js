@@ -7,13 +7,15 @@ import {
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import AlertMessage from "../common/AlertMessage";
+import AlertMessage from "../common/AlertMessage";
 import SearchForm from "../forms/SearchForm";
+import ListGroup from "react-bootstrap/ListGroup";
+import LocationIcon from "../icons/LocationIcon";
 
 export default function SearchModalList() {
   const [product, setproduct] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
 
   const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
@@ -28,7 +30,7 @@ export default function SearchModalList() {
         setproduct(response.data);
       } catch (error) {
         console.log(error);
-        // setError(error.toString());
+        setError(error.toString());
       } finally {
         setLoading(false);
       }
@@ -38,22 +40,19 @@ export default function SearchModalList() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
-  let resultMessage = "";
-
-  // if (error) {
-  //   return (
-  //     <AlertMessage
-  //       variant="danger"
-  //       message="An error occured when trying to fetch the API"
-  //     />
-  //   );
-  // }
+  if (error) {
+    return (
+      <AlertMessage
+        variant="danger"
+        message="An error occured when trying to fetch the API"
+      />
+    );
+  }
 
   return (
     <>
       <SearchForm setQuery={setQuery} loading={loading} />
-      <ul className="search-list">
+      <ListGroup className="search-list" variant="flush">
         {product
           // eslint-disable-next-line array-callback-return
           .filter((item) => {
@@ -67,13 +66,24 @@ export default function SearchModalList() {
             }
           })
           .map((item) => (
-            <li key={item.id}>
-              <Link to={`/details/${item.id}`}>{item.name}</Link>
-            </li>
+            <Link
+              to={`/details/${item.id}`}
+              key={item.id}
+              style={{ textDecoration: "none" }}
+            >
+              <ListGroup.Item>
+                <div className="list-item-wrapper">
+                  <LocationIcon />
+                  <span className="list-item-name">{item.name}</span>
+                  <div className="list-item-category">—</div>
+                  <span className="list-item-category">
+                    {item.categories[0].name.toLowerCase()}
+                  </span>
+                </div>
+              </ListGroup.Item>
+            </Link>
           ))}
-        <div>{loading ? "Please wait..." : ""}</div>
-        <div>{!product.name ? "No result" : ""}</div>
-      </ul>
+      </ListGroup>
     </>
   );
 }

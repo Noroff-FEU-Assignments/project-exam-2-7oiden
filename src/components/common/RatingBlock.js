@@ -2,10 +2,10 @@ import StarIcon from "../icons/StarIcon";
 
 function RatingBlock({rating, reviews}) {
   return (
-    <div className="rating-block">
+    <div className="info-block">
       <StarIcon />
-      <p className="rating-block__text rating-block__text--rating">{rating}</p>
-      <p className="rating-block__text">({reviews} reviews)</p>
+      <p className="info-block__text info-block__text--bold">{rating}</p>
+      <p className="info-block__text">({reviews} reviews)</p>
     </div>
   );
 }

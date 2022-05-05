@@ -1,4 +1,18 @@
 .details {
+    &__category {
+        @extend .base-margin;
+        font-family: $serif-headings;
+        font-weight: bold;
+        color: getColor(secondaryCol);
+        font-size: 1.25rem;
+    }
+
+    &__info-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 1rem;
+    }
+
     &__column-1 {
         width: 100%;
         display: flex;

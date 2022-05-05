@@ -57,8 +57,14 @@
         font-family: $sans-serif-headings;
         font-weight: bold;
         font-size: 1.25rem;
-        color: getColor(linkCol);
+        color: getColor(textDark);
         padding-bottom: 0.25rem;
+    }
+
+    &__text {
+        font-family: $serif-headings;
+        font-weight: bold;
+        color: getColor(secondaryCol);
     }
 
     &__bottom {
@@ -133,6 +139,12 @@
         max-width: 450px;
         border-radius: 25px;
         padding-top: 0.5rem;
+    }
+
+    &__block--flex {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
     }
 }
 

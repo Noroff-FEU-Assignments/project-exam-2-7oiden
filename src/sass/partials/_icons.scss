@@ -43,6 +43,14 @@
     }
 }
 
+.bed-icon {
+    width: 1.25rem;
+    
+    path {
+        fill: getColor(textDark);
+    }
+}
+
 .star-icon {
     width: 1.25rem;
 

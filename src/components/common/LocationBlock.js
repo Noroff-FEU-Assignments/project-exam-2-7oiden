@@ -2,11 +2,9 @@ import LocationIcon from "../icons/LocationIcon";
 
 function LocationBlock({location}) {
   return (
-    <div className="location-block">
+    <div className="info-block">
       <LocationIcon />
-      <p className="location-block__text">
-        {location}
-      </p>
+      <p className="info-block__text info-block__text--gray">{location}</p>
     </div>
   );
 }

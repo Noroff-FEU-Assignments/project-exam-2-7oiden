@@ -1,29 +1,20 @@
-.location-block {
+.info-block {
     display: flex;
     align-items: center;
     gap: 0.25rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
 
-    &__text {
-        @extend .base-margin;
-        color: getColor(textGray);
-    }
-}
-
-.rating-block {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-    
     &__text {
         @extend .base-margin;
         color: getColor(textDark);
-
-        &--rating {
+    
+        &--bold {
             font-weight: bold;
+        }
+
+        &--gray {
+            color: getColor(textGray);
         }
     }
 }
