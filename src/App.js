@@ -1,4 +1,5 @@
 import "./sass/style.scss";
+// import "react-widgets/styles.css";
 import { AuthProvider } from "./context/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
@@ -8,6 +9,7 @@ import Overview from "./components/pages/Overview";
 import Details from "./components/pages/Details";
 import Admin from "./components/pages/Admin";
 import Add from "./components/pages/Add";
+
 
 function App() {
   return (

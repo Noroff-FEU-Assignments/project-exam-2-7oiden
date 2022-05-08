@@ -14,7 +14,7 @@ import SearchForm from "../forms/SearchForm";
 import ProductCard from "../products/ProductCard";
 
 function ProductsList() {
-  const [product, setproduct] = useState([]);
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
@@ -26,7 +26,7 @@ function ProductsList() {
       try {
         const response = await axios.get(url);
         console.log("response", response.data);
-        setproduct(response.data);
+        setProduct(response.data);
       } catch (error) {
         console.log(error);
         setError(error.toString());

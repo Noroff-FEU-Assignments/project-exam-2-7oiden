@@ -47,17 +47,7 @@ header {
     background-color: getColor(primaryBg);
 }
 
-.admin__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 2rem;
 
-    @media (min-width: getBreakpoint(large)) {
-        flex-direction: row;
-    }
-}
 
 hr {
     @extend .base-margin;

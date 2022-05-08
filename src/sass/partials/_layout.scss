@@ -214,10 +214,22 @@ main {
         margin: 0 auto;
         
         @media (min-width: getBreakpoint(large)) {
-            flex-direction: row;
-            width: 85%;
-            gap: 1rem;
             padding-top: 4rem;
+            flex-direction: row;
+            gap: 1rem;
+            width: 85%;
+        }
+
+        @media (min-width: getBreakpoint(xlarge)) {
+            width: 80%;
+        }
+
+        @media (min-width: getBreakpoint(xxxlarge)) {
+            width: 75%;
+        }
+
+        @media (min-width: getBreakpoint(xxlarge)) {
+            width: 70%;
         }
     }
 
@@ -306,9 +318,16 @@ main {
     margin: 0 auto;
     padding: 2rem 4.5%;
 
-    @media (min-width: getBreakpoint(large)) {
-        padding: 2rem 3rem;
+    @media (min-width: getBreakpoint(medium)) {
+        padding: 2rem 4rem;
+        width: 85%;
         border-radius: 25px;
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 100%;
+        padding: 2rem 3rem;
+        
     }
 
     @media (min-width: getBreakpoint(xlarge)) {
@@ -365,7 +384,7 @@ main {
         width: 100%;
         margin: 0 auto;
         
-        @media (min-width: getBreakpoint(large)) {
+        @media (min-width: getBreakpoint(medium)) {
             width: 70%;
             padding-top: 4rem;
         }

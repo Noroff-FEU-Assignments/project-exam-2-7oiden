@@ -14,6 +14,7 @@ import {
   CONSUMER_KEY,
   CONSUMER_SECRET,
 } from "../../constants/api";
+import Multiselect from "react-widgets/Multiselect";
 
 const schema = yup.object().shape({
   name: yup
@@ -44,21 +45,31 @@ const schema = yup.object().shape({
 
   image: yup.string().required("Please provide a image URL"),
 
-  wifi: yup.string(),
+  // value: yup
+  //   .array()
+  //   .of(
+  //     yup.object().shape({
+  //       data: yup.string(),
+  //     })
+  //   )
+  //   .default([])
+  //   .oneOf([true], "Must choose one"),
 
-  television: yup.string(),
+  // wifi: yup.string(),
 
-  central: yup.string(),
+  // television: yup.string(),
 
-  parking: yup.string(),
+  // central: yup.string(),
 
-  breakfast: yup.string(),
+  // parking: yup.string(),
 
-  pets: yup.string(),
+  // breakfast: yup.string(),
 
-  bar: yup.string(),
+  // pets: yup.string(),
 
-  restaurant: yup.string(),
+  // bar: yup.string(),
+
+  // restaurant: yup.string(),
 });
 
 export default function AddForm() {
@@ -100,8 +111,6 @@ export default function AddForm() {
     //   console.log(element);
     // });
 
-    console.log(data.beds);
-
     const jsonData = {
       name: data.name,
       sku: data.address,
@@ -121,9 +130,9 @@ export default function AddForm() {
       ],
       // tags: [
       //   {
-      //     name: data
-      //   }
-      // ]
+      //     value: data.checkboxes,
+      //   },
+      // ],
     };
 
     console.log(jsonData);
@@ -248,7 +257,29 @@ export default function AddForm() {
 
           <fieldset className="form-check-fieldset">
             <legend>Facilities</legend>
-            {["checkbox"].map((type) => (
+
+            {/* <Multiselect
+              data={colors}
+              value={value}
+              onChange={(value) => setValue(value)}
+              {...register("value")}
+            /> */}
+
+            {/* <Multiselect
+              data={[
+                { name: "Bar" },
+                { name: "Television" },
+                { name: "Restaurant" },
+                { name: "Central" },
+                { name: "Wifi" },
+              ]}
+              textField="name"
+              name="checkboxes"
+              multiple
+              {...register("name")}
+            /> */}
+
+            {/* {["checkbox"].map((type) => (
               <div key={`default-${type}`} className="mb-3 form-check-wrapper">
                 <div>
                   <Form.Check
@@ -303,7 +334,7 @@ export default function AddForm() {
                   />
                 </div>
               </div>
-            ))}
+            ))} */}
           </fieldset>
 
           <Button className="admin-button form-button" type="submit">

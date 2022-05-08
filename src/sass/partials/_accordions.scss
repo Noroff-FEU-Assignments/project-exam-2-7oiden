@@ -1,0 +1,48 @@
+.accordion {
+    &__header-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 1rem;
+        justify-content: space-between;
+    }
+
+    &__header {
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    &__date {
+        color: getColor(textGray);
+        display: inline-block;
+        padding-right: 10%;
+    }
+
+    &__body-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    &__info-container {
+        @extend .base-margin;
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__sub-header {
+        @extend .base-margin;
+        font-weight: bold;
+        width: 100px;
+    }
+
+    &__text {
+        @extend .base-margin;
+    }
+
+    &__link {
+        @extend .base-margin;
+        text-decoration: underline;
+        cursor: pointer;
+        color: getColor(linkCol);
+    }
+}

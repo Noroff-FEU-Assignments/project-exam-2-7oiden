@@ -1,49 +1,71 @@
+import { useState, useEffect } from "react";
+import { CONTACT_URL } from "../../constants/api";
+import axios from "axios";
+import Loader from "../common/Loader";
+import AlertMessage from "../common/AlertMessage";
 import Accordion from "react-bootstrap/Accordion";
 import Heading from "../layout/Heading";
+import ContactItem from "./ContactItem";
 
 function AdmContactAccordion() {
+  const [message, setMessage] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const url = CONTACT_URL;
+
+  useEffect(function () {
+    async function getproduct() {
+      try {
+        const response = await axios.get(url);
+        console.log("response", response.data.data);
+        setMessage(response.data.data);
+      } catch (error) {
+        console.log(error);
+        setError(error.toString());
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    getproduct();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (loading) return <Loader />;
+
+  if (error) {
+    return (
+      <AlertMessage
+        variant="danger"
+        message="An error occured when trying to fetch the API"
+      />
+    );
+  }
+
+  console.log(message);
+
   return (
     <>
       <Heading size="2" cssClass="accordion-heading" flush>
         Contact enquiries
       </Heading>
       <Accordion defaultActiveKey="0" flush>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Accordion Item #1</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Accordion Item #2</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="2">
-          <Accordion.Header>Accordion Item #2</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
+        {message.map((item) => {
+          return (
+            <ContactItem
+              key={item.id}
+              eventKey={item.index}
+              // id={item.id}
+              firstName={item.attributes.first_name}
+              lastName={item.attributes.last_name}
+              subject={item.attributes.subject}
+              email={item.attributes.email}
+              message={item.attributes.message}
+              created={item.attributes.createdAt}
+            />
+          );
+        })}
       </Accordion>
     </>
   );

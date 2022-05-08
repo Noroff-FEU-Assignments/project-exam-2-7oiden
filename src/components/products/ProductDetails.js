@@ -99,6 +99,7 @@ export default function ProductDetails() {
           </div>
           <BookingModal
             name={product.name}
+            location={product.sku}
             // location={product.attributes[0].options[0]}
           />
         </div>
