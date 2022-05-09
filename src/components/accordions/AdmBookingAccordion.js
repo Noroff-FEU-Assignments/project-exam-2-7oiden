@@ -1,47 +1,89 @@
+import { useState, useEffect } from "react";
+import { BOOKING_URL } from "../../constants/api";
+import axios from "axios";
+import Loader from "../common/Loader";
+import AlertMessage from "../common/AlertMessage";
 import Accordion from "react-bootstrap/Accordion";
 import Heading from "../layout/Heading";
+import BookingItem from "./BookingItem";
+import { orderBy } from "lodash";
 
 function AdmBookingAccordion() {
+  const [booking, setBooking] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const url = BOOKING_URL;
+
+  useEffect(function () {
+    async function getproduct() {
+      try {
+        const response = await axios.get(url);
+        console.log("response", response.data.data);
+        setBooking(response.data.data);
+      } catch (error) {
+        console.log(error);
+        setError(error.toString());
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    getproduct();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (loading) return <Loader />;
+
+  if (error) {
+    return (
+      <AlertMessage
+        variant="danger"
+        message="An error occured when trying to fetch the API"
+      />
+    );
+  }
+
+  const orderedBookings = orderBy(booking, ["attributes.createdAt"], ["desc"]);
+
+  //check this code
+  let indexArray = [];
+
+  orderedBookings.forEach((el, i) => {
+    indexArray.push(i);
+  });
+
+  if (indexArray.length === 1) {
+    indexArray = 0;
+  }
+
+  // console.log(indexArray);
+
   return (
     <>
-      <Heading size="2" cssClass="accordion-heading">Booking enquiries</Heading>
-      <Accordion defaultActiveKey="0" flush>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Accordion Item #1</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Accordion Item #2</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="2">
-          <Accordion.Header>Accordion Item #2</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
+      <Heading size="2" cssClass="accordion-heading">
+        Booking enquiries
+      </Heading>
+
+      <Accordion flush>
+        {orderedBookings.map((item) => {
+          return (
+            <BookingItem
+              key={item.id}
+              eventKey={indexArray}
+              establishment={item.attributes.establishment}
+              firstName={item.attributes.first_name}
+              lastName={item.attributes.last_name}
+              guests={item.attributes.guests}
+              email={item.attributes.email}
+              message={item.attributes.message}
+              // location={item.attributes.location}
+              created={item.attributes.createdAt}
+              fromDate={item.attributes.from_date}
+              toDate={item.attributes.to_date}
+            />
+          );
+        })}
       </Accordion>
     </>
   );

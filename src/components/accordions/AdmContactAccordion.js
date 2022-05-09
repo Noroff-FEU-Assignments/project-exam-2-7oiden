@@ -6,6 +6,7 @@ import AlertMessage from "../common/AlertMessage";
 import Accordion from "react-bootstrap/Accordion";
 import Heading from "../layout/Heading";
 import ContactItem from "./ContactItem";
+import { orderBy } from "lodash";
 
 function AdmContactAccordion() {
   const [message, setMessage] = useState([]);
@@ -18,7 +19,7 @@ function AdmContactAccordion() {
     async function getproduct() {
       try {
         const response = await axios.get(url);
-        console.log("response", response.data.data);
+        // console.log("response", response.data.data);
         setMessage(response.data.data);
       } catch (error) {
         console.log(error);
@@ -43,20 +44,32 @@ function AdmContactAccordion() {
     );
   }
 
-  console.log(message);
+  const orderedMessages = orderBy(message, ["attributes.createdAt"], ["desc"]);
+
+  //check this code
+  let indexArray = [];
+
+  orderedMessages.forEach((el, i) => {
+    indexArray.push(i);
+  });
+
+  if (indexArray.length === 1) {
+    indexArray = 0;
+  }
+
+  // console.log(indexArray);
 
   return (
     <>
       <Heading size="2" cssClass="accordion-heading" flush>
         Contact enquiries
       </Heading>
-      <Accordion defaultActiveKey="0" flush>
-        {message.map((item) => {
+      <Accordion flush>
+        {orderedMessages.map((item, indexArray) => {
           return (
             <ContactItem
               key={item.id}
-              eventKey={item.index}
-              // id={item.id}
+              eventKey={indexArray}
               firstName={item.attributes.first_name}
               lastName={item.attributes.last_name}
               subject={item.attributes.subject}

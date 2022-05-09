@@ -2,9 +2,12 @@
     &__header-container {
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        gap: 0 1rem;
-        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    &__header-wrapper {
+        display: flex;
+        gap: 2rem;
     }
 
     &__header {
@@ -29,13 +32,13 @@
         gap: 1rem;
     }
 
-    &__sub-header {
+    &__label {
         @extend .base-margin;
         font-weight: bold;
         width: 100px;
     }
 
-    &__text {
+    &__info {
         @extend .base-margin;
     }
 

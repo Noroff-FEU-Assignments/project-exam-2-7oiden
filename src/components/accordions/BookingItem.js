@@ -2,8 +2,20 @@ import Accordion from "react-bootstrap/Accordion";
 import moment from "moment";
 import AccInfoBlock from "../common/AccInfoBlock";
 
-function ContactItem(props) {
-  const { firstName, lastName, email, subject, message, created, eventKey } = props;
+function BookingItem(props) {
+  const {
+    establishment,
+    guests,
+    firstName,
+    lastName,
+    email,
+    // location,
+    message,
+    created,
+    eventKey,
+    fromDate,
+    toDate,
+  } = props;
 
   const date = moment(created).format("YYYY-MM-DD, HH:mm");
 
@@ -11,20 +23,24 @@ function ContactItem(props) {
     <Accordion.Item eventKey={eventKey}>
       <Accordion.Header as="div">
         <div className="accordion__header-container">
-          <span className="accordion__header">
-            {firstName} {lastName}
-          </span>
+          <div className="accordion__header-wrapper">
+            <span className="accordion__header">{establishment}</span>
+          </div>
           <span className="accordion__date">{date}</span>
         </div>
       </Accordion.Header>
       <Accordion.Body>
         <div className="accordion__body-wrapper">
-          <AccInfoBlock label="Subject:" info={subject} />
+          <AccInfoBlock label="Guests::" info={guests} />
+          <AccInfoBlock label="From date:" info={fromDate} />
+          <AccInfoBlock label="To date:" info={toDate} />
+          <AccInfoBlock label="Name:" info={`${firstName} ${lastName}`} />
+          {/* <AccInfoBlock label="Email:" info={email} /> */}
           <div className="accordion__info-container">
             <p className="accordion__label">Email:</p>
             <p
               onClick={() =>
-                (window.location = `mailto:${email}?subject=Re: ${subject}`)
+                (window.location = `mailto:${email}?subject=Booking: ${establishment}`)
               }
               className="accordion__link"
             >
@@ -37,4 +53,4 @@ function ContactItem(props) {
     </Accordion.Item>
   );
 }
-export default ContactItem;
+export default BookingItem;
