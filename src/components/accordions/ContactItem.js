@@ -7,6 +7,8 @@ function ContactItem(props) {
 
   const date = moment(created).format("YYYY-MM-DD, HH:mm");
 
+  console.log(eventKey);
+
   return (
     <Accordion.Item eventKey={eventKey}>
       <Accordion.Header as="div">

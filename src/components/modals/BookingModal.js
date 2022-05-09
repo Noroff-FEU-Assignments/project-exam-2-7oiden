@@ -25,7 +25,7 @@ export default function BookingModal({ name, location }) {
           <LocationBlock location={location} />
         </Modal.Header>
         <Modal.Body>
-          <BookingForm />
+          <BookingForm establishment={name} location={location} />
         </Modal.Body>
       </Modal>
     </>

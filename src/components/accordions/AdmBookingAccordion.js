@@ -66,7 +66,7 @@ function AdmBookingAccordion() {
       </Heading>
 
       <Accordion flush>
-        {orderedBookings.map((item) => {
+        {orderedBookings.map((item, indexArray) => {
           return (
             <BookingItem
               key={item.id}
