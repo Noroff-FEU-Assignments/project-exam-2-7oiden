@@ -8,9 +8,13 @@ import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
 import { BOOKING_URL } from "../../constants/api";
-import Heading from "../layout/Heading";
+import DatePicker from "react-widgets/DatePicker";
 
 const schema = yup.object().shape({
+  // from_date: yup.string().required("Please select from date"),
+
+  // to_date: yup.string().required("Please select to date"),
+
   guests: yup.string().required("Please select number of guests"),
 
   first_name: yup
@@ -28,11 +32,6 @@ const schema = yup.object().shape({
     .required("Please enter your email address")
     .email("Please enter a valid email address"),
 
-  // subject: yup
-  //   .string()
-  //   .required("Please enter your lastname")
-  //   .min(4, "Subject must be at least 4 characters"),
-
   message: yup.string(),
 });
 
@@ -40,12 +39,14 @@ export default function BookingForm({ establishment, location }) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
+  const [date, setDate] = useState(new Date());
 
   const url = BOOKING_URL;
 
   const {
     register,
     handleSubmit,
+    handleChange,
     reset,
     formState: { errors },
   } = useForm({
@@ -65,6 +66,8 @@ export default function BookingForm({ establishment, location }) {
       data: {
         establishment: establishment,
         location: location,
+        from_date: date,
+        to_date: date,
         guests: data.guests,
         first_name: data.first_name,
         last_name: data.last_name,
@@ -97,6 +100,37 @@ export default function BookingForm({ establishment, location }) {
       )}
       {serverError && <FormError>{serverError}</FormError>}
       <fieldset disabled={submitting}>
+        <div className="date-picker-wrapper">
+          <Form.Group className="mb-3" controlId="formBasicGuests">
+            <Form.Label>From date</Form.Label>
+            {/* <DatePicker
+              defaultValue={new Date()}
+              valueFormat={{ dateStyle: "medium" }}
+              value={current}
+              onChange={setCurrent}
+              {...register("from_date")}
+            /> */}
+            {errors.from_date && (
+              <FormError>{errors.from_date.message}</FormError>
+            )}
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicGuests">
+            <Form.Label>To date</Form.Label>
+            {/* <DatePicker
+              id="to_date"
+              type="date"
+              defaultValue={new Date()}
+              valueFormat={{ dateStyle: "medium" }}
+              name="toDate"
+              value={date}
+              onChange={(date) =>
+                handleChange({ target: { value: date, name: "toDate" } })
+              }
+              {...register("toDate")}
+            /> */}
+            {errors.to_date && <FormError>{errors.to_date.message}</FormError>}
+          </Form.Group>
+        </div>
         <Form.Group className="mb-3" controlId="formBasicGuests">
           <Form.Label>Number of guests</Form.Label>
           <Form.Select

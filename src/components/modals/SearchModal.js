@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import SearchIcon from "../icons/SearchIcon";
 import SearchModalList from "./SearchModalList";
@@ -8,6 +9,13 @@ export default function SearchModal() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const location = useLocation();
+  // console.log(location);
+
+  useEffect(() => {
+    setShow(false);
+  }, [location]);
 
   return (
     <>

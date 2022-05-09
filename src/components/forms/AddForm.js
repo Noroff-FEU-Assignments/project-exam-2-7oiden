@@ -265,7 +265,7 @@ export default function AddForm() {
               {...register("value")}
             /> */}
 
-            {/* <Multiselect
+            <Multiselect
               data={[
                 { name: "Bar" },
                 { name: "Television" },
@@ -276,8 +276,7 @@ export default function AddForm() {
               textField="name"
               name="checkboxes"
               multiple
-              {...register("name")}
-            /> */}
+            />
 
             {/* {["checkbox"].map((type) => (
               <div key={`default-${type}`} className="mb-3 form-check-wrapper">

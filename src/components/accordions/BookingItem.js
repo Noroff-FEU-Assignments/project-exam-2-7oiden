@@ -19,7 +19,7 @@ function BookingItem(props) {
 
   const date = moment(created).format("YYYY-MM-DD, HH:mm");
 
-  console.log(eventKey);
+  // console.log(eventKey);
 
   return (
     <Accordion.Item eventKey={eventKey}>
@@ -37,7 +37,6 @@ function BookingItem(props) {
           <AccInfoBlock label="From date:" info={fromDate} />
           <AccInfoBlock label="To date:" info={toDate} />
           <AccInfoBlock label="Name:" info={`${firstName} ${lastName}`} />
-          {/* <AccInfoBlock label="Email:" info={email} /> */}
           <div className="accordion__info-container">
             <p className="accordion__label">Email:</p>
             <p

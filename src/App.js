@@ -1,5 +1,5 @@
 import "./sass/style.scss";
-// import "react-widgets/styles.css";
+import "react-widgets/scss/styles.scss";
 import { AuthProvider } from "./context/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
@@ -9,7 +9,6 @@ import Overview from "./components/pages/Overview";
 import Details from "./components/pages/Details";
 import Admin from "./components/pages/Admin";
 import Add from "./components/pages/Add";
-
 
 function App() {
   return (
@@ -28,26 +27,5 @@ function App() {
     </AuthProvider>
   );
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Tommy Johnsen
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
