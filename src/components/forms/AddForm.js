@@ -27,7 +27,7 @@ const schema = yup.object().shape({
     .required("Please enter the establishments street address")
     .min(5, "Street address must be at least 5 characters"),
 
-  beds: yup.number().required("Please select number of beds"),
+  beds: yup.number().min(1, "Number of beds must be at least 1"),
 
   category: yup.string().required("Please select number a category"),
 
@@ -207,7 +207,7 @@ export default function AddForm() {
                 type="number"
                 {...register("beds")}
               >
-                <option value="">Number of beds</option>
+                <option value="0">Number of beds</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -222,12 +222,14 @@ export default function AddForm() {
               controlId="formBasicAddress"
             >
               <Form.Label>Price/night</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Price/night"
-                {...register("price")}
-              />
-              <div className="input-prefix">NOK</div>
+              <div className="input-price-container">
+                <Form.Control
+                  type="text"
+                  placeholder="Price/night"
+                  {...register("price")}
+                />
+                <div className="input-prefix">NOK</div>
+              </div>
               {errors.price && <FormError>{errors.price.message}</FormError>}
             </Form.Group>
           </div>
@@ -277,6 +279,8 @@ export default function AddForm() {
               name="checkboxes"
               multiple
             />
+
+            
 
             {/* {["checkbox"].map((type) => (
               <div key={`default-${type}`} className="mb-3 form-check-wrapper">

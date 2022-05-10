@@ -64,12 +64,18 @@ function AdmBookingAccordion() {
       <Heading size="2" cssClass="accordion-heading">
         Booking enquiries
       </Heading>
-
+      <div className="accordion__empty-item">
+        <p className="accordion__test">
+          {orderedBookings.length === 0 ? "No messages" : ""}
+        </p>
+      </div>
       <Accordion flush>
         {orderedBookings.map((item, indexArray) => {
           return (
             <BookingItem
               key={item.id}
+              id={item.id}
+              type={"booking"}
               eventKey={indexArray}
               establishment={item.attributes.establishment}
               firstName={item.attributes.first_name}

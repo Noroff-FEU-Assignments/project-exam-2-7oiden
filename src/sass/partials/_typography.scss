@@ -72,7 +72,7 @@ input {
 }
 
 .accordion-heading {
-    background-color: getColor(textDark);
+    background-color: getColor(footerBg);
     color: getColor(textLight);
     font-family: $sans-serif-headings;
     font-size: 1.5rem;

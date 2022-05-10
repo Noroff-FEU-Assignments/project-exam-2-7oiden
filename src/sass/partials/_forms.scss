@@ -1,4 +1,7 @@
 
+.form-label {
+    font-weight: 600;
+}
 
 .contact {
   &__heading {
@@ -85,7 +88,11 @@ legend {
     width: 100%;
 }
 
-.relative-input {
+// .relative-input {
+//     position: relative;
+// }
+
+.input-price-container {
     position: relative;
 }
 
@@ -93,7 +100,7 @@ legend {
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: getColor(textDark);
+    background-color: getColor(textGray);
     color: getColor(textLight);
     padding: 0.45rem 0.75rem;
     border-radius: 0 4px 4px 0;

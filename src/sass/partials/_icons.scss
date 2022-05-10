@@ -51,6 +51,17 @@
     }
 }
 
+.bin-icon {
+    width: 1.25rem;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    path {
+        fill: getColor(textLight);
+    }
+}
+
 .star-icon {
     width: 1.25rem;
 

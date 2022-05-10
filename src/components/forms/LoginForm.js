@@ -7,6 +7,7 @@ import AuthContext from "../../context/AuthContext";
 import axios from "axios";
 import { WP_BASE_URL, TOKEN_PATH } from "../../constants/api";
 import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 import FormError from "../common/FormError";
 import Button from "react-bootstrap/Button";
 import AlertMessage from "../common/AlertMessage";
@@ -62,7 +63,21 @@ function LoginForm() {
         />
       )}
       <fieldset disabled={submitting}>
-        <Form.Group className="mb-3" controlId="formBasicUsername">
+        <FloatingLabel
+          controlId="floatingInput"
+          label="Username"
+          className="mb-3"
+        >
+          <Form.Control
+            type="text"
+            placeholder="name@example.com"
+            className="mb-3"
+            {...register("username")}
+          />
+          {errors.username && <FormError>{errors.username.message}</FormError>}
+        </FloatingLabel>
+
+        {/* <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
@@ -70,8 +85,17 @@ function LoginForm() {
             {...register("username")}
           />
           {errors.username && <FormError>{errors.username.message}</FormError>}
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        </Form.Group> */}
+
+        <FloatingLabel controlId="floatingPassword" label="Password">
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            {...register("password")}
+          />
+          {errors.password && <FormError>{errors.password.message}</FormError>}
+        </FloatingLabel>
+        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="text"
@@ -79,9 +103,9 @@ function LoginForm() {
             {...register("password")}
           />
           {errors.password && <FormError>{errors.password.message}</FormError>}
-        </Form.Group>
+        </Form.Group> */}
         <Button className="primary-button form-button" type="submit">
-          {submitting ? " Please wait..." : "Login"}
+          {submitting ? "Please wait..." : "Login"}
         </Button>
       </fieldset>
     </Form>

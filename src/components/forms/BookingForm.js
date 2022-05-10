@@ -8,12 +8,17 @@ import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
 import { BOOKING_URL } from "../../constants/api";
-import DatePicker from "react-widgets/DatePicker";
+import moment from "moment";
+
+const date = new Date()
+
+const today = moment(date).format("YYYY-MM-DD");
+const tomorrow = moment(date.setDate(date.getDate() + 1)).format("YYYY-MM-DD");
 
 const schema = yup.object().shape({
-  // from_date: yup.string().required("Please select from date"),
+  from_date: yup.date().required("Please select a from date").min(today, "Date can not be earlier than today"),
 
-  // to_date: yup.string().required("Please select to date"),
+  to_date: yup.date().required("Please select a to date").min(today, "Date can not be earlier than today"),
 
   guests: yup.string().required("Please select number of guests"),
 
@@ -39,14 +44,12 @@ export default function BookingForm({ establishment, location }) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
-  const [date, setDate] = useState(new Date());
 
   const url = BOOKING_URL;
 
   const {
     register,
     handleSubmit,
-    handleChange,
     reset,
     formState: { errors },
   } = useForm({
@@ -62,12 +65,14 @@ export default function BookingForm({ establishment, location }) {
     // setSubmitted(true);
     // reset();
 
+    console.log(data.to_date);
+
     const jsonData = {
       data: {
         establishment: establishment,
         location: location,
-        from_date: date,
-        to_date: date,
+        from_date: data.from_date,
+        to_date: data.to_date,
         guests: data.guests,
         first_name: data.first_name,
         last_name: data.last_name,
@@ -76,7 +81,7 @@ export default function BookingForm({ establishment, location }) {
       },
     };
 
-    console.log(jsonData);
+    // console.log(jsonData);
 
     try {
       const response = await axios.post(url, jsonData);
@@ -103,31 +108,22 @@ export default function BookingForm({ establishment, location }) {
         <div className="date-picker-wrapper">
           <Form.Group className="mb-3" controlId="formBasicGuests">
             <Form.Label>From date</Form.Label>
-            {/* <DatePicker
-              defaultValue={new Date()}
-              valueFormat={{ dateStyle: "medium" }}
-              value={current}
-              onChange={setCurrent}
+            <Form.Control
+              type="date"
+              defaultValue={today}
               {...register("from_date")}
-            /> */}
+            />
             {errors.from_date && (
               <FormError>{errors.from_date.message}</FormError>
             )}
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicGuests">
             <Form.Label>To date</Form.Label>
-            {/* <DatePicker
-              id="to_date"
+            <Form.Control
               type="date"
-              defaultValue={new Date()}
-              valueFormat={{ dateStyle: "medium" }}
-              name="toDate"
-              value={date}
-              onChange={(date) =>
-                handleChange({ target: { value: date, name: "toDate" } })
-              }
-              {...register("toDate")}
-            /> */}
+              defaultValue={tomorrow}
+              {...register("to_date")}
+            />
             {errors.to_date && <FormError>{errors.to_date.message}</FormError>}
           </Form.Group>
         </div>

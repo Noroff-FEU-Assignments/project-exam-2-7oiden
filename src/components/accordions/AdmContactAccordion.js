@@ -57,18 +57,25 @@ function AdmContactAccordion() {
     indexArray = 0;
   }
 
-  // console.log(indexArray);
+  console.log(indexArray);
 
   return (
     <>
       <Heading size="2" cssClass="accordion-heading" flush>
         Contact enquiries
       </Heading>
+      <div className="accordion__empty-item">
+        <p className="accordion__test">
+          {orderedMessages.length === 0 ? "No messages" : ""}
+        </p>
+      </div>
       <Accordion flush>
         {orderedMessages.map((item, indexArray) => {
           return (
             <ContactItem
               key={item.id}
+              id={item.id}
+              type={"contact"}
               eventKey={indexArray}
               firstName={item.attributes.first_name}
               lastName={item.attributes.last_name}

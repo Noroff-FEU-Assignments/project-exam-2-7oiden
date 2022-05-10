@@ -1,13 +1,22 @@
 import Accordion from "react-bootstrap/Accordion";
 import moment from "moment";
 import AccInfoBlock from "../common/AccInfoBlock";
+import DeleteItem from "./DeleteItem";
 
 function ContactItem(props) {
-  const { firstName, lastName, email, subject, message, created, eventKey } = props;
+  const {
+    id,
+    type,
+    firstName,
+    lastName,
+    email,
+    subject,
+    message,
+    created,
+    eventKey,
+  } = props;
 
   const date = moment(created).format("YYYY-MM-DD, HH:mm");
-
-  // console.log(eventKey);
 
   return (
     <Accordion.Item eventKey={eventKey}>
@@ -34,6 +43,7 @@ function ContactItem(props) {
             </p>
           </div>
           <AccInfoBlock label="Message:" info={message} />
+          <DeleteItem id={id} type={type} />
         </div>
       </Accordion.Body>
     </Accordion.Item>

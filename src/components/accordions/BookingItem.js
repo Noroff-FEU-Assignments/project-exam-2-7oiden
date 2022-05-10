@@ -1,9 +1,12 @@
 import Accordion from "react-bootstrap/Accordion";
 import moment from "moment";
 import AccInfoBlock from "../common/AccInfoBlock";
+import DeleteItem from "./DeleteItem";
 
 function BookingItem(props) {
   const {
+    id,
+    type,
     establishment,
     guests,
     firstName,
@@ -33,9 +36,9 @@ function BookingItem(props) {
       </Accordion.Header>
       <Accordion.Body>
         <div className="accordion__body-wrapper">
-          <AccInfoBlock label="Guests::" info={guests} />
           <AccInfoBlock label="From date:" info={fromDate} />
           <AccInfoBlock label="To date:" info={toDate} />
+          <AccInfoBlock label="Guests:" info={guests} />
           <AccInfoBlock label="Name:" info={`${firstName} ${lastName}`} />
           <div className="accordion__info-container">
             <p className="accordion__label">Email:</p>
@@ -49,6 +52,7 @@ function BookingItem(props) {
             </p>
           </div>
           <AccInfoBlock label="Message:" info={message} />
+          <DeleteItem id={id} type={type}/>
         </div>
       </Accordion.Body>
     </Accordion.Item>
