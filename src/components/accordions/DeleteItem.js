@@ -1,11 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BOOKING_URL, CONTACT_URL } from "../../constants/api";
 import axios from "axios";
 import BinIcon from "../icons/BinIcon";
 import AlertMessage from "../common/AlertMessage";
+import { useNavigate, useLocation} from "react-router-dom";
 
 export default function DeleteItem({ id, type }) {
   const [error, setError] = useState(null);
+ 
+  const history = useNavigate();
+  const location = useLocation();
 
   let url = "";
 
@@ -21,10 +25,9 @@ export default function DeleteItem({ id, type }) {
     if (confirmDelete) {
       try {
         await axios.delete(url);
+        history(location.pathname);
       } catch (error) {
         setError(error);
-      } finally {
-        window.location.reload(false);
       }
     }
   }

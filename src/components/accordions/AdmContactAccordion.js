@@ -7,6 +7,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Heading from "../layout/Heading";
 import ContactItem from "./ContactItem";
 import { orderBy } from "lodash";
+import { useLocation } from "react-router-dom";
 
 function AdmContactAccordion() {
   const [message, setMessage] = useState([]);
@@ -15,23 +16,29 @@ function AdmContactAccordion() {
 
   const url = CONTACT_URL;
 
-  useEffect(function () {
-    async function getproduct() {
-      try {
-        const response = await axios.get(url);
-        // console.log("response", response.data.data);
-        setMessage(response.data.data);
-      } catch (error) {
-        console.log(error);
-        setError(error.toString());
-      } finally {
-        setLoading(false);
-      }
-    }
+  const location = useLocation().key;
 
-    getproduct();
+  // console.log(location);
+
+  useEffect(
+    function () {
+      async function getproduct() {
+        try {
+          const response = await axios.get(url);
+          // console.log("response", response.data.data);
+          setMessage(response.data.data);
+        } catch (error) {
+          console.log(error);
+          setError(error.toString());
+        } finally {
+          setLoading(false);
+        }
+      }
+      getproduct();
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    [location]
+  );
 
   if (loading) return <Loader />;
 
@@ -57,17 +64,19 @@ function AdmContactAccordion() {
     indexArray = 0;
   }
 
-  console.log(indexArray);
+  let display = "none";
+
+  if (orderedMessages.length === 0) {
+    display = "block";
+  }
 
   return (
     <>
       <Heading size="2" cssClass="accordion-heading" flush>
         Contact enquiries
       </Heading>
-      <div className="accordion__empty-item">
-        <p className="accordion__test">
-          {orderedMessages.length === 0 ? "No messages" : ""}
-        </p>
+      <div className="accordion__empty-item" style={{ display: display }}>
+        <p className="accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
         {orderedMessages.map((item, indexArray) => {

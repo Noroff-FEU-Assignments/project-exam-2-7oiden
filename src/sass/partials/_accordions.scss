@@ -17,11 +17,12 @@
 
     &__empty-item {
         background-color: getColor(primaryBg);
+        border-radius: 0 0 4px 4px;
     }
 
-    &__test {
+    &__empty-message {
         @extend .base-margin;
-        padding: 0.5rem 1rem;
+        padding: 1rem;
     }
 
     &__date {

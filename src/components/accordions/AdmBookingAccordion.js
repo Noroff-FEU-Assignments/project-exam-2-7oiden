@@ -7,6 +7,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Heading from "../layout/Heading";
 import BookingItem from "./BookingItem";
 import { orderBy } from "lodash";
+import { useLocation } from "react-router-dom";
 
 function AdmBookingAccordion() {
   const [booking, setBooking] = useState([]);
@@ -14,6 +15,8 @@ function AdmBookingAccordion() {
   const [error, setError] = useState(null);
 
   const url = BOOKING_URL;
+
+  const location = useLocation().key;
 
   useEffect(function () {
     async function getproduct() {
@@ -31,7 +34,7 @@ function AdmBookingAccordion() {
 
     getproduct();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location]);
 
   if (loading) return <Loader />;
 
@@ -57,16 +60,20 @@ function AdmBookingAccordion() {
     indexArray = 0;
   }
 
-  // console.log(indexArray);
+  let display = "none";
+
+  if (orderedBookings.length === 0) {
+    display = "block";
+  }
 
   return (
     <>
       <Heading size="2" cssClass="accordion-heading">
         Booking enquiries
       </Heading>
-      <div className="accordion__empty-item">
-        <p className="accordion__test">
-          {orderedBookings.length === 0 ? "No messages" : ""}
+      <div className="accordion__empty-item" style={{ display: display }}>
+        <p className="accordion__empty-message">
+          The list is empty
         </p>
       </div>
       <Accordion flush>
