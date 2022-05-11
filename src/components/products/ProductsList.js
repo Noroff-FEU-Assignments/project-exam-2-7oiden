@@ -10,11 +10,14 @@ import AlertMessage from "../common/AlertMessage";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Heading from "../layout/Heading";
+import Form from "react-bootstrap/Form";
 import SearchForm from "../forms/SearchForm";
 import ProductCard from "../products/ProductCard";
+import { filter } from "lodash";
 
 function ProductsList() {
   const [product, setProduct] = useState([]);
+  const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
@@ -50,15 +53,43 @@ function ProductsList() {
     );
   }
 
+  const handleChange = (option) => setCategory(option.target.value);
+
+  const filterByCategory = filter(product, {
+    categories: [{ slug: category }],
+  });
+
+  // console.log(filterByCategory)
+
+  let filteredProduct = [];
+
+  if (filterByCategory.length === 0) {
+    filteredProduct = product;
+  } else {
+    filteredProduct = filterByCategory;
+  }
+
   return (
     <>
       <div className="overview__header">
         <Heading size="1">Establishment overview</Heading>
         <SearchForm setQuery={setQuery} />
+        <Form.Select
+          aria-label="Default select example"
+          onChange={handleChange}
+          value
+        >
+          <option>Filter by category</option>
+          <option value="all">All establishments</option>
+          <option value="hotel">Hotels</option>
+          <option value="bed_and_breakfast">Bed & Breakfast</option>
+          <option value="apartment">Apartments</option>
+        </Form.Select>
       </div>
+
       <Container fluid>
         <Row className="gy-5">
-          {product
+          {filteredProduct
             // eslint-disable-next-line array-callback-return
             .filter((item) => {
               if (query === "") {

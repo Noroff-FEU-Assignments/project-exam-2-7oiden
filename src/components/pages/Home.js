@@ -17,9 +17,17 @@ function Home() {
           Browse by category
         </Heading>
         <div className="category__flexbox">
-          <CategoryCard title="Hotels" image={hotels} />
-          <CategoryCard title="Bed & Breakfast" image={bab} />
-          <CategoryCard title="Apartments" image={apartments} />
+          <CategoryCard title="Hotels" image={hotels} category="hotels" />
+          <CategoryCard
+            title="Bed & Breakfast"
+            image={bab}
+            category="bed_and_breakfast"
+          />
+          <CategoryCard
+            title="Apartments"
+            image={apartments}
+            category="apartments"
+          />
         </div>
       </Wrapper>
       <Wrapper cssClass="carousel__wrapper">

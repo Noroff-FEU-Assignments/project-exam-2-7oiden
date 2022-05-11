@@ -47,7 +47,8 @@
     }
     
     &__image {
-        border-radius: 25px 25px 0 0;
+        @extend .base-margin;
+        border-radius: 25px 25px 0 0;        
     }
 
     &__body {

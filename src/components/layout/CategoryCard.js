@@ -3,11 +3,11 @@ import Card from "react-bootstrap/Card";
 
 
 function CategoryCard(props) {
-  const { title, image, id } = props;
+  const { title, image, category } = props;
   return (
       
         <Card className="category-card">
-        <Link to={`detail/${id}`} className="card-link" style={{ textDecoration: 'none' }}>
+        <Link to={`overview/${category}`} className="card-link" style={{ textDecoration: 'none' }}>
           <Card.Img
             variant="top"
             src={image}
