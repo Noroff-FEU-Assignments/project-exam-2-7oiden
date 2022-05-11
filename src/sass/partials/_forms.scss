@@ -1,7 +1,7 @@
 
-.form-label {
-    font-weight: 600;
-}
+// .form-label {
+//     font-weight: 600;
+// }
 
 .contact {
   &__heading {
@@ -24,6 +24,7 @@
     position: relative;
     width: 100%;
     max-width: 400px;
+    margin: 0 auto;
 
     @media (min-width: getBreakpoint(small)) {
         min-width: 350px;
@@ -122,6 +123,10 @@ legend {
     @media (min-width: getBreakpoint(xsmall)) {
             flex-direction: row;
         }
+}
+
+.category-filter {
+    max-width: 300px;
 }
 
 // .rw-multiselect-input {

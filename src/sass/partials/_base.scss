@@ -95,3 +95,11 @@ hr {
 .test {
     background-color: pink;
 }
+
+.reviews__list-item {
+    background-color: getColor(primaryBg);
+
+    &:hover {
+        background-color: getColor(primaryBg);
+    }
+}

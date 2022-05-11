@@ -17,16 +17,16 @@ function Home() {
           Browse by category
         </Heading>
         <div className="category__flexbox">
-          <CategoryCard title="Hotels" image={hotels} category="hotels" />
+          <CategoryCard title="Hotels" image={hotels} category="hotel" />
           <CategoryCard
             title="Bed & Breakfast"
             image={bab}
-            category="bed_and_breakfast"
+            category="bed-and-breakfast"
           />
           <CategoryCard
             title="Apartments"
             image={apartments}
-            category="apartments"
+            category="apartment"
           />
         </div>
       </Wrapper>

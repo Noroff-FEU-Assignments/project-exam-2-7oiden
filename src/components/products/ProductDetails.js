@@ -15,9 +15,10 @@ import BookingModal from "../modals/BookingModal";
 import FacilitiesList from "./FacilitiesItem";
 import LocationMap from "../layout/LocationMap";
 import BedsBlock from "../common/BedsBlock";
+import ProductReviews from "./ProductReviews";
 
 export default function ProductDetails() {
-  const [product, setproduct] = useState([]);
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -40,7 +41,7 @@ export default function ProductDetails() {
         try {
           const response = await axios.get(detailsUrl);
           console.log("response:", response.data);
-          setproduct(response.data);
+          setProduct(response.data);
         } catch (error) {
           console.log(error);
           setError(error.toString());
@@ -66,82 +67,85 @@ export default function ProductDetails() {
 
   return (
     <>
-      <div className="details__column-1">
-        <figure className="details__image">
-          <img
-            src={product.images[0].src}
-            alt="placeholder"
-            className="details__image"
-          />
-        </figure>
-        <div className="details__block-1">
-          <Heading size="1" cssClass="details-heading">
-            {product.name}
-          </Heading>
-          <p className="details__category">{product.categories[0].name}</p>
-          <div className="details__info-wrapper">
-            <RatingBlock
-              rating={product.average_rating}
-              reviews={product.rating_count}
+      <div className="details-inner-wrapper">
+        <div className="details__column-1">
+          <figure className="details__image">
+            <img
+              src={product.images[0].src}
+              alt="placeholder"
+              className="details__image"
             />
-            <div>—</div>
-            <BedsBlock beds={product.stock_quantity} />
-          </div>
-          {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
-
-          {/* <LocationBlock location={product.sku} /> */}
-
-          {/* <BedsBlock beds={product.attributes[1].options[0]} /> */}
-        </div>
-        <div className="details__block-2">
-          <div>
-            <p className="details__price">{product.price} /night</p>
-          </div>
-          <BookingModal
-            name={product.name}
-            location={product.sku}
-            // location={product.attributes[0].options[0]}
-          />
-        </div>
-      </div>
-      <div className="details__column-2">
-        <div className="details-card">
-          <div className="details-card__block">
-            <Heading size="2" cssClass="details-card__heading">
-              Facilities:
+          </figure>
+          <div className="details__block-1">
+            <Heading size="1" cssClass="details-heading">
+              {product.name}
             </Heading>
-            <ul className="details-card__list">
-              {product.tags.map((item) => {
-                return <FacilitiesList key={item.id} facility={item.name} />;
-              })}
-            </ul>
+            <p className="details__category">{product.categories[0].name}</p>
+            <div className="details__info-wrapper">
+              <RatingBlock
+                rating={product.average_rating}
+                reviews={product.rating_count}
+              />
+              <div>—</div>
+              <BedsBlock beds={product.stock_quantity} />
+            </div>
+            {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
+
+            {/* <LocationBlock location={product.sku} /> */}
+
+            {/* <BedsBlock beds={product.attributes[1].options[0]} /> */}
           </div>
-          {/* <div className="details-card__block details-card__block--flex">
+          <div className="details__block-2">
+            <div>
+              <p className="details__price">{product.price} /night</p>
+            </div>
+            <BookingModal
+              name={product.name}
+              location={product.sku}
+              // location={product.attributes[0].options[0]}
+            />
+          </div>
+        </div>
+        <div className="details__column-2">
+          <div className="details-card">
+            <div className="details-card__block">
+              <Heading size="2" cssClass="details-card__heading">
+                Facilities:
+              </Heading>
+              <ul className="details-card__list">
+                {product.tags.map((item) => {
+                  return <FacilitiesList key={item.id} facility={item.name} />;
+                })}
+              </ul>
+            </div>
+            {/* <div className="details-card__block details-card__block--flex">
             <Heading size="2" cssClass="details-card__heading">
               Category:
             </Heading>
             <p className="details-card__text">{product.categories[0].name}</p>
           </div> */}
-          <div className="details-card__block">
-            <Heading size="2" cssClass="details-card__heading">
-              Description:
-            </Heading>
-            <p
-              className="details-card__text"
-              dangerouslySetInnerHTML={{ __html: product.description }}
-            ></p>
-          </div>
-          <div className="details-card__block">
-            <Heading size="2" cssClass="details-card__heading">
-              Location:
-            </Heading>
-            {/* <LocationMap address={product.attributes[0].options[0]} /> */}
-            <LocationMap address={product.sku} />
-            {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
-            <LocationBlock location={product.sku} />
+            <div className="details-card__block">
+              <Heading size="2" cssClass="details-card__heading">
+                Description:
+              </Heading>
+              <p
+                className="details-card__text"
+                dangerouslySetInnerHTML={{ __html: product.description }}
+              ></p>
+            </div>
+            <div className="details-card__block">
+              <Heading size="2" cssClass="details-card__heading">
+                Location:
+              </Heading>
+              {/* <LocationMap address={product.attributes[0].options[0]} /> */}
+              <LocationMap address={product.sku} />
+              {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
+              <LocationBlock location={product.sku} />
+            </div>
           </div>
         </div>
       </div>
+      <ProductReviews id={id} />
     </>
   );
 }

@@ -55,11 +55,13 @@ function ProductsList() {
 
   const handleChange = (option) => setCategory(option.target.value);
 
+  console.log(category);
+
   const filterByCategory = filter(product, {
     categories: [{ slug: category }],
   });
 
-  // console.log(filterByCategory)
+  console.log(filterByCategory);
 
   let filteredProduct = [];
 
@@ -72,22 +74,27 @@ function ProductsList() {
   return (
     <>
       <div className="overview__header">
-        <Heading size="1">Establishment overview</Heading>
-        <SearchForm setQuery={setQuery} />
-        <Form.Select
-          aria-label="Default select example"
-          onChange={handleChange}
-          value
-        >
-          <option>Filter by category</option>
-          <option value="all">All establishments</option>
-          <option value="hotel">Hotels</option>
-          <option value="bed_and_breakfast">Bed & Breakfast</option>
-          <option value="apartment">Apartments</option>
-        </Form.Select>
+          <Heading size="1">Establishment overview</Heading>
+          <div>
+            <Form.Label>Filter by category</Form.Label>
+            <Form.Select
+              aria-label="Filter by category"
+              onChange={handleChange}
+              className="category-filter"
+              // value
+            >
+              <option value="all">All establishments</option>
+              <option value="hotel">Hotels</option>
+              <option value="bed-and-breakfast">Bed & Breakfast</option>
+              <option value="apartment">Apartments</option>
+            </Form.Select>
+          </div>
       </div>
 
       <Container fluid>
+        <div className="overview__search-wrapper">
+          <SearchForm setQuery={setQuery} />
+        </div>
         <Row className="gy-5">
           {filteredProduct
             // eslint-disable-next-line array-callback-return
@@ -116,21 +123,6 @@ function ProductsList() {
                 reviews={item.rating_count}
               />
             ))}
-          {/* {product.map((item) => {
-            return (
-              <ProductCard
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                location={item.attributes[0].options[0]}
-                image={item.images[0].src}
-                category={item.categories[0].name}
-                price={item.price}
-                rating={item.average_rating}
-                reviews={item.rating_count}
-              />
-            );
-          })} */}
         </Row>
       </Container>
     </>

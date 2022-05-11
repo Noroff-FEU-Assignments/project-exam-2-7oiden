@@ -7,7 +7,7 @@ function CategoryCard(props) {
   return (
       
         <Card className="category-card">
-        <Link to={`overview/${category}`} className="card-link" style={{ textDecoration: 'none' }}>
+        <Link to={`overview`} className="card-link" style={{ textDecoration: 'none' }}>
           <Card.Img
             variant="top"
             src={image}
