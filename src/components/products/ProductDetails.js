@@ -16,6 +16,7 @@ import FacilitiesList from "./FacilitiesItem";
 import LocationMap from "../layout/LocationMap";
 import BedsBlock from "../common/BedsBlock";
 import ProductReviews from "./ProductReviews";
+import Wrapper from "../layout/Wrapper";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
@@ -67,7 +68,7 @@ export default function ProductDetails() {
 
   return (
     <>
-      <div className="details-inner-wrapper">
+      <Wrapper cssClass="details__wrapper">
         <div className="details__column-1">
           <figure className="details__image">
             <img
@@ -109,7 +110,7 @@ export default function ProductDetails() {
         <div className="details__column-2">
           <div className="details-card">
             <div className="details-card__block">
-              <Heading size="2" cssClass="details-card__heading">
+              <Heading size="3" cssClass="details-card__heading">
                 Facilities:
               </Heading>
               <ul className="details-card__list">
@@ -125,7 +126,7 @@ export default function ProductDetails() {
             <p className="details-card__text">{product.categories[0].name}</p>
           </div> */}
             <div className="details-card__block">
-              <Heading size="2" cssClass="details-card__heading">
+              <Heading size="3" cssClass="details-card__heading">
                 Description:
               </Heading>
               <p
@@ -134,7 +135,7 @@ export default function ProductDetails() {
               ></p>
             </div>
             <div className="details-card__block">
-              <Heading size="2" cssClass="details-card__heading">
+              <Heading size="3" cssClass="details-card__heading">
                 Location:
               </Heading>
               {/* <LocationMap address={product.attributes[0].options[0]} /> */}
@@ -144,8 +145,19 @@ export default function ProductDetails() {
             </div>
           </div>
         </div>
-      </div>
-      <ProductReviews id={id} />
+      </Wrapper>
+      <Wrapper cssClass="reviews__wrapper">
+        <div className="details-card reviews-card">
+          <Heading size="2" cssClass="reviews-heading">
+            Reviews
+          </Heading>
+          <RatingBlock
+            rating={product.average_rating}
+            reviews={product.rating_count}
+          />
+          <ProductReviews id={id} cssClass="details-review__heading" />
+        </div>
+      </Wrapper>
     </>
   );
 }

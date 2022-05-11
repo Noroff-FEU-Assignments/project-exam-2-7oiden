@@ -47,7 +47,10 @@
 
     &__column-2 {
         width: 100%;
-        margin: 0 auto;         
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;         
     }
 
     &__image {

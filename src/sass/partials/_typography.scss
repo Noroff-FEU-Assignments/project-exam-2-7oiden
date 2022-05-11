@@ -80,6 +80,10 @@ input {
     border-radius: 3px 3px 0 0;
 }
 
+.reviews-heading {
+    font-family: $sans-serif-headings;
+}
+
 .card-text {
     @extend .base-margin;  
 }

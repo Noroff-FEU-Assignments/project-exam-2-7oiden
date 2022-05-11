@@ -60,16 +60,16 @@ export default function ProductReviews({ id }) {
 
   return (
     <ListGroup>
-      {filteredReviews.map((item) => (
-        <ReviewItem
-          key={item.id}
-          rating={item.rating}
-          review={item.review}
-          customer={item.reviewer}
-          date={item.date_created}
-          avatar={item.reviewer_avatar_urls}
-        />
-      ))}
+        {filteredReviews.map((item) => (
+          <ReviewItem
+            key={item.id}
+            rating={item.rating}
+            review={item.review}
+            customer={item.reviewer}
+            date={item.date_created}
+            avatar={item.reviewer_avatar_urls[48]}
+          />
+        ))}
     </ListGroup>
   );
 }
