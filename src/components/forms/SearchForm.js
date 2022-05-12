@@ -1,5 +1,5 @@
 import Form from "react-bootstrap/Form";
-import SearchIcon from "../icons/SearchIcon";
+import { SearchIcon } from "../icons/MaterialIcons";
 
 function SearchForm({ setQuery, loading }) {
   return (

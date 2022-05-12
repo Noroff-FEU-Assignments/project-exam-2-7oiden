@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
-import SearchIcon from "../icons/SearchIcon";
+import { SearchIcon } from "../icons/MaterialIcons";
 import SearchModalList from "./SearchModalList";
 
 export default function SearchModal() {

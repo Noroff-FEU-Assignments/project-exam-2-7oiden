@@ -7,6 +7,7 @@ import AdminLayout from "../layout/AdminLayout";
 import Wrapper from "../layout/Wrapper";
 import Icon from "@mdi/react";
 import { mdiChevronLeft } from "@mdi/js";
+import { ChevronLeftIcon } from "../icons/MaterialIcons";
 
 function Add() {
   const [auth, setAuth] = useContext(AuthContext);
@@ -20,7 +21,7 @@ function Add() {
       <Wrapper cssClass="add__wrapper">
         <AddForm />
         <ButtonLink cssClass="back-link" linkTo="/admin">
-          <Icon path={mdiChevronLeft} className="chevron" color />
+          <ChevronLeftIcon />
           Back to admin dashboard
         </ButtonLink>
       </Wrapper>

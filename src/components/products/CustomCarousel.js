@@ -6,7 +6,7 @@ import hotel3 from "../../images/hotel-3.jpg";
 import customer1 from "../../images/customer-1.jpg";
 import customer2 from "../../images/customer-2.jpg";
 import customer3 from "../../images/customer-3.jpg";
-import StarIcon from "../icons/StarIcon";
+// import StarIcon from "../icons/StarIcon";
 import CustomerBlock from "../common/CustomerBlock";
 import { Link } from "react-router-dom";
 
@@ -24,12 +24,12 @@ function CustomCarousel() {
                 <Heading size="6" cssClass="carousel__title">
                   Radisson Blu Royal
                 </Heading>
+                <img
+                  className="d-block carousel__image"
+                  src={hotel1}
+                  alt="First slide"
+                />
               </Link>
-              <img
-                className="d-block carousel__image"
-                src={hotel1}
-                alt="First slide"
-              />
             </div>
             <CustomerBlock
               avatar={customer1}

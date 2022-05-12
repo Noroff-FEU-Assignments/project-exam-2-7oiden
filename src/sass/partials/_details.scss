@@ -1,8 +1,8 @@
 .details {
     &__category {
         @extend .base-margin;
+        font-family: $serif-headings;
         font-weight: bold;
-        text-transform: uppercase;
         color: getColor(secondaryCol);
         font-size: 1.125rem;
     }

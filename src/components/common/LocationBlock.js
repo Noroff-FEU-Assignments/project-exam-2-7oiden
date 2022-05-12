@@ -1,6 +1,6 @@
-import LocationIcon from "../icons/LocationIcon";
+import { LocationIcon } from "../icons/MaterialIcons";
 
-function LocationBlock({location}) {
+function LocationBlock({ location }) {
   return (
     <div className="info-block">
       <LocationIcon />
@@ -8,4 +8,4 @@ function LocationBlock({location}) {
     </div>
   );
 }
-export default LocationBlock
+export default LocationBlock;

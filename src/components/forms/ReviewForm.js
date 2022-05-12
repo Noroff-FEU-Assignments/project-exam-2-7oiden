@@ -60,7 +60,7 @@ function ReviewForm({ id }) {
       product_id: parseInt(id),
       status: "approved",
       rating: parseInt(data.rating),
-      reviewer_email: "7oiden@gmail.com",
+      reviewer_email: "",
       reviewer: data.reviewer,
       review: data.review,
     };

@@ -1,4 +1,4 @@
-import CopyrightIcon from "../icons/CopyrightIcon";
+import { CopyrightIcon } from "../icons/MaterialIcons";
 
 function CopyrightBlock() {
   return (

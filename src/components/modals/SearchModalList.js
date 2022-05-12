@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import SearchForm from "../forms/SearchForm";
 import ListGroup from "react-bootstrap/ListGroup";
-import LocationIcon from "../icons/LocationIcon";
+import { LocationIcon } from "../icons/MaterialIcons";
 
 export default function SearchModalList() {
   const [product, setproduct] = useState([]);

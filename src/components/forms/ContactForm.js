@@ -58,10 +58,7 @@ export default function ContactForm() {
     setServerError(null);
     console.log(data);
     reset();
-    // console.log(data);
-    // setSubmitted(true);
-    // reset();
-
+   
     const jsonData = {
       data: {
         first_name: data.first_name,

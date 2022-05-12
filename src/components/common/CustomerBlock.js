@@ -1,13 +1,10 @@
-import StarIcon from "../icons/StarIcon";
+import { StarIcon } from "../icons/MaterialIcons";
 import moment from "moment";
-
 
 function CustomerBlock({ avatar, name, date, stars, rating, review }) {
   const formattedDate = moment(date).format("MMMM YYYY");
 
   console.log(rating);
-
-  
 
   return (
     <div className="customer">

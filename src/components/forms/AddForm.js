@@ -13,7 +13,7 @@ import {
   CONSUMER_KEY,
   CONSUMER_SECRET,
 } from "../../constants/api";
-import Multiselect from "react-widgets/Multiselect";
+// import Multiselect from "react-widgets/Multiselect";
 
 const schema = yup.object().shape({
   name: yup
@@ -44,31 +44,25 @@ const schema = yup.object().shape({
 
   image: yup.string().required("Please provide a image URL"),
 
-  // value: yup
-  //   .array()
-  //   .of(
-  //     yup.object().shape({
-  //       data: yup.string(),
-  //     })
-  //   )
-  //   .default([])
-  //   .oneOf([true], "Must choose one"),
-
+  // wifi: yup
+  //   .array().ensure().cast(null);
   // wifi: yup.string(),
 
-  // television: yup.string(),
+  wifi: yup.string(),
 
-  // central: yup.string(),
+  television: yup.string(),
 
-  // parking: yup.string(),
+  central: yup.string(),
 
-  // breakfast: yup.string(),
+  parking: yup.string(),
 
-  // pets: yup.string(),
+  breakfast: yup.string(),
 
-  // bar: yup.string(),
+  pets: yup.string(),
 
-  // restaurant: yup.string(),
+  bar: yup.string(),
+
+  restaurant: yup.string(),
 });
 
 export default function AddForm() {
@@ -78,9 +72,6 @@ export default function AddForm() {
   const [show, setShow] = useState(false);
 
   const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
-
-  // const history = useNavigate();
-  // const http = useAxios();
 
   const {
     register,
@@ -107,10 +98,6 @@ export default function AddForm() {
       categoryId = 37;
     }
 
-    // data.tags.forEach(element => {
-    //   console.log(element);
-    // });
-
     const jsonData = {
       name: data.name,
       sku: data.address,
@@ -128,11 +115,32 @@ export default function AddForm() {
           src: data.image,
         },
       ],
-      // tags: [
-      //   {
-      //     value: data.checkboxes,
-      //   },
-      // ],
+      tags: [
+        {
+          name: data.wifi,
+        },
+        {
+          name: data.television,
+        },
+        {
+          name: data.central,
+        },
+        {
+          name: data.breakfast,
+        },
+        {
+          name: data.bar,
+        },
+        {
+          name: data.restaurant,
+        },
+        {
+          name: data.pets,
+        },
+        {
+          name: data.parking,
+        },
+      ],
     };
 
     console.log(jsonData);
@@ -268,54 +276,36 @@ export default function AddForm() {
 
           <fieldset className="form-check-fieldset">
             <legend>Facilities</legend>
-
-            {/* <Multiselect
-              data={colors}
-              value={value}
-              onChange={(value) => setValue(value)}
-              {...register("value")}
-            /> */}
-
-            <Multiselect
-              data={[
-                { name: "Bar" },
-                { name: "Television" },
-                { name: "Restaurant" },
-                { name: "Central" },
-                { name: "Wifi" },
-              ]}
-              textField="name"
-              name="checkboxes"
-              multiple
-            />
-
-            
-
-            {/* {["checkbox"].map((type) => (
+            {["checkbox"].map((type) => (
               <div key={`default-${type}`} className="mb-3 form-check-wrapper">
                 <div>
                   <Form.Check
                     type={type}
-                    id="WIFI"
-                    label="WIFI"
+                    id="wifi"
+                    label="Wifi"
+                    value="wifi"
                     {...register("wifi")}
                   />
                   <Form.Check
                     type={type}
                     id="Television"
                     label="Television"
+                    value="television"
                     {...register("television")}
                   />
                   <Form.Check
                     type={type}
                     id="central"
                     label="Central"
+                    value="central"
                     {...register("central")}
                   />
+
                   <Form.Check
                     type={type}
                     id="bar"
                     label="Bar"
+                    value="bar"
                     {...register("bar")}
                   />
                 </div>
@@ -324,29 +314,33 @@ export default function AddForm() {
                     type={type}
                     id="parking"
                     label="Parking"
+                    value="parking"
                     {...register("parking")}
                   />
                   <Form.Check
                     type={type}
                     id="restaurant"
-                    label="restaurant"
+                    label="Restaurant"
+                    value="restaurant"
                     {...register("restaurant")}
                   />
                   <Form.Check
                     type={type}
                     id="breakfast"
                     label="Free breakfast"
+                    value="breakfast"
                     {...register("breakfast")}
                   />
                   <Form.Check
                     type={type}
                     id="pets"
-                    label="Pets Allowed"
+                    label="Pets allowed"
+                    value="pets"
                     {...register("pets")}
                   />
                 </div>
               </div>
-            ))} */}
+            ))}
           </fieldset>
 
           <Button className="admin-button form-button" type="submit">

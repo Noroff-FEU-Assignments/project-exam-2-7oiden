@@ -18,7 +18,7 @@ function FacilitiesItem({ facility }) {
     case "central":
       icon = faCity;
       break;
-    case "free breakfast":
+    case "breakfast":
       icon = faMugSaucer;
       break;
     case "restaurant":
@@ -36,7 +36,7 @@ function FacilitiesItem({ facility }) {
     case "parking":
       icon = faSquareParking;
       break;
-    case "pets allowed":
+    case "pets":
       icon = faDog;
       break;
     default:

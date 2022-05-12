@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BOOKING_URL, CONTACT_URL } from "../../constants/api";
 import axios from "axios";
-import BinIcon from "../icons/BinIcon";
+import { BinIcon } from "../icons/MaterialIcons";
 import AlertMessage from "../common/AlertMessage";
 import { useNavigate, useLocation} from "react-router-dom";
 

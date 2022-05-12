@@ -8,7 +8,7 @@ function AdminLayout({ children }) {
       <div className="sticky-footer-wrapper">
         <header>
           <CustomNav />
-          <AdminIndicator />
+          {/* <AdminIndicator /> */}
         </header>
         <main>{children}</main>
       </div>

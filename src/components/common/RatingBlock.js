@@ -1,4 +1,4 @@
-import StarIcon from "../icons/StarIcon";
+import { StarIcon } from "../icons/MaterialIcons";
 
 function RatingBlock({ rating, reviews }) {
   return (

@@ -1,4 +1,4 @@
-import BedIcon from "../icons/BedIcon";
+import { BedIcon } from "../icons/MaterialIcons";
 
 function BedsBlock({ beds }) {
   return (

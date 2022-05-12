@@ -61,11 +61,8 @@ export default function BookingForm({ establishment, location }) {
     setServerError(null);
     console.log(data);
     reset();
-    // console.log(data);
-    // setSubmitted(true);
-    // reset();
 
-    console.log(data.to_date);
+    // console.log(data.to_date);
 
     const jsonData = {
       data: {

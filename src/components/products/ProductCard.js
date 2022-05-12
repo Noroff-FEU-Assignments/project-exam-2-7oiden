@@ -41,7 +41,9 @@ function ProductCard(props) {
               <Card.Text className="product-card__text product-card__text--category">
                 {category}
               </Card.Text>
-              <div>—</div>
+              <div className="product-card__text product-card__text--category">
+                —
+              </div>
               <BedsBlock beds={beds} />
             </div>
 

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Form from "react-bootstrap/Form";
-import EmailIcon from "../icons/EmailIcon";
+import { EmailIcon } from "../icons/MaterialIcons";
 
 const schema = yup.object().shape({
 
