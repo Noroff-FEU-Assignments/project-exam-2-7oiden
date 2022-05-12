@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -16,8 +16,8 @@ const schema = yup.object().shape({
 });
 
 function NewsletterForm() {
-
   const [submitted, setSubmitted] = useState(false);
+  const [show, setShow] = useState(false);
 
   const {
     register,
@@ -31,8 +31,16 @@ function NewsletterForm() {
   function onSubmit(data) {
     console.log(data);
     setSubmitted(true);
+    setShow(true);
     reset();
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [show]);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -40,6 +48,7 @@ function NewsletterForm() {
         <AlertMessage
           variant="success"
           message="Thank you for subscribing to our newsletter!"
+          show={show}
         />
       )}
       <Form.Group className="mb-3" controlId="formBasicNewsletter">

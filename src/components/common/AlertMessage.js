@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import Alert from "react-bootstrap/Alert";
 
-export default function AlertMessage({ variant, message }) {
-  return <Alert variant={variant}>{message}</Alert>;
+export default function AlertMessage({ variant, message, show }) {
+  return <Alert show={show} variant={variant}>{message}</Alert>;
 }
 
 AlertMessage.propTypes = {

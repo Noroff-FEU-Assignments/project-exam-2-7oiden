@@ -4,7 +4,7 @@ import {
   CONSUMER_KEY,
   CONSUMER_SECRET,
 } from "../../constants/api";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -20,14 +20,9 @@ const schema = yup.object().shape({
   reviewer: yup
     .string()
     .required("Please enter your firstname")
-    .min(3, "Your firstname must be at least 3 characters"),
+    .min(4, "Your firstname must be at least 4 characters"),
 
   rating: yup.string().required("Please select a rating"),
-
-  //   last_name: yup
-  //     .string()
-  //     .required("Please enter your lastname")
-  //     .min(4, "Your lastname must be at least 4 characters"),
 
   review: yup
     .string()
@@ -39,6 +34,7 @@ function ReviewForm({ id }) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
+  const [show, setShow] = useState(false);
 
   const reviewsUrl = PRODUCTS_URL + "/reviews" + CONSUMER_KEY + CONSUMER_SECRET;
 
@@ -69,12 +65,13 @@ function ReviewForm({ id }) {
       review: data.review,
     };
 
-    console.log(jsonData);
+    // console.log(jsonData);
 
     try {
       const response = await axios.post(reviewsUrl, jsonData);
       console.log("response", response.data);
       setSubmitted(true);
+      setShow(true)
       history(location.pathname);
     } catch (error) {
       console.log("error", error);
@@ -84,12 +81,21 @@ function ReviewForm({ id }) {
     }
   }
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [show]);
+
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)} className="review__form">
       {submitted && (
         <AlertMessage
           variant="success"
-          message="Your review was successfully submitted"
+          message="Thank you for your feedback!"
+          show={show}
         />
       )}
       {serverError && <FormError>{serverError}</FormError>}

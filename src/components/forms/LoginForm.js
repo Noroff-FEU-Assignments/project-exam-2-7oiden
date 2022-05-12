@@ -77,16 +77,6 @@ function LoginForm() {
           {errors.username && <FormError>{errors.username.message}</FormError>}
         </FloatingLabel>
 
-        {/* <Form.Group className="mb-3" controlId="formBasicUsername">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Username"
-            {...register("username")}
-          />
-          {errors.username && <FormError>{errors.username.message}</FormError>}
-        </Form.Group> */}
-
         <FloatingLabel controlId="floatingPassword" label="Password">
           <Form.Control
             type="password"
@@ -95,15 +85,7 @@ function LoginForm() {
           />
           {errors.password && <FormError>{errors.password.message}</FormError>}
         </FloatingLabel>
-        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Password"
-            {...register("password")}
-          />
-          {errors.password && <FormError>{errors.password.message}</FormError>}
-        </Form.Group> */}
+     
         <Button className="primary-button form-button" type="submit">
           {submitting ? "Please wait..." : "Login"}
         </Button>

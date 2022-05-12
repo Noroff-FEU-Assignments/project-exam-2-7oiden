@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -76,6 +75,7 @@ export default function AddForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
+  const [show, setShow] = useState(false);
 
   const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
 
@@ -141,6 +141,7 @@ export default function AddForm() {
       const response = await axios.post(url, jsonData);
       console.log("response", response.data);
       setSubmitted(true);
+      setShow(true);
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
@@ -148,6 +149,13 @@ export default function AddForm() {
       setSubmitting(false);
     }
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [show]);
 
   return (
     <div className="add__container">
@@ -159,6 +167,7 @@ export default function AddForm() {
           <AlertMessage
             variant="success"
             message="New establishment was successfully added"
+            show={show}
           />
         )}
         {serverError && <FormError>{serverError}</FormError>}
