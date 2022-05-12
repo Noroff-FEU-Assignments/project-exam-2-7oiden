@@ -14,6 +14,7 @@ import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Heading from "../layout/Heading";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const schema = yup.object().shape({
   reviewer: yup
@@ -40,6 +41,9 @@ function ReviewForm({ id }) {
   const [serverError, setServerError] = useState(null);
 
   const reviewsUrl = PRODUCTS_URL + "/reviews" + CONSUMER_KEY + CONSUMER_SECRET;
+
+  const history = useNavigate();
+  const location = useLocation();
 
   const {
     register,
@@ -71,6 +75,7 @@ function ReviewForm({ id }) {
       const response = await axios.post(reviewsUrl, jsonData);
       console.log("response", response.data);
       setSubmitted(true);
+      history(location.pathname);
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
@@ -84,7 +89,7 @@ function ReviewForm({ id }) {
       {submitted && (
         <AlertMessage
           variant="success"
-          message="Your message was successfully submitted"
+          message="Your review was successfully submitted"
         />
       )}
       {serverError && <FormError>{serverError}</FormError>}

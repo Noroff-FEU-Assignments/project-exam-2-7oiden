@@ -18,6 +18,7 @@ import BedsBlock from "../common/BedsBlock";
 import ProductReviews from "./ProductReviews";
 import Wrapper from "../layout/Wrapper";
 import ReviewForm from "../forms/ReviewForm";
+import { useLocation } from "react-router-dom";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
@@ -37,6 +38,8 @@ export default function ProductDetails() {
 
   const detailsUrl = PRODUCTS_URL + "/" + id + CONSUMER_KEY + CONSUMER_SECRET;
 
+  const location = useLocation().key;
+
   useEffect(
     function () {
       async function getDetails() {
@@ -54,7 +57,7 @@ export default function ProductDetails() {
       getDetails();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [id]
+    [location]
   );
 
   if (loading) return <Loader />;

@@ -10,6 +10,7 @@ import AlertMessage from "../common/AlertMessage";
 import { filter } from "lodash";
 import ReviewItem from "./ReviewItem";
 import ListGroup from "react-bootstrap/ListGroup";
+import { useLocation } from "react-router-dom";
 
 export default function ProductReviews({ id }) {
   const [review, setReview] = useState([]);
@@ -17,6 +18,8 @@ export default function ProductReviews({ id }) {
   const [error, setError] = useState(null);
 
   const reviewsUrl = PRODUCTS_URL + "/reviews" + CONSUMER_KEY + CONSUMER_SECRET;
+
+  const location = useLocation().key;
 
   const revId = parseInt(id);
 
@@ -39,7 +42,7 @@ export default function ProductReviews({ id }) {
       getReviews();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [location]
   );
 
   if (loading) return <Loader />;
