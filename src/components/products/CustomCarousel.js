@@ -35,7 +35,7 @@ function CustomCarousel() {
               avatar={customer1}
               name="Joyce Russell"
               date="2022-05-11T14:15:12"
-              stars="5"
+              rating={5}
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -61,7 +61,7 @@ function CustomCarousel() {
               avatar={customer2}
               name="Kelly Johnson"
               date="2021-09-11T14:15:12"
-              stars="5"
+              rating={5}
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -88,7 +88,7 @@ function CustomCarousel() {
               avatar={customer3}
               name="Rebecca Lee"
               date="2021-06-11T14:15:12"
-              stars="5"
+              rating={5}
               review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

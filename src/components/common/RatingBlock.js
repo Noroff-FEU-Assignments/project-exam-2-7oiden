@@ -7,7 +7,6 @@ function RatingBlock({ rating, reviews }) {
       <p className="info-block__text info-block__text--bold">
         {rating !== "0.00" ? rating : "No reviews yet"}
       </p>
-      <div></div>
       <p className="info-block__text">
         {rating !== "0.00" ? "(" + reviews + " reviews)" : ""}
       </p>

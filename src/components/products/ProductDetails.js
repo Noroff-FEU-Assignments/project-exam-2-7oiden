@@ -17,6 +17,7 @@ import LocationMap from "../layout/LocationMap";
 import BedsBlock from "../common/BedsBlock";
 import ProductReviews from "./ProductReviews";
 import Wrapper from "../layout/Wrapper";
+import ReviewForm from "../forms/ReviewForm";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
@@ -148,7 +149,7 @@ export default function ProductDetails() {
       </Wrapper>
       <Wrapper cssClass="reviews__wrapper">
         <div className="details-card reviews-card">
-          <Heading size="2" cssClass="reviews-heading">
+          <Heading size="2" cssClass="reviews__heading">
             Reviews
           </Heading>
           <RatingBlock
@@ -157,6 +158,7 @@ export default function ProductDetails() {
           />
           <ProductReviews id={id} cssClass="details-review__heading" />
         </div>
+        <ReviewForm id={id} />
       </Wrapper>
     </>
   );

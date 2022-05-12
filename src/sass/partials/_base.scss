@@ -96,10 +96,10 @@ hr {
 
 .reviews__list-item {
     background-color: getColor(secondaryBg);
-    max-width: 300px;
+    width: 300px;
 
     @media (min-width: getBreakpoint(large)) {
-            max-width: 400px;
+            width: 400px;
         }
 
     &:hover {
@@ -111,6 +111,7 @@ hr {
 .list-group {
     flex-direction: column;
     flex-wrap: wrap;
+    margin-top: 1rem;
     
 
     @media (min-width: getBreakpoint(large)) {
