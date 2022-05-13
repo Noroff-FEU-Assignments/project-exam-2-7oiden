@@ -94,6 +94,7 @@
     border: none;
 }
 
+
 .delete-button {
     width: 2rem;
     height: 2rem;
@@ -103,4 +104,11 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.description-button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: getColor(textGray);
 }

@@ -3,6 +3,7 @@ import {
   PRODUCTS_URL,
   CONSUMER_KEY,
   CONSUMER_SECRET,
+  ITEMS_RETURNED,
 } from "../../constants/api";
 import axios from "axios";
 import Loader from "../common/Loader";
@@ -23,7 +24,7 @@ function ProductsList() {
   const [query, setQuery] = useState("");
 
   const url =
-    PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET + "&per_page=20";
+    PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET + ITEMS_RETURNED;
 
   useEffect(function () {
     async function getproduct() {

@@ -3,6 +3,7 @@ import {
   PRODUCTS_URL,
   CONSUMER_KEY,
   CONSUMER_SECRET,
+  ITEMS_RETURNED,
 } from "../../constants/api";
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -18,7 +19,7 @@ export default function SearchModalList() {
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
 
-  const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
+  const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET + ITEMS_RETURNED;
 
   // const navigate = useNavigate();
 

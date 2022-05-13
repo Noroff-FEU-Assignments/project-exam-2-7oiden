@@ -5,6 +5,7 @@
 
 // const corsFix = "https://noroffcors.herokuapp.com/";
 
+//wordpress API
 export const WP_BASE_URL = "https://holidaze.7oiden.com/wp-json/";
 
 export const TOKEN_PATH = "jwt-auth/v1/token";
@@ -18,10 +19,14 @@ export const CONSUMER_KEY =
 export const CONSUMER_SECRET =
   "&consumer_secret=cs_e2bab28a5350c4b9e4743a32d56c5f7585525190";
 
+export const ITEMS_RETURNED = "&per_page=20"
+
+//google maps API  
 export const MAP_URL = "https://www.google.com/maps/embed/v1/place?";
 
 export const MAP_API_KEY = "key=AIzaSyDeBgWNvAla1OxecdgJaF7pBiqBoIPu9I4";
 
+//strapi API
 export const ESTABLISHMENT_URL = "http://localhost:3005/api/establishments";
 
 export const CONTACT_URL = "http://localhost:3005/api/contacts";

@@ -1,6 +1,17 @@
-function DescriptionButton() {
+import { MinusIcon, PlusIcon } from "../icons/MaterialIcons";
+
+export function ShowButton() {
   return (
-    <div>DescriptionButton</div>
-  )
+    <span className="description-button">
+      <PlusIcon /> show
+    </span>
+  );
 }
-export default DescriptionButton
+
+export function HideButton() {
+  return (
+    <span className="description-button">
+      <MinusIcon /> hide
+    </span>
+  );
+}

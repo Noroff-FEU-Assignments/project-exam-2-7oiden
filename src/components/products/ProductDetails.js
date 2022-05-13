@@ -19,9 +19,9 @@ import ProductReviews from "./ProductReviews";
 import Wrapper from "../layout/Wrapper";
 import ReviewForm from "../forms/ReviewForm";
 import { useLocation } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
-import { PlusIcon, MinusIcon } from "../icons/MaterialIcons";
+// import { PlusIcon, MinusIcon } from "../icons/MaterialIcons";
+import { HideButton, ShowButton } from "./DescriptionButtons";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
@@ -136,7 +136,7 @@ export default function ProductDetails() {
                 aria-expanded={open}
                 className="transparent-button"
               >
-                {open ? <MinusIcon /> : <PlusIcon />}
+                {open ? <HideButton /> : <ShowButton />}
               </button>
               <Collapse in={open}>
                 <div
