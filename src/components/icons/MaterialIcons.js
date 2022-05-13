@@ -1,4 +1,5 @@
 import Icon from "@mdi/react";
+import { mdiMenu } from "@mdi/js"; 
 import { mdiStar } from "@mdi/js";
 import { mdiMapMarker } from "@mdi/js";
 import { mdiMagnify } from "@mdi/js";
@@ -8,10 +9,26 @@ import { mdiDelete } from "@mdi/js";
 import { mdiCopyright } from "@mdi/js";
 import { mdiEmailOutline } from "@mdi/js";
 import { mdiChevronLeft } from "@mdi/js";
+import { mdiPlus } from "@mdi/js";
+import { mdiMinus } from "@mdi/js";
+
+export function MenuIcon() {
+  return (
+    <Icon path={mdiMenu} className="menu-icon" color="default" />
+  );
+}
+
+export function PlusIcon() {
+  return <Icon path={mdiPlus} className="plus-icon" color="default" />;
+}
+
+export function MinusIcon() {
+  return <Icon path={mdiMinus} className="minus-icon" color="default" />;
+}
 
 export function StarIcon() {
   return (
-    <Icon path={mdiStar} className="material-icon star-icon" color="default" />
+    <Icon path={mdiStar} className="star-icon" color="default" />
   );
 }
 

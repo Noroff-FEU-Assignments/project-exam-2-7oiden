@@ -50,12 +50,13 @@ function CustomCarousel() {
                 <Heading size="6" cssClass="carousel__title">
                   Scandic Ørnen
                 </Heading>
+
+                <img
+                  className="d-block carousel__image"
+                  src={hotel2}
+                  alt="First slide"
+                />
               </Link>
-              <img
-                className="d-block carousel__image"
-                src={hotel2}
-                alt="First slide"
-              />
             </div>
             <CustomerBlock
               avatar={customer2}

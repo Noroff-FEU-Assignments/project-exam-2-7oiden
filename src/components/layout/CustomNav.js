@@ -9,6 +9,7 @@ import brandLogo from "../../images/brand-logo.jpg";
 import LoginModal from "../modals/LoginModal";
 import LogoutModal from "../modals/LogoutModal";
 import SearchModal from "../modals/SearchModal";
+import { MenuIcon } from "../icons/MaterialIcons";
 
 function CustomNav() {
   const [auth, setAuth] = useContext(AuthContext);
@@ -27,7 +28,7 @@ function CustomNav() {
                 ></img>
               </Link>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav"><MenuIcon /> </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto navbar__container">
                 <NavLink

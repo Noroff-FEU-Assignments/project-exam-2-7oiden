@@ -13,7 +13,7 @@ function About() {
           </Heading>
         </div>
         <Wrapper cssClass="about__wrapper">
-          <div className="about__container">
+          <section className="about__container">
             <Heading size="1" cssClass="about__heading">
               About Holidaze
             </Heading>
@@ -51,7 +51,7 @@ function About() {
                 {/* <p className="ceo-card__signature">Anna Birkeland - CEO</p> */}
               </div>
             </div>
-          </div>
+          </section>
         </Wrapper>
       </div>
     </Layout>

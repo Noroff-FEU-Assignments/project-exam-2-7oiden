@@ -35,7 +35,15 @@
     }
 }
 
-.chevron {
+.menu-icon {
+    width: 2rem;
+    
+    path {
+        fill: getColor(linkCol);
+    }
+}
+
+.chevron, .plus-icon, .minus-icon {
     width: 1.5rem;
 
     path {
@@ -47,7 +55,7 @@
     width: 1.25rem;
     
     path {
-        fill: getColor(textDark);
+        fill: getColor(secondaryCol);
     }
 }
 
@@ -78,13 +86,13 @@
     }
 }
 
-// .bullet-icon {
-//     width: 1.5rem;
+.plus-icon, .minus-icon {
+    width: 1.5rem;
     
-//     path {
-//         fill: getColor(textDark);
-//     }
-// }
+    path {
+        fill: getColor(primaryCol);
+    }
+}
 
 .navbar-toggler {
     position: absolute;

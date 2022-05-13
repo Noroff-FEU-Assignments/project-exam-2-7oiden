@@ -19,18 +19,21 @@ import ProductReviews from "./ProductReviews";
 import Wrapper from "../layout/Wrapper";
 import ReviewForm from "../forms/ReviewForm";
 import { useLocation } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Collapse from "react-bootstrap/Collapse";
+import { PlusIcon, MinusIcon } from "../icons/MaterialIcons";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [open, setOpen] = useState(false);
 
   let history = useNavigate();
 
   const { id } = useParams();
 
   console.log(id);
-  // console.log(useLocation());
 
   if (!id) {
     history("/");
@@ -73,7 +76,7 @@ export default function ProductDetails() {
   return (
     <>
       <Wrapper cssClass="details__wrapper">
-        <div className="details__column-1">
+        <section className="details__column-1">
           <figure className="details__image">
             <img
               src={product.images[0].src}
@@ -85,15 +88,15 @@ export default function ProductDetails() {
             <Heading size="1" cssClass="details-heading">
               {product.name}
             </Heading>
-            <p className="details__category">{product.categories[0].name}</p>
             <div className="details__info-wrapper">
-              <RatingBlock
-                rating={product.average_rating}
-                reviews={product.rating_count}
-              />
-              <div>—</div>
+              <p className="details__category">{product.categories[0].name}</p>
+              <div className="info-block__text--green">—</div>
               <BedsBlock beds={product.stock_quantity} />
             </div>
+            <RatingBlock
+              rating={product.average_rating}
+              reviews={product.rating_count}
+            />
             {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
 
             {/* <LocationBlock location={product.sku} /> */}
@@ -110,8 +113,8 @@ export default function ProductDetails() {
               // location={product.attributes[0].options[0]}
             />
           </div>
-        </div>
-        <div className="details__column-2">
+        </section>
+        <section className="details__column-2">
           <div className="details-card">
             <div className="details-card__block">
               <Heading size="3" cssClass="details-card__heading">
@@ -123,20 +126,29 @@ export default function ProductDetails() {
                 })}
               </ul>
             </div>
-            {/* <div className="details-card__block details-card__block--flex">
-            <Heading size="2" cssClass="details-card__heading">
-              Category:
-            </Heading>
-            <p className="details-card__text">{product.categories[0].name}</p>
-          </div> */}
             <div className="details-card__block">
               <Heading size="3" cssClass="details-card__heading">
                 Description:
               </Heading>
-              <p
+              <button
+                onClick={() => setOpen(!open)}
+                aria-controls="example-fade-text"
+                aria-expanded={open}
+                className="transparent-button"
+              >
+                {open ? <MinusIcon /> : <PlusIcon />}
+              </button>
+              <Collapse in={open}>
+                <div
+                  id="example-collapse-text"
+                  className="details-card__text"
+                  dangerouslySetInnerHTML={{ __html: product.description }}
+                ></div>
+              </Collapse>
+              {/* <p
                 className="details-card__text"
                 dangerouslySetInnerHTML={{ __html: product.description }}
-              ></p>
+              ></p> */}
             </div>
             <div className="details-card__block">
               <Heading size="3" cssClass="details-card__heading">
@@ -148,10 +160,10 @@ export default function ProductDetails() {
               <LocationBlock location={product.sku} />
             </div>
           </div>
-        </div>
+        </section>
       </Wrapper>
       <Wrapper cssClass="reviews__wrapper">
-        <div className="details-card reviews-card">
+        <section className="reviews">
           <Heading size="2" cssClass="reviews__heading">
             Reviews
           </Heading>
@@ -160,7 +172,7 @@ export default function ProductDetails() {
             reviews={product.rating_count}
           />
           <ProductReviews id={id} cssClass="details-review__heading" />
-        </div>
+        </section>
         <ReviewForm id={id} />
       </Wrapper>
     </>

@@ -66,39 +66,6 @@ input {
     }
 }
 
-.form-heading {
-    font-family: $sans-serif-headings;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.accordion-heading {
-    background-color: getColor(footerBg);
-    color: getColor(textLight);
-    font-family: $sans-serif-headings;
-    font-size: 1.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 3px 3px 0 0;
-}
-
-.reviews__heading {
-    font-family: $sans-serif-headings;
-}
-
-.card-text {
-    @extend .base-margin;  
-}
-
-.form-error {
-    display: inline-block;
-    color: getColor(dangerCol);
-    margin-top: 0.25rem;
-
-    &::before {
-        content: "* "
-    }
-}
-
 .faq__heading {
     font-family: $sans-serif-headings;
     margin-bottom: 0.5rem;

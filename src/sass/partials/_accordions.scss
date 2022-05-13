@@ -15,6 +15,15 @@
         display: inline-block;
     }
 
+    &__heading {
+        background-color: getColor(footerBg);
+        color: getColor(textLight);
+        fon-family: $sans-serif-headings;
+        font-size: 1.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 3px 3px 0 0;
+    }
+
     &__empty-item {
         background-color: getColor(primaryBg);
         border-radius: 0 0 4px 4px;

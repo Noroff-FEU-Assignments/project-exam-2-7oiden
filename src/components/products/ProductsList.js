@@ -22,7 +22,8 @@ function ProductsList() {
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
 
-  const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
+  const url =
+    PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET + "&per_page=20";
 
   useEffect(function () {
     async function getproduct() {

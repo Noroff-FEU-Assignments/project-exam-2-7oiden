@@ -16,7 +16,7 @@ function Home() {
         <Heading size="3" cssClass="category__heading">
           Browse by category
         </Heading>
-        <div className="category__flexbox">
+        <section className="category__flexbox">
           <CategoryCard title="Hotels" image={hotels} category="hotel" />
           <CategoryCard
             title="Bed & Breakfast"
@@ -28,7 +28,7 @@ function Home() {
             image={apartments}
             category="apartment"
           />
-        </div>
+        </section>
       </Wrapper>
       <Wrapper cssClass="carousel__wrapper">
         <CustomCarousel />

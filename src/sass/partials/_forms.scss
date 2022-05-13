@@ -3,6 +3,22 @@
 //     font-weight: 600;
 // }
 
+.form-error {
+    display: inline-block;
+    color: getColor(dangerCol);
+    margin-top: 0.25rem;
+
+    &::before {
+        content: "* "
+    }
+}
+
+.form-heading {
+    font-family: $sans-serif-headings;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
 .contact {
   &__heading {
       font-family: $serif-headings;
@@ -89,10 +105,6 @@ legend {
     width: 100%;
 }
 
-// .relative-input {
-//     position: relative;
-// }
-
 .input-price-container {
     position: relative;
 }
@@ -129,22 +141,31 @@ legend {
     max-width: 300px;
 }
 
-.review__form {
+.review-form {
     max-width: 400px;
     margin: 2rem auto 0 auto;
+
+    &__heading {
+        font-family: $sans-serif-headings;
+    }
+
+    &__fieldset {
+        margin-top: 1rem;
+    }
+
+    &__rating-input {
+        width: 150px;
+    }
+
+    &__text-area {
+        height: 200px;
+    }
 }
 
-.reviews__fieldset {
-    margin-top: 1rem;
-}
 
-.reviews__text-area {
-    height: 200px;
-}
 
-.reviews__rating-input {
-    width: 150px;
-}
+
+
 
 // .rw-multiselect-input {
 //     width: 100%;

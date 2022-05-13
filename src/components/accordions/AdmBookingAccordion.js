@@ -68,7 +68,7 @@ function AdmBookingAccordion() {
 
   return (
     <>
-      <Heading size="2" cssClass="accordion-heading">
+      <Heading size="2" cssClass="accordion__heading">
         Booking enquiries
       </Heading>
       <div className="accordion__empty-item" style={{ display: display }}>

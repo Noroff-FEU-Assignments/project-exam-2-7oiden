@@ -30,12 +30,12 @@ function Admin() {
       </Wrapper>
       <Wrapper cssClass="admin__body-wrapper">
         <div className="admin__accordion-wrapper">
-          <div className="admin__accordion-container">
+          <section className="admin__accordion-container">
             <AdmBookingAccordion />
-          </div>
-          <div className="admin__accordion-container">
+          </section>
+          <section className="admin__accordion-container">
             <AdmContactAccordion />
-          </div>
+          </section>
         </div>
       </Wrapper>
     </AdminLayout>

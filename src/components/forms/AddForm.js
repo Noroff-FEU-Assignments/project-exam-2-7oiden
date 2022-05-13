@@ -171,13 +171,6 @@ export default function AddForm() {
         Add establishment
       </Heading>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {submitted && (
-          <AlertMessage
-            variant="success"
-            message="New establishment was successfully added"
-            show={show}
-          />
-        )}
         {serverError && <FormError>{serverError}</FormError>}
         <fieldset disabled={submitting}>
           <Form.Group className="mb-3" controlId="formBasicName">
@@ -256,6 +249,7 @@ export default function AddForm() {
             <Form.Control
               as="textarea"
               type="text"
+              rows="6"
               placeholder="Description"
               {...register("description")}
             />
@@ -342,7 +336,13 @@ export default function AddForm() {
               </div>
             ))}
           </fieldset>
-
+          {submitted && (
+            <AlertMessage
+              variant="success"
+              message="New establishment was successfully added"
+              show={show}
+            />
+          )}
           <Button className="admin-button form-button" type="submit">
             Add
           </Button>

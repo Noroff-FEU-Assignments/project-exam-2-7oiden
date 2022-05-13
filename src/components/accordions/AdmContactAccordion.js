@@ -72,7 +72,7 @@ function AdmContactAccordion() {
 
   return (
     <>
-      <Heading size="2" cssClass="accordion-heading" flush>
+      <Heading size="2" cssClass="accordion__heading" flush>
         Contact enquiries
       </Heading>
       <div className="accordion__empty-item" style={{ display: display }}>

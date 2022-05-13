@@ -90,7 +90,7 @@ function ReviewForm({ id }) {
 
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)} className="review__form">
+    <Form onSubmit={handleSubmit(onSubmit)} className="review-form">
       {submitted && (
         <AlertMessage
           variant="success"
@@ -99,10 +99,10 @@ function ReviewForm({ id }) {
         />
       )}
       {serverError && <FormError>{serverError}</FormError>}
-      <Heading size="4" cssClass="reviews__heading">
+      <Heading size="4" cssClass="review-form__heading">
         Leave a review
       </Heading>
-      <fieldset disabled={submitting} className="reviews__fieldset">
+      <fieldset disabled={submitting} className="review-form__fieldset">
         <FloatingLabel
           controlId="floatingInput"
           label="Your name"
@@ -115,11 +115,10 @@ function ReviewForm({ id }) {
           />
           {errors.reviewer && <FormError>{errors.reviewer.message}</FormError>}
         </FloatingLabel>
-
         <Form.Group className="mb-3" controlId="formBasicRating">
           <Form.Select
             aria-label="Default select example"
-            className="reviews__rating-input"
+            className="review-form__rating-input"
             {...register("rating")}
           >
             <option value="">Your rating</option>
@@ -131,17 +130,15 @@ function ReviewForm({ id }) {
           </Form.Select>
           {errors.rating && <FormError>{errors.rating.message}</FormError>}
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicRating">
           <Form.Control
             as="textarea"
             placeholder="Start writing your review"
-            className="reviews__text-area"
+            className="review-form__text-area"
             {...register("review")}
           />
           {errors.review && <FormError>{errors.review.message}</FormError>}
         </Form.Group>
-
         <Button className="form-button" type="submit">
           Submit
         </Button>

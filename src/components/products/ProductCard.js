@@ -36,7 +36,6 @@ function ProductCard(props) {
             </Card.Title>
             <RatingBlock rating={rating} reviews={reviews} />
             <LocationBlock location={location} />
-            <hr />
             <div className="product-card__text-wrapper">
               <Card.Text className="product-card__text product-card__text--category">
                 {category}
