@@ -3,7 +3,7 @@ import Layout from "../layout/Layout";
 import Hero from "../layout/Hero";
 import CategoryCard from "../layout/CategoryCard";
 import Wrapper from "../layout/Wrapper";
-import CustomCarousel from "../products/CustomCarousel";
+import CustomCarousel from "../carousels/CustomCarousel";
 import hotels from "../../images/hotels.jpg";
 import bab from "../../images/bed-and-breakfast.jpg";
 import apartments from "../../images/apartments.jpg";

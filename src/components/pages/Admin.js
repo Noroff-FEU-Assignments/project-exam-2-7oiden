@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import AdminLayout from "../layout/AdminLayout";
 import Heading from "../layout/Heading";
 import Wrapper from "../layout/Wrapper";
-import ButtonLink from "../common/ButtonLink";
+import ButtonLink from "../buttons/ButtonLink";
 import AdmBookingAccordion from "../accordions/AdmBookingAccordion";
 import AdmContactAccordion from "../accordions/AdmContactAccordion";
 

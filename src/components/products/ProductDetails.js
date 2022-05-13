@@ -21,7 +21,7 @@ import ReviewForm from "../forms/ReviewForm";
 import { useLocation } from "react-router-dom";
 import Collapse from "react-bootstrap/Collapse";
 // import { PlusIcon, MinusIcon } from "../icons/MaterialIcons";
-import { HideButton, ShowButton } from "./DescriptionButtons";
+import { HideButton, ShowButton } from "../buttons/DescriptionButtons";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);

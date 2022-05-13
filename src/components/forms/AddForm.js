@@ -44,25 +44,28 @@ const schema = yup.object().shape({
 
   image: yup.string().required("Please provide a image URL"),
 
+  wifi: yup.bool(),
+
+  television: yup.bool(),
   // wifi: yup
   //   .array().ensure().cast(null);
   // wifi: yup.string(),
 
-  wifi: yup.string(),
+  // wifi: yup.string(),
 
-  television: yup.string(),
+  // television: yup.string(),
 
-  central: yup.string(),
+  // central: yup.string(),
 
-  parking: yup.string(),
+  // parking: yup.string(),
 
-  breakfast: yup.string(),
+  // breakfast: yup.string(),
 
-  pets: yup.string(),
+  // pets: yup.string(),
 
-  bar: yup.string(),
+  // bar: yup.string(),
 
-  restaurant: yup.string(),
+  // restaurant: yup.string(),
 });
 
 export default function AddForm() {
@@ -98,6 +101,51 @@ export default function AddForm() {
       categoryId = 37;
     }
 
+    let wifiTagsId = undefined
+
+    if (data.wifi === true) {
+      wifiTagsId = 43;
+    }
+
+    let tvTagsId = undefined;
+
+    if (data.television === true) {
+      tvTagsId = 47;
+    }
+
+    // let tagsId = undefined;
+
+    // switch (tagsId) {
+    //   case "central":
+    //     icon = faCity;
+    //     break;
+    //   case "breakfast":
+    //     icon = faMugSaucer;
+    //     break;
+    //   case "restaurant":
+    //     icon = faUtensils;
+    //     break;
+    //   case "wifi":
+    //     icon = faWifi;
+    //     break;
+    //   case "television":
+    //     icon = faTv;
+    //     break;
+    //   case "bar":
+    //     icon = faMartiniGlass;
+    //     break;
+    //   case "parking":
+    //     icon = faSquareParking;
+    //     break;
+    //   case "pets":
+    //     icon = faDog;
+    //     break;
+    //   default:
+    //     icon = faCircleDot;
+    // }
+
+    console.log(data.wifi)
+
     const jsonData = {
       name: data.name,
       sku: data.address,
@@ -117,29 +165,29 @@ export default function AddForm() {
       ],
       tags: [
         {
-          name: data.wifi,
+          id: wifiTagsId,
         },
         {
-          name: data.television,
+          id: tvTagsId,
         },
-        {
-          name: data.central,
-        },
-        {
-          name: data.breakfast,
-        },
-        {
-          name: data.bar,
-        },
-        {
-          name: data.restaurant,
-        },
-        {
-          name: data.pets,
-        },
-        {
-          name: data.parking,
-        },
+        // {
+        //   name: data.central,
+        // },
+        // {
+        //   name: data.breakfast,
+        // },
+        // {
+        //   name: data.bar,
+        // },
+        // {
+        //   name: data.restaurant,
+        // },
+        // {
+        //   name: data.pets,
+        // },
+        // {
+        //   name: data.parking,
+        // },
       ],
     };
 
@@ -277,61 +325,61 @@ export default function AddForm() {
                     type={type}
                     id="wifi"
                     label="Wifi"
-                    value="wifi"
+                    name="wifi"
                     {...register("wifi")}
                   />
                   <Form.Check
                     type={type}
                     id="Television"
                     label="Television"
-                    value="television"
+                    name="television"
                     {...register("television")}
                   />
-                  <Form.Check
+                  {/* <Form.Check
                     type={type}
                     id="central"
                     label="Central"
                     value="central"
                     {...register("central")}
-                  />
+                  /> */}
 
-                  <Form.Check
+                  {/* <Form.Check
                     type={type}
                     id="bar"
                     label="Bar"
                     value="bar"
                     {...register("bar")}
-                  />
+                  /> */}
                 </div>
                 <div>
-                  <Form.Check
+                  {/* <Form.Check
                     type={type}
                     id="parking"
                     label="Parking"
                     value="parking"
                     {...register("parking")}
-                  />
-                  <Form.Check
+                  /> */}
+                  {/* <Form.Check
                     type={type}
                     id="restaurant"
                     label="Restaurant"
                     value="restaurant"
                     {...register("restaurant")}
-                  />
-                  <Form.Check
+                  /> */}
+                  {/* <Form.Check
                     type={type}
                     id="breakfast"
                     label="Free breakfast"
                     value="breakfast"
                     {...register("breakfast")}
-                  />
-                  <Form.Check
+                  /> */}
+                  {/* <Form.Check
                     type={type}
                     id="pets"
                     label="Pets allowed"
                     value="pets"
                     {...register("pets")}
-                  />
+                  /> */}
                 </div>
               </div>
             ))}

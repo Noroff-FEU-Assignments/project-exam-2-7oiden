@@ -78,11 +78,12 @@
         border-radius: 3px;
         background-color: black;
     }
+
+    &__customer-container {
+        margin-top: 1rem;
+    }
 }
 
-.customer {
- 
-}
 
 .carousel-control-next {
     display: block;

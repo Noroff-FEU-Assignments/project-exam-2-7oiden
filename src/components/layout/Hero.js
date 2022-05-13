@@ -1,5 +1,5 @@
 import Heading from "./Heading";
-import ButtonLink from "../common/ButtonLink";
+import ButtonLink from "../buttons/ButtonLink";
 import Wrapper from "./Wrapper";
 
 function Hero() {
@@ -13,7 +13,7 @@ function Hero() {
           <div className="hero__sub-heading-container">
           <div className="hero__dot"></div>
             <Heading size="2" cssClass="hero__sub-heading">
-              Easy, Conventient & Reliable
+              Holidaze: Easy, Conventient & Reliable
             </Heading>
           </div>
         </hgroup>

@@ -11,8 +11,7 @@ export default function SearchModal() {
   const handleShow = () => setShow(true);
 
   const location = useLocation();
-  // console.log(location);
-
+ 
   useEffect(() => {
     setShow(false);
   }, [location]);

@@ -1,7 +1,7 @@
 import Accordion from "react-bootstrap/Accordion";
 import moment from "moment";
 import AccInfoBlock from "../common/AccInfoBlock";
-import DeleteItem from "./DeleteItem";
+import DeleteAdmItem from "../buttons/DeleteAdmItem";
 
 function ContactItem(props) {
   const {
@@ -43,7 +43,7 @@ function ContactItem(props) {
             </p>
           </div>
           <AccInfoBlock label="Message:" info={message} />
-          <DeleteItem id={id} type={type} />
+          <DeleteAdmItem id={id} type={type} />
         </div>
       </Accordion.Body>
     </Accordion.Item>

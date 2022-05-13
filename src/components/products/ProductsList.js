@@ -13,7 +13,7 @@ import Row from "react-bootstrap/Row";
 import Heading from "../layout/Heading";
 import Form from "react-bootstrap/Form";
 import SearchForm from "../forms/SearchForm";
-import ProductCard from "../products/ProductCard";
+import ProductItem from "./ProductItem";
 import { filter } from "lodash";
 
 function ProductsList() {
@@ -111,7 +111,7 @@ function ProductsList() {
               }
             })
             .map((item) => (
-              <ProductCard
+              <ProductItem
                 key={item.id}
                 id={item.id}
                 name={item.name}
