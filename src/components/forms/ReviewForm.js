@@ -98,7 +98,7 @@ function ReviewForm({ id }) {
           show={show}
         />
       )}
-      {serverError && <FormError>{serverError}</FormError>}
+      {serverError && <AlertMessage variant="danger" message={serverError} />}
       <Heading size="4" cssClass="review-form__heading">
         Leave a review
       </Heading>

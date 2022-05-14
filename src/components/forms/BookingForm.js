@@ -10,15 +10,21 @@ import Button from "react-bootstrap/Button";
 import { BOOKING_URL } from "../../constants/api";
 import moment from "moment";
 
-const date = new Date()
+const date = new Date();
 
 const today = moment(date).format("YYYY-MM-DD");
 const tomorrow = moment(date.setDate(date.getDate() + 1)).format("YYYY-MM-DD");
 
 const schema = yup.object().shape({
-  from_date: yup.date().required("Please select a from date").min(today, "Date can not be earlier than today"),
+  from_date: yup
+    .date()
+    .required("Please select a from date")
+    .min(today, "Date can not be earlier than today"),
 
-  to_date: yup.date().required("Please select a to date").min(today, "Date can not be earlier than today"),
+  to_date: yup
+    .date()
+    .required("Please select a to date")
+    .min(today, "Date can not be earlier than today"),
 
   guests: yup.string().required("Please select number of guests"),
 
@@ -100,7 +106,7 @@ export default function BookingForm({ establishment, location }) {
           message="Your booking request was successfully submitted"
         />
       )}
-      {serverError && <FormError>{serverError}</FormError>}
+      {serverError && <AlertMessage variant="danger" message={serverError} />}
       <fieldset disabled={submitting}>
         <div className="date-picker-wrapper">
           <Form.Group className="mb-3" controlId="formBasicGuests">

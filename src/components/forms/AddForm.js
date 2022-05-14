@@ -13,7 +13,6 @@ import {
   CONSUMER_KEY,
   CONSUMER_SECRET,
 } from "../../constants/api";
-// import Multiselect from "react-widgets/Multiselect";
 
 const schema = yup.object().shape({
   name: yup
@@ -59,6 +58,8 @@ const schema = yup.object().shape({
   breakfast: yup.bool(),
 
   pets: yup.bool(),
+
+  other: yup.string(),
 });
 
 export default function AddForm() {
@@ -84,6 +85,7 @@ export default function AddForm() {
     console.log(data);
     reset();
 
+    //adds category according to category-id
     let categoryId = 34;
 
     if (data.category.toLowerCase() === "hotel") {
@@ -94,6 +96,7 @@ export default function AddForm() {
       categoryId = 37;
     }
 
+    //adds tag according to tag-id
     let wifiTagId = undefined;
 
     if (data.wifi === true) {
@@ -184,6 +187,9 @@ export default function AddForm() {
         {
           id: petsTagId,
         },
+        {
+          name: data.other,
+        },
       ],
     };
 
@@ -215,7 +221,6 @@ export default function AddForm() {
         Add establishment
       </Heading>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {serverError && <FormError>{serverError}</FormError>}
         <fieldset disabled={submitting}>
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>Name</Form.Label>
@@ -378,7 +383,19 @@ export default function AddForm() {
                 </div>
               </div>
             ))}
+            <Form.Group className="mb-3" controlId="formBasicAddress">
+              <Form.Label>Other facility</Form.Label>
+              <Form.Control
+                className="other-facility-input"
+                type="text"
+                placeholder="Specify"
+                {...register("other")}
+              />
+            </Form.Group>
           </fieldset>
+          {serverError && (
+            <AlertMessage variant="danger" message={serverError} />
+          )}
           {submitted && (
             <AlertMessage
               variant="success"

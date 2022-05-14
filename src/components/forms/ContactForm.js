@@ -95,7 +95,7 @@ export default function ContactForm() {
             message="Your message was successfully submitted"
           />
         )}
-        {serverError && <FormError>{serverError}</FormError>}
+        {serverError && <AlertMessage variant="danger" message={serverError} />}
         <fieldset disabled={submitting}>
           <Form.Group className="mb-3" controlId="formBasicFirstname">
             <Form.Label>Firstname</Form.Label>

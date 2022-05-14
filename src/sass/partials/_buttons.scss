@@ -26,6 +26,7 @@
     color: getColor(textLight);
     max-width: 275px;
     min-width: 125px;
+    margin-bottom: 2rem;
 
     &:hover {
         background-color: getColor(adminCol);

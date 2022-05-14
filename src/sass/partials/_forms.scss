@@ -47,6 +47,10 @@
     }
 }
 
+.other-facility-input {
+    width: 200px;
+}
+
 .custom-input {
     border-radius: 25px;
     margin-top: 0.5rem;
@@ -81,8 +85,10 @@
 }
 
 .form-check-fieldset {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid getColor(subtleGray);
 }
 
 .form-check-wrapper {
