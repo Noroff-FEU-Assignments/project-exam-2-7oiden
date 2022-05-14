@@ -20,14 +20,16 @@ const schema = yup.object().shape({
   reviewer: yup
     .string()
     .required("Please enter your name")
-    .min(4, "Your name must be at least 4 characters"),
+    .min(4, "Your name must be at least 4 characters")
+    .max(14, "Your name can't be more than characters"),
 
   rating: yup.string().required("Please select a rating"),
 
   review: yup
     .string()
     .required("Please write your rewiev")
-    .min(10, "Your review must be at least 10 characters"),
+    .min(10, "Your review must be at least 10 characters")
+    .max(400, "Your review can't be more than 400 characters"),
 });
 
 function ReviewForm({ id }) {
@@ -71,7 +73,7 @@ function ReviewForm({ id }) {
       const response = await axios.post(reviewsUrl, jsonData);
       console.log("response", response.data);
       setSubmitted(true);
-      setShow(true)
+      setShow(true);
       history(location.pathname);
     } catch (error) {
       console.log("error", error);
@@ -87,7 +89,6 @@ function ReviewForm({ id }) {
     }, 3000);
     return () => clearTimeout(timer);
   }, [show]);
-
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)} className="review-form">

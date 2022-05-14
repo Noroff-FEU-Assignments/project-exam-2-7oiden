@@ -11,13 +11,15 @@ function Hero() {
             Let <em>us</em> take care of your stay in <strong>Bergen.</strong>
           </Heading>
           <div className="hero__sub-heading-container">
-          <div className="hero__dot"></div>
+            {/* <div className="hero__dot"></div> */}
             <Heading size="2" cssClass="hero__sub-heading">
-              Holidaze: Easy, Conventient & Reliable
+              Book accomodation with ease with <strong>Holidaze</strong>.
             </Heading>
           </div>
         </hgroup>
-        <ButtonLink cssClass="btn-primary hero__button" linkTo="/overview">Browse all</ButtonLink>
+        <ButtonLink cssClass="btn-primary hero__button" linkTo="/overview">
+          Explore
+        </ButtonLink>
       </Wrapper>
     </div>
   );

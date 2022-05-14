@@ -13,15 +13,17 @@
         gap: 0.5rem
     }
 
-    &__dot {
-        background-color: black;
-        height: 0.5rem;
-        width: 0.5rem;
-        border-radius: 50%;
-    }
+    // &__dot {
+    //     background-color: black;
+    //     height: 0.5rem;
+    //     width: 0.5rem;
+    //     border-radius: 50%;
+    // }
 
     &__sub-heading {
         font-size: 1.25rem;
+        // font-family: $sans-serif-headings;
+        // font-style: italic;
 
         @media (min-width: getBreakpoint(large)) {
             font-size: 1.5rem;

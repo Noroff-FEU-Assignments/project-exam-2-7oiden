@@ -9,6 +9,7 @@ import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
 import { filter } from "lodash";
 import ReviewItem from "./ReviewItem";
+import Row from "react-bootstrap/Row";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useLocation } from "react-router-dom";
 
@@ -23,7 +24,7 @@ export default function ProductReviews({ id }) {
 
   const revId = parseInt(id);
 
-//   console.log(revId);
+  //   console.log(revId);
 
   useEffect(
     function () {
@@ -59,10 +60,11 @@ export default function ProductReviews({ id }) {
 
   const filteredReviews = filter(review, { product_id: revId });
 
-//   console.log(filteredReviews);
+  //   console.log(filteredReviews);
 
   return (
-    <ListGroup>
+    <ListGroup className="reviews__list-group">
+      <Row>
         {filteredReviews.map((item) => (
           <ReviewItem
             key={item.id}
@@ -73,6 +75,7 @@ export default function ProductReviews({ id }) {
             avatar={item.reviewer_avatar_urls[48]}
           />
         ))}
+      </Row>
     </ListGroup>
   );
 }

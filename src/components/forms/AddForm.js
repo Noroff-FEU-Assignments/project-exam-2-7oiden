@@ -95,8 +95,8 @@ export default function AddForm() {
 
     if (data.category.toLowerCase() === "hotel") {
       categoryId = 35;
-    } else if (data.category.toLowerCase() === "bed and breakfast") {
-      categoryId = 36;
+    } else if (data.category.toLowerCase() === "motel") {
+      categoryId = 62;
     } else if (data.category.toLowerCase() === "apartment") {
       categoryId = 37;
     }

@@ -177,7 +177,7 @@
         border: 1px solid getColor(subtleGray);
         border-radius: 0 25px 25px 0;
         margin-left: 30px;
-        padding: 0 1.5rem 0 5rem;
+        padding: 0 2rem 0 5rem;
         height: 60px;
         display: flex;
         flex-direction: column;
@@ -187,7 +187,7 @@
     &__quote {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.25rem;
     }
 
     &__quote-text {

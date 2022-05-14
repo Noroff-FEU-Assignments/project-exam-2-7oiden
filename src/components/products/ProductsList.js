@@ -14,17 +14,16 @@ import Heading from "../layout/Heading";
 import Form from "react-bootstrap/Form";
 import SearchForm from "../forms/SearchForm";
 import ProductItem from "./ProductItem";
-import { filter } from "lodash";
+import { filter, capitalize } from "lodash";
 
 function ProductsList() {
   const [product, setProduct] = useState([]);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Establishment");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
 
-  const url =
-    PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET + ITEMS_RETURNED;
+  const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET + ITEMS_RETURNED;
 
   useEffect(function () {
     async function getproduct() {
@@ -57,7 +56,7 @@ function ProductsList() {
 
   const handleChange = (option) => setCategory(option.target.value);
 
-  console.log(category);
+  // console.log(category);
 
   const filterByCategory = filter(product, {
     categories: [{ slug: category }],
@@ -76,21 +75,23 @@ function ProductsList() {
   return (
     <>
       <div className="overview__header">
-          <Heading size="1">Establishment overview</Heading>
-          <div>
-            <Form.Label>Filter by category</Form.Label>
-            <Form.Select
-              aria-label="Filter by category"
-              onChange={handleChange}
-              className="category-filter"
-              // value
-            >
-              <option value="all">All establishments</option>
-              <option value="hotel">Hotels</option>
-              <option value="bed-and-breakfast">Bed & Breakfast</option>
-              <option value="apartment">Apartments</option>
-            </Form.Select>
-          </div>
+        <Heading size="1" className="overview__heading">{`${capitalize(
+          category
+        )}s`}</Heading>
+        <div>
+          <Form.Label>Filter by category</Form.Label>
+          <Form.Select
+            aria-label="Filter by category"
+            onChange={handleChange}
+            className="category-filter"
+            // value
+          >
+            <option value="establishment">All establishments</option>
+            <option value="hotel">Hotels</option>
+            <option value="motel">Motels</option>
+            <option value="apartment">Apartments</option>
+          </Form.Select>
+        </div>
       </div>
 
       <Container fluid>

@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { NavLink, Link } from "react-router-dom";
 import Wrapper from "./Wrapper";
-import brandLogo from "../../images/brand-logo.jpg";
+import brandLogo from "../../images/holidaze-logo.png";
 import LoginModal from "../modals/LoginModal";
 import LogoutModal from "../modals/LogoutModal";
 import SearchModal from "../modals/SearchModal";

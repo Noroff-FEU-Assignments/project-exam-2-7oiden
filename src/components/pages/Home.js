@@ -14,7 +14,7 @@ function Home() {
       <Hero />
       <Wrapper cssClass="category__wrapper">
         <Heading size="3" cssClass="category__heading">
-          Browse by category
+          Accomodation for every need
         </Heading>
         <section className="category__flexbox">
           <CategoryCard title="Hotels" image={hotels} category="hotel" />

@@ -1,21 +1,20 @@
 .navbar {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+
     &__container {
         display: flex;
-        // background-color: greenyellow;
         gap: 0.5rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
         order: 2;
 
         @media (min-width: getBreakpoint(large)) {
             gap: 2rem;
-            padding: 0;
         }
     }
 
     &__logo {
-        width: 125px;
-        margin-right: 1rem;
+        width: 130px;
+        margin-right: 1.5rem;
 
         @media (min-width: getBreakpoint(large)) {
             width: 150px;
@@ -29,6 +28,7 @@
         text-decoration: none;
         display: inline-block;
         font-size: 1.25rem;
+        padding-top: 0.25rem;
         border-bottom: 2px solid transparent;
 
         @media (min-width: getBreakpoint(large)) {
@@ -65,7 +65,7 @@
         top: 0;
         right: 0;
         // background-color: aqua;
-        transform: translateY(10%);
+        // transform: translateY(10%);
 
         @media (min-width: getBreakpoint(large)) {
             gap: 2rem;
