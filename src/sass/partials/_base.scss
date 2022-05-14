@@ -47,41 +47,6 @@ header {
     background-color: getColor(primaryBg);
 }
 
-.list-item-wrapper {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.list-item-name {
-    text-decoration: underline;
-}
-
-.list-item-category {
-  color: getColor(textGray)
-}
 
 
-
-// .test {
-//     background-color: pink;
-// }
-
-
-
-.list-group {
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-    
-
-    @media (min-width: getBreakpoint(large)) {
-            flex-direction: row;
-            gap: 0 3rem;
-        }
-}
-
-.list-group-item {
-    border: none;
-}
 

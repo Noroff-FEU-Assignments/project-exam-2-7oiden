@@ -8,7 +8,6 @@
     border: none;
     border-radius: 100px;
     padding: 0.5rem 2rem;
-    outline: none;
 
     &:hover {
         opacity: 0.75;
@@ -41,19 +40,16 @@
 .btn-secondary {
     font-family: $button-text;
     text-decoration: none;
-    background-color: getColor(primaryBg);
-    color: getColor(textDark);
+    background-color: getColor(footerBg);
+    color: getColor(textLight);
     font-size: 1.25rem;
-    border: 2px solid getColor(textDark);
     border-radius: 100px;
+    border: none;
     padding: 0.5rem 2rem;
-    outline: none;
     opacity: 1;
 
     &:hover {
         opacity: 0.75;
-        background-color: getColor(primaryBg);
-        color: getColor(textDark);
     }
     
     &:focus {

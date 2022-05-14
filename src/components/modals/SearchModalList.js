@@ -5,7 +5,6 @@ import {
   CONSUMER_SECRET,
   ITEMS_RETURNED,
 } from "../../constants/api";
-// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
@@ -53,7 +52,7 @@ export default function SearchModalList() {
   return (
     <>
       <SearchForm setQuery={setQuery} loading={loading} />
-      <ListGroup className="search-list" variant="flush">
+      <ListGroup className="search-modal__list-group" variant="flush">
         {product
           // eslint-disable-next-line array-callback-return
           .filter((item) => {
@@ -72,12 +71,16 @@ export default function SearchModalList() {
               key={item.id}
               style={{ textDecoration: "none" }}
             >
-              <ListGroup.Item>
-                <div className="list-item-wrapper">
-                  <LocationIcon />
-                  <span className="list-item-name">{item.name}</span>
-                  <div className="list-item-category">—</div>
-                  <span className="list-item-category">
+              <ListGroup.Item className="search-modal__list-item">
+                <div className="search-modal__list-item-wrapper">
+                  <div>
+                    <LocationIcon />
+                    <span className="search-modal__list-item-name">
+                      {item.name}
+                    </span>
+                  </div>
+                  {/* <div className="search-modal__list-item-category">—</div> */}
+                  <span className="search-modal__list-item-category">
                     {item.categories[0].name.toLowerCase()}
                   </span>
                 </div>

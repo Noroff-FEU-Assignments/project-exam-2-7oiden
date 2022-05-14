@@ -22,9 +22,12 @@
 
 .modal-body {
     padding: 1rem 1rem 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
     @media (min-width: getBreakpoint(small)) {
-        padding: 1.5rem 3rem 2.5rem 3rem;
+        padding: 1rem 3rem 2.5rem 3rem;
     }
 }
 
@@ -32,3 +35,45 @@
     display: flex;
     justify-content: space-between;
 }
+
+.logout-modal__user {
+    // font-style: italic;
+    font-size: 1.125rem;
+}
+
+.search-modal {
+    &__list-group {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0 3rem;
+        font-size: 1.125rem;
+        text-decoration: none;
+    }
+
+    &__list-item {
+        border: none;
+    }
+
+    &__list-item-wrapper {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__list-item-name {
+        text-decoration: underline;
+        padding-left: 0.25rem;
+    }
+
+    &__list-item-category {
+        color: getColor(textGray)
+    }
+}
+
+
+
+        
+
+
