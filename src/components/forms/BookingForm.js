@@ -17,14 +17,18 @@ const tomorrow = moment(date.setDate(date.getDate() + 1)).format("YYYY-MM-DD");
 
 const schema = yup.object().shape({
   from_date: yup
-    .date()
+    .date("Please select a date")
     .required("Please select a from date")
-    .min(today, "Date can not be earlier than today"),
+    .min(today, "Date can not be earlier than today")
+    .nullable()
+    .typeError("Please select a date"),
 
   to_date: yup
-    .date()
+    .date("Please selevt a date")
     .required("Please select a to date")
-    .min(today, "Date can not be earlier than today"),
+    .min(tomorrow, "Date can not be earlier than tomorrow")
+    .nullable()
+    .typeError("Please select a date"),
 
   guests: yup.string().required("Please select number of guests"),
 
@@ -67,8 +71,6 @@ export default function BookingForm({ establishment, location }) {
     setServerError(null);
     console.log(data);
     reset();
-
-    // console.log(data.to_date);
 
     const jsonData = {
       data: {

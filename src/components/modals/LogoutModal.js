@@ -41,11 +41,15 @@ export default function LoginModal() {
           <Modal.Title>Do you want to log out?</Modal.Title>
         </Modal.Header>
         <Modal.Body className="logout-modal__body">
-          <Button variant="secondary" onClick={handleClose} className="secondary-button log-button">
-            Stay logged in
-          </Button>
           <Button onClick={handleLogout} className="primary-button log-button">
             Log out
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            className="secondary-button log-button"
+          >
+            Stay logged in
           </Button>
         </Modal.Body>
       </Modal>

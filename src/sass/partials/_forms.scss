@@ -85,7 +85,7 @@
 }
 
 .form-check-fieldset {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem 0;
     border-bottom: 1px solid getColor(subtleGray);
@@ -109,20 +109,6 @@ legend {
 
 .mb-3 {
     width: 100%;
-}
-
-.input-price-container {
-    position: relative;
-}
-
-.input-prefix {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-color: getColor(textGray);
-    color: getColor(textLight);
-    padding: 0.45rem 0.75rem;
-    border-radius: 0 4px 4px 0;
 }
 
 .search-list {

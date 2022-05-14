@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
 import Heading from "../layout/Heading";
 import {
   PRODUCTS_URL,
@@ -27,21 +28,25 @@ const schema = yup.object().shape({
 
   beds: yup.number().min(1, "Number of beds must be at least 1"),
 
-  category: yup.string().required("Please select number a category"),
+  category: yup.string().required("Please select a category"),
 
   price: yup
     .number()
     .required("Please enter a price")
     .typeError("Please enter a price")
-    .required("Please enter your age")
-    .integer("Price must be a whole number"),
+    .integer("Price must be a whole number")
+    .min(300, "Price must be at least 300 NOK")
+    .max(10000, "Price can't be more than 10.000 NOK"),
 
   description: yup
     .string()
-    .required("Please enter the establishments street address")
-    .min(10, "Please add a description of the establishment"),
+    .required("Please add a description of the establishment")
+    .min(10, "Description must be at least 10 characters"),
 
-  image: yup.string().required("Please provide a image URL"),
+  image: yup
+    .string()
+    .url("Please enter a valid URL")
+    .required("Please provide an image URL"),
 
   wifi: yup.bool(),
 
@@ -281,14 +286,17 @@ export default function AddForm() {
               controlId="formBasicAddress"
             >
               <Form.Label>Price/night</Form.Label>
-              <div className="input-price-container">
+              {/* <div className="input-price-container"> */}
+              <InputGroup>
+                <InputGroup.Text id="basic-addon1">NOK</InputGroup.Text>
                 <Form.Control
                   type="text"
                   placeholder="Price/night"
                   {...register("price")}
                 />
-                <div className="input-prefix">NOK</div>
-              </div>
+                {/* <div className="input-prefix">NOK</div> */}
+                {/* </div> */}
+              </InputGroup>
               {errors.price && <FormError>{errors.price.message}</FormError>}
             </Form.Group>
           </div>
@@ -307,15 +315,18 @@ export default function AddForm() {
             )}
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label>Image URL</Form.Label>
+          {/* <Form.Group className="mb-3" controlId="formBasicName"> */}
+          <Form.Label>Image</Form.Label>
+          <InputGroup>
+            <InputGroup.Text id="basic-addon1">URL</InputGroup.Text>
             <Form.Control
               type="text"
               placeholder="Image URL"
               {...register("image")}
             />
-            {errors.image && <FormError>{errors.image.message}</FormError>}
-          </Form.Group>
+          </InputGroup>
+          {errors.image && <FormError>{errors.image.message}</FormError>}
+          {/* </Form.Group> */}
 
           <fieldset className="form-check-fieldset">
             <legend>Facilities</legend>

@@ -19,14 +19,14 @@ import { useNavigate, useLocation } from "react-router-dom";
 const schema = yup.object().shape({
   reviewer: yup
     .string()
-    .required("Please enter your firstname")
-    .min(4, "Your firstname must be at least 4 characters"),
+    .required("Please enter your name")
+    .min(4, "Your name must be at least 4 characters"),
 
   rating: yup.string().required("Please select a rating"),
 
   review: yup
     .string()
-    .required("Please enter your message")
+    .required("Please write your rewiev")
     .min(10, "Your review must be at least 10 characters"),
 });
 

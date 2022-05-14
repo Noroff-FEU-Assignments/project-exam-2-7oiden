@@ -85,7 +85,6 @@ function LoginForm() {
           />
           {errors.password && <FormError>{errors.password.message}</FormError>}
         </FloatingLabel>
-     
         <Button className="primary-button form-button" type="submit">
           {submitting ? "Please wait..." : "Login"}
         </Button>

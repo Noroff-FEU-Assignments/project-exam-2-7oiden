@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -28,7 +28,7 @@ const schema = yup.object().shape({
 
   subject: yup
     .string()
-    .required("Please enter your lastname")
+    .required("Please enter a subject")
     .min(4, "Subject must be at least 4 characters"),
 
   message: yup
@@ -41,6 +41,7 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
+  const [show, setShow] = useState(false);
 
   const url = CONTACT_URL;
 
@@ -75,6 +76,7 @@ export default function ContactForm() {
       const response = await axios.post(url, jsonData);
       console.log("response", response.data);
       setSubmitted(true);
+      setShow(true);
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
@@ -83,19 +85,19 @@ export default function ContactForm() {
     }
   }
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [show]);
+
   return (
     <div className="contact__container" id="contact-section">
       <Heading size="3" cssClass="form-heading">
         Contact
       </Heading>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {submitted && (
-          <AlertMessage
-            variant="success"
-            message="Your message was successfully submitted"
-          />
-        )}
-        {serverError && <AlertMessage variant="danger" message={serverError} />}
         <fieldset disabled={submitting}>
           <Form.Group className="mb-3" controlId="formBasicFirstname">
             <Form.Label>Firstname</Form.Label>
@@ -138,9 +140,7 @@ export default function ContactForm() {
               placeholder="Subject"
               {...register("subject")}
             />
-            {errors.lastname && (
-              <FormError>{errors.lastname.message}</FormError>
-            )}
+            {errors.subject && <FormError>{errors.subject.message}</FormError>}
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicMessage">
@@ -153,7 +153,16 @@ export default function ContactForm() {
             />
             {errors.message && <FormError>{errors.message.message}</FormError>}
           </Form.Group>
-
+          {submitted && (
+            <AlertMessage
+              variant="success"
+              message="Your message was successfully submitted"
+              show={show}
+            />
+          )}
+          {serverError && (
+            <AlertMessage variant="danger" message={serverError} />
+          )}
           <Button className="form-button" type="submit">
             Submit
           </Button>
