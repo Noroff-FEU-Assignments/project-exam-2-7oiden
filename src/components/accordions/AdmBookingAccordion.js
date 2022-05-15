@@ -68,11 +68,11 @@ function AdmBookingAccordion() {
 
   return (
     <>
-      <Heading size="2" cssClass="accordion__heading">
+      <Heading size="2" cssClass="adm-accordion__heading">
         Booking enquiries
       </Heading>
-      <div className="accordion__empty-item" style={{ display: display }}>
-        <p className="accordion__empty-message">
+      <div className="adm-accordion__empty-item" style={{ display: display }}>
+        <p className="adm-accordion__empty-message">
           The list is empty
         </p>
       </div>

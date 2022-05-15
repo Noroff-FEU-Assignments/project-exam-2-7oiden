@@ -75,11 +75,11 @@ function ProductsList() {
   return (
     <>
       <div className="overview__header">
-        <Heading size="1" className="overview__heading">{`${capitalize(
+        <Heading size="1" cssClass="overview__heading">{`${capitalize(
           category
         )}s`}</Heading>
         <div>
-          <Form.Label>Filter by category</Form.Label>
+          {/* <Form.Label>Category</Form.Label> */}
           <Form.Select
             aria-label="Filter by category"
             onChange={handleChange}

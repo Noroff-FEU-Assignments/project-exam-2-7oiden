@@ -1,13 +1,18 @@
 .btn-primary {
     font-family: $button-text;
     text-decoration: none;
-    display: inline-block;
+    // display: inline-block;
     background-color: getColor(primaryCol);
     color: getColor(textLight);
-    font-size: 1.25rem;
+    width: auto;
+    font-size: 1.125rem;
     border: none;
     border-radius: 100px;
     padding: 0.5rem 2rem;
+
+    @media (min-width: getBreakpoint(large)) {
+            font-size: 1.25rem;
+        }
 
     &:hover {
         opacity: 0.75;
@@ -20,12 +25,14 @@
     }
 }
 
+.hero__button {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
 .admin-button {
     background-color: getColor(adminCol);
     color: getColor(textLight);
-    max-width: 275px;
-    min-width: 125px;
-    margin-bottom: 2rem;
 
     &:hover {
         background-color: getColor(adminCol);

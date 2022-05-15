@@ -85,7 +85,7 @@ export default function ProductDetails() {
             />
           </figure>
           <div className="details__block-1">
-            <Heading size="1" cssClass="details-heading">
+            <Heading size="1" cssClass="details__heading">
               {product.name}
             </Heading>
             <div className="details__info-wrapper">

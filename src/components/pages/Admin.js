@@ -19,7 +19,7 @@ function Admin() {
     <AdminLayout>
       <Wrapper cssClass="admin__header-wrapper">
         <div className="admin__header">
-          <Heading size="1">Admin Dashboard</Heading>
+          <Heading size="1" cssClass="admin__heading">Admin Dashboard</Heading>
           <ButtonLink
             cssClass="admin-button btn-primary"
             linkTo="/add-establishment"

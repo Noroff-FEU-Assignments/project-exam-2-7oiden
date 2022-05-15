@@ -16,14 +16,36 @@ input {
     font-family: $input-text;
 }
 
+.hero {
+    &__heading {
+        font-family: $serif-headings;
+        font-weight: 900;
+        color: black;
+        margin-bottom: 1.5rem;
+    }
+
+    &__sub-heading {
+        font-size: 1.25rem;
+
+        @media (min-width: getBreakpoint(large)) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.overview__heading,
+.admin__heading,
+.category__heading,
+.support__heading {
+    font-family: $serif-headings;
+    font-weight: 600;
+    font-size: calc(1.375rem + 1.5vw);
+}
+
 .category__heading, .support__heading {
-    font-family: $sans-serif-headings;
-    font-size: 2rem;
-    font-weight: 800;
     padding-left: 4.5%;
 
     @media (min-width: getBreakpoint(large)) {
-        font-size: 2.5rem;
         padding-left: 0;
     }
 }
@@ -33,7 +55,7 @@ input {
     border-bottom: 1px solid getColor(subtleGray);
 }
 
-.details-heading {
+.details__heading {
     font-family: $sans-serif-headings;
     font-size: 2rem;
     font-weight: 700;
@@ -42,9 +64,13 @@ input {
 
 .about__heading {
     font-family: $sans-serif-headings;
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 1.75rem;
+    font-weight: 700;
     margin-bottom: 1rem;
+
+    @media (min-width: getBreakpoint(large)) {
+            font-size: 2rem;
+        }
 }
 
 .about__text {
@@ -66,23 +92,33 @@ input {
     }
 }
 
-.faq__heading {
+.faq-accordion__heading {
     font-family: $sans-serif-headings;
+    font-weight: 600;
     margin-bottom: 0.5rem;
-}
+    font-size: 1.5rem;
 
-.admin__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    @media (min-width: getBreakpoint(small)) {
+            font-size: 1.75rem;
+        }
 
     @media (min-width: getBreakpoint(large)) {
-        flex-direction: row;
+            font-size: 2rem;
+        }
+}
+
+.adm-accordion__heading {
+    background-color: getColor(secondaryCol);
+    color: getColor(textLight);
+    font-family: $sans-serif-headings;
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
+    border-radius: 3px 3px 0 0;
+    
+    @media (min-width: getBreakpoint(large)) {
+            font-size: 1.375rem;
     }
 }
 
-// .overview__heading {
-//     text-transform: capitalize;
-// }
+
+

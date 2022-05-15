@@ -21,23 +21,23 @@ function ContactItem(props) {
   return (
     <Accordion.Item eventKey={eventKey}>
       <Accordion.Header as="div">
-        <div className="accordion__header-container">
-          <span className="accordion__header">
+        <div className="adm-accordion__header-container">
+          <span className="adm-accordion__header">
             {firstName} {lastName}
           </span>
-          <span className="accordion__date">{date}</span>
+          <span className="adm-accordion__date">{date}</span>
         </div>
       </Accordion.Header>
       <Accordion.Body>
-        <div className="accordion__body-wrapper">
+        <div className="adm-accordion__body-wrapper">
           <AccInfoBlock label="Subject:" info={subject} />
-          <div className="accordion__info-container">
-            <p className="accordion__label">Email:</p>
+          <div className="adm-accordion__info-container">
+            <p className="adm-accordion__label">Email:</p>
             <p
               onClick={() =>
                 (window.location = `mailto:${email}?subject=Re: ${subject}`)
               }
-              className="accordion__link"
+              className="adm-accordion__link"
             >
               {email}
             </p>

@@ -72,11 +72,11 @@ function AdmContactAccordion() {
 
   return (
     <>
-      <Heading size="2" cssClass="accordion__heading" flush>
+      <Heading size="2" cssClass="adm-accordion__heading" flush>
         Contact enquiries
       </Heading>
-      <div className="accordion__empty-item" style={{ display: display }}>
-        <p className="accordion__empty-message">The list is empty</p>
+      <div className="adm-accordion__empty-item" style={{ display: display }}>
+        <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
         {orderedMessages.map((item, indexArray) => {

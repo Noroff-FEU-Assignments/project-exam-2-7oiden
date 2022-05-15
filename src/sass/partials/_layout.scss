@@ -214,7 +214,6 @@ main {
          width: 85%;
             
     }
-
 }
 
 //about page
@@ -313,17 +312,6 @@ main {
     }
 }
 
-.faq__container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 4.5%;
-
-    @media (min-width: getBreakpoint(large)) {
-        border-radius: 25px;
-        padding: 0;
-    }
-}
-
 .contact__container {
     background-color: getColor(primaryBg);
     width: 100%;
@@ -357,7 +345,7 @@ main {
         width: 91%;
         margin: 0 auto;
         padding-top: 2rem;
-        
+
         @media (min-width: getBreakpoint(medium)) {
                 width: 85%;
             }

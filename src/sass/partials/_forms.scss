@@ -17,6 +17,15 @@
     font-family: $sans-serif-headings;
     margin-bottom: 1rem;
     font-weight: 600;
+    font-size: 1.5rem;
+
+    @media (min-width: getBreakpoint(large)) {
+            font-size: 1.75rem;
+        }
+
+    @media (min-width: getBreakpoint(large)) {
+            font-size: 2rem;
+        }
 }
 
 .contact {
@@ -24,16 +33,6 @@
       font-family: $serif-headings;
       margin-bottom: 1rem;
   }
-}
-
-.faq__link {
-    display: inline;
-    font-weight: 600;
-    color: getColor(linkCol)
-}
-
-.faq__list-item {
-    padding-bottom: 0.5rem;
 }
 
 .custom-input-container {

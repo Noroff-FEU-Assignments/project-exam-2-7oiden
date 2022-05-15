@@ -1,11 +1,12 @@
 import Accordion from "react-bootstrap/Accordion";
-import Heading from "../layout/Heading";
 
-function FaqItem({eventKey, qNumber}) {
+function FaqItem({ eventKey, title }) {
   return (
     <Accordion.Item eventKey={eventKey}>
-      <Accordion.Header>Question {qNumber}</Accordion.Header>
-      <Accordion.Body>
+      <Accordion.Header as="div" className="faq-accordion__title">
+        <span className="faq-accordion__title">{title}</span>
+      </Accordion.Header>
+      <Accordion.Body className="faq-accordion__text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
