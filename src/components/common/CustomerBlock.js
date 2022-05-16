@@ -9,7 +9,7 @@ function CustomerBlock({ avatar, name, date, rating, review }) {
   return (
     <div className="customer">
       <div className="customer__header">
-        <img src={avatar} alt="profile" className="customer__image"></img>
+        <img src={avatar} alt={`${name} avatar`} className="customer__image"></img>
         <div>
           <p className="customer__name">{name}</p>
           <p className="customer__date">{formattedDate}</p>

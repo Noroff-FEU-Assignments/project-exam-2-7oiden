@@ -35,7 +35,7 @@ function About() {
             <div className="about-card">
               <img
                 src={ceo}
-                alt="Holidaze CEO profile"
+                alt="Holidaze employee"
                 className="about-card__image"
               />
               <div className="about-card__body">

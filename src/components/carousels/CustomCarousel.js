@@ -27,7 +27,7 @@ function CustomCarousel() {
                 <img
                   className="d-block carousel__image"
                   src={hotel1}
-                  alt="First slide"
+                  alt="Interior of Radisson Blu Royal hotel room"
                 />
               </Link>
             </div>
@@ -56,7 +56,7 @@ function CustomCarousel() {
                 <img
                   className="d-block carousel__image"
                   src={hotel2}
-                  alt="First slide"
+                  alt="Interior of Scandic Ørnen hotel room"
                 />
               </Link>
             </div>
@@ -85,7 +85,7 @@ function CustomCarousel() {
                 <img
                   className="d-block carousel__image"
                   src={hotel3}
-                  alt="First slide"
+                  alt="Interior of Augustin Hotel hotel room"
                 />
               </Link>
             </div>

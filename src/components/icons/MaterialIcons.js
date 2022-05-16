@@ -46,7 +46,7 @@ export function SearchIcon() {
   return (
     <Icon
       path={mdiMagnify}
-      title="User Profile"
+      // title="Search"
       className="navbar__search-icon"
       color="default"
     />

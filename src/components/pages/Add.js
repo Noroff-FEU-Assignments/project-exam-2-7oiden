@@ -18,10 +18,7 @@ function Add() {
     <AdminLayout>
       <Wrapper cssClass="add__wrapper">
         <AddForm />
-        <ButtonLink cssClass="back-link" linkTo="/admin">
-          <ChevronLeftIcon />
-          Back to admin dashboard
-        </ButtonLink>
+        
       </Wrapper>
     </AdminLayout>
   );

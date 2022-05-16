@@ -5,32 +5,34 @@ import CategoryCard from "../layout/CategoryCard";
 import Wrapper from "../layout/Wrapper";
 import CustomCarousel from "../carousels/CustomCarousel";
 import hotels from "../../images/hotels.jpg";
-import bab from "../../images/bed-and-breakfast.jpg";
+import motels from "../../images/motels.jpg";
 import apartments from "../../images/apartments.jpg";
 
 function Home() {
   return (
     <Layout>
       <Hero />
-      <Wrapper cssClass="category__wrapper">
+      <Wrapper cssClass="home__wrapper">
         <Heading size="3" cssClass="category__heading">
           Accomodation for every need
         </Heading>
-        <section className="category__flexbox">
+        <p className="category__sub-heading">
+          Choose your flavour among an increaslingly number of Bergen's
+          finest—in our portfolio
+        </p>
+        <section className="category__container">
           <CategoryCard title="Hotels" image={hotels} category="hotel" />
           <CategoryCard
-            title="Bed & Breakfast"
-            image={bab}
-            category="bed-and-breakfast"
+            title="Motels"
+            image={motels}
+            // category="motel"
           />
           <CategoryCard
             title="Apartments"
             image={apartments}
-            category="apartment"
+            // category="apartment"
           />
         </section>
-      </Wrapper>
-      <Wrapper cssClass="carousel__wrapper">
         <CustomCarousel />
       </Wrapper>
     </Layout>

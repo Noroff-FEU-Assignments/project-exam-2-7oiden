@@ -120,6 +120,7 @@ function ProductsList() {
                 // beds={item.attributes[1].options[0]}
                 beds={item.stock_quantity}
                 image={item.images[0].src}
+                altText={item.images[0].alt}
                 category={item.categories[0].name}
                 price={item.price}
                 rating={item.average_rating}

@@ -80,7 +80,7 @@ export default function ProductDetails() {
           <figure className="details__image">
             <img
               src={product.images[0].src}
-              alt="placeholder"
+              alt={product.images[0].alt}
               className="details__image"
             />
           </figure>

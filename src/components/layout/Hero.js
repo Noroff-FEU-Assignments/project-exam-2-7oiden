@@ -10,9 +10,9 @@ function Hero() {
           <Heading size="1" cssClass="hero__heading">
             Let <em>us</em> take care of your stay in <strong>Bergen.</strong>
           </Heading>
-            <Heading size="2" cssClass="hero__sub-heading">
-              <strong>Holidaze</strong> booking made easy.
-            </Heading>
+          <Heading size="2" cssClass="hero__sub-heading">
+            Holidaze — hotel booking made easy.
+          </Heading>
         </hgroup>
         <ButtonLink cssClass="btn-primary hero__button" linkTo="/overview">
           Explore

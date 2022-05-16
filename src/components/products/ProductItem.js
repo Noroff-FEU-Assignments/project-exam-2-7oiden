@@ -6,7 +6,7 @@ import RatingBlock from "../common/RatingBlock";
 import BedsBlock from "../common/BedsBlock";
 
 function ProductCard(props) {
-  const { id, image, name, location, beds, category, price, rating, reviews } =
+  const { id, image, altText, name, location, beds, category, price, rating, reviews } =
     props;
 
   return (
@@ -28,6 +28,7 @@ function ProductCard(props) {
               variant="top"
               src={image}
               className="product-card__image"
+              alt={altText}
             />
           </figure>
           <Card.Body className="product-card__body">

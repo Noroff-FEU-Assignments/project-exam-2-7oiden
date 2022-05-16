@@ -47,6 +47,10 @@ header {
     background-color: getColor(primaryBg);
 }
 
+img {
+    @extend .base-margin;
+}
+
 
 
 

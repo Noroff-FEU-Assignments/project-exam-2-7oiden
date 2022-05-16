@@ -15,7 +15,6 @@ main {
     justify-self: center;
 }
 
-//navbar
 .nav__wrapper {
     width: 90%;
     margin: 0 auto;
@@ -25,51 +24,6 @@ main {
     }
 }
 
-//newsletter
-.newsletter__wrapper {
-    width: 100%;
-    margin: 0 auto;
-
-    @media (min-width: getBreakpoint(large)) {
-        width: 50%;
-    }
-}
-
-//footer
-.footer {
-    &__wrapper {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-
-    &__container {
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 2rem;
-        
-        @media (min-width: getBreakpoint(large)) {
-            flex-direction: row;
-            width: 70%;
-        }
-        
-        @media (min-width: getBreakpoint(xlarge)) {
-            width: 65%;
-        }
-        
-        @media (min-width: getBreakpoint(xxlarge)) {
-            width: 60%;
-        }
-        
-        @media (min-width: getBreakpoint(xxxlarge)) {
-            width: 55%;
-        }
-    }
-}
-
-//home page
 .hero__wrapper {
     background-color: #ffffffbf;
     width: 90%;
@@ -104,115 +58,77 @@ main {
     }
 }
 
-.carousel__wrapper {
+.home__wrapper {
     width: 100%;
     margin: 0 auto;
-    
+    padding-top: 2rem;
+
     @media (min-width: getBreakpoint(large)) {
         width: 85%;
+        padding-top: 4rem;
     }
-
+    
     @media (min-width: getBreakpoint(xlarge)) {
         width: 80%;
     }
-
+    
     @media (min-width: getBreakpoint(xxlarge)) {
         width: 75%;
     }
-
+    
     @media (min-width: getBreakpoint(xxxlarge)) {
         width: 70%;
     }
 }
 
-.category {
-    &__wrapper {
-        width: 90%;
-        margin: 0 auto;
-        padding-top: 3rem;
+.category__container {
+    width: 90%;
+    margin: 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
         
-        @media (min-width: getBreakpoint(large)) {
-            width: 85%;
-        }
+    @media (min-width: getBreakpoint(medium)) {
+        flex-direction: row;
+        gap: 1rem;
+    }
         
-        @media (min-width: getBreakpoint(xlarge)) {
-            width: 80%;
-        }
-        
-        @media (min-width: getBreakpoint(xxlarge)) {
-            width: 75%;
-        }
-        
-        @media (min-width: getBreakpoint(xxxlarge)) {
-            width: 70%;
-        }
-    } 
-
-    &__flexbox {
+    @media (min-width: getBreakpoint(large)) {
         width: 100%;
-        margin: 1.5rem auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+        align-items: flex-start;
         gap: 2rem;
-        
-        @media (min-width: getBreakpoint(medium)) {
-            flex-direction: row;
-            gap: 1rem;
-        }
-        
-        @media (min-width: getBreakpoint(large)) {
-            align-items: flex-start;
-            gap: 2rem;
-        }
-        
-        @media (min-width: getBreakpoint(xlarge)) {
-            gap: 3rem;
-        }
-        
-        @media (min-width: getBreakpoint(xxlarge)) {
-            gap: 4rem;
-        }
     }
 }
 
-//overview page
-.overview__wrapper {
+.overview__wrapper, .reviews__wrapper, .details__wrapper {
     width: 90%;
     margin: 0 auto;
-    padding-top: 1.5rem;
 
     @media (min-width: getBreakpoint(large)) {
         width: 85%;
+    }
+}
+.overview__wrapper {
+    padding-top: 1.5rem;
+
+    @media (min-width: getBreakpoint(large)) {
         padding-top: 2rem;
     }
 }
 
-//details page
 .details__wrapper {
     width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
     
-
     @media (min-width: getBreakpoint(large)) {
-        width: 85%;
         padding-top: 4rem;
         flex-direction: row;
-    }
-}
-
-.reviews__wrapper {
-    width: 90%;
-    margin: 0 auto;
-
-    @media (min-width: getBreakpoint(large)) {
-         width: 85%;
-            
+        width: 85%;
     }
 }
 
@@ -271,7 +187,6 @@ main {
     }
 }
 
-//about page
 .about__container {
     @media (min-width: getBreakpoint(medium)) {
         padding-top: 2rem;
@@ -282,7 +197,6 @@ main {
         padding-top: 4rem;
     }   
 }
-
 
 .support__container {
     margin-top: 1rem;
@@ -301,7 +215,6 @@ main {
     }
 }
 
-
 .contact__container {
     background-color: getColor(primaryBg);
     width: 100%;
@@ -318,7 +231,6 @@ main {
     }
 }
 
-//admin dashboard page
 .admin {
     &__header {
         width: 90%;
@@ -348,13 +260,56 @@ main {
 
 .add__container {
     background-color: getColor(primaryBg);
-    width: 100%;
-    margin: 0 auto;
+    // width: 100%;
+    margin: 0 auto 3rem auto;
     padding: 2rem 10%;
+    position: relative;
 
     @media (min-width: getBreakpoint(small)) {
         border-radius: 4px;
     }          
+}
+
+.newsletter__wrapper {
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 50%;
+    }
+}
+
+.footer {
+    &__wrapper {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    &__container {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+
+        @media (min-width: getBreakpoint(large)) {
+            flex-direction: row;
+            width: 70%;
+        }
+
+        @media (min-width: getBreakpoint(xlarge)) {
+            width: 65%;
+        }
+
+        @media (min-width: getBreakpoint(xxlarge)) {
+            width: 60%;
+        }
+
+        @media (min-width: getBreakpoint(xxxlarge)) {
+            width: 55%;
+        }
+    }
 }
 
 

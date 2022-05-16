@@ -2,35 +2,40 @@
     border-radius: 25px;
     border: none;
     max-width: 300px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
 
     @media (min-width: getBreakpoint(xlarge)) {
         max-width: 400px;
     }
 
     &__link {
-        @extend .base-margin;
-        
+        @extend .base-margin;  
     }
 
     &__image {
-        border-radius: 25px 25px 0 0;
+        border-radius: 4px 4px 0 0;
     }
 
     &__body {
         background-color: getColor(secondaryCol);
-        border-radius: 0 0 25px 25px;
+        padding: 1rem;
+        border-radius: 0 0 4px 4px;
     }
 
     &__title {
         @extend .base-margin;
         text-align: center;
         font-family: $serif-headings;
-        font-weight: 700;
-        font-size: 1.5rem;
+        font-weight: 600;
+        font-size: 1.25rem;
         color: getColor(textLight);
 
         @media (min-width: getBreakpoint(large)) {
-            font-size: 1.625rem;
+            font-size: 1.375rem;
         }
     }
 }
@@ -86,6 +91,7 @@
     }
 
     &__bottom {
+        font-family: $serif-headings;
         font-size: 1.25rem;
         font-weight: bold;
         background-color: getColor(secondaryCol);
@@ -99,7 +105,7 @@
 .details-card {
     background-color: getColor(primaryBg);
     width: 100%;
-    padding: 2rem 4.5% 3rem 4.5%;
+    padding: 2rem 5% 3rem 5%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
