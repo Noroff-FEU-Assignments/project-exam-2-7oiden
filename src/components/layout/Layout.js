@@ -9,9 +9,11 @@ function Layout({ children }) {
         <header>
           <CustomNav />
         </header>
-        <main>{children}</main>
+        <main>
+          {children}
+          <Newsletter />
+        </main>
       </div>
-      <Newsletter />
       <Footer />
     </>
   );

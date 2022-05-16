@@ -1,11 +1,3 @@
-main {
-    padding-bottom: 4rem;
-
-    @media (min-width: getBreakpoint(large)) {
-        padding-bottom: 7rem;
-    }
-}
-
 .container-fluid {
     @extend .base-margin;
 }
@@ -15,6 +7,7 @@ main {
     justify-self: center;
 }
 
+//wrappers
 .nav__wrapper {
     width: 90%;
     margin: 0 auto;
@@ -58,32 +51,118 @@ main {
     }
 }
 
-.home__wrapper {
+.home__wrapper,
+.support__wrapper,
+.admin__wrapper,
+.add__wrapper,
+.about__wrapper {
     width: 100%;
-    margin: 0 auto;
     padding-top: 2rem;
+    padding-bottom: 4rem;
+    margin: 0 auto;
+    // background-color: pink;
+
+    @media (min-width: getBreakpoint(medium)) {
+        width: 85%;
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+        padding-top: 4rem;
+        padding-bottom: 7rem;
+    }
+
+    @media (min-width: getBreakpoint(xlarge)) {
+        width: 80%;
+    }
+
+    @media (min-width: getBreakpoint(xxlarge)) {
+        width: 70%;
+    }
+
+    @media (min-width: getBreakpoint(xxxlarge)) {
+        width: 65%;
+    }
+}
+
+.home__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media (min-width: getBreakpoint(large)) {
+        gap: 6rem;
+    }
+}
+
+.overview__wrapper,
+.reviews__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    // background-color: pink;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 
     @media (min-width: getBreakpoint(large)) {
         width: 85%;
         padding-top: 4rem;
+        padding-bottom: 7rem;
     }
-    
-    @media (min-width: getBreakpoint(xlarge)) {
-        width: 80%;
-    }
-    
-    @media (min-width: getBreakpoint(xxlarge)) {
-        width: 75%;
-    }
-    
+
     @media (min-width: getBreakpoint(xxxlarge)) {
-        width: 70%;
+        width: 80%;
     }
 }
 
+.overview__wrapper {
+    padding-top: 1.5rem;
+    // background-color: pink;
+
+    @media (min-width: getBreakpoint(large)) {
+        padding-top: 2rem;
+    }
+}
+
+.reviews__wrapper {
+    padding-top: 0;
+}
+
+.details__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 0;
+
+    @media (min-width: getBreakpoint(large)) {
+        flex-direction: row;
+        width: 85%;
+        padding-top: 4rem;
+    }
+
+    @media (min-width: getBreakpoint(xlarge)) {
+        gap: 3rem;
+    }
+
+    @media (min-width: getBreakpoint(xxxlarge)) {
+        width: 80%;
+    }
+}
+
+.newsletter__wrapper {
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 50%;
+    }
+}
+
+//containers
 .category__container {
-    width: 90%;
-    margin: 1.5rem auto;
+    // background-color: lightblue;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,62 +181,20 @@ main {
     }
 }
 
-.overview__wrapper, .reviews__wrapper, .details__wrapper {
-    width: 90%;
+.carousel__container {
+    // background-color: lightblue;
+    width: 100%;
     margin: 0 auto;
-
-    @media (min-width: getBreakpoint(large)) {
-        width: 85%;
-    }
-}
-.overview__wrapper {
+    background-color: getColor(primaryBg);
     padding-top: 1.5rem;
 
     @media (min-width: getBreakpoint(large)) {
-        padding-top: 2rem;
-    }
-}
-
-.details__wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2rem;
-    
-    @media (min-width: getBreakpoint(large)) {
-        padding-top: 4rem;
-        flex-direction: row;
-        width: 85%;
-    }
-}
-
-.support__wrapper,
-.admin__wrapper,
-.add__wrapper,
-.about-wrapper {
-    width: 100%;
-    padding-top: 2rem;
-    margin: 0 auto;
-
-    @media (min-width: getBreakpoint(small)) {
-        width: 85%;
-    }
-
-    @media (min-width: getBreakpoint(large)) {
-        padding-top: 4rem;
-    }
-
-    @media (min-width: getBreakpoint(xxlarge)) {
-        width: 75%;
-    }
-
-    @media (min-width: getBreakpoint(xxxlarge)) {
-        width: 70%;
+        border-radius: 25px;
     }
 }
 
 .about__container, .support__container {
+    // background-color: lightblue;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -169,7 +206,21 @@ main {
     }
 }
 
-.about__container, .add__container {
+.about__container {
+    // background-color: lightblue;
+    @media (min-width: getBreakpoint(medium)) {
+        gap: 0.5rem;
+    }
+}
+
+.add__container {
+    background-color: getColor(primaryBg);
+    width: 100%;
+    margin: 0 auto 3rem auto;
+    padding: 2rem 10%;
+    position: relative;
+    // background-color: lightblue;
+
     @media (min-width: getBreakpoint(medium)) {
         width: 85%;
     }
@@ -182,20 +233,13 @@ main {
         width: 75%;
     }
     
-    @media (min-width: getBreakpoint(xxxlarge)) {
+    @media (min-width: getBreakpoint(xxlarge)) {
         width: 70%;
     }
-}
 
-.about__container {
-    @media (min-width: getBreakpoint(medium)) {
-        padding-top: 2rem;
-        gap: 0.5rem;
+    @media (min-width: getBreakpoint(xxlarge)) {
+        width: 65%;
     }
-        
-    @media (min-width: getBreakpoint(large)) {
-        padding-top: 4rem;
-    }   
 }
 
 .support__container {
@@ -205,14 +249,6 @@ main {
     @media (min-width: getBreakpoint(large)) {
         margin-top: 2rem;
     }
-        
-    @media (min-width: getBreakpoint(xlarge)) {
-        gap: 3rem;
-    }
-        
-    @media (min-width: getBreakpoint(xxlarge)) {
-        gap: 4rem;
-    }
 }
 
 .contact__container {
@@ -221,7 +257,7 @@ main {
     margin: 0 auto;
     padding: 2rem 10%;
 
-    @media (min-width: getBreakpoint(small)) {
+    @media (min-width: getBreakpoint(medium)) {
         border-radius: 4px;
     }
 
@@ -245,7 +281,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 3rem;
+        gap: 2rem;
         margin: 0 auto;
 
         @media (min-width: getBreakpoint(large)) {
@@ -259,24 +295,11 @@ main {
 }
 
 .add__container {
-    background-color: getColor(primaryBg);
-    // width: 100%;
-    margin: 0 auto 3rem auto;
-    padding: 2rem 10%;
-    position: relative;
+    
 
     @media (min-width: getBreakpoint(small)) {
         border-radius: 4px;
     }          
-}
-
-.newsletter__wrapper {
-    width: 100%;
-    margin: 0 auto;
-
-    @media (min-width: getBreakpoint(large)) {
-        width: 50%;
-    }
 }
 
 .footer {

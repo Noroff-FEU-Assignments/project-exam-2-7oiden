@@ -27,7 +27,7 @@ export default function ProductDetails() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(true);
 
   let history = useNavigate();
 
@@ -131,14 +131,14 @@ export default function ProductDetails() {
                 Description:
               </Heading>
               <button
-                onClick={() => setOpen(!open)}
+                onClick={() => setShow(!show)}
                 aria-controls="example-fade-text"
-                aria-expanded={open}
+                aria-expanded={show}
                 className="transparent-button"
               >
-                {open ? <HideButton /> : <ShowButton />}
+                {show ? <HideButton /> : <ShowButton />}
               </button>
-              <Collapse in={open}>
+              <Collapse in={show}>
                 <div
                   id="example-collapse-text"
                   className="details-card__text"

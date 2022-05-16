@@ -46,15 +46,17 @@ input {
 }
 
 .support__heading {
-    padding-left: 5%;
+    width: 90%;
+    margin: 0 auto;
 
-    @media (min-width: getBreakpoint(small)) {
-        padding-left: 0;
+    @media (min-width: getBreakpoint(medium)) {
+        width: 100%;
     }
 }
 
-.category__heading{
+.category__header {
     padding-left: 5%;
+    padding-bottom: 0.5rem;
 
     @media (min-width: getBreakpoint(large)) {
         padding-left: 0;
@@ -62,7 +64,6 @@ input {
 }
 
 .category__sub-heading {
-    font-family: $sans-serif-headings;
     font-weight: 500;
     color: getColor(secondaryCol);
     padding-top: 0.25rem;
@@ -119,10 +120,24 @@ input {
     }
 }
 
+.learn-more__slogan {
+    font-family: $serif-headings;
+    font-weight: 600;
+    color: getColor(textDark);
+    position: absolute;
+    max-width: 250px;
+    left: 10%;
+    top: 2rem;
+
+    @media (min-width: getBreakpoint(large)) {
+        top: 3rem;
+    }
+}
+
 .faq-accordion__heading {
     font-family: $sans-serif-headings;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     font-size: 1.5rem;
 
     @media (min-width: getBreakpoint(small)) {

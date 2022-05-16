@@ -1,3 +1,7 @@
+// main {
+    
+// }
+
 .hero__bg-image {
     background-image: url("../../images/bergen-city.jpg");
     background-size: cover;
@@ -9,6 +13,22 @@
     @media (min-width: getBreakpoint(large)) {
         padding-top: 5rem;
         height: 1000px;
+    }
+}
+
+.learn-more__bg-image {
+    background-image: url("../../images/pillows.jpg");
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    margin: 0 auto;
+    height: 250px;
+    padding-top: 3rem;
+    position: relative;
+
+    @media (min-width: getBreakpoint(large)) {
+        // width: 50%;
+        border-radius: 4px;
     }
 }
 

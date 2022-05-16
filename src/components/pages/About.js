@@ -6,7 +6,7 @@ import ceo from "../../images/ceo.jpg";
 function About() {
   return (
     <Layout>
-      <Wrapper className="about__wrapper">
+      <Wrapper cssClass="about__wrapper">
         <div className="about__container">
           <div className="about__bg-image">
             <Heading size="2" cssClass="about__slogan">

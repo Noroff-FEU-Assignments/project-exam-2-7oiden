@@ -96,7 +96,7 @@
        width: 90%;
         margin: 0 auto;
 
-        @media (min-width: getBreakpoint(small)) {
+        @media (min-width: getBreakpoint(medium)) {
             width: 100%;
         }
     }
