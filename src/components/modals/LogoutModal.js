@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import ProfileImage from "../common/ProfileImage";
 
 export default function LoginModal() {
   const history = useNavigate();
@@ -36,8 +37,8 @@ export default function LoginModal() {
 
   return (
     <>
-      <FontAwesomeIcon
-        icon={faCircleUser}
+      <ProfileImage
+        // icon={faCircleUser}
         onClick={handleShow}
         className="font-awesome-icon admin-logged-in"
       />

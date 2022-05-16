@@ -35,7 +35,7 @@ function CustomCarousel() {
               <CustomerBlock
                 avatar={customer1}
                 name="Joyce Russell"
-                date="2022-05-11T14:15:12"
+                date="2022-05-04T14:15:12"
                 rating={5}
                 review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -64,7 +64,7 @@ function CustomCarousel() {
               <CustomerBlock
                 avatar={customer2}
                 name="Kelly Johnson"
-                date="2021-09-11T14:15:12"
+                date="2021-09-20T14:15:12"
                 rating={5}
                 review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

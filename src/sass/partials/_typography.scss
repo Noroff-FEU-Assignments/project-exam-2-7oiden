@@ -43,9 +43,9 @@ input {
 }
 
 .category__heading, .support__heading {
-    padding-left: 4.5%;
+    padding-left: 5%;
 
-    @media (min-width: getBreakpoint(large)) {
+    @media (min-width: getBreakpoint(small)) {
         padding-left: 0;
     }
 }
@@ -66,7 +66,8 @@ input {
     font-family: $sans-serif-headings;
     font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 
     @media (min-width: getBreakpoint(large)) {
             font-size: 2rem;
@@ -107,18 +108,7 @@ input {
         }
 }
 
-.adm-accordion__heading {
-    background-color: getColor(secondaryCol);
-    color: getColor(textLight);
-    font-family: $sans-serif-headings;
-    font-size: 1.25rem;
-    padding: 0.75rem 1rem;
-    border-radius: 3px 3px 0 0;
-    
-    @media (min-width: getBreakpoint(large)) {
-            font-size: 1.375rem;
-    }
-}
+
 
 
 

@@ -29,7 +29,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please write your rewiev")
     .min(10, "Your review must be at least 10 characters")
-    .max(400, "Your review can't be more than 400 characters"),
+    .max(300, "Your review can't be more than 300 characters"),
 });
 
 function ReviewForm({ id }) {

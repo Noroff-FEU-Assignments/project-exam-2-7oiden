@@ -12,7 +12,7 @@ function Support() {
         <Heading size="1" cssClass="support__heading">
           Support
         </Heading>
-        <div className="support__flexbox">
+        <div className="support__container">
           <FaqAccordion />
           <ContactForm />
         </div>

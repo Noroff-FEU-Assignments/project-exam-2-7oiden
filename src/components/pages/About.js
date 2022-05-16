@@ -6,14 +6,14 @@ import ceo from "../../images/ceo.jpg";
 function About() {
   return (
     <Layout>
-      <div className="about__outer-wrapper">
-        <div className="about__bg-image">
-          <Heading size="2" cssClass="about__slogan">
-            Easy, Convenient & Reliable
-          </Heading>
-        </div>
-        <Wrapper cssClass="about__wrapper">
-          <section className="about__container">
+      <Wrapper className="about__wrapper">
+        <div className="about__container">
+          <div className="about__bg-image">
+            <Heading size="2" cssClass="about__slogan">
+              Easy, Convenient & Reliable
+            </Heading>
+          </div>
+          <section className="about__card">
             <Heading size="1" cssClass="about__heading">
               About Holidaze
             </Heading>
@@ -32,28 +32,30 @@ function About() {
               quae ab illo inventore veritatis et quasi architecto beatae vitae
               dicta sunt explicabo.
             </p>
-            <div className="ceo-card">
+            <div className="about-card">
               <img
                 src={ceo}
                 alt="Holidaze CEO profile"
-                className="ceo-card__image"
+                className="about-card__image"
               />
-              <div className="ceo-card__body">
-                <div className="ceo-card__quote">
-                  <svg viewBox="0 0 24 24" className="ceo-card__quote-symbol">
+              <div className="about-card__body">
+                <div className="about-card__quote">
+                  <svg viewBox="0 0 24 24" className="about-card__quote-symbol">
                     <path
                       fill="currentColor"
                       d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
                     />
                   </svg>
-                  <p className="ceo-card__quote-text">We are her for you</p>
+                  <p className="about-card__quote-text">
+                    You are important to us
+                  </p>
                 </div>
                 {/* <p className="ceo-card__signature">Anna Birkeland - CEO</p> */}
               </div>
             </div>
           </section>
-        </Wrapper>
-      </div>
+        </div>
+      </Wrapper>
     </Layout>
   );
 }

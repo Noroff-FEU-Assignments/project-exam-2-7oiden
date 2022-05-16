@@ -17,9 +17,12 @@ function Admin() {
 
   return (
     <AdminLayout>
-      <Wrapper cssClass="admin__header-wrapper">
+      {/* <Wrapper cssClass="admin__header-wrapper"></Wrapper> */}
+      <Wrapper cssClass="admin__wrapper">
         <div className="admin__header">
-          <Heading size="1" cssClass="admin__heading">Admin Dashboard</Heading>
+          <Heading size="1" cssClass="admin__heading">
+            Admin Dashboard
+          </Heading>
           <ButtonLink
             cssClass="admin-button btn-primary"
             linkTo="/add-establishment"
@@ -27,8 +30,6 @@ function Admin() {
             Add new establishment
           </ButtonLink>
         </div>
-      </Wrapper>
-      <Wrapper cssClass="admin__body-wrapper">
         <div className="admin__accordion-wrapper">
           <section className="admin__accordion-container">
             <AdmBookingAccordion />

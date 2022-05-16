@@ -42,7 +42,6 @@
     opacity: 1;
 
     &:hover {
-        // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         opacity: 0.7;
     }
     
@@ -167,7 +166,23 @@
     }
 }
 
-.ceo-card {
+.about__card {
+    width: 100%;
+    margin: 0 auto;
+    background-color: getColor(primaryBg);
+    padding: 1.5rem 5% 5rem 5%;
+    
+    @media (min-width: getBreakpoint(medium)) {
+        border-radius: 0 0 25px 25px;
+    }
+    
+    @media (min-width: getBreakpoint(large)) {
+        width: 50%;
+        border-radius: 0 25px 25px 0;
+    }
+}
+
+.about-card {
     display: flex;
     margin-top: 3rem;
     max-width: 400px;
@@ -199,10 +214,5 @@
         color: getColor(textDark);
         font-style: italic;
     }
-
-    // &__signature {
-    //     @extend .base-margin;
-    //     color: getColor(textGray);
-    // }
 }
 

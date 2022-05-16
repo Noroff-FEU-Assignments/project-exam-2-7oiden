@@ -20,7 +20,9 @@ function BookingItem(props) {
     toDate,
   } = props;
 
-  const date = moment(created).format("YYYY-MM-DD, HH:mm");
+  const date = moment(created).format("MMMM Do YYYY, HH:mm");
+  const toDateForm = moment(toDate).format("MMMM Do YYYY");
+  const fromDateForm = moment(fromDate).format("MMMM Do YYYY");
 
   return (
     <Accordion.Item eventKey={eventKey}>
@@ -34,8 +36,8 @@ function BookingItem(props) {
       </Accordion.Header>
       <Accordion.Body>
         <div className="adm-accordion__body-wrapper">
-          <AccInfoBlock label="From date:" info={fromDate} />
-          <AccInfoBlock label="To date:" info={toDate} />
+          <AccInfoBlock label="From date:" info={fromDateForm} />
+          <AccInfoBlock label="To date:" info={toDateForm} />
           <AccInfoBlock label="Guests:" info={guests} />
           <AccInfoBlock label="Name:" info={`${firstName} ${lastName}`} />
           <div className="adm-accordion__info-container">

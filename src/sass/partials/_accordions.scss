@@ -15,6 +15,24 @@
         display: inline-block;
     }
 
+    &__heading {
+        background-color: getColor(secondaryCol);
+        color: getColor(textLight);
+        font-family: $sans-serif-headings;
+        font-size: 1.25rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0;
+        
+
+        @media (min-width: getBreakpoint(small)) {
+            border-radius: 4px 4px 0 0;
+        }
+        
+        @media (min-width: getBreakpoint(large)) {
+            font-size: 1.375rem;
+        }
+    }
+
     &__empty-item {
         background-color: getColor(primaryBg);
         border-radius: 0 0 4px 4px;
@@ -66,11 +84,20 @@
     &__container {
         width: 100%;
         margin: 0 auto;
-        padding: 0 4.5%;
+        // padding: 0 4.5%;
         
         @media (min-width: getBreakpoint(large)) {
             border-radius: 25px;
             padding: 0;
+        }
+    }
+
+    &__header {
+       width: 90%;
+        margin: 0 auto;
+
+        @media (min-width: getBreakpoint(small)) {
+            width: 100%;
         }
     }
 
@@ -79,7 +106,7 @@
 
         @media (min-width: getBreakpoint(large)) {
                 font-size: 1.125rem;
-            }
+        }
     }
 
     &__text {
