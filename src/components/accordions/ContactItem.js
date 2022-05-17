@@ -22,7 +22,7 @@ function ContactItem(props) {
     <Accordion.Item eventKey={eventKey}>
       <Accordion.Header as="div">
         <div className="adm-accordion__header-container">
-          <span className="adm-accordion__header">
+          <span className="adm-accordion__title">
             {firstName} {lastName}
           </span>
           <span className="adm-accordion__date">{date}</span>

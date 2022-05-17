@@ -30,11 +30,11 @@ function Admin() {
             Add new establishment
           </ButtonLink>
         </div>
-        <div className="admin__accordion-wrapper">
-          <section className="admin__accordion-container">
+        <div className="admin-accordion__wrapper">
+          <section className="admin-accordion__container">
             <AdmBookingAccordion />
           </section>
-          <section className="admin__accordion-container">
+          <section className="admin-accordion__container">
             <AdmContactAccordion />
           </section>
         </div>

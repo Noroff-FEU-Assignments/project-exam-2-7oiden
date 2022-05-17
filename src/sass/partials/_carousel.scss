@@ -1,44 +1,39 @@
 .carousel {
-    width: 90%;
-    margin: 0 auto;
-
-    @media (min-width: getBreakpoint(large)) {
-        width: 82%;
-    }
-
     &__heading {
-        width: 90%;
         margin: 0 auto;
+        padding: 1rem 5%;
         font-family: $serif-headings;
         font-weight: 600;
         font-size: 1.5rem;
+        background-color: getColor(secondaryCol);
+        color: getColor(textLight);
+
+        @media (min-width: getBreakpoint(small)) {
+            padding: 1rem 7.5%;
+            border-radius: 4px 4px 0 0;
+        }
 
         @media (min-width: getBreakpoint(large)) {
-            font-size: 2rem;
-            width: 82%;
+            font-size: 2rem;       
         }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
-        margin-top: 1rem;
+        margin: 0 auto;
         padding: 1rem 0 5rem 0;
-        border-top: 1px solid getColor(subtleGray);
+        // border-top: 1px solid getColor(subtleGray);
         // background-color: pink;
+        width: 90%;
 
         @media (min-width: getBreakpoint(small)) {
-            padding: 1rem 10% 5rem 10%;
+            width: 85%;
         }
 
         @media (min-width: getBreakpoint(medium)) {
             flex-direction: row;
-            gap: 3rem;
-            padding: 1rem 10% 5rem 10%;
-        }
-
-        @media (min-width: getBreakpoint(medium)) {
-            padding: 1rem 1rem 5rem 1rem;
+            gap: 2rem;
         }
     }
 
@@ -56,17 +51,17 @@
         width: 100%;
         border-radius: 4px;
 
-        @media (min-width: getBreakpoint(medium)) {
-            width: 300px;
-        }
+        // @media (min-width: getBreakpoint(medium)) {
+        //     width: 300px;
+        // }
         
-        @media (min-width: getBreakpoint(xlarge)) {
-            width: 400px;
-        }
+        // @media (min-width: getBreakpoint(xlarge)) {
+        //     width: 400px;
+        // }
 
-        @media (min-width: getBreakpoint(xxlarge)) {
-            width: 450px;
-        }
+        // @media (min-width: getBreakpoint(xxlarge)) {
+        //     width: 450px;
+        // }
     }
 
     &__indicators button {
@@ -74,8 +69,21 @@
         background-color: black;
     }
 
-    &__customer-container {
+    &__block-1 {
+        flex: 1;
+
+    @media (min-width: getBreakpoint(medium)) {
+            flex: 3;
+        }
+    }
+
+    &__block-2 {
         margin-top: 1rem;
+        flex: 1;
+
+        @media (min-width: getBreakpoint(medium)) {
+            flex: 2;
+        }
     }
 }
 
@@ -85,13 +93,15 @@
     top: auto;
     bottom: 0.5rem;
     right: 0;
+    height: 2.5rem;
     
-    @media (min-width: getBreakpoint(large)) {
+    @media (min-width: getBreakpoint(small)) {
         width: auto;
-        transform: translateX(200%);
-        top: 0;
-        display: flex;
-        align-items: center;
+        // transform: translateX(200%);
+        top: 50%;
+        // display: flex;
+        transform: translateY(-50%);
+        // align-items: center;
     }  
 }
 
@@ -100,12 +110,14 @@
     top: auto;
     bottom: 0.5rem;
     left: 0;
+    height: 2.5rem;
 
-    @media (min-width: getBreakpoint(large)) {
+    @media (min-width: getBreakpoint(small)) {
         width: auto;
-        transform: translateX(-200%);
-        top: 0;
-        display: flex;
-        align-items: center;
+        // transform: translateX(-200%);
+        top: 50%;
+        transform: translateY(-50%);
+        // display: flex;
+        // align-items: center;
     }
 }

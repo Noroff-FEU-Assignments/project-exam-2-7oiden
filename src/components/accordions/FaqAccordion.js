@@ -4,9 +4,9 @@ import FaqItem from "./FaqItem";
 
 function FaqAccordion() {
   return (
-    <div className="faq-accordion__container">
-      <div className="faq-accordion__header">
-        <Heading size="2" cssClass="faq-accordion__heading">
+    <div className="faq__container">
+      <div className="faq__header">
+        <Heading size="2" cssClass="faq__heading">
           FAQ
         </Heading>
         <ul>

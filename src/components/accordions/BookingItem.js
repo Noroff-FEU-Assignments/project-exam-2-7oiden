@@ -27,9 +27,9 @@ function BookingItem(props) {
   return (
     <Accordion.Item eventKey={eventKey}>
       <Accordion.Header as="div">
-        <div className="adm-accordion__header-container">
-          <div className="adm-accordion__header-wrapper">
-            <span className="adm-accordion__header">{establishment}</span>
+        <div className="adm-accordion__title-container">
+          <div className="adm-accordion__title-wrapper">
+            <span className="adm-accordion__title">{establishment}</span>
           </div>
           <span className="adm-accordion__date">{date}</span>
         </div>

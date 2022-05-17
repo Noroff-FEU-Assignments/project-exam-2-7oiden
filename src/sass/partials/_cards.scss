@@ -178,7 +178,7 @@
     background-color: getColor(primaryBg);
     padding: 1.5rem 5% 5rem 5%;
     
-    @media (min-width: getBreakpoint(medium)) {
+    @media (min-width: getBreakpoint(small)) {
         border-radius: 0 0 25px 25px;
     }
     
