@@ -114,9 +114,8 @@
     flex-direction: column;
     gap: 1.5rem;
 
-    @media (min-width: getBreakpoint(large)) {
+    @media (min-width: getBreakpoint(small)) {
         border-radius: 4px;
-        padding: 2rem 2rem;
     }
 
     &__heading {

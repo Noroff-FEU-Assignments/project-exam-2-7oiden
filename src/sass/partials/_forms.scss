@@ -66,9 +66,9 @@
         gap: 1rem;
     }
 
-    @media (min-width: getBreakpoint(xsmall)) {
-        gap: 2rem;
-    }
+    // @media (min-width: getBreakpoint(xsmall)) {
+    //     gap: 2rem;
+    // }
 }
 
 .form-check-fieldset {

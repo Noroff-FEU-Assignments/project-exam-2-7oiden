@@ -7,7 +7,9 @@ function BedsBlock({ beds }) {
       <p className="info-block__text info-block__text--green info-block__text--bold">
         {beds}
       </p>
-      <p className="info-block__text info-block__text--green">bed(s)</p>
+      <p className="info-block__text info-block__text--green info-block__text--bold">
+        bed(s)
+      </p>
     </div>
   );
 }

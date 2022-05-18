@@ -4,8 +4,6 @@ import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import ProfileImage from "../common/ProfileImage";
 
 export default function LoginModal() {

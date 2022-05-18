@@ -134,9 +134,13 @@
     gap: 2rem;
     padding-top: 0;
 
+    @media (min-width: getBreakpoint(small)) {
+        width: 85%;
+    }
+
     @media (min-width: getBreakpoint(large)) {
         flex-direction: row;
-        width: 85%;
+        // width: 85%;
         padding-top: 4rem;
     }
 
