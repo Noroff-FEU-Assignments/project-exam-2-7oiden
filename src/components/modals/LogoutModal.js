@@ -55,7 +55,7 @@ export default function LoginModal() {
           <span className="logout-modal__user">
             You are currently logged in as: <em>{user.user_nicename}</em>
           </span>
-          <div className="logout-modal__body">
+          <div className="logout-modal__wrapper">
             <Button
               onClick={handleLogout}
               className="primary-button log-button"

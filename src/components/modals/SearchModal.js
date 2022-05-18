@@ -11,7 +11,7 @@ export default function SearchModal() {
   const handleShow = () => setShow(true);
 
   const location = useLocation();
- 
+
   useEffect(() => {
     setShow(false);
   }, [location]);
@@ -23,7 +23,9 @@ export default function SearchModal() {
       </button>
       <Modal show={show} onHide={handleClose} className="login">
         <Modal.Header closeButton>
-          <Modal.Title>Search all establishments</Modal.Title>
+          <Modal.Title>
+            Search all establishments
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <SearchModalList />

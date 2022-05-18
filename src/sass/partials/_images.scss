@@ -62,7 +62,7 @@
     }
 
     @media (min-width: getBreakpoint(large)) {
-        width: 50%;
+        flex: 1;
         height: 440px;
         border-radius: 25px 0 0 25px;
     }

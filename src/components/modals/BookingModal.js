@@ -21,7 +21,7 @@ export default function BookingModal({ name, location }) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>{name}</Modal.Title>
+          <Modal.Title className="modal-title">{name}</Modal.Title>
           <LocationBlock location={location} />
         </Modal.Header>
         <Modal.Body>

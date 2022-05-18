@@ -31,11 +31,15 @@
         text-align: center;
         font-family: $serif-headings;
         font-weight: 600;
-        font-size: 1.25rem;
+        font-size: getSize(catCardTitleSmall);
         color: getColor(textLight);
 
         @media (min-width: getBreakpoint(large)) {
-            font-size: 1.375rem;
+            font-size: getSize(catCardTitleMedium);
+        }
+
+        @media (min-width: getBreakpoint(xlarge)) {
+            font-size: getSize(catCardTitleLarge);
         }
     }
 }
@@ -64,7 +68,7 @@
         @extend .base-margin;
         font-family: $sans-serif-headings;
         font-weight: bold;
-        font-size: 1.25rem;
+        font-size: getSize(prodCardTitle);
         color: getColor(textDark);
         padding-bottom: 0.25rem;
     }
@@ -92,7 +96,7 @@
 
     &__bottom {
         font-family: $serif-headings;
-        font-size: 1.25rem;
+        font-size: getSize(prodCardTitle);
         font-weight: bold;
         background-color: getColor(secondaryCol);
         color: getColor(textLight);
@@ -183,7 +187,7 @@
     }
     
     @media (min-width: getBreakpoint(large)) {
-        width: 50%;
+        flex: 1;
         border-radius: 0 25px 25px 0;
     }
 }

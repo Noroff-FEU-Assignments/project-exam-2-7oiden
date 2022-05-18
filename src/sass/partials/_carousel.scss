@@ -4,9 +4,10 @@
         padding: 1rem 5%;
         font-family: $serif-headings;
         font-weight: 600;
-        font-size: 1.5rem;
-        background-color: getColor(secondaryCol);
-        color: getColor(textLight);
+        font-size: getSize(titleSmall);
+        background-color: getColor(primaryBg);
+        color: getColor(textDark);
+        border-bottom: 1px solid getColor(subtleGray);
 
         @media (min-width: getBreakpoint(small)) {
             padding: 1rem 7.5%;
@@ -14,7 +15,11 @@
         }
 
         @media (min-width: getBreakpoint(large)) {
-            font-size: 2rem;       
+            font-size: getSize(titleMedium);
+        }
+
+        @media (min-width: getBreakpoint(large)) {
+            font-size: getSize(titleLarge);
         }
     }
 
@@ -45,6 +50,10 @@
         margin-bottom: 1rem;
         color: getColor(linkCol);
         text-decoration: underline;
+
+        @media (min-width: getBreakpoint(medium)) {
+            font-size: 1.5rem;
+        }
     }
 
     &__image {
@@ -87,37 +96,23 @@
     }
 }
 
-
-.carousel-control-next {
+.carousel-control-next, .carousel-control-prev {
     display: block;
     top: auto;
-    bottom: 0.5rem;
-    right: 0;
+    bottom: 1.25rem;
     height: 2.5rem;
-    
-    @media (min-width: getBreakpoint(small)) {
+
+    @media (min-width: getBreakpoint(medium)) {
         width: auto;
-        // transform: translateX(200%);
         top: 50%;
-        // display: flex;
         transform: translateY(-50%);
-        // align-items: center;
-    }  
+    }
+}
+
+.carousel-control-next {
+    right: 0;
 }
 
 .carousel-control-prev {
-    display: block;
-    top: auto;
-    bottom: 0.5rem;
     left: 0;
-    height: 2.5rem;
-
-    @media (min-width: getBreakpoint(small)) {
-        width: auto;
-        // transform: translateX(-200%);
-        top: 50%;
-        transform: translateY(-50%);
-        // display: flex;
-        // align-items: center;
-    }
 }

@@ -21,7 +21,7 @@ input {
         font-family: $serif-headings;
         font-weight: 900;
         color: black;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     &__sub-heading {
@@ -29,9 +29,10 @@ input {
         font-family: $sans-serif-headings;
         font-weight: 600;
         color: getColor(secondaryCol);
+        margin-bottom: 2rem;
 
         @media (min-width: getBreakpoint(large)) {
-            font-size: 1.5rem;
+            font-size: 1.375rem;
         }
     }
 }
@@ -42,7 +43,15 @@ input {
 .support__heading {
     font-family: $serif-headings;
     font-weight: 600;
-    font-size: calc(1.375rem + 1.5vw);
+    font-size: getSize(mainSmall);
+
+    @media (min-width: getBreakpoint(medium)) {
+        font-size: getSize(mainMedium);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+        font-size: getSize(mainLarge);
+    }
 }
 
 .support__heading {
@@ -91,24 +100,34 @@ input {
 
 .details__heading {
     font-family: $sans-serif-headings;
-    font-size: 1.5rem;
+    font-size: getSize(titleSmall);
     font-weight: 700;
     padding-bottom: 0.25rem;
 
     @media (min-width: getBreakpoint(large)) {
         font-size: 2rem;
+        font-size: getSize(titleMedium);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+        font-size: 2rem;
+        font-size: getSize(titleLarge);
     }
 }
 
 .about__heading {
     font-family: $sans-serif-headings;
-    font-size: 1.75rem;
+    font-size: getSize(titleSmall);
     font-weight: 700;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 
     @media (min-width: getBreakpoint(large)) {
-            font-size: 2rem;
+        font-size: getSize(titleMedium);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+            font-size: getSize(titleLarge);
         }
 }
 
@@ -158,6 +177,42 @@ input {
     @media (min-width: getBreakpoint(large)) {
             font-size: 2rem;
         }
+}
+
+.form-heading {
+    font-family: $sans-serif-headings;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    font-size: getSize(titleSmall);
+    border-bottom: 1px solid getColor(subtleGray);
+
+    @media (min-width: getBreakpoint(medium)) {
+        font-size: getSize(titleMedium);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+        font-size: getSize(titleLarge);
+    }
+}
+
+.review-form__heading {
+    font-family: $sans-serif-headings;
+    font-size: getSize(reviewFormSmall);
+
+    @media (min-width: getBreakpoint(medium)) {
+        font-size: getSize(reviewFormLarge);
+    }
+}
+
+.modal-title {
+    font-family: $sans-serif-headings;
+    font-weight: 700;
+    font-size: getSize(modalTitleSmall);
+
+    @media (min-width: getBreakpoint(large)) {
+        font-size: getSize(modalTitleLarge);
+    }
 }
 
 

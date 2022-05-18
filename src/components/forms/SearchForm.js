@@ -5,7 +5,7 @@ function SearchForm({ setQuery, loading }) {
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicSearch">
-        <div className="custom-input-container">
+        <div className="custom-input-container search-input-container">
           <Form.Control
             onKeyUp={(event) => setQuery(event.target.value)}
             className="custom-input"

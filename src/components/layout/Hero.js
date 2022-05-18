@@ -14,7 +14,7 @@ function Hero() {
             Holidaze — hotel booking made easy.
           </Heading>
         </hgroup>
-        <ButtonLink cssClass="btn-primary hero__button" linkTo="/overview">
+        <ButtonLink cssClass="btn-primary" linkTo="/overview">
           Explore
         </ButtonLink>
       </Wrapper>

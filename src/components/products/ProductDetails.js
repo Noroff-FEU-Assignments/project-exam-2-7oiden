@@ -164,7 +164,7 @@ export default function ProductDetails() {
       </Wrapper>
       <Wrapper cssClass="reviews__wrapper">
         <section className="reviews">
-          <Heading size="2" cssClass="reviews__heading">
+          <Heading size="2" cssClass="form-heading">
             Reviews
           </Heading>
           <RatingBlock

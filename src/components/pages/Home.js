@@ -21,7 +21,7 @@ function Home() {
             </Heading>
             <p className="category__sub-heading">
               Choose your flavour among an increaslingly number of Bergen's
-              finest<br/>—in our portfolio
+              finest:
             </p>
           </div>
           <div className="category__container">

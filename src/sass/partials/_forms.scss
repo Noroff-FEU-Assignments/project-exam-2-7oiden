@@ -13,21 +13,6 @@
     }
 }
 
-.form-heading {
-    font-family: $sans-serif-headings;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    font-size: 1.5rem;
-
-    @media (min-width: getBreakpoint(large)) {
-            font-size: 1.75rem;
-        }
-
-    @media (min-width: getBreakpoint(large)) {
-            font-size: 2rem;
-        }
-}
-
 .contact {
   &__heading {
       font-family: $serif-headings;
@@ -38,12 +23,15 @@
 .custom-input-container {
     position: relative;
     width: 100%;
-    max-width: 400px;
     margin: 0 auto;
 
-    @media (min-width: getBreakpoint(small)) {
-        min-width: 350px;
-    }
+    // @media (min-width: getBreakpoint(small)) {
+    //     min-width: 350px;
+    // }
+}
+
+.search-input-container {
+    max-width: 400px;
 }
 
 .other-facility-input {
