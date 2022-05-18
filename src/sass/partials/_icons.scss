@@ -7,13 +7,18 @@
 }
 
 .navbar__search-icon-box {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     background-color: getColor(primaryCol);
     border: none;
     border-radius: 50%;
     position: relative;
     transition: all 0.3s ease;
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 
     &:hover {
         opacity: 0.7;
@@ -21,7 +26,7 @@
 }
 
 .navbar__search-icon {
-    width: 1.75rem;
+    width: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,7 +41,7 @@
     width: 2rem;
 
     path {
-        fill: getColor(textLight);
+        fill: getColor(textFooter);
     }
 }
 
@@ -106,10 +111,15 @@
 }
 
 .font-awesome-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 
     &:hover {
         opacity: 0.75;

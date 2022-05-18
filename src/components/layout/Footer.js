@@ -5,6 +5,7 @@ import {
   FacebookIcon,
 } from "../icons/SocialMediaIcons";
 import Copyright from "./Copyright";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -29,9 +30,9 @@ function Footer() {
             <p className="footer__heading">About</p>
             <ul className="footer__list">
               <li>
-                <a href="/about" className="footer__link">
+                <Link to="/about" className="footer__link">
                   About us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -39,14 +40,14 @@ function Footer() {
             <p className="footer__heading">Support</p>
             <ul className="footer__list">
               <li>
-                <a href="/support" className="footer__link">
+                <Link to="/support" className="footer__link">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/support" className="footer__link">
+                <Link to="/support" className="footer__link">
                   Contact form
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -54,14 +55,14 @@ function Footer() {
             <p className="footer__heading">Legal</p>
             <ul className="footer__list">
               <li>
-                <a href="/" className="footer__link">
+                <Link to="/" className="footer__link">
                   Terms
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/" className="footer__link">
+                <Link to="/" className="footer__link">
                   Privacy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

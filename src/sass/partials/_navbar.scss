@@ -2,6 +2,11 @@
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
 
+        @media (min-width: getBreakpoint(large)) {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
     &__container {
         display: flex;
         gap: 0.5rem;
@@ -75,11 +80,13 @@
 
 .container-fluid {
     position: relative;
+    align-items: center;
 }
 
 
 .navbar-brand {
     margin-left: 4rem;
+    padding: 0;
 
     @media (min-width: getBreakpoint(large)) {
         margin-left: 0;

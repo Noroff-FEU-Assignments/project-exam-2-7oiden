@@ -10,6 +10,7 @@ import apartments from "../../images/apartments.jpg";
 import ButtonLink from "../buttons/ButtonLink";
 
 function Home() {
+
   return (
     <Layout>
       <Hero />
@@ -25,16 +26,17 @@ function Home() {
             </p>
           </div>
           <div className="category__container">
-            <CategoryCard title="Hotels" image={hotels} category="hotel" />
+            <CategoryCard
+              title="Hotels"
+              image={hotels}
+            />
             <CategoryCard
               title="Motels"
               image={motels}
-              // category="motel"
             />
             <CategoryCard
               title="Apartments"
               image={apartments}
-              // category="apartment"
             />
           </div>
         </section>

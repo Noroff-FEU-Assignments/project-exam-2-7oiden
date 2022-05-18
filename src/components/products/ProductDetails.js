@@ -122,7 +122,9 @@ export default function ProductDetails() {
                 Facilities:
               </Heading>
               {product.tags.length === 0 ? (
-                <span>Facilities is not specified, please contact support</span>
+                <span className="details-card__text">
+                  Facilities is not specified, please contact support.
+                </span>
               ) : (
                 <span></span>
               )}

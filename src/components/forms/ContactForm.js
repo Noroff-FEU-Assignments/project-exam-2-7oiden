@@ -14,12 +14,14 @@ const schema = yup.object().shape({
   first_name: yup
     .string()
     .required("Please enter your firstname")
-    .min(3, "Your firstname must be at least 3 characters"),
+    .min(3, "Your firstname must be at least 3 characters")
+    .max(10, "Firstname can't be more than 10 characters"),
 
   last_name: yup
     .string()
     .required("Please enter your lastname")
-    .min(4, "Your lastname must be at least 4 characters"),
+    .min(4, "Your lastname must be at least 4 characters")
+    .max(12, "Lastname can't be more than 12 characters"),
 
   email: yup
     .string()
@@ -29,12 +31,14 @@ const schema = yup.object().shape({
   subject: yup
     .string()
     .required("Please enter a subject")
-    .min(4, "Subject must be at least 4 characters"),
+    .min(4, "Subject must be at least 4 characters")
+    .max(10, "Firstname can't be more than 10 characters"),
 
   message: yup
     .string()
     .required("Please enter your message")
-    .min(10, "Your message must be at least 10 characters"),
+    .min(10, "Your message must be at least 10 characters")
+    .max(400, "Message can't be more than 10 characters"),
 });
 
 export default function ContactForm() {

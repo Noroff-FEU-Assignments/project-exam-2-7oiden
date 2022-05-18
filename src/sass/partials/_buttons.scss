@@ -74,10 +74,6 @@
     bottom: -3rem;
     left: 1rem;
 
-    @media (min-width: getBreakpoint(large)) {
-        font-size: getSize(buttonLarge);
-    }
-
     &:hover {
         color: getColor(linkCol);
         opacity: 0.7;
@@ -102,9 +98,14 @@
 .transparent-profile-button {
     background-color: transparent;
     border: none;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     transition: all 0.3s ease;
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 
     &:hover {
         opacity: 0.7;

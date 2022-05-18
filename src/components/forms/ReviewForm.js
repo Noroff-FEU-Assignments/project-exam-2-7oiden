@@ -21,7 +21,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please enter your name")
     .min(4, "Your name must be at least 4 characters")
-    .max(14, "Your name can't be more than characters"),
+    .max(12, "Your name can't be more than 12 characters"),
 
   rating: yup.string().required("Please select a rating"),
 

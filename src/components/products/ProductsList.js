@@ -56,7 +56,7 @@ function ProductsList() {
 
   const handleChange = (option) => setCategory(option.target.value);
 
-  // console.log(category);
+  /////////////
 
   const filterByCategory = filter(product, {
     categories: [{ slug: category }],

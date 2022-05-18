@@ -21,12 +21,14 @@ const schema = yup.object().shape({
   name: yup
     .string()
     .required("Please enter the establishments name")
-    .min(5, "Establishment name must be at least 5 characters"),
+    .min(5, "Establishment name must be at least 5 characters")
+    .max(20, "Establishment name can't be more than 20 characters"),
 
   address: yup
     .string()
     .required("Please enter the establishments street address")
-    .min(5, "Street address must be at least 5 characters"),
+    .min(5, "Street address must be at least 5 characters")
+    .max(25, "Street address can't be more than 25 characters"),
 
   beds: yup.number().min(1, "Number of beds must be at least 1"),
 
@@ -43,7 +45,8 @@ const schema = yup.object().shape({
   description: yup
     .string()
     .required("Please add a description of the establishment")
-    .min(10, "Description must be at least 10 characters"),
+    .min(10, "Description must be at least 10 characters")
+    .max(500, "Description can't be more than 500 characters"),
 
   image: yup
     .string()
@@ -257,7 +260,7 @@ export default function AddForm() {
             >
               <option value="">Select a category</option>
               <option value="hotel">Hotel</option>
-              <option value="bed and breakfast">Bed & Breakfast</option>
+              <option value="motel">Motel</option>
               <option value="apartment">Apartment</option>
             </Form.Select>
             {errors.category && (

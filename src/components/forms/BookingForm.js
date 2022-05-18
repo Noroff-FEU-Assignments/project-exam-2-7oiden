@@ -35,12 +35,14 @@ const schema = yup.object().shape({
   first_name: yup
     .string()
     .required("Please enter your firstname")
-    .min(3, "Your firstname must be at least 3 characters"),
+    .min(3, "Your firstname must be at least 3 characters")
+    .max(10, "Firstname can't be more than 10 characters"),
 
   last_name: yup
     .string()
     .required("Please enter your lastname")
-    .min(4, "Your lastname must be at least 4 characters"),
+    .min(4, "Your lastname must be at least 4 characters")
+    .max(12, "Lastname can't be more than 12 characters"),
 
   email: yup
     .string()

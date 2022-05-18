@@ -9,20 +9,25 @@ import Overview from "./components/pages/Overview";
 import Details from "./components/pages/Details";
 import Admin from "./components/pages/Admin";
 import Add from "./components/pages/Add";
+import { ScrollToTop } from "./components/utils/ScrollToTop";
 
 function App() {
+  
   return (
     <AuthProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/overview" element={<Overview />}></Route>
-          <Route path="/details/:id" element={<Details />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/support" element={<Support />}></Route>
-          <Route path="/admin" element={<Admin />}></Route>
-          <Route path="/add-establishment" element={<Add />}></Route>
-        </Routes>
+        {/* <ScrollToTop /> */}
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/overview" element={<Overview />}></Route>
+            <Route path="/details/:id" element={<Details />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/support" element={<Support />}></Route>
+            <Route path="/admin" element={<Admin />}></Route>
+            <Route path="/add-establishment" element={<Add />}></Route>
+          </Routes>
+        </ScrollToTop>
       </Router>
     </AuthProvider>
   );

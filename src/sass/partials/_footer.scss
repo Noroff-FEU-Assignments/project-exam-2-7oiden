@@ -6,8 +6,12 @@
         @extend .base-margin;
         font-family: $sans-serif-headings;
         font-size: 1.125rem;
-        color: getColor(textFooter);
+        color: getColor(headingFooter);
         margin-bottom: 0.625rem;
+
+        @media (min-width: getBreakpoint(large)) {
+            font-size: 1.25rem;
+        }
     }
 
     &__list {
@@ -30,7 +34,11 @@
     }
 
     &__link {
-        color: getColor(textLight)
+        color: getColor(textLight);
+
+        @media (min-width: getBreakpoint(large)) {
+            font-size: 1.125rem;
+        }
     }
 
     &__link:hover {
