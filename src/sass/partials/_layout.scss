@@ -112,6 +112,22 @@
     }
 }
 
+.reviews__wrapper {
+    @media (min-width: getBreakpoint(small)) {
+        width: 85%;
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 85%;
+        padding-top: 4rem;
+        padding-bottom: 7rem;
+    }
+    
+    @media (min-width: getBreakpoint(xxxlarge)) {
+        width: 80%;
+    }
+}
+
 .overview__wrapper {
     padding-top: 1.5rem;
     // background-color: pink;

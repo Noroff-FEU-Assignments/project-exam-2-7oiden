@@ -12,7 +12,7 @@ import Heading from "../layout/Heading";
 import RatingBlock from "../common/RatingBlock";
 import LocationBlock from "../common/LocationBlock";
 import BookingModal from "../modals/BookingModal";
-import FacilitiesList from "./FacilitiesItem";
+import FacilitiesItem from "./FacilitiesItem";
 import LocationMap from "../layout/LocationMap";
 import BedsBlock from "../common/BedsBlock";
 import ProductReviews from "./ProductReviews";
@@ -72,6 +72,8 @@ export default function ProductDetails() {
       />
     );
 
+  console.log(product.tags);
+
   return (
     <>
       <Wrapper cssClass="details__wrapper">
@@ -119,9 +121,14 @@ export default function ProductDetails() {
               <Heading size="3" cssClass="details-card__heading">
                 Facilities:
               </Heading>
+              {product.tags.length === 0 ? (
+                <span>Facilities is not specified, please contact support</span>
+              ) : (
+                <span></span>
+              )}
               <ul className="details-card__list">
                 {product.tags.map((item) => {
-                  return <FacilitiesList key={item.id} facility={item.name} />;
+                  return <FacilitiesItem key={item.id} facility={item.name} />;
                 })}
               </ul>
             </div>
@@ -163,7 +170,7 @@ export default function ProductDetails() {
       </Wrapper>
       <Wrapper cssClass="reviews__wrapper">
         <section className="reviews">
-          <Heading size="2" cssClass="form-heading">
+          <Heading size="2" cssClass="reviews__heading">
             Reviews
           </Heading>
           <RatingBlock

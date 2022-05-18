@@ -92,7 +92,7 @@ export default function AddForm() {
     console.log(data);
     reset();
 
-    //adds category according to category-id
+    //adds a category according to wp category-id
     let categoryId = 34;
 
     if (data.category.toLowerCase() === "hotel") {
@@ -103,7 +103,7 @@ export default function AddForm() {
       categoryId = 37;
     }
 
-    //adds tag according to tag-id
+    //adds a tag according to wp tag-id
     let wifiTagId = undefined;
 
     if (data.wifi === true) {
@@ -288,7 +288,6 @@ export default function AddForm() {
               controlId="formBasicAddress"
             >
               <Form.Label>Price/night</Form.Label>
-              {/* <div className="input-price-container"> */}
               <InputGroup>
                 <InputGroup.Text id="basic-addon1">NOK</InputGroup.Text>
                 <Form.Control
@@ -296,13 +295,10 @@ export default function AddForm() {
                   placeholder="Price/night"
                   {...register("price")}
                 />
-                {/* <div className="input-prefix">NOK</div> */}
-                {/* </div> */}
               </InputGroup>
               {errors.price && <FormError>{errors.price.message}</FormError>}
             </Form.Group>
           </div>
-
           <Form.Group className="mb-3" controlId="formBasicAddress">
             <Form.Label>Description</Form.Label>
             <Form.Control
@@ -316,8 +312,6 @@ export default function AddForm() {
               <FormError>{errors.description.message}</FormError>
             )}
           </Form.Group>
-
-          {/* <Form.Group className="mb-3" controlId="formBasicName"> */}
           <Form.Label>Image</Form.Label>
           <InputGroup>
             <InputGroup.Text id="basic-addon1">URL</InputGroup.Text>
@@ -328,8 +322,6 @@ export default function AddForm() {
             />
           </InputGroup>
           {errors.image && <FormError>{errors.image.message}</FormError>}
-          {/* </Form.Group> */}
-
           <fieldset className="form-check-fieldset">
             <legend>Facilities</legend>
             {["checkbox"].map((type) => (

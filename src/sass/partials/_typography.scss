@@ -81,8 +81,6 @@ input {
     }
 }
 
-
-
 .category__sub-heading {
     font-weight: 500;
     color: getColor(secondaryCol);
@@ -179,7 +177,7 @@ input {
         }
 }
 
-.form-heading {
+.form-heading, .reviews__heading {
     font-family: $sans-serif-headings;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
@@ -194,6 +192,14 @@ input {
     @media (min-width: getBreakpoint(large)) {
         font-size: getSize(titleLarge);
     }
+}
+
+.reviews__heading {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top: 1rem;
+    border-bottom: none;
+    border-top: 1px solid getColor(subtleGray);
 }
 
 .review-form__heading {

@@ -45,7 +45,7 @@ function FacilitiesItem({ facility }) {
 
   return (
     <li className="details-card__list-item">
-      <FontAwesomeIcon icon={icon} className="facility-icon"/>
+      <FontAwesomeIcon icon={icon} className="facility-icon" />
       {facility}
     </li>
   );
