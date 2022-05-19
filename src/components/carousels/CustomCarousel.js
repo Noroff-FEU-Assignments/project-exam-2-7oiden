@@ -37,10 +37,7 @@ function CustomCarousel() {
                 name="Joyce Russell"
                 date="2022-05-04T14:15:12"
                 rating={5}
-                review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat."
+                review="Very good hotel near the city center. Friendly staff and very clean. Exceptional breakfast with a abundance of choice. The hotel was well-located for exploring the UNESCO World Heritage site of Bryggen and even for walking to other areas. I would absolutely recommend this hotel to those visiting Bergen."
               />
             </div>
           </div>
@@ -66,10 +63,7 @@ function CustomCarousel() {
                 name="Kelly Johnson"
                 date="2021-09-20T14:15:12"
                 rating={5}
-                review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat."
+                review="My husband and I really enjoyed our stay at this hotel. The breakfast was beautiful with lots of options, staff were lovely and friendly, and the hotel and room were clean, modern and comfortable. The hotel is a short walk from various useful locations e.g. bus station, Bryggen, a shopping centre just opposite. Highly recommended!"
               />
             </div>
           </div>
@@ -95,10 +89,7 @@ function CustomCarousel() {
                 name="Rebecca Lee"
                 date="2021-06-11T14:15:12"
                 rating={5}
-                review="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat."
+                review="Beautiful property in a perfect part of town. We alked everywhere and it's very close to the harbor. Staff is absolutely fabulous! They are friendly, helpful and made us feel very welcome. Great breakfast and a boxed breakfast when you are on the run... thanks! Comfortable sitting room with coffee and tea options. Will stay here again when we return."
               />
             </div>
           </div>

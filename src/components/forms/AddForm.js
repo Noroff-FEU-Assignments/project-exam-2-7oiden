@@ -100,7 +100,7 @@ export default function AddForm() {
 
     if (data.category.toLowerCase() === "hotel") {
       categoryId = 35;
-    } else if (data.category.toLowerCase() === "motel") {
+    } else if (data.category.toLowerCase() === "hostel") {
       categoryId = 62;
     } else if (data.category.toLowerCase() === "apartment") {
       categoryId = 37;
@@ -260,7 +260,7 @@ export default function AddForm() {
             >
               <option value="">Select a category</option>
               <option value="hotel">Hotel</option>
-              <option value="motel">Motel</option>
+              <option value="hostel">Hostel</option>
               <option value="apartment">Apartment</option>
             </Form.Select>
             {errors.category && (

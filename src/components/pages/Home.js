@@ -5,12 +5,11 @@ import CategoryCard from "../layout/CategoryCard";
 import Wrapper from "../layout/Wrapper";
 import CustomCarousel from "../carousels/CustomCarousel";
 import hotels from "../../images/hotels.jpg";
-import motels from "../../images/motels.jpg";
+import hostels from "../../images/hostels.jpg";
 import apartments from "../../images/apartments.jpg";
 import ButtonLink from "../buttons/ButtonLink";
 
 function Home() {
-
   return (
     <Layout>
       <Hero />
@@ -29,14 +28,17 @@ function Home() {
             <CategoryCard
               title="Hotels"
               image={hotels}
+              alt="Interior of a hotel room with a view. The room has a queen sized bed and, a couch and a small coffee table."
             />
             <CategoryCard
-              title="Motels"
-              image={motels}
+              title="Hostels"
+              image={hostels}
+              alt="A cosy carpeted bedroom with a queen sized bed and a night table with a lit lamp."
             />
             <CategoryCard
               title="Apartments"
               image={apartments}
+              alt="Interior of a small modern apartment with a kitchen and living space in one room."
             />
           </div>
         </section>

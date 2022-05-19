@@ -14,11 +14,12 @@ import Heading from "../layout/Heading";
 import Form from "react-bootstrap/Form";
 import SearchForm from "../forms/SearchForm";
 import ProductItem from "./ProductItem";
-import { filter, capitalize } from "lodash";
+import { filter, capitalize, sortBy, orderBy, parseInt } from "lodash";
 
 function ProductsList() {
   const [product, setProduct] = useState([]);
   const [category, setCategory] = useState("Establishment");
+  const [order, setOrder] = useState("asc");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
@@ -29,7 +30,7 @@ function ProductsList() {
     async function getproduct() {
       try {
         const response = await axios.get(url);
-        console.log("response", response.data);
+        // console.log("response", response.data);
         setProduct(response.data);
       } catch (error) {
         console.log(error);
@@ -54,20 +55,26 @@ function ProductsList() {
     );
   }
 
-  const handleChange = (option) => setCategory(option.target.value);
+  const handleCategoryChange = (option) => setCategory(option.target.value);
 
-  /////////////
+  const handlePriceChange = (option) => setOrder(option.target.value);
 
-  const filterByCategory = filter(product, {
+  const filterByPrice = orderBy(
+    product,
+    function (obj) {
+      return parseInt(obj.price);
+    },
+    [order]
+  );
+
+  const filterByCategory = filter(filterByPrice, {
     categories: [{ slug: category }],
   });
-
-  console.log(filterByCategory);
 
   let filteredProduct = [];
 
   if (filterByCategory.length === 0) {
-    filteredProduct = product;
+    filteredProduct = filterByPrice;
   } else {
     filteredProduct = filterByCategory;
   }
@@ -78,17 +85,23 @@ function ProductsList() {
         <Heading size="1" cssClass="overview__heading">{`${capitalize(
           category
         )}s`}</Heading>
-        <div>
-          {/* <Form.Label>Category</Form.Label> */}
+        <div className="product-filter__wrapper">
+          <Form.Select
+            aria-label="Filter by Price"
+            onChange={handlePriceChange}
+            className="product-filter__input"
+          >
+            <option value="asc">Price: low-to-high</option>
+            <option value="desc">Price: high-to-low</option>
+          </Form.Select>
           <Form.Select
             aria-label="Filter by category"
-            onChange={handleChange}
-            className="category-filter"
-            // value
+            onChange={handleCategoryChange}
+            className="product-filter__input"
           >
             <option value="establishment">All establishments</option>
             <option value="hotel">Hotels</option>
-            <option value="motel">Motels</option>
+            <option value="hostel">Hostels</option>
             <option value="apartment">Apartments</option>
           </Form.Select>
         </div>
@@ -117,7 +130,6 @@ function ProductsList() {
                 id={item.id}
                 name={item.name}
                 location={item.sku}
-                // beds={item.attributes[1].options[0]}
                 beds={item.stock_quantity}
                 image={item.images[0].src}
                 altText={item.images[0].alt}
