@@ -9,11 +9,13 @@ import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
+const arrayItems = 8;
+
 function AdmBookingAccordion() {
   const [booking, setBooking] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [numshow, setNumshow] = useState(1);
+  const [itemNum, setItemNum] = useState(arrayItems);
 
   const url = HEROKU_BASE_URL + "bookings";
 
@@ -53,11 +55,11 @@ function AdmBookingAccordion() {
 
   const orderedBookings = orderBy(booking, ["attributes.createdAt"], ["desc"]);
 
-  let handleShow = () => setNumshow(numshow + 1);
+  let handleShow = () => setItemNum(itemNum + arrayItems);
 
    let buttonDisplay = "none";
 
-   if (orderedBookings.length > numshow || orderedBookings === []) {
+   if (orderedBookings.length > itemNum || orderedBookings === []) {
      buttonDisplay = "block";
    }
 
@@ -72,19 +74,19 @@ function AdmBookingAccordion() {
     indexArray = null;
   }
 
-  let emptyDisplay = "none";
+  let messageDisplay = "none";
 
   if (orderedBookings.length === 0) {
-    emptyDisplay = "block";
+    messageDisplay = "block";
   }
 
   return (
     <>
-      <div className="adm-accordion__empty-item" style={{ display: emptyDisplay }}>
+      <div className="adm-accordion__empty-item" style={{ display: messageDisplay }}>
         <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
-        {orderedBookings.slice(0, numshow).map((item, indexArray) => {
+        {orderedBookings.slice(0, itemNum).map((item, indexArray) => {
           return (
             <BookingItem
               key={item.id}
@@ -109,7 +111,7 @@ function AdmBookingAccordion() {
         onClick={handleShow}
         style={{ display: buttonDisplay }}
       >
-        Show older
+        Show older posts
       </Button>
     </>
   );

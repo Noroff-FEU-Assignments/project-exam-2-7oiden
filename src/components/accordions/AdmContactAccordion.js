@@ -9,12 +9,13 @@ import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
+const arrayItems = 8
+
 function AdmContactAccordion() {
   const [message, setMessage] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [numshow, setNumshow] = useState(1);
-  // const [button, setButton] = useState("none");
+  const [itemNum, setItemNum] = useState(arrayItems);
 
   const url = HEROKU_BASE_URL + "contacts";
 
@@ -55,13 +56,13 @@ function AdmContactAccordion() {
 
   const orderedMessages = orderBy(message, ["attributes.createdAt"], ["desc"]);
 
-  let handleShow = () => setNumshow(numshow + 1);
+  let handleShow = () => setItemNum(itemNum + arrayItems);
 
   let buttonDisplay = "none";
 
   console.log(orderedMessages.length);
 
-  if (orderedMessages.length > numshow || orderedMessages === []) {
+  if (orderedMessages.length > itemNum || orderedMessages === []) {
     buttonDisplay = "block";
   } 
 
@@ -76,19 +77,19 @@ function AdmContactAccordion() {
     indexArray = null;
   }
 
-  let emptyDisplay = "none";
+  let messageDisplay = "none";
 
   if (orderedMessages.length === 0) {
-    emptyDisplay = "block";
+    messageDisplay = "block";
   }
 
   return (
     <>
-      <div className="adm-accordion__empty-item" style={{ display: emptyDisplay }}>
+      <div className="adm-accordion__empty-item" style={{ display: messageDisplay }}>
         <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
-        {orderedMessages.slice(0, numshow).map((item, indexArray) => {
+        {orderedMessages.slice(0, itemNum).map((item, indexArray) => {
           return (
             <ContactItem
               key={item.id}
@@ -110,7 +111,7 @@ function AdmContactAccordion() {
         onClick={handleShow}
         style={{ display: buttonDisplay }}
       >
-        Show older
+        Show older posts
       </Button>
     </>
   );

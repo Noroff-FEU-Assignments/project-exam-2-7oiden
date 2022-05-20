@@ -5,12 +5,12 @@ import { mdiMapMarker } from "@mdi/js";
 import { mdiMagnify } from "@mdi/js";
 import { mdiBed } from "@mdi/js";
 import { mdiDelete } from "@mdi/js";
-// import { mdiCircleSmall } from "@mdi/js";
 import { mdiCopyright } from "@mdi/js";
 import { mdiEmailOutline } from "@mdi/js";
 import { mdiChevronLeft } from "@mdi/js";
 import { mdiPlus } from "@mdi/js";
 import { mdiMinus } from "@mdi/js";
+import { mdiAlertDecagram } from "@mdi/js";
 
 export function MenuIcon() {
   return (
@@ -75,10 +75,6 @@ export function BinIcon() {
   );
 }
 
-// export function BulletIcon() {
-//   return <Icon path={mdiCircleSmall} className="bullet-icon" color="default" />;
-// }
-
 export function CopyrightIcon() {
   return (
     <Icon
@@ -97,4 +93,15 @@ export function ChevronLeftIcon() {
         color="default"
       />
     );
+}
+
+export function NewIcon() {
+  return (
+    <Icon
+      path={mdiAlertDecagram}
+      // style={{ display: style }}
+      className="new-icon"
+      color="default"
+    />
+  );
 }
