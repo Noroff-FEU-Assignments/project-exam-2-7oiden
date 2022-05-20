@@ -1,7 +1,9 @@
-import { MAP_URL, MAP_API_KEY } from "../../constants/api"
+import { MAP_URL, MAP_API_KEY } from "../../constants/api";
 
-function LocationMap({address}) {
-    const url = MAP_URL + MAP_API_KEY + "&q=" + address + ",Bergen+Norway";
+function LocationMap({ address }) {
+  const url = MAP_URL + MAP_API_KEY + "&q=" + address + ",Bergen+Norway";
+
+  console.log(address);
 
   return (
     <iframe
@@ -14,4 +16,4 @@ function LocationMap({address}) {
     ></iframe>
   );
 }
-export default LocationMap
+export default LocationMap;

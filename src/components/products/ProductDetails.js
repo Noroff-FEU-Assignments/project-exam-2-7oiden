@@ -157,10 +157,8 @@ export default function ProductDetails() {
               <Heading size="3" cssClass="details-card__heading">
                 Location:
               </Heading>
-              {/* <LocationMap address={product.attributes[0].options[0]} /> */}
-              <LocationMap address={product.short_description} />
-              {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
-              <LocationBlock location={product.short_description} />
+              <LocationMap address={product.sku} />
+              <LocationBlock location={product.sku} />
             </div>
           </div>
         </section>
