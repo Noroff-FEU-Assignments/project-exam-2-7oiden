@@ -55,16 +55,12 @@ export default function LoginModal() {
           </span>
           <div className="logout-modal__wrapper">
             <Button
+              variant="primary"
               onClick={handleLogout}
-              className="primary-button log-button"
             >
               Log out
             </Button>
-            <Button
-              variant="secondary"
-              onClick={handleClose}
-              className="secondary-button log-button"
-            >
+            <Button variant="secondary" onClick={handleClose}>
               Stay logged in
             </Button>
           </div>

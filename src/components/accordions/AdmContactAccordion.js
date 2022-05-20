@@ -7,11 +7,14 @@ import Accordion from "react-bootstrap/Accordion";
 import ContactItem from "./ContactItem";
 import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function AdmContactAccordion() {
   const [message, setMessage] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [numshow, setNumshow] = useState(1);
+  // const [button, setButton] = useState("none");
 
   const url = HEROKU_BASE_URL + "contacts";
 
@@ -36,7 +39,7 @@ function AdmContactAccordion() {
       getproduct();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [location]
+    [url, location]
   );
 
   if (loading) return <Loader />;
@@ -52,6 +55,16 @@ function AdmContactAccordion() {
 
   const orderedMessages = orderBy(message, ["attributes.createdAt"], ["desc"]);
 
+  let handleShow = () => setNumshow(numshow + 1);
+
+  let buttonDisplay = "none";
+
+  console.log(orderedMessages.length);
+
+  if (orderedMessages.length > numshow || orderedMessages === []) {
+    buttonDisplay = "block";
+  } 
+
   //check this code
   let indexArray = [];
 
@@ -60,23 +73,22 @@ function AdmContactAccordion() {
   });
 
   if (indexArray.length === 1) {
-    indexArray = 0;
+    indexArray = null;
   }
 
-  let display = "none";
+  let emptyDisplay = "none";
 
   if (orderedMessages.length === 0) {
-    display = "block";
+    emptyDisplay = "block";
   }
 
   return (
     <>
-      
-      <div className="adm-accordion__empty-item" style={{ display: display }}>
+      <div className="adm-accordion__empty-item" style={{ display: emptyDisplay }}>
         <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
-        {orderedMessages.map((item, indexArray) => {
+        {orderedMessages.slice(0, numshow).map((item, indexArray) => {
           return (
             <ContactItem
               key={item.id}
@@ -93,6 +105,13 @@ function AdmContactAccordion() {
           );
         })}
       </Accordion>
+      <Button
+        className="btn-secondary"
+        onClick={handleShow}
+        style={{ display: buttonDisplay }}
+      >
+        Show older
+      </Button>
     </>
   );
 }

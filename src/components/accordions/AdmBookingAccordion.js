@@ -7,33 +7,38 @@ import Accordion from "react-bootstrap/Accordion";
 import BookingItem from "./BookingItem";
 import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function AdmBookingAccordion() {
   const [booking, setBooking] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [numshow, setNumshow] = useState(1);
 
   const url = HEROKU_BASE_URL + "bookings";
 
   const location = useLocation().key;
 
-  useEffect(function () {
-    async function getproduct() {
-      try {
-        const response = await axios.get(url);
-        console.log("response", response.data.data);
-        setBooking(response.data.data);
-      } catch (error) {
-        console.log(error);
-        setError(error.toString());
-      } finally {
-        setLoading(false);
+  useEffect(
+    function () {
+      async function getproduct() {
+        try {
+          const response = await axios.get(url);
+          console.log("response", response.data.data);
+          setBooking(response.data.data);
+        } catch (error) {
+          console.log(error);
+          setError(error.toString());
+        } finally {
+          setLoading(false);
+        }
       }
-    }
 
-    getproduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+      getproduct();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    },
+    [url, location]
+  );
 
   if (loading) return <Loader />;
 
@@ -48,6 +53,14 @@ function AdmBookingAccordion() {
 
   const orderedBookings = orderBy(booking, ["attributes.createdAt"], ["desc"]);
 
+  let handleShow = () => setNumshow(numshow + 1);
+
+   let buttonDisplay = "none";
+
+   if (orderedBookings.length > numshow || orderedBookings === []) {
+     buttonDisplay = "block";
+   }
+
   //check this code
   let indexArray = [];
 
@@ -56,24 +69,22 @@ function AdmBookingAccordion() {
   });
 
   if (indexArray.length === 1) {
-    indexArray = 0;
+    indexArray = null;
   }
 
-  let display = "none";
+  let emptyDisplay = "none";
 
   if (orderedBookings.length === 0) {
-    display = "block";
+    emptyDisplay = "block";
   }
 
   return (
     <>
-      <div className="adm-accordion__empty-item" style={{ display: display }}>
-        <p className="adm-accordion__empty-message">
-          The list is empty
-        </p>
+      <div className="adm-accordion__empty-item" style={{ display: emptyDisplay }}>
+        <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
-        {orderedBookings.map((item, indexArray) => {
+        {orderedBookings.slice(0, numshow).map((item, indexArray) => {
           return (
             <BookingItem
               key={item.id}
@@ -86,7 +97,6 @@ function AdmBookingAccordion() {
               guests={item.attributes.guests}
               email={item.attributes.email}
               message={item.attributes.message}
-              // location={item.attributes.location}
               created={item.attributes.createdAt}
               fromDate={item.attributes.from_date}
               toDate={item.attributes.to_date}
@@ -94,7 +104,15 @@ function AdmBookingAccordion() {
           );
         })}
       </Accordion>
+      <Button
+        className="btn-secondary"
+        onClick={handleShow}
+        style={{ display: buttonDisplay }}
+      >
+        Show older
+      </Button>
     </>
   );
 }
+
 export default AdmBookingAccordion;

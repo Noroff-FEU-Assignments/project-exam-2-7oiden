@@ -14,7 +14,7 @@ import Heading from "../layout/Heading";
 import Form from "react-bootstrap/Form";
 import SearchForm from "../forms/SearchForm";
 import ProductItem from "./ProductItem";
-import { filter, capitalize, sortBy, orderBy, parseInt } from "lodash";
+import { filter, capitalize, orderBy, parseInt, slice } from "lodash";
 
 function ProductsList() {
   const [product, setProduct] = useState([]);
@@ -78,6 +78,14 @@ function ProductsList() {
   } else {
     filteredProduct = filterByCategory;
   }
+
+  // let displayButton = "none";
+
+  // if (filteredProduct.length >= 2) {
+  //   displayButton = "block";
+  // } else if (filteredProduct.length === numshow) {
+  //   displayButton = "none";
+  // }
 
   return (
     <>
