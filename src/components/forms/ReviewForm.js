@@ -55,7 +55,7 @@ function ReviewForm({ id }) {
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
+    // console.log(data);
     reset();
 
     const jsonData = {

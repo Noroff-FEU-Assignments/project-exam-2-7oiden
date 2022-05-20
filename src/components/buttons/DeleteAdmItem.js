@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BOOKING_URL, CONTACT_URL } from "../../constants/api";
+import { HEROKU_BASE_URL } from "../../constants/api";
 import axios from "axios";
 import { BinIcon } from "../icons/MaterialIcons";
 import AlertMessage from "../common/AlertMessage";
@@ -14,9 +14,9 @@ export default function DeleteItem({ id, type }) {
   let url = "";
 
   if (type === "booking") {
-    url = BOOKING_URL + "/" + id;
+    url = HEROKU_BASE_URL + "bookings/" + id;
   } else if (type === "contact") {
-    url = CONTACT_URL + "/" + id;
+    url = HEROKU_BASE_URL + "contacts/" + id;
   }
 
   async function handleDelete() {

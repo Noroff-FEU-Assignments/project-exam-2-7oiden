@@ -32,9 +32,15 @@ function Admin() {
         </div>
         <div className="admin-accordion__wrapper">
           <section className="admin-accordion__container">
+            <Heading size="2" cssClass="adm-accordion__heading">
+              Booking enquiries
+            </Heading>
             <AdmBookingAccordion />
           </section>
           <section className="admin-accordion__container">
+            <Heading size="2" cssClass="adm-accordion__heading" flush>
+              Contact enquiries
+            </Heading>
             <AdmContactAccordion />
           </section>
         </div>

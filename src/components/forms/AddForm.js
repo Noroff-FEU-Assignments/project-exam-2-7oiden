@@ -92,7 +92,7 @@ export default function AddForm() {
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
+    // console.log(data);
     reset();
 
     //adds a category according to wp category-id
@@ -203,7 +203,7 @@ export default function AddForm() {
       ],
     };
 
-    console.log(jsonData);
+    // console.log(jsonData);
 
     try {
       const response = await axios.post(url, jsonData);

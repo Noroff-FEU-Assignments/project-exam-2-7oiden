@@ -51,12 +51,20 @@ a {
     display: block;
 }
 
+p {
+    @extend .base-margin;
+}
+
 header {
     background-color: getColor(primaryBg);
 }
 
 img {
     @extend .base-margin;
+}
+
+.loader-container {
+    padding: 1rem;
 }
 
 

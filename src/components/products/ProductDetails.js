@@ -32,7 +32,7 @@ export default function ProductDetails() {
 
   const { id } = useParams();
 
-  console.log(id);
+  // console.log(id);
 
   if (!id) {
     history("/");
@@ -72,7 +72,7 @@ export default function ProductDetails() {
       />
     );
 
-  console.log(product.tags);
+  // console.log(product.tags);
 
   return (
     <>
@@ -98,11 +98,6 @@ export default function ProductDetails() {
               rating={product.average_rating}
               reviews={product.rating_count}
             />
-            {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
-
-            {/* <LocationBlock location={product.sku} /> */}
-
-            {/* <BedsBlock beds={product.attributes[1].options[0]} /> */}
           </div>
           <div className="details__block-2">
             <div>
@@ -110,7 +105,7 @@ export default function ProductDetails() {
             </div>
             <BookingModal
               name={product.name}
-              location={product.sku}
+              location={product.short_description}
               // location={product.attributes[0].options[0]}
             />
           </div>
@@ -163,9 +158,9 @@ export default function ProductDetails() {
                 Location:
               </Heading>
               {/* <LocationMap address={product.attributes[0].options[0]} /> */}
-              <LocationMap address={product.sku} />
+              <LocationMap address={product.short_description} />
               {/* <LocationBlock location={product.attributes[0].options[0]} /> */}
-              <LocationBlock location={product.sku} />
+              <LocationBlock location={product.short_description} />
             </div>
           </div>
         </section>

@@ -15,7 +15,7 @@ export default function LoginModal() {
   function handleLogout() {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
 
-    console.log(auth);
+    // console.log(auth);
 
     if (confirmLogout) {
       history("/");

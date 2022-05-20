@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { BOOKING_URL } from "../../constants/api";
+import { HEROKU_BASE_URL } from "../../constants/api";
 import axios from "axios";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
 import Accordion from "react-bootstrap/Accordion";
-import Heading from "../layout/Heading";
 import BookingItem from "./BookingItem";
 import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
@@ -14,7 +13,7 @@ function AdmBookingAccordion() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const url = BOOKING_URL;
+  const url = HEROKU_BASE_URL + "bookings";
 
   const location = useLocation().key;
 
@@ -68,9 +67,6 @@ function AdmBookingAccordion() {
 
   return (
     <>
-      <Heading size="2" cssClass="adm-accordion__heading">
-        Booking enquiries
-      </Heading>
       <div className="adm-accordion__empty-item" style={{ display: display }}>
         <p className="adm-accordion__empty-message">
           The list is empty

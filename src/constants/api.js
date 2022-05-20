@@ -26,9 +26,12 @@ export const MAP_URL = "https://www.google.com/maps/embed/v1/place?";
 
 export const MAP_API_KEY = "key=AIzaSyDeBgWNvAla1OxecdgJaF7pBiqBoIPu9I4";
 
-//strapi API
-export const ESTABLISHMENT_URL = "http://localhost:3005/api/establishments";
+//heroku-strapi API
+// export const ESTABLISHMENT_URL = "http://localhost:3005/api/establishments";
 
-export const CONTACT_URL = "http://localhost:3005/api/contacts";
+export const HEROKU_BASE_URL =
+  "https://obscure-reaches-62581.herokuapp.com/api/";
 
-export const BOOKING_URL = "http://localhost:3005/api/bookings";
+// export const CONTACT_URL = "https://obscure-reaches-62581.herokuapp.com/api/contacts";
+
+// export const BOOKING_URL = "http://localhost:3005/api/bookings";

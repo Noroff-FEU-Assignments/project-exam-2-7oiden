@@ -29,7 +29,7 @@ function NewsletterForm() {
   });
 
   function onSubmit(data) {
-    console.log(data);
+    // console.log(data);
     setSubmitted(true);
     setShow(true);
     reset();

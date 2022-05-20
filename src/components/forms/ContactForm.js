@@ -8,7 +8,7 @@ import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
 import Heading from "../layout/Heading";
-import { CONTACT_URL } from "../../constants/api";
+import { HEROKU_BASE_URL } from "../../constants/api";
 
 const schema = yup.object().shape({
   first_name: yup
@@ -32,7 +32,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please enter a subject")
     .min(4, "Subject must be at least 4 characters")
-    .max(10, "Firstname can't be more than 10 characters"),
+    .max(20, "Subject can't be more than 20 characters"),
 
   message: yup
     .string()
@@ -47,7 +47,7 @@ export default function ContactForm() {
   const [serverError, setServerError] = useState(null);
   const [show, setShow] = useState(false);
 
-  const url = CONTACT_URL;
+  const url = HEROKU_BASE_URL + "contacts";
 
   const {
     register,

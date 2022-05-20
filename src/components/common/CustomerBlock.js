@@ -4,7 +4,7 @@ import moment from "moment";
 function CustomerBlock({ avatar, name, date, rating, review }) {
   const formattedDate = moment(date).format("MMMM Do YYYY");
 
-  console.log(rating);
+  // console.log(rating);
 
   return (
     <div className="customer">

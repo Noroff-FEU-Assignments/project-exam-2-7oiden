@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
-import { BOOKING_URL } from "../../constants/api";
+import { HEROKU_BASE_URL } from "../../constants/api";
 import moment from "moment";
 
 const date = new Date();
@@ -52,12 +52,13 @@ const schema = yup.object().shape({
   message: yup.string(),
 });
 
-export default function BookingForm({ establishment, location }) {
+export default function BookingForm({ establishment }) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  const url = BOOKING_URL;
+  // const url = BOOKING_URL;
+  const url = HEROKU_BASE_URL + "bookings";
 
   const {
     register,
@@ -71,13 +72,12 @@ export default function BookingForm({ establishment, location }) {
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
+    // console.log(data);
     reset();
 
     const jsonData = {
       data: {
         establishment: establishment,
-        location: location,
         from_date: data.from_date,
         to_date: data.to_date,
         guests: data.guests,
