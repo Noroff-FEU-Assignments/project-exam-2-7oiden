@@ -103,11 +103,7 @@ export default function ProductDetails() {
             <div>
               <p className="details__price">{product.price} /night</p>
             </div>
-            <BookingModal
-              name={product.name}
-              location={product.short_description}
-              // location={product.attributes[0].options[0]}
-            />
+            <BookingModal name={product.name} address={product.sku} />
           </div>
         </section>
         <section className="details__column-2">
@@ -158,7 +154,7 @@ export default function ProductDetails() {
                 Location:
               </Heading>
               <LocationMap address={product.sku} />
-              <LocationBlock location={product.sku} />
+              <LocationBlock address={product.sku} />
             </div>
           </div>
         </section>

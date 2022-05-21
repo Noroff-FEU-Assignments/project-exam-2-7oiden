@@ -54,6 +54,14 @@ input {
     }
 }
 
+.admin__heading {
+    padding-left: 5%;
+
+    @media (min-width: getBreakpoint(small)) {
+        padding-left: 0;
+    }
+}
+
 .support__heading {
     width: 90%;
     margin: 0 auto;

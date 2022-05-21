@@ -137,7 +137,7 @@ function ProductsList() {
                 key={item.id}
                 id={item.id}
                 name={item.name}
-                location={item.sku}
+                address={item.sku}
                 beds={item.stock_quantity}
                 image={item.images[0].src}
                 altText={item.images[0].alt}

@@ -85,7 +85,10 @@ function AdmContactAccordion() {
 
   return (
     <>
-      <div className="adm-accordion__empty-item" style={{ display: messageDisplay }}>
+      <div
+        className="adm-accordion__empty-item"
+        style={{ display: messageDisplay }}
+      >
         <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
@@ -107,7 +110,8 @@ function AdmContactAccordion() {
         })}
       </Accordion>
       <Button
-        className="btn-secondary"
+        variant="secondary"
+        className="show-more-btn"
         onClick={handleShow}
         style={{ display: buttonDisplay }}
       >

@@ -92,3 +92,24 @@
         margin-left: 0;
     }
 }
+
+.admin-nav {
+    background-color: getColor(adminCol);
+    font-family: $navbar-links;
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    @media (min-width: getBreakpoint(small)) {
+        flex-direction: row;
+        gap: 2rem;
+        border-radius: 4px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: getColor(textLight);
+    }
+}

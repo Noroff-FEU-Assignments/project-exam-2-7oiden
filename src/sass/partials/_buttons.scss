@@ -138,3 +138,11 @@
 //     gap: 0.25rem;
 //     color: getColor(primaryCol);
 // }
+
+.show-more-btn {
+    margin-left: 5%;
+
+    @media (min-width: getBreakpoint(small)) {
+        margin-left: 0;
+    }
+}

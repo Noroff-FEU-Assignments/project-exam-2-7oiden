@@ -80,13 +80,17 @@
 
 .form-check-wrapper {
     display: flex;
-    gap: 3rem;
-    
+    flex-wrap: wrap;
+    gap: 0rem 0.5rem;
 
     @media (min-width: getBreakpoint(small)) {
-        flex-direction: row;
-        gap: 4rem;
+        // flex-direction: row;
+        // gap: 4rem;
     }
+}
+
+.form-check {
+    width: 150px;
 }
 
 legend {

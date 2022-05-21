@@ -6,8 +6,18 @@ import RatingBlock from "../common/RatingBlock";
 import BedsBlock from "../common/BedsBlock";
 
 function ProductCard(props) {
-  const { id, image, altText, name, location, beds, category, price, rating, reviews } =
-    props;
+  const {
+    id,
+    image,
+    altText,
+    name,
+    address,
+    beds,
+    category,
+    price,
+    rating,
+    reviews,
+  } = props;
 
   return (
     <Col
@@ -36,7 +46,7 @@ function ProductCard(props) {
               {name}
             </Card.Title>
             <RatingBlock rating={rating} reviews={reviews} />
-            <LocationBlock location={location} />
+            <LocationBlock address={address} />
             <div className="product-card__text-wrapper">
               <Card.Text className="product-card__text product-card__text--category">
                 {category}

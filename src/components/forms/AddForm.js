@@ -329,66 +329,62 @@ export default function AddForm() {
             <legend>Facilities</legend>
             {["checkbox"].map((type) => (
               <div key={`default-${type}`} className="mb-3 form-check-wrapper">
-                <div>
-                  <Form.Check
-                    type={type}
-                    id="wifi"
-                    label="Wifi"
-                    name="wifi"
-                    {...register("wifi")}
-                  />
-                  <Form.Check
-                    type={type}
-                    id="Television"
-                    label="Television"
-                    name="television"
-                    {...register("television")}
-                  />
-                  <Form.Check
-                    type={type}
-                    id="central"
-                    label="Central"
-                    name="central"
-                    {...register("central")}
-                  />
-                  <Form.Check
-                    type={type}
-                    id="bar"
-                    label="Bar"
-                    name="bar"
-                    {...register("bar")}
-                  />
-                </div>
-                <div>
-                  <Form.Check
-                    type={type}
-                    id="parking"
-                    label="Parking"
-                    name="parking"
-                    {...register("parking")}
-                  />
-                  <Form.Check
-                    type={type}
-                    id="restaurant"
-                    label="Restaurant"
-                    name="restaurant"
-                    {...register("restaurant")}
-                  />
-                  <Form.Check
-                    type={type}
-                    id="breakfast"
-                    label="Free breakfast"
-                    name="breakfast"
-                    {...register("breakfast")}
-                  />
-                  <Form.Check
-                    type={type}
-                    id="pets"
-                    label="Pets allowed"
-                    name="pets"
-                    {...register("pets")}
-                  />
-                </div>
+                <Form.Check
+                  type={type}
+                  id="wifi"
+                  label="Wifi"
+                  name="wifi"
+                  {...register("wifi")}
+                />
+                <Form.Check
+                  type={type}
+                  id="Television"
+                  label="Television"
+                  name="television"
+                  {...register("television")}
+                />
+                <Form.Check
+                  type={type}
+                  id="central"
+                  label="Central"
+                  name="central"
+                  {...register("central")}
+                />
+                <Form.Check
+                  type={type}
+                  id="bar"
+                  label="Bar"
+                  name="bar"
+                  {...register("bar")}
+                />
+                <Form.Check
+                  type={type}
+                  id="parking"
+                  label="Parking"
+                  name="parking"
+                  {...register("parking")}
+                />
+                <Form.Check
+                  type={type}
+                  id="restaurant"
+                  label="Restaurant"
+                  name="restaurant"
+                  {...register("restaurant")}
+                />
+                <Form.Check
+                  type={type}
+                  id="breakfast"
+                  label="Free breakfast"
+                  name="breakfast"
+                  {...register("breakfast")}
+                />
+                <Form.Check
+                  type={type}
+                  id="pets"
+                  label="Pets allowed"
+                  name="pets"
+                  {...register("pets")}
+                />
               </div>
             ))}
             <Form.Group className="mb-3" controlId="formBasicAddress">
@@ -416,10 +412,6 @@ export default function AddForm() {
           </Button>
         </fieldset>
       </Form>
-        <ButtonLink cssClass="back-link" linkTo="/admin">
-          <ChevronLeftIcon />
-          Back to admin dashboard
-        </ButtonLink>
     </div>
   );
 }

@@ -107,7 +107,8 @@ function AdmBookingAccordion() {
         })}
       </Accordion>
       <Button
-        className="btn-secondary"
+        variant="secondary"
+        className="show-more-btn"
         onClick={handleShow}
         style={{ display: buttonDisplay }}
       >
