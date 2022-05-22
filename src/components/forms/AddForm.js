@@ -226,7 +226,7 @@ export default function AddForm() {
   }, [show]);
 
   return (
-    <div className="add__container">
+    <>
       <Heading size="1" cssClass="form-heading">
         Add establishment
       </Heading>
@@ -412,6 +412,6 @@ export default function AddForm() {
           </Button>
         </fieldset>
       </Form>
-    </div>
+    </>
   );
 }

@@ -10,7 +10,7 @@ export default function LoginModal() {
   const history = useNavigate();
   const [show, setShow] = useState(false);
   const [auth, setAuth] = useContext(AuthContext);
-  const [user, setUser] = useState([]);
+  // const [user, setUser] = useState([]);
 
   function handleLogout() {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
@@ -23,13 +23,8 @@ export default function LoginModal() {
     }
   }
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("auth"));
-    if (useRef) {
-      setUser(user);
-    }
-  }, []);
-
+  const user = JSON.parse(localStorage.getItem("auth"));
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

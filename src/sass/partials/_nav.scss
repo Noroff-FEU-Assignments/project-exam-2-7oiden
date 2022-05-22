@@ -94,22 +94,29 @@
 }
 
 .admin-nav {
-    background-color: getColor(adminCol);
+    background-color: getColor(subtleGray);
     font-family: $navbar-links;
     font-size: 1.125rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-
+  
     @media (min-width: getBreakpoint(small)) {
         flex-direction: row;
-        gap: 2rem;
-        border-radius: 4px;
     }
 
     &__link {
         text-decoration: none;
+        color: getColor(textDark);
+        padding: 0.5rem 1rem;
+
+        &:hover {
+            background-color: getColor(adminCol);
+            color: getColor(textLight);
+        }
+    }
+
+    &__link--active {
+        background-color: getColor(adminCol);
         color: getColor(textLight);
     }
 }

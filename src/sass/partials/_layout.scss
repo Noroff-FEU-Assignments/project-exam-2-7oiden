@@ -66,7 +66,7 @@
     }
 
     @media (min-width: getBreakpoint(large)) {
-        padding-top: 4rem;
+        padding-top: 3rem;
         padding-bottom: 7rem;
     }
 
@@ -83,34 +83,36 @@
     }
 }
 
-.admin__wrapper {
+.admin__wrapper, .admin__container {
     width: 100%;
     padding-top: 2rem;
     padding-bottom: 4rem;
     margin: 0 auto;
        
-    @media (min-width: getBreakpoint(small)) {
-        width: 80%;
+    @media (min-width: getBreakpoint(medium)) {
+        width: 85%;
     }
     
     @media (min-width: getBreakpoint(large)) {
-        width: 70%;
-        padding-top: 4rem;
+        padding-top: 3rem;
         padding-bottom: 7rem;
     }
     
     @media (min-width: getBreakpoint(xlarge)) {
-        width: 60%;
+        width: 80%;
     }
     
     @media (min-width: getBreakpoint(xxlarge)) {
-        width: 50%;
+        width: 70%;
     }
     
     @media (min-width: getBreakpoint(xxxlarge)) {
-        width: 40%;
+        width: 65%;
     }
+}
 
+.admin__container {
+    padding: 0;
 }
 
 .home__wrapper {
@@ -133,7 +135,7 @@
 
     @media (min-width: getBreakpoint(large)) {
         width: 85%;
-        padding-top: 4rem;
+        padding-top: 3rem;
         padding-bottom: 7rem;
     }
 
@@ -149,7 +151,7 @@
 
     @media (min-width: getBreakpoint(large)) {
         width: 85%;
-        padding-top: 4rem;
+        padding-top: 3rem;
         padding-bottom: 7rem;
     }
     
@@ -187,7 +189,7 @@
     @media (min-width: getBreakpoint(large)) {
         flex-direction: row;
         // width: 85%;
-        padding-top: 4rem;
+        padding-top: 3rem;
     }
 
     @media (min-width: getBreakpoint(xlarge)) {
@@ -207,21 +209,21 @@
     }
 
     @media (min-width: getBreakpoint(large)) {
-        padding-top: 4rem;
+        padding-top: 3rem;
     }
 }
 
-.admin-accordion__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2rem;
-    margin: 0 auto;
+// .admin-accordion__wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     gap: 2rem;
+//     margin: 0 auto;
 
-    @media (min-width: getBreakpoint(large)) {
-        flex-direction: row;
-    }
-}
+//     @media (min-width: getBreakpoint(large)) {
+//         flex-direction: row;
+//     }
+// }
 
 .newsletter__wrapper {
     width: 100%;
@@ -280,15 +282,27 @@
     }
 }
 
-.admin-accordion__container {
-    width: 100%;
-}
+// .admin-accordion__container {
+//     width: 100%;
+// }
+
+// .admin__container {
+//     width: 100%;
+//     margin: 0 auto;
+
+//     @media (min-width: getBreakpoint(small)) {
+//         width: 80%;
+//     }
+// }
 
 .add__container {
     background-color: getColor(primaryBg);
-    width: 100%;
     padding: 2rem 10%;
-    position: relative;
+
+    @media (min-width: getBreakpoint(small)) {
+        border-radius: 4px;
+    }
+    // position: relative;
 
     // @media (min-width: getBreakpoint(medium)) {
     //     width: 85%;
@@ -361,9 +375,7 @@
 
 
 .add__container {
-    @media (min-width: getBreakpoint(small)) {
-        border-radius: 4px;
-    }          
+              
 }
 
 .faq__header {

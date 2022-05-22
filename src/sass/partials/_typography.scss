@@ -80,7 +80,7 @@ input {
     border-radius: 0;
     
     
-    @media (min-width: getBreakpoint(small)) {
+    @media (min-width: getBreakpoint(medium)) {
         border-radius: 4px 4px 0 0;
     }
     
@@ -227,6 +227,10 @@ input {
     @media (min-width: getBreakpoint(large)) {
         font-size: getSize(modalTitleLarge);
     }
+}
+
+.adm__welcome-msg {
+    font-size: 1.125rem;
 }
 
 
