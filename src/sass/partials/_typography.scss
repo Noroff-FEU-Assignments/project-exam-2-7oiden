@@ -57,7 +57,7 @@ input {
 .admin__heading {
     padding-left: 5%;
 
-    @media (min-width: getBreakpoint(small)) {
+    @media (min-width: getBreakpoint(medium)) {
         padding-left: 0;
     }
 }
@@ -72,13 +72,14 @@ input {
 }
 
 .adm-accordion__heading {
-    background-color: getColor(secondaryCol);
-    color: getColor(textLight);
+    background-color: getColor(primaryBg);
+    color: getColor(textDark);
     font-family: $sans-serif-headings;
+    font-weight: 600;
     font-size: 1.25rem;
-    padding: 0.75rem 1rem;
+    padding: 1rem;
     border-radius: 0;
-    
+    border-bottom: 1px solid getColor(subtleGray);
     
     @media (min-width: getBreakpoint(medium)) {
         border-radius: 4px 4px 0 0;
@@ -229,8 +230,20 @@ input {
     }
 }
 
+.adm__msg-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .adm__welcome-msg {
     font-size: 1.125rem;
+}
+
+.adm__user-name {
+    color: getColor(primaryCol);
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 

@@ -20,11 +20,19 @@ function Admin() {
 
   return (
     <AdminLayout>
-      <div className="adm__welcome-msg">
-        Welcome to Holidze admin dashboard <em>{user.user_nicename}</em>
-      </div>
-      <div className="adm__welcome-msg">
-        For support please contact helpdesk at helpdesk@holidaze.com
+      <div className="adm__msg-container">
+        <div className="adm__welcome-msg">
+          Welcome to Holidze admin dashboard <span className="adm__user-name">{user.user_nicename}</span>
+        </div>
+        <div className="adm__welcome-msg">
+          For support please contact helpdesk at{" "}
+          <span
+            onClick={() => (window.location = "mailto:helpdesk@holidaze.com")}
+            className="adm-accordion__link"
+          >
+            helpdesk@holidaze.com
+          </span>
+        </div>
       </div>
     </AdminLayout>
   );

@@ -94,9 +94,9 @@
 }
 
 .admin-nav {
-    background-color: getColor(subtleGray);
+    background-color: getColor(secondaryCol);
     font-family: $navbar-links;
-    font-size: 1.125rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
   
@@ -104,10 +104,15 @@
         flex-direction: row;
     }
 
+    @media (min-width: getBreakpoint(small)) {
+        font-size: 1.125rem;
+    }
+
     &__link {
         text-decoration: none;
-        color: getColor(textDark);
+        color: getColor(textLight);
         padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
 
         &:hover {
             background-color: getColor(adminCol);
