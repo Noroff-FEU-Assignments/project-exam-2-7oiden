@@ -14,8 +14,6 @@ import {
   CONSUMER_KEY,
   CONSUMER_SECRET,
 } from "../../constants/api";
-import ButtonLink from "../buttons/ButtonLink";
-import { ChevronLeftIcon } from "../icons/MaterialIcons";
 
 const schema = yup.object().shape({
   name: yup

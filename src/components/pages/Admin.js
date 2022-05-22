@@ -22,11 +22,11 @@ function Admin() {
     <AdminLayout>
       <div className="adm__msg-container">
         <div className="adm__welcome-msg">
-          Welcome to Holidze admin dashboard <span className="adm__user-name">{user.user_nicename}</span>
+          Welcome back <span className="adm__user-name">{user.user_nicename}</span>
         </div>
-        <div className="adm__welcome-msg">
+        <div className="adm__support-msg">
           For support please contact helpdesk at{" "}
-          <span
+          <span 
             onClick={() => (window.location = "mailto:helpdesk@holidaze.com")}
             className="adm-accordion__link"
           >

@@ -5,8 +5,7 @@ import Wrapper from "./Wrapper";
 import AdminNav from "../navigation/AdminNav";
 import { useLocation, Outlet } from "react-router-dom";
 
-function AdminLayout({children}) {
-
+function AdminLayout({ children }) {
   const location = useLocation().pathname;
 
   console.log(location);
@@ -24,7 +23,9 @@ function AdminLayout({children}) {
             </Heading>
             <AdminNav />
           </div>
-          <main>{location === "/admin" ? children : <Outlet />}</main>
+          <main className="adm__sub-page-container">
+            {location === "/admin" ? children : <Outlet />}
+          </main>
         </Wrapper>
       </div>
       <footer>

@@ -186,17 +186,12 @@ input {
         }
 }
 
-.form-heading, .reviews__heading {
+.form-heading, .reviews__heading, .adm-accordion__heading {
     font-family: $sans-serif-headings;
-    margin-bottom: 1rem;
     padding-bottom: 1rem;
     font-weight: 600;
     font-size: getSize(titleSmall);
     border-bottom: 1px solid getColor(subtleGray);
-
-    @media (min-width: getBreakpoint(medium)) {
-        font-size: getSize(titleMedium);
-    }
 
     @media (min-width: getBreakpoint(large)) {
         font-size: getSize(titleLarge);
@@ -231,19 +226,29 @@ input {
 }
 
 .adm__msg-container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
 .adm__welcome-msg {
-    font-size: 1.125rem;
+    font-family: $sans-serif-headings;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.adm__support-msg {
+    font-size: 1rem;
+
+    @media (min-width: getBreakpoint(large)) {
+        font-size: 1.125rem;
+    }
 }
 
 .adm__user-name {
     color: getColor(primaryCol);
-    font-weight: bold;
-    font-size: 1.25rem;
 }
 
 

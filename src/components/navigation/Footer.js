@@ -1,10 +1,10 @@
-import Wrapper from "./Wrapper";
+import Wrapper from "../layout/Wrapper";
 import {
   InstagramIcon,
   TwitterIcon,
   FacebookIcon,
 } from "../icons/SocialMediaIcons";
-import Copyright from "./Copyright";
+import Copyright from "../layout/Copyright";
 import { Link } from "react-router-dom";
 
 function Footer() {

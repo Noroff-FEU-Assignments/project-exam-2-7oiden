@@ -7,7 +7,7 @@ import { mdiBed } from "@mdi/js";
 import { mdiDelete } from "@mdi/js";
 import { mdiCopyright } from "@mdi/js";
 import { mdiEmailOutline } from "@mdi/js";
-import { mdiChevronLeft } from "@mdi/js";
+// import { mdiChevronLeft } from "@mdi/js";
 import { mdiPlus } from "@mdi/js";
 import { mdiMinus } from "@mdi/js";
 import { mdiAlertDecagram } from "@mdi/js";
@@ -85,21 +85,20 @@ export function CopyrightIcon() {
   );
 }
 
-export function ChevronLeftIcon() {
-    return (
-      <Icon
-        path={mdiChevronLeft}
-        className="chevron"
-        color="default"
-      />
-    );
-}
+// export function ChevronLeftIcon() {
+//     return (
+//       <Icon
+//         path={mdiChevronLeft}
+//         className="chevron"
+//         color="default"
+//       />
+//     );
+// }
 
 export function NewIcon() {
   return (
     <Icon
       path={mdiAlertDecagram}
-      // style={{ display: style }}
       className="new-icon"
       color="default"
     />

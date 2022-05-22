@@ -99,20 +99,23 @@
     font-size: 1rem;
     display: flex;
     flex-direction: column;
-  
+   
     @media (min-width: getBreakpoint(small)) {
         flex-direction: row;
-    }
-
-    @media (min-width: getBreakpoint(small)) {
         font-size: 1.125rem;
     }
+
+    
 
     &__link {
         text-decoration: none;
         color: getColor(textLight);
         padding: 0.5rem 1rem;
         transition: all 0.3s ease;
+
+        @media (min-width: getBreakpoint(small)) {
+            padding: 0.75rem 1rem;
+        }
 
         &:hover {
             background-color: getColor(adminCol);
