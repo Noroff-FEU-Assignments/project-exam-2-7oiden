@@ -1,16 +1,10 @@
 import AuthContext from "../../context/AuthContext";
-import { useContext, useState, useEffect, useRef } from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
 import AdminLayout from "../layout/AdminLayout";
-import Heading from "../layout/Heading";
-import Wrapper from "../layout/Wrapper";
-import ButtonLink from "../buttons/ButtonLink";
-import AdmBookingAccordion from "../accordions/AdmBookingAccordion";
-import AdmContactAccordion from "../accordions/AdmContactAccordion";
 
 function Admin() {
   const [auth, setAuth] = useContext(AuthContext);
-  // const [user, setUser] = useState([]);
 
   if (!auth) {
     return <Navigate to="/" />;
@@ -22,7 +16,7 @@ function Admin() {
     <AdminLayout>
       <div className="adm__msg-container">
         <div className="adm__welcome-msg">
-          Welcome back <span className="adm__user-name">{user.user_nicename}</span>
+          Welcome <span className="adm__user-name">{user.user_nicename}</span>
         </div>
         <div className="adm__support-msg">
           For support please contact helpdesk at{" "}

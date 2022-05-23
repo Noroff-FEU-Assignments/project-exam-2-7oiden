@@ -20,8 +20,8 @@ function Home() {
               Accomodation for every need
             </Heading>
             <p className="category__sub-heading">
-              Choose your flavour among an increaslingly number of Bergen's
-              finest:
+              Choose your flavour, among an increaslingly number of Bergen's
+              finest establishments:
             </p>
           </div>
           <div className="category__container">

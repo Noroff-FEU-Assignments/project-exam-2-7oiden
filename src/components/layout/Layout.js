@@ -1,4 +1,4 @@
-import CustomNav from "./CustomNav";
+import CustomNav from "../navigation/CustomNav";
 import Footer from "../navigation/Footer";
 import Newsletter from "../layout/Newsletter";
 

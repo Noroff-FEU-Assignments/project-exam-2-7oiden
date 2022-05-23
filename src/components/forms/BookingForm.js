@@ -107,7 +107,7 @@ export default function BookingForm({ establishment }) {
       {submitted && (
         <AlertMessage
           variant="success"
-          message="Your booking request was successfully submitted"
+          message="Thank you for your booking enquiry. You will receive a confirmation email shortly."
         />
       )}
       {serverError && <AlertMessage variant="danger" message={serverError} />}

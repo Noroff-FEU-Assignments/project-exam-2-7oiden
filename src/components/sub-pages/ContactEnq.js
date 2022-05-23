@@ -13,9 +13,6 @@ function ContactEnq() {
   
   return (
     <div className="admin__container">
-      <Heading size="2" cssClass="adm-accordion__heading" flush>
-        Contact enquiries
-      </Heading>
       <AdmContactAccordion />
     </div>
   );

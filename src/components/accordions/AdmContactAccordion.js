@@ -8,14 +8,17 @@ import ContactItem from "./ContactItem";
 import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import Heading from "../layout/Heading";
+import AdminSearchForm from "../forms/AdminSearchForm";
 
-const arrayItems = 8
+const arrayItems = 8;
 
 function AdmContactAccordion() {
   const [message, setMessage] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [itemNum, setItemNum] = useState(arrayItems);
+  const [query, setQuery] = useState("");
 
   const url = HEROKU_BASE_URL + "contacts";
 
@@ -56,20 +59,35 @@ function AdmContactAccordion() {
 
   const orderedMessages = orderBy(message, ["attributes.createdAt"], ["desc"]);
 
+  const filteredMessages = orderedMessages
+    // eslint-disable-next-line array-callback-return
+    .filter((item) => {
+      if (query === "") {
+        return item;
+      } else if (
+        item.attributes.last_name
+          .toLowerCase()
+          .startsWith(query.toLowerCase()) ||
+        item.attributes.last_name.toLowerCase().includes(query.toLowerCase())
+      ) {
+        return item;
+      }
+    });
+
   let handleShow = () => setItemNum(itemNum + arrayItems);
 
   let buttonDisplay = "none";
 
   console.log(orderedMessages.length);
 
-  if (orderedMessages.length > itemNum || orderedMessages === []) {
+  if (filteredMessages.length > itemNum || filteredMessages === []) {
     buttonDisplay = "block";
-  } 
+  }
 
   //check this code
   let indexArray = [];
 
-  orderedMessages.forEach((el, i) => {
+  filteredMessages.forEach((el, i) => {
     indexArray.push(i);
   });
 
@@ -85,6 +103,12 @@ function AdmContactAccordion() {
 
   return (
     <>
+      <div className="adm-accordion__header">
+        <Heading size="2" cssClass="adm-accordion__heading">
+          Contact enquiries
+        </Heading>
+        <AdminSearchForm setQuery={setQuery} searchType="lastname" />
+      </div>
       <div
         className="adm-accordion__empty-item"
         style={{ display: messageDisplay }}
@@ -92,7 +116,7 @@ function AdmContactAccordion() {
         <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
-        {orderedMessages.slice(0, itemNum).map((item, indexArray) => {
+        {filteredMessages.slice(0, itemNum).map((item, indexArray) => {
           return (
             <ContactItem
               key={item.id}

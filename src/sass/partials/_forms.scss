@@ -3,6 +3,11 @@ form {
     margin-top: 1rem;
 }
 
+.adm__search-form {
+    margin-top: 0;
+    max-width: 300px;
+}
+
 .form-error {
     display: inline-block;
     color: getColor(dangerCol);

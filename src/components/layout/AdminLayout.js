@@ -1,5 +1,5 @@
 import Copyright from "./Copyright";
-import CustomNav from "./CustomNav";
+import CustomNav from "../navigation/CustomNav";
 import Heading from "./Heading";
 import Wrapper from "./Wrapper";
 import AdminNav from "../navigation/AdminNav";

@@ -72,21 +72,19 @@ input {
 }
 
 .adm-accordion__heading {
-    background-color: getColor(primaryBg);
     color: getColor(textDark);
     font-family: $sans-serif-headings;
     font-weight: 600;
-    font-size: 1.25rem;
-    padding: 1rem;
+    font-size: getSize(titleSmall);
+    // padding: 1rem;
     border-radius: 0;
-    border-bottom: 1px solid getColor(subtleGray);
     
     @media (min-width: getBreakpoint(medium)) {
         border-radius: 4px 4px 0 0;
     }
     
     @media (min-width: getBreakpoint(large)) {
-        font-size: 1.375rem;
+        font-size: getSize(titleLarge);
     }
 }
 
@@ -186,7 +184,7 @@ input {
         }
 }
 
-.form-heading, .reviews__heading, .adm-accordion__heading {
+.form-heading, .reviews__heading {
     font-family: $sans-serif-headings;
     padding-bottom: 1rem;
     font-weight: 600;

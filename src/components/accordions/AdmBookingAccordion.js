@@ -8,6 +8,8 @@ import BookingItem from "./BookingItem";
 import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import AdminSearchForm from "../forms/AdminSearchForm";
+import Heading from "../layout/Heading";
 
 const arrayItems = 8;
 
@@ -16,6 +18,7 @@ function AdmBookingAccordion() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [itemNum, setItemNum] = useState(arrayItems);
+  const [query, setQuery] = useState("");
 
   const url = HEROKU_BASE_URL + "bookings";
 
@@ -57,11 +60,11 @@ function AdmBookingAccordion() {
 
   let handleShow = () => setItemNum(itemNum + arrayItems);
 
-   let buttonDisplay = "none";
+  let buttonDisplay = "none";
 
-   if (orderedBookings.length > itemNum || orderedBookings === []) {
-     buttonDisplay = "block";
-   }
+  if (orderedBookings.length > itemNum || orderedBookings === []) {
+    buttonDisplay = "block";
+  }
 
   //check this code
   let indexArray = [];
@@ -82,29 +85,55 @@ function AdmBookingAccordion() {
 
   return (
     <>
-      <div className="adm-accordion__empty-item" style={{ display: messageDisplay }}>
+      <div className="adm-accordion__header">
+        <Heading size="2" cssClass="adm-accordion__heading">
+          Booking enquiries
+        </Heading>
+        <AdminSearchForm setQuery={setQuery} searchType="establishment" />
+      </div>
+      <div
+        className="adm-accordion__empty-item"
+        style={{ display: messageDisplay }}
+      >
         <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
-        {orderedBookings.slice(0, itemNum).map((item, indexArray) => {
-          return (
-            <BookingItem
-              key={item.id}
-              id={item.id}
-              type={"booking"}
-              eventKey={indexArray}
-              establishment={item.attributes.establishment}
-              firstName={item.attributes.first_name}
-              lastName={item.attributes.last_name}
-              guests={item.attributes.guests}
-              email={item.attributes.email}
-              message={item.attributes.message}
-              created={item.attributes.createdAt}
-              fromDate={item.attributes.from_date}
-              toDate={item.attributes.to_date}
-            />
-          );
-        })}
+        {orderedBookings
+          .slice(0, itemNum)
+          // eslint-disable-next-line array-callback-return
+          .filter((item) => {
+            if (query === "") {
+              return item;
+            } else if (
+              item.attributes.establishment
+                .toLowerCase()
+                .includes(query.toLowerCase()) ||
+              item.attributes.establishment
+                .toLowerCase()
+                .startsWith(query.toLowerCase())
+            ) {
+              return item;
+            }
+          })
+          .map((item, indexArray) => {
+            return (
+              <BookingItem
+                key={item.id}
+                id={item.id}
+                type={"booking"}
+                eventKey={indexArray}
+                establishment={item.attributes.establishment}
+                firstName={item.attributes.first_name}
+                lastName={item.attributes.last_name}
+                guests={item.attributes.guests}
+                email={item.attributes.email}
+                message={item.attributes.message}
+                created={item.attributes.createdAt}
+                fromDate={item.attributes.from_date}
+                toDate={item.attributes.to_date}
+              />
+            );
+          })}
       </Accordion>
       <Button
         variant="secondary"
