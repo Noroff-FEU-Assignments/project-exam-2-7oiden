@@ -4,27 +4,25 @@ import axios from "axios";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
 import Accordion from "react-bootstrap/Accordion";
-import ContactItem from "./ContactItem";
+import BookingItem from "./BookingItem";
 import { orderBy } from "lodash";
 import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Heading from "../layout/Heading";
 import AdminSearchForm from "../forms/AdminSearchForm";
+import Heading from "../common/Heading";
 
 const arrayItems = 8;
 
-function AdmContactAccordion() {
-  const [message, setMessage] = useState([]);
+function AdmBookingAccordion() {
+  const [booking, setBooking] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [itemNum, setItemNum] = useState(arrayItems);
   const [query, setQuery] = useState("");
 
-  const url = HEROKU_BASE_URL + "contacts";
+  const url = HEROKU_BASE_URL + "bookings";
 
   const location = useLocation().key;
-
-  // console.log(location);
 
   useEffect(
     function () {
@@ -32,7 +30,7 @@ function AdmContactAccordion() {
         try {
           const response = await axios.get(url);
           console.log("response", response.data.data);
-          setMessage(response.data.data);
+          setBooking(response.data.data);
         } catch (error) {
           console.log(error);
           setError(error.toString());
@@ -40,9 +38,10 @@ function AdmContactAccordion() {
           setLoading(false);
         }
       }
+
       getproduct();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [url, location]
   );
 
@@ -57,37 +56,20 @@ function AdmContactAccordion() {
     );
   }
 
-  const orderedMessages = orderBy(message, ["attributes.createdAt"], ["desc"]);
-
-  const filteredMessages = orderedMessages
-    // eslint-disable-next-line array-callback-return
-    .filter((item) => {
-      if (query === "") {
-        return item;
-      } else if (
-        item.attributes.last_name
-          .toLowerCase()
-          .startsWith(query.toLowerCase()) ||
-        item.attributes.last_name.toLowerCase().includes(query.toLowerCase())
-      ) {
-        return item;
-      }
-    });
+  const orderedBookings = orderBy(booking, ["attributes.createdAt"], ["desc"]);
 
   let handleShow = () => setItemNum(itemNum + arrayItems);
 
   let buttonDisplay = "none";
 
-  console.log(orderedMessages.length);
-
-  if (filteredMessages.length > itemNum || filteredMessages === []) {
+  if (orderedBookings.length > itemNum || orderedBookings === []) {
     buttonDisplay = "block";
   }
 
   //check this code
   let indexArray = [];
 
-  filteredMessages.forEach((el, i) => {
+  orderedBookings.forEach((el, i) => {
     indexArray.push(i);
   });
 
@@ -97,7 +79,7 @@ function AdmContactAccordion() {
 
   let messageDisplay = "none";
 
-  if (orderedMessages.length === 0) {
+  if (orderedBookings.length === 0) {
     messageDisplay = "block";
   }
 
@@ -105,9 +87,9 @@ function AdmContactAccordion() {
     <>
       <div className="adm-accordion__header">
         <Heading size="2" cssClass="adm-accordion__heading">
-          Contact enquiries
+          Booking enquiries
         </Heading>
-        <AdminSearchForm setQuery={setQuery} searchType="lastname" />
+        <AdminSearchForm setQuery={setQuery} searchType="establishment" />
       </div>
       <div
         className="adm-accordion__empty-item"
@@ -116,22 +98,42 @@ function AdmContactAccordion() {
         <p className="adm-accordion__empty-message">The list is empty</p>
       </div>
       <Accordion flush>
-        {filteredMessages.slice(0, itemNum).map((item, indexArray) => {
-          return (
-            <ContactItem
-              key={item.id}
-              id={item.id}
-              type={"contact"}
-              eventKey={indexArray}
-              firstName={item.attributes.first_name}
-              lastName={item.attributes.last_name}
-              subject={item.attributes.subject}
-              email={item.attributes.email}
-              message={item.attributes.message}
-              created={item.attributes.createdAt}
-            />
-          );
-        })}
+        {orderedBookings
+          .slice(0, itemNum)
+          // eslint-disable-next-line array-callback-return
+          .filter((item) => {
+            if (query === "") {
+              return item;
+            } else if (
+              item.attributes.establishment
+                .toLowerCase()
+                .includes(query.toLowerCase()) ||
+              item.attributes.establishment
+                .toLowerCase()
+                .startsWith(query.toLowerCase())
+            ) {
+              return item;
+            }
+          })
+          .map((item, indexArray) => {
+            return (
+              <BookingItem
+                key={item.id}
+                id={item.id}
+                type={"booking"}
+                eventKey={indexArray}
+                establishment={item.attributes.establishment}
+                firstName={item.attributes.first_name}
+                lastName={item.attributes.last_name}
+                guests={item.attributes.guests}
+                email={item.attributes.email}
+                message={item.attributes.message}
+                created={item.attributes.createdAt}
+                fromDate={item.attributes.from_date}
+                toDate={item.attributes.to_date}
+              />
+            );
+          })}
       </Accordion>
       <Button
         variant="secondary"
@@ -144,4 +146,5 @@ function AdmContactAccordion() {
     </>
   );
 }
-export default AdmContactAccordion;
+
+export default AdmBookingAccordion;

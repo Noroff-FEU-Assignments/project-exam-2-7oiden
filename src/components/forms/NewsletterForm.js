@@ -8,11 +8,10 @@ import Form from "react-bootstrap/Form";
 import { EmailIcon } from "../icons/MaterialIcons";
 
 const schema = yup.object().shape({
-
   email: yup
     .string()
     .required("Please enter your email address")
-    .email("Please enter a valid email address")
+    .email("Please enter a valid email address"),
 });
 
 function NewsletterForm() {
@@ -58,6 +57,7 @@ function NewsletterForm() {
             className="custom-input"
             type="text"
             placeholder="Your Email"
+            aria-label="Email"
             {...register("email")}
           />
           {errors.email && <FormError>{errors.email.message}</FormError>}

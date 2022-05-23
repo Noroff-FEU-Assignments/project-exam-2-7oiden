@@ -1,5 +1,5 @@
 import Accordion from "react-bootstrap/Accordion";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import FaqItem from "./FaqItem";
 
 function FaqAccordion() {

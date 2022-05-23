@@ -8,11 +8,11 @@ import {
 import axios from "axios";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import RatingBlock from "../common/RatingBlock";
 import LocationBlock from "../common/LocationBlock";
 import BookingModal from "../modals/BookingModal";
-import FacilitiesItem from "./FacilitiesItem";
+import FacilitiesIcons from "../icons/FacilitiesIcons";
 import LocationMap from "../layout/LocationMap";
 import BedsBlock from "../common/BedsBlock";
 import ProductReviews from "./ProductReviews";
@@ -109,7 +109,7 @@ export default function ProductDetails() {
         <section className="details__column-2">
           <div className="details-card">
             <div className="details-card__block">
-              <Heading size="3" cssClass="details-card__heading">
+              <Heading size="2" cssClass="details-card__heading">
                 Facilities:
               </Heading>
               {product.tags.length === 0 ? (
@@ -121,12 +121,12 @@ export default function ProductDetails() {
               )}
               <ul className="details-card__list">
                 {product.tags.map((item) => {
-                  return <FacilitiesItem key={item.id} facility={item.name} />;
+                  return <FacilitiesIcons key={item.id} facility={item.name} />;
                 })}
               </ul>
             </div>
             <div className="details-card__block">
-              <Heading size="3" cssClass="details-card__heading">
+              <Heading size="2" cssClass="details-card__heading">
                 Description:
               </Heading>
               <button
@@ -144,13 +144,9 @@ export default function ProductDetails() {
                   dangerouslySetInnerHTML={{ __html: product.description }}
                 ></div>
               </Collapse>
-              {/* <p
-                className="details-card__text"
-                dangerouslySetInnerHTML={{ __html: product.description }}
-              ></p> */}
             </div>
             <div className="details-card__block">
-              <Heading size="3" cssClass="details-card__heading">
+              <Heading size="2" cssClass="details-card__heading">
                 Location:
               </Heading>
               <LocationMap address={product.sku} />
@@ -161,7 +157,7 @@ export default function ProductDetails() {
       </Wrapper>
       <Wrapper cssClass="reviews__wrapper">
         <section className="reviews">
-          <Heading size="2" cssClass="reviews__heading">
+          <Heading size="3" cssClass="reviews__heading">
             Reviews
           </Heading>
           <RatingBlock

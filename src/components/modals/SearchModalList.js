@@ -72,7 +72,7 @@ export default function SearchModalList() {
               style={{ textDecoration: "none" }}
             >
               <ListGroup.Item className="search-modal__list-item">
-                <div className="search-modal__list-item-wrapper">
+                {/* <div className="search-modal__list-item-wrapper"> */}
                   <div>
                     <LocationIcon />
                     <span className="search-modal__list-item-name">
@@ -80,10 +80,10 @@ export default function SearchModalList() {
                     </span>
                   </div>
                   {/* <div className="search-modal__list-item-category">—</div> */}
-                  <span className="search-modal__list-item-category">
-                    {item.categories[0].name.toLowerCase()}
-                  </span>
-                </div>
+                  {/* <span className="search-modal__list-item-category">
+                    {item.categories[0].name}
+                  </span> */}
+                {/* </div> */}
               </ListGroup.Item>
             </Link>
           ))}

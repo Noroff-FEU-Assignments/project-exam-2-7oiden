@@ -1,5 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import hotel1 from "../../images/hotel-1.jpg";
 import hotel2 from "../../images/hotel-2.jpg";
 import hotel3 from "../../images/hotel-3.jpg";

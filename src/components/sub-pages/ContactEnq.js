@@ -1,7 +1,7 @@
 import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import AdmContactAccordion from "../accordions/AdmContactAccordion";
+import AdmContactAccordion from "../administration/AdmContactAccordion";
 
 function ContactEnq() {
   const [auth, setAuth] = useContext(AuthContext);

@@ -130,6 +130,10 @@
 
 .adm__search-icon {
     width: 1.375rem;
+
+    path {
+        fill: getColor(textLight);
+    }
 }
 
 .facility-icon {

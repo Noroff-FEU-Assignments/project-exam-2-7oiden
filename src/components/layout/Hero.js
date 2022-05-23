@@ -1,4 +1,4 @@
-import Heading from "./Heading";
+import Heading from "../common/Heading";
 import ButtonLink from "../buttons/ButtonLink";
 import Wrapper from "./Wrapper";
 

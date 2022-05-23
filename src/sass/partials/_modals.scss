@@ -44,8 +44,11 @@
         display: flex;
         flex-direction: column;
         gap: 0 3rem;
-        font-size: 1.125rem;
         text-decoration: none;
+
+        @media (min-width: getBreakpoint(large)) {
+            font-size: 1.125rem;
+        }
     }
 
     &__list-item {
@@ -60,6 +63,7 @@
     }
 
     &__list-item-name {
+        color: getColor(linkCol);
         text-decoration: underline;
         padding-left: 0.25rem;
     }

@@ -39,6 +39,11 @@
         @media (min-width: getBreakpoint(large)) {
             font-size: 1.125rem;
         }
+
+        &--inactive {
+            pointer-events: none;
+            color: getColor(subtleGray)
+        }
     }
 
     &__link:hover {

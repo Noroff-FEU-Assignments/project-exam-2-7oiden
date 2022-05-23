@@ -113,7 +113,7 @@ export default function BookingForm({ establishment }) {
       {serverError && <AlertMessage variant="danger" message={serverError} />}
       <fieldset disabled={submitting}>
         <div className="date-picker-wrapper">
-          <Form.Group className="mb-3" controlId="formBasicGuests">
+          <Form.Group className="mb-3" controlId="formBasicFromDate">
             <Form.Label>From date</Form.Label>
             <Form.Control
               type="date"
@@ -124,7 +124,7 @@ export default function BookingForm({ establishment }) {
               <FormError>{errors.from_date.message}</FormError>
             )}
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicGuests">
+          <Form.Group className="mb-3" controlId="formBasicToDate">
             <Form.Label>To date</Form.Label>
             <Form.Control
               type="date"

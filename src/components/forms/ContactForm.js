@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import { HEROKU_BASE_URL } from "../../constants/api";
 
 const schema = yup.object().shape({

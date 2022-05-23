@@ -4,7 +4,7 @@ import {
   TwitterIcon,
   FacebookIcon,
 } from "../icons/SocialMediaIcons";
-import Copyright from "../layout/Copyright";
+import CopyrightBlock from "../common/CopyrightBlock";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -55,12 +55,12 @@ function Footer() {
             <p className="footer__heading">Legal</p>
             <ul className="footer__list">
               <li>
-                <Link to="/" className="footer__link">
+                <Link to="#" className="footer__link footer__link--inactive">
                   Terms
                 </Link>
               </li>
               <li>
-                <Link to="/" className="footer__link">
+                <Link to="#" className="footer__link footer__link--inactive">
                   Privacy
                 </Link>
               </li>
@@ -68,7 +68,7 @@ function Footer() {
           </div>
         </div>
       </Wrapper>
-      <Copyright />
+      <CopyrightBlock />
     </footer>
   );
 }

@@ -17,7 +17,7 @@ function CategoryCard(props) {
           className="category-card__image"
         />
         <Card.Body className="category-card__body">
-          <Card.Title as="h3" className="category-card__title">
+          <Card.Title as="h4" className="category-card__title">
             {title}
           </Card.Title>
         </Card.Body>

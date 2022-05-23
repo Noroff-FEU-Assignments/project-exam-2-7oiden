@@ -13,7 +13,7 @@ import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const schema = yup.object().shape({
@@ -118,7 +118,7 @@ function ReviewForm({ id }) {
         </FloatingLabel>
         <Form.Group className="mb-3" controlId="formBasicRating">
           <Form.Select
-            aria-label="Default select example"
+            aria-label="Select rating"
             className="review-form__rating-input"
             {...register("rating")}
           >
@@ -131,6 +131,7 @@ function ReviewForm({ id }) {
           </Form.Select>
           {errors.rating && <FormError>{errors.rating.message}</FormError>}
         </Form.Group>
+        <Form.Label>Review</Form.Label>
         <Form.Group className="mb-3" controlId="formBasicRating">
           <Form.Control
             as="textarea"

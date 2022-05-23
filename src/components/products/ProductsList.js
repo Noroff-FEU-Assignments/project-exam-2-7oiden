@@ -10,7 +10,7 @@ import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import Form from "react-bootstrap/Form";
 import SearchForm from "../forms/SearchForm";
 import ProductItem from "./ProductItem";

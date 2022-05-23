@@ -1,5 +1,5 @@
 import Layout from "../layout/Layout";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import Wrapper from "../layout/Wrapper";
 import ceo from "../../images/ceo.jpg";
 import { QuoteIcon } from "../icons/MaterialIcons";

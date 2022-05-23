@@ -1,6 +1,6 @@
-import Copyright from "./Copyright";
+import CopyrightBlock from "../common/CopyrightBlock";
 import CustomNav from "../navigation/CustomNav";
-import Heading from "./Heading";
+import Heading from "../common/Heading";
 import Wrapper from "./Wrapper";
 import AdminNav from "../navigation/AdminNav";
 import { useLocation, Outlet } from "react-router-dom";
@@ -29,7 +29,7 @@ function AdminLayout({ children }) {
         </Wrapper>
       </div>
       <footer>
-        <Copyright />
+        <CopyrightBlock />
       </footer>
     </>
   );

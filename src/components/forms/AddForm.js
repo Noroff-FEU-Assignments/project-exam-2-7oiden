@@ -8,7 +8,7 @@ import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 import {
   PRODUCTS_URL,
   CONSUMER_KEY,
@@ -297,7 +297,7 @@ export default function AddForm() {
 
             <Form.Group
               className="mb-3 relative-input"
-              controlId="formBasicAddress"
+              controlId="formBasicPrice"
             >
               <Form.Label>Price/night</Form.Label>
               <InputGroup>
@@ -311,7 +311,7 @@ export default function AddForm() {
               {errors.price && <FormError>{errors.price.message}</FormError>}
             </Form.Group>
           </div>
-          <Form.Group className="mb-3" controlId="formBasicAddress">
+          <Form.Group className="mb-3" controlId="formBasicDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control
               as="textarea"
@@ -330,10 +330,16 @@ export default function AddForm() {
             <Form.Control
               type="text"
               placeholder="Image URL"
+              aria-label="Image URL"
+              aria-describedby="basic-addon1"
               {...register("image")}
             />
           </InputGroup>
           {errors.image && <FormError>{errors.image.message}</FormError>}
+          <div className="form-warning">
+            Important! Images must have a 3:2 aspect ratio to be displayed
+            correctly
+          </div>
           <fieldset className="form-check-fieldset">
             <legend>Facilities</legend>
             {["checkbox"].map((type) => (
@@ -403,7 +409,7 @@ export default function AddForm() {
                 />
               </div>
             ))}
-            <Form.Group className="mb-3" controlId="formBasicAddress">
+            <Form.Group className="mb-3" controlId="formBasicFacility">
               <Form.Label>Other facility</Form.Label>
               <Form.Control
                 className="other-facility-input"

@@ -3,9 +3,27 @@ form {
     margin-top: 1rem;
 }
 
+.form-warning {
+    background-color: getColor(headingFooter);
+    padding: 0.375rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem; 
+    border-radius: 4px;
+}
+
 .adm__search-form {
     margin-top: 0;
     max-width: 300px;
+}
+
+.adm__search-input {
+    border: 1px solid getColor(footerBg);
+    border-radius: 4px;
+}
+
+.adm__search-icon-box {
+    background-color: getColor(footerBg);
+    border: none;
 }
 
 .form-error {

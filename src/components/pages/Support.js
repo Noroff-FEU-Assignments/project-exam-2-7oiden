@@ -1,8 +1,8 @@
 import ContactForm from "../forms/ContactForm";
-import FaqAccordion from "../accordions/FaqAccordion";
+import FaqAccordion from "../administration/FaqAccordion";
 import Layout from "../layout/Layout";
 import Wrapper from "../layout/Wrapper";
-import Heading from "../layout/Heading";
+import Heading from "../common/Heading";
 // import FlexContainer from "../layout/FlexContainer";
 
 function Support() {
