@@ -21,7 +21,7 @@ input {
         font-family: $serif-headings;
         font-weight: 900;
         color: black;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
     }
 
     &__sub-heading {
@@ -94,7 +94,7 @@ input {
     padding-top: 0.25rem;
     
     @media (min-width: getBreakpoint(large)) {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
     }
 }
 

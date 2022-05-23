@@ -2,6 +2,7 @@ import Layout from "../layout/Layout";
 import Heading from "../layout/Heading";
 import Wrapper from "../layout/Wrapper";
 import ceo from "../../images/ceo.jpg";
+import { QuoteIcon } from "../icons/MaterialIcons";
 
 function About() {
   return (
@@ -38,17 +39,11 @@ function About() {
               />
               <div className="about-card__body">
                 <div className="about-card__quote">
-                  <svg viewBox="0 0 24 24" className="about-card__quote-symbol">
-                    <path
-                      fill="currentColor"
-                      d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                    />
-                  </svg>
+                  <QuoteIcon />
                   <p className="about-card__quote-text">
                     You are important to us
                   </p>
                 </div>
-                {/* <p className="ceo-card__signature">Anna Birkeland - CEO</p> */}
               </div>
             </div>
           </section>

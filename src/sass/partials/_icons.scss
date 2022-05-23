@@ -1,8 +1,8 @@
-.about-card__quote-symbol {
+.quote-icon {
     width: 2rem;
 
     path {
-        fill: getColor(primaryCol);
+        fill: getColor(secondaryCol);
     }
 }
 
@@ -48,14 +48,6 @@
 .menu-icon {
     width: 2rem;
     
-    path {
-        fill: getColor(linkCol);
-    }
-}
-
-.chevron {
-    width: 1.5rem;
-
     path {
         fill: getColor(linkCol);
     }

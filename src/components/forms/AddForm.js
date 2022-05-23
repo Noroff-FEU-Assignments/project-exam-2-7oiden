@@ -57,7 +57,7 @@ const schema = yup.object().shape({
 
   central: yup.bool(),
 
-  bar: yup.bool(),
+  gym: yup.bool(),
 
   parking: yup.bool(),
 
@@ -66,6 +66,8 @@ const schema = yup.object().shape({
   breakfast: yup.bool(),
 
   pets: yup.bool(),
+
+  kitchen: yup.bool(),
 
   other: yup.string(),
 });
@@ -123,10 +125,10 @@ export default function AddForm() {
       centralTagId = 48;
     }
 
-    let barTagId = undefined;
+    let gymTagId = undefined;
 
-    if (data.bar === true) {
-      barTagId = 44;
+    if (data.gym === true) {
+      gymTagId = 44;
     }
 
     let parkingTagId = undefined;
@@ -151,6 +153,12 @@ export default function AddForm() {
 
     if (data.pets === true) {
       petsTagId = 59;
+    }
+
+    let kitchenTagId = undefined;
+
+    if (data.kitchen === true) {
+      kitchenTagId = 65;
     }
 
     const jsonData = {
@@ -181,7 +189,7 @@ export default function AddForm() {
           id: centralTagId,
         },
         {
-          id: barTagId,
+          id: gymTagId,
         },
         {
           id: parkingTagId,
@@ -194,6 +202,9 @@ export default function AddForm() {
         },
         {
           id: petsTagId,
+        },
+        {
+          id: kitchenTagId,
         },
         {
           name: data.other,
@@ -350,10 +361,10 @@ export default function AddForm() {
                 />
                 <Form.Check
                   type={type}
-                  id="bar"
-                  label="Bar"
-                  name="bar"
-                  {...register("bar")}
+                  id="gym"
+                  label="Gym"
+                  name="gym"
+                  {...register("gym")}
                 />
                 <Form.Check
                   type={type}
@@ -382,6 +393,13 @@ export default function AddForm() {
                   label="Pets allowed"
                   name="pets"
                   {...register("pets")}
+                />
+                <Form.Check
+                  type={type}
+                  id="kitchen"
+                  label="Kitchen"
+                  name="pets"
+                  {...register("kitchen")}
                 />
               </div>
             ))}

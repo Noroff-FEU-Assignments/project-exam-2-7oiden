@@ -8,6 +8,8 @@ import {
   faMartiniGlass,
   faSquareParking,
   faDog,
+  faKitchenSet,
+  faDumbbell,
   faCircleDot,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -38,6 +40,12 @@ function FacilitiesItem({ facility }) {
       break;
     case "pets allowed":
       icon = faDog;
+      break;
+    case "kitchen":
+      icon = faKitchenSet;
+      break;
+    case "gym":
+      icon = faDumbbell;
       break;
     default:
       icon = faCircleDot;

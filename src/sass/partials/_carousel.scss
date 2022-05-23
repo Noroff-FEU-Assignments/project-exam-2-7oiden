@@ -4,7 +4,7 @@
         padding: 1rem 5%;
         font-family: $serif-headings;
         font-weight: 600;
-        font-size: getSize(titleSmall);
+        font-size: getSize(carouselSmall);
         background-color: getColor(primaryBg);
         color: getColor(textDark);
         border-bottom: 1px solid getColor(subtleGray);
@@ -14,12 +14,12 @@
             border-radius: 4px 4px 0 0;
         }
 
-        @media (min-width: getBreakpoint(medium)) {
-            font-size: getSize(titleMedium);
-        }
+        // @media (min-width: getBreakpoint(medium)) {
+        //     font-size: getSize(titleMedium);
+        // }
 
         @media (min-width: getBreakpoint(large)) {
-            font-size: getSize(titleLarge);
+            font-size: getSize(carouselLarge);
         }
     }
 

@@ -8,6 +8,7 @@ import hotels from "../../images/hotels.jpg";
 import hostels from "../../images/hostels.jpg";
 import apartments from "../../images/apartments.jpg";
 import ButtonLink from "../buttons/ButtonLink";
+import { QuoteIcon } from "../icons/MaterialIcons";
 
 function Home() {
   return (
@@ -20,7 +21,7 @@ function Home() {
               Accomodation for every need
             </Heading>
             <p className="category__sub-heading">
-              Choose your flavour, among an increaslingly number of Bergen's
+              Choose your flavour among Bergen's
               finest establishments:
             </p>
           </div>
@@ -51,12 +52,13 @@ function Home() {
                   Sleep tight with Holidaze
                 </div>
                 <div className="learn-more__quote-wrapper">
-                  <svg viewBox="0 0 24 24" className="about-card__quote-symbol">
+                  {/* <svg viewBox="0 0 24 24" className="about-card__quote-symbol">
                     <path
                       fill="currentColor"
                       d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
                     />
-                  </svg>
+                  </svg> */}
+                  <QuoteIcon />
                   <div className="learn-more__quote">
                     Nobody knows Bergen like us
                   </div>

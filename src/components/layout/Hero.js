@@ -11,7 +11,7 @@ function Hero() {
             Let <em>us</em> take care of your stay in <strong>Bergen.</strong>
           </Heading>
           <Heading size="2" cssClass="hero__sub-heading">
-            Holidaze — hotel booking made easy.
+            Holidaze — booking made easy.
           </Heading>
         </hgroup>
         <ButtonLink cssClass="btn-primary" linkTo="/overview">
