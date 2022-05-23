@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -10,8 +10,7 @@ export default function LoginModal() {
   const history = useNavigate();
   const [show, setShow] = useState(false);
   const [auth, setAuth] = useContext(AuthContext);
-  // const [user, setUser] = useState([]);
-
+ 
   function handleLogout() {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
 
@@ -31,7 +30,6 @@ export default function LoginModal() {
   return (
     <>
       <ProfileImage
-        // icon={faCircleUser}
         onClick={handleShow}
         className="font-awesome-icon admin-logged-in"
       />
@@ -52,6 +50,7 @@ export default function LoginModal() {
             <Button
               variant="primary"
               onClick={handleLogout}
+              className="logout-button"
             >
               Log out
             </Button>

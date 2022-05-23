@@ -28,7 +28,9 @@
 
 .logout-modal__wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    gap: 1rem 2rem;
 }
 
 .logout-modal__user {

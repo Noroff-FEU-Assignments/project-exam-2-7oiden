@@ -140,33 +140,59 @@ input {
     color: getColor(textGray)
 }
 
-.about__slogan {
+.slogan {
     font-family: $serif-headings;
+    font-size: calc(1.325rem + 0.9vw);
     font-weight: 600;
-    color: getColor(primaryCol);
+    line-height: 1.2;
+
+    @media (min-width: getBreakpoint(large)) {
+        font-size: 2rem;
+    }
+}
+
+.about__slogan {
     position: absolute;
     max-width: 250px;
     left: 1.5rem;
     top: 1rem;
+    color: getColor(primaryCol);
 
     @media (min-width: getBreakpoint(large)) {
         left: 2rem;
         top: 1.5rem;
-    }
+    }  
+}
+
+.learn-more__slogan-block {
+    width: 100%;
+    background-color: getColor(semiTransparentBg);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 3rem;
+    padding: 1rem 5% 1.5rem 5%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .learn-more__slogan {
-    font-family: $serif-headings;
-    font-weight: 600;
     color: getColor(textDark);
-    position: absolute;
-    max-width: 250px;
-    left: 10%;
-    top: 2rem;
+}
 
-    @media (min-width: getBreakpoint(large)) {
-        top: 3rem;
-    }
+.learn-more__quote-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.learn-more__quote {
+    color: getColor(secondaryCol);
+    font-size: 1.25rem;
+    padding-top: 0.25rem;
+    font-family: $sans-serif-headings;
+    font-weight: 600;
 }
 
 .faq__heading {

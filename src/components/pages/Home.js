@@ -43,19 +43,34 @@ function Home() {
           </div>
         </section>
         <CustomCarousel />
-        <section className="learn-more__container">
+        <div className="learn-more__container">
           <div className="learn-more__bg-image">
-            <Heading size="2" cssClass="learn-more__slogan">
-              Sleep tight with Holidaze
-            </Heading>
-            <ButtonLink
-              cssClass="btn-primary learn-more__button"
-              linkTo="/about"
-            >
-              Learn more
-            </ButtonLink>
+            <div className="learn-more__slogan-block">
+              <div>
+                <div className="slogan learn-more__slogan">
+                  Sleep tight with Holidaze
+                </div>
+                <div className="learn-more__quote-wrapper">
+                  <svg viewBox="0 0 24 24" className="about-card__quote-symbol">
+                    <path
+                      fill="currentColor"
+                      d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
+                    />
+                  </svg>
+                  <div className="learn-more__quote">
+                    Nobody knows Bergen like us
+                  </div>
+                </div>
+              </div>
+              <ButtonLink
+                cssClass="btn-primary learn-more__button"
+                linkTo="/about"
+              >
+                Learn more
+              </ButtonLink>
+            </div>
           </div>
-        </section>
+        </div>
       </Wrapper>
     </Layout>
   );

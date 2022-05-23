@@ -40,7 +40,7 @@ function BookingItem(props) {
   return (
     <Accordion.Item eventKey={eventKey}>
       <Accordion.Header as="div">
-        <div className="adm-accordion__header-container">
+        <div className="adm-accordion__item-header">
           <div className="adm-accordion__title-wrapper">
             <Icon
               path={mdiAlertDecagram}

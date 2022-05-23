@@ -18,7 +18,7 @@
 }
 
 .hero__wrapper {
-    background-color: #ffffffbf;
+    background-color: getColor(semiTransparentBg);
     width: 90%;
     margin: 0 auto;
     border-radius: 25px;
