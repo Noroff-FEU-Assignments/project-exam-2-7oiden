@@ -2,7 +2,7 @@ import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 
-import AdmBookingAccordion from "../accordions/AdmBookingAccordion";
+import AdmBookingAccordion from "../administration/AdmBookingAccordion";
 import AdminLayout from "../layout/AdminLayout";
 
 function Bookings() {
