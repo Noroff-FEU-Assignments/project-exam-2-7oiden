@@ -11,6 +11,7 @@ import { mdiFormatQuoteClose } from "@mdi/js";
 import { mdiPlus } from "@mdi/js";
 import { mdiMinus } from "@mdi/js";
 import { mdiAlertDecagram } from "@mdi/js";
+import { mdiContentCopy } from "@mdi/js";
 
 export function MenuIcon() {
   return <Icon path={mdiMenu} className="menu-icon" color="default" />;
@@ -75,4 +76,8 @@ export function QuoteIcon() {
 
 export function NewIcon() {
   return <Icon path={mdiAlertDecagram} className="new-icon" color="default" />;
+}
+
+export function CopyIcon() {
+  return <Icon path={mdiContentCopy} className="copy-icon" color="default" />;
 }

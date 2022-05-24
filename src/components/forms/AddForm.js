@@ -13,7 +13,9 @@ import {
   PRODUCTS_URL,
   CONSUMER_KEY,
   CONSUMER_SECRET,
+  PLACEHOLDER_IMG_URL,
 } from "../../constants/api";
+import { CopyIcon } from "../icons/MaterialIcons";
 
 const schema = yup.object().shape({
   name: yup
@@ -77,8 +79,11 @@ export default function AddForm() {
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
   const [show, setShow] = useState(false);
+  const [data, setData] = useState("");
 
   const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
+
+  const placeholderUrl = PLACEHOLDER_IMG_URL;
 
   const {
     register,
@@ -220,8 +225,11 @@ export default function AddForm() {
       setSubmitted(true);
       setShow(true);
     } catch (error) {
-      console.log("error", error);
-      setServerError(error.toString());
+      console.log("error", error.status);
+      setServerError(
+        `${error.toString()} 
+        Please make sure to upload a valid image file`
+      );
     } finally {
       setSubmitting(false);
     }
@@ -233,6 +241,10 @@ export default function AddForm() {
     }, 3000);
     return () => clearTimeout(timer);
   }, [show]);
+
+  function copy(imgUrl) {
+    navigator.clipboard.writeText(imgUrl);
+  }
 
   return (
     <>
@@ -329,17 +341,29 @@ export default function AddForm() {
             <InputGroup.Text id="basic-addon1">URL</InputGroup.Text>
             <Form.Control
               type="text"
-              placeholder="Image URL"
               aria-label="Image URL"
               aria-describedby="basic-addon1"
               {...register("image")}
             />
           </InputGroup>
           {errors.image && <FormError>{errors.image.message}</FormError>}
-          <div className="form-warning">
-            Important! Images must have a 3:2 aspect ratio to be displayed
-            correctly
+          <div className="copy-wrapper">
+            <span>Copy a placeholder image-URL to the clipboard:</span>
+            <Button
+              className="copy-button"
+              onClick={() => copy(placeholderUrl)}
+            >
+              <CopyIcon />
+            </Button>
           </div>
+          <ul className="form__warning-list">
+            <li className="form__warning-list-item">
+              Images must have a 3:2 aspect ratio to be displayed correctly
+            </li>
+            <li className="form__warning-list-item">
+              File size should be no more than 200kB
+            </li>
+          </ul>
           <fieldset className="form-check-fieldset">
             <legend>Facilities</legend>
             {["checkbox"].map((type) => (
@@ -415,6 +439,7 @@ export default function AddForm() {
                 className="other-facility-input"
                 type="text"
                 placeholder="Specify"
+                size="sm"
                 {...register("other")}
               />
             </Form.Group>

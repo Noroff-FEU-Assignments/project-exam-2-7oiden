@@ -6,18 +6,8 @@ import RatingBlock from "../common/RatingBlock";
 import BedsBlock from "../common/BedsBlock";
 
 function ProductCard(props) {
-  const {
-    id,
-    image,
-    altText,
-    name,
-    address,
-    beds,
-    category,
-    price,
-    rating,
-    reviews,
-  } = props;
+  const { id, image, altText, name, address, beds, category, price, rating, reviews } =
+    props;
 
   return (
     <Col

@@ -35,3 +35,7 @@ export const HEROKU_BASE_URL =
 // export const CONTACT_URL = "https://obscure-reaches-62581.herokuapp.com/api/contacts";
 
 // export const BOOKING_URL = "http://localhost:3005/api/bookings";
+
+//cloudinary
+export const PLACEHOLDER_IMG_URL =
+  "https://res.cloudinary.com/dhd2paq70/image/upload/v1653334963/pillows_slxmw3.jpg";

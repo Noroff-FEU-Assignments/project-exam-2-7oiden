@@ -63,7 +63,7 @@ export default function ContactForm() {
     setServerError(null);
     console.log(data);
     reset();
-   
+
     const jsonData = {
       data: {
         first_name: data.first_name,
@@ -160,7 +160,7 @@ export default function ContactForm() {
           {submitted && (
             <AlertMessage
               variant="success"
-              message="Your message was successfully submitted"
+              message="Your message was successfully submitted. We will get back to you shortly."
               show={show}
             />
           )}

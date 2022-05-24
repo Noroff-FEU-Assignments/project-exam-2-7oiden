@@ -80,8 +80,16 @@ export default function ProductDetails() {
         <section className="details__column-1">
           <figure className="details__image">
             <img
-              src={product.images[0].src}
-              alt={product.images[0].alt}
+              src={
+                product.images[0].src
+                  ? product.images[0].src
+                  : "https://res.cloudinary.com/dhd2paq70/image/upload/v1653334963/pillows_slxmw3.jpg"
+              }
+              alt={
+                product.images[0].alt
+                  ? product.images[0].alt
+                  : "Holidaze placeholder image of a hotel bed"
+              }
               className="details__image"
             />
           </figure>
@@ -101,7 +109,7 @@ export default function ProductDetails() {
           </div>
           <div className="details__block-2">
             <div>
-              <p className="details__price">{product.price} /night</p>
+              <p className="details__price">{product.price} NOK/night</p>
             </div>
             <BookingModal name={product.name} address={product.sku} />
           </div>

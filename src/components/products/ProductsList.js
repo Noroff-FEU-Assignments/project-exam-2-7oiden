@@ -14,7 +14,7 @@ import Heading from "../common/Heading";
 import Form from "react-bootstrap/Form";
 import SearchForm from "../forms/SearchForm";
 import ProductItem from "./ProductItem";
-import { filter, capitalize, orderBy, parseInt, slice } from "lodash";
+import { filter, capitalize, orderBy, parseInt } from "lodash";
 
 function ProductsList() {
   const [product, setProduct] = useState([]);
@@ -86,6 +86,14 @@ function ProductsList() {
   // } else if (filteredProduct.length === numshow) {
   //   displayButton = "none";
   // }
+
+  // filteredProduct.forEach((element) => {
+  //   if (element.images === []) {
+  //     element.images.push({ placeholder });
+  //   }
+  // });
+
+  console.log(filteredProduct);
 
   return (
     <>

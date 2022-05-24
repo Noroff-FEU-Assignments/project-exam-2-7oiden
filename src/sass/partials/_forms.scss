@@ -3,12 +3,18 @@ form {
     margin-top: 1rem;
 }
 
-.form-warning {
-    background-color: getColor(headingFooter);
-    padding: 0.375rem 1rem;
-    margin-top: 2rem;
+.form__warning-list {
+    background-color: getColor(warningCol);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
     margin-bottom: 0.5rem; 
     border-radius: 4px;
+}
+
+.form__warning-list-item {
+    margin-left: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
 .adm__search-form {

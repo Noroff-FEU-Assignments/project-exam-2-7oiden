@@ -98,11 +98,30 @@
     border: none;
 }
 
-.transparent-profile-button {
+.copy-button {
     background-color: transparent;
     border: none;
     width: 2rem;
     height: 2rem;
+    border-radius: 0;
+    position: relative;
+    padding: 0;
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &:focus {
+        background-color: transparent;
+        box-shadow: none !important;
+    }
+}
+
+.transparent-profile-button {
+    background-color: transparent;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
     transition: all 0.3s ease;
 
     @media (min-width: getBreakpoint(large)) {

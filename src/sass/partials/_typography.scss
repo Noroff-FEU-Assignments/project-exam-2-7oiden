@@ -43,14 +43,16 @@ input {
 .support__heading {
     font-family: $serif-headings;
     font-weight: 600;
-    font-size: getSize(mainSmall);
+    font-size: calc(1.325rem + 0.9vw);
+    font-weight: 600;
+    line-height: 1.2;
 
-    @media (min-width: getBreakpoint(medium)) {
-        font-size: getSize(mainMedium);
-    }
+    // @media (min-width: getBreakpoint(medium)) {
+    //     font-size: getSize(mainMedium);
+    // }
 
     @media (min-width: getBreakpoint(large)) {
-        font-size: getSize(mainLarge);
+        font-size: getSize(mainMaxSize);
     }
 }
 

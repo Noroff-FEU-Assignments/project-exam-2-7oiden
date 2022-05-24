@@ -153,8 +153,20 @@
     width: 1.25rem;
 
     path {
-            fill: getColor(primaryCol);
-        }
+        fill: getColor(primaryCol);
+    }
+}
+
+.copy-icon {
+    width: 1.5rem;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+
+    path {
+        fill: getColor(textDark);
+    }
 }
 
 
