@@ -19,13 +19,11 @@ export default function SearchModal() {
   return (
     <>
       <button onClick={handleShow} className="navbar__search-icon-box">
-        <SearchIcon />
+        <SearchIcon color="#fff" size="70%" />
       </button>
       <Modal show={show} onHide={handleClose} className="login">
         <Modal.Header closeButton>
-          <Modal.Title>
-            Search all establishments
-          </Modal.Title>
+          <Modal.Title>Search all establishments</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <SearchModalList />

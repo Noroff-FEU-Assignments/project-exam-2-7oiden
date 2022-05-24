@@ -29,6 +29,7 @@
 .admin-button {
     background-color: getColor(adminCol);
     color: getColor(textLight);
+    margin-top: 0.5rem;
 
     &:hover {
         background-color: getColor(adminCol);
@@ -43,7 +44,7 @@
 .btn-secondary {
     font-family: $button-text;
     text-decoration: none;
-    background-color: getColor(footerBg);
+    background-color: getColor(secondaryBtn);
     color: getColor(textLight);
     font-size: 1rem;
     border-radius: 25px;
@@ -54,11 +55,11 @@
 
     &:hover {
         opacity: 0.7;
-        background-color: getColor(footerBg);
+        background-color: getColor(secondaryBtn);
     }
     
     &:focus {
-        background-color: getColor(footerBg);
+        background-color: getColor(secondaryBtn);
         opacity: 1;
         outline: none;
     }
@@ -68,20 +69,6 @@
     margin-top: 1.5rem;
 }
 
-.back-link {
-    display: inline-block;
-    color: getColor(linkCol);
-    font-size: getSize(buttonSmall);
-    margin-top: 1.5rem;
-    position: absolute;
-    bottom: -3rem;
-    left: 1rem;
-
-    &:hover {
-        color: getColor(linkCol);
-        opacity: 0.7;
-    }
-}
 
 .btn-close {
     position: absolute;
@@ -89,72 +76,10 @@
     top: 1rem;
 }
 
-// .log-button {
-//     font-size: 1.125rem;
-// }
-
 .newsletter-button, .transparent-button {
     background-color: transparent;
     border: none;
 }
-
-.copy-button {
-    background-color: transparent;
-    border: none;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0;
-    position: relative;
-    padding: 0;
-
-    &:hover {
-        background-color: transparent;
-    }
-
-    &:focus {
-        background-color: transparent;
-        box-shadow: none !important;
-    }
-}
-
-.transparent-profile-button {
-    background-color: transparent;
-    border: none;
-    width: 1.5rem;
-    height: 1.5rem;
-    transition: all 0.3s ease;
-
-    @media (min-width: getBreakpoint(large)) {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    &:hover {
-        opacity: 0.7;
-    }
-}
-
-.delete-button {
-    width: 2rem;
-    height: 2rem;
-    border: none;
-    border-radius: 50%;
-    background-color: getColor(adminCol);
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-// .learn-more__button {
-//     transform: translateX(-50%);
-// }
-
-// .description-button {
-//     display: flex;
-//     align-items: center;
-//     gap: 0.25rem;
-//     color: getColor(primaryCol);
-// }
 
 .show-more-btn {
     margin-left: 5%;
@@ -164,13 +89,13 @@
     }
 }
 
-.logout-button {
-    background-color: getColor(adminCol);
-    font-size: 1rem;
-    padding: 0.5rem 2rem;
+// .logout-button {
+//     background-color: getColor(adminCol);
+//     font-size: 1rem;
+//     padding: 0.5rem 2rem;
 
-    &:hover {
-        background-color: getColor(adminCol);
-        opacity: 0.7;
-    }
-}
+//     &:hover {
+//         background-color: getColor(adminCol);
+//         opacity: 0.7;
+//     }
+// }

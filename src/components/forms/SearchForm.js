@@ -14,7 +14,7 @@ function SearchForm({ setQuery, loading }) {
             disabled={loading}
           />
           <div className="custom-input-icon-box">
-            <SearchIcon />
+            <SearchIcon color="#fff" size="2rem" />
           </div>
         </div>
       </Form.Group>

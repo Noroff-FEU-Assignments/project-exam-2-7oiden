@@ -21,8 +21,7 @@ function Home() {
               Accomodation for every need
             </Heading>
             <p className="category__sub-heading">
-              Choose your flavour among Bergen's
-              finest establishments:
+              Choose your flavour among Bergen's finest establishments:
             </p>
           </div>
           <div className="category__container">
@@ -58,7 +57,7 @@ function Home() {
                       d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
                     />
                   </svg> */}
-                  <QuoteIcon />
+                  <QuoteIcon color="#084c61" size="1.5rem" />
                   <div className="learn-more__quote">
                     Nobody knows Bergen like us
                   </div>

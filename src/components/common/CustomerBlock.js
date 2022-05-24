@@ -9,14 +9,18 @@ function CustomerBlock({ avatar, name, date, rating, review }) {
   return (
     <div className="customer">
       <div className="customer__header">
-        <img src={avatar} alt={`${name} avatar`} className="customer__image"></img>
+        <img
+          src={avatar}
+          alt={`${name} avatar`}
+          className="customer__image"
+        ></img>
         <div>
           <p className="customer__name">{name}</p>
           <p className="customer__date">{formattedDate}</p>
         </div>
       </div>
       {[...Array(rating)].map((x, i) => (
-        <StarIcon key={i} />
+        <StarIcon key={i} color="#cc4a45" size="1.25rem" />
       ))}
       <p
         className="customer__comment"

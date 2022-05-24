@@ -4,7 +4,7 @@ import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import ProfileImage from "../common/ProfileImage";
+import AdmProfileIcon from "../icons/AdmProfileIcon";
 
 export default function LoginModal() {
   const history = useNavigate();
@@ -29,7 +29,7 @@ export default function LoginModal() {
 
   return (
     <>
-      <ProfileImage
+      <AdmProfileIcon
         onClick={handleShow}
         className="font-awesome-icon admin-logged-in"
       />

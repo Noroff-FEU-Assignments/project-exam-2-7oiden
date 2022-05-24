@@ -10,7 +10,9 @@ function About() {
       <Wrapper cssClass="about__wrapper">
         <div className="about__container">
           <div className="about__bg-image">
-            <div className="slogan about__slogan">Easy, Convenient & Reliable</div>
+            <div className="slogan about__slogan">
+              Easy, Convenient & Reliable
+            </div>
           </div>
           <section className="about__card">
             <Heading size="1" cssClass="about__heading">
@@ -39,7 +41,7 @@ function About() {
               />
               <div className="about-card__body">
                 <div className="about-card__quote">
-                  <QuoteIcon />
+                  <QuoteIcon color="#084c61" size="1.5rem" />
                   <p className="about-card__quote-text">
                     You are important to us
                   </p>

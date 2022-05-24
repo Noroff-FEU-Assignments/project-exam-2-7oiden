@@ -62,7 +62,7 @@ function NewsletterForm() {
           />
           {errors.email && <FormError>{errors.email.message}</FormError>}
           <button className="custom-input-icon-box newsletter-button">
-            <EmailIcon />
+            <EmailIcon color="#ffffff" size="2rem" />
           </button>
         </div>
       </Form.Group>

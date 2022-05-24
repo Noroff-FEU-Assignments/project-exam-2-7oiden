@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert";
 import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
@@ -22,7 +23,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please enter the establishments name")
     .min(5, "Establishment name must be at least 5 characters")
-    .max(20, "Establishment name can't be more than 20 characters"),
+    .max(25, "Establishment name can't be more than 25 characters"),
 
   address: yup
     .string()
@@ -347,23 +348,26 @@ export default function AddForm() {
             />
           </InputGroup>
           {errors.image && <FormError>{errors.image.message}</FormError>}
-          <div className="copy-wrapper">
-            <span>Copy a placeholder image-URL to the clipboard:</span>
+          <div className="copy-msg__wrapper">
+            <span>Copies a placeholder image-URL to the clipboard:</span>
             <Button
-              className="copy-button"
+              variant="light"
+              className="copy-msg__icon-box"
               onClick={() => copy(placeholderUrl)}
             >
-              <CopyIcon />
+              <CopyIcon color="#222222" size="1.5rem" />
             </Button>
           </div>
-          <ul className="form__warning-list">
-            <li className="form__warning-list-item">
-              Images must have a 3:2 aspect ratio to be displayed correctly
-            </li>
-            <li className="form__warning-list-item">
-              File size should be no more than 200kB
-            </li>
-          </ul>
+          <Alert variant="warning" className="form__warning">
+            <ul className="form__warning-list">
+              <li className="form__warning-list-item">
+                Images must have a 3:2 aspect ratio to be displayed correctly
+              </li>
+              <li className="form__warning-list-item">
+                File size should be no more than 200kB
+              </li>
+            </ul>
+          </Alert>
           <fieldset className="form-check-fieldset">
             <legend>Facilities</legend>
             {["checkbox"].map((type) => (
@@ -434,7 +438,7 @@ export default function AddForm() {
               </div>
             ))}
             <Form.Group className="mb-3" controlId="formBasicFacility">
-              <Form.Label>Other facility</Form.Label>
+              <Form.Label>Other facility (optional)</Form.Label>
               <Form.Control
                 className="other-facility-input"
                 type="text"
@@ -454,7 +458,7 @@ export default function AddForm() {
               show={show}
             />
           )}
-          <Button className="admin-button form-button" type="submit">
+          <Button className="admin-button" type="submit">
             Add
           </Button>
         </fieldset>

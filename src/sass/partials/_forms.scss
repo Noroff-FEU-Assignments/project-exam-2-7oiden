@@ -3,16 +3,17 @@ form {
     margin-top: 1rem;
 }
 
-.form__warning-list {
-    background-color: getColor(warningCol);
-    padding: 0.5rem 1rem;
+.form__warning {
     margin-top: 1rem;
-    margin-bottom: 0.5rem; 
-    border-radius: 4px;
+    padding: 1rem 0;
+}
+
+.form__warning-list {
+    @extend .base-margin;  
 }
 
 .form__warning-list-item {
-    margin-left: 1rem;
+    margin-left: 2rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
@@ -23,12 +24,12 @@ form {
 }
 
 .adm__search-input {
-    border: 1px solid getColor(footerBg);
+    border: 1px solid getColor(secondaryBtn);
     border-radius: 4px;
 }
 
 .adm__search-icon-box {
-    background-color: getColor(footerBg);
+    background-color: getColor(secondaryBtn);
     border: none;
 }
 
@@ -182,4 +183,11 @@ legend {
     &__text-area {
         height: 200px;
     }
+}
+
+.copy-msg__wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
 }

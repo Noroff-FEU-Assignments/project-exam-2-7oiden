@@ -3,11 +3,11 @@ import { HEROKU_BASE_URL } from "../../constants/api";
 import axios from "axios";
 import { BinIcon } from "../icons/MaterialIcons";
 import AlertMessage from "../common/AlertMessage";
-import { useNavigate, useLocation} from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function DeleteItem({ id, type }) {
   const [error, setError] = useState(null);
- 
+
   const history = useNavigate();
   const location = useLocation();
 
@@ -40,9 +40,8 @@ export default function DeleteItem({ id, type }) {
 
   return (
     <>
-      {/* <button onClick={handleDelete}>{error ? "Error" : "Delete"}</button>{" "} */}
-      <button onClick={handleDelete} className="delete-button">
-        <BinIcon />
+      <button onClick={handleDelete} className="delete__icon-box">
+        <BinIcon color="#fff" size="1.25rem" />
       </button>
     </>
   );

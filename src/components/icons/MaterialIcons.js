@@ -1,83 +1,108 @@
 import Icon from "@mdi/react";
-import { mdiMenu } from "@mdi/js";
-import { mdiStar } from "@mdi/js";
-import { mdiMapMarker } from "@mdi/js";
-import { mdiMagnify } from "@mdi/js";
-import { mdiBed } from "@mdi/js";
-import { mdiDelete } from "@mdi/js";
-import { mdiCopyright } from "@mdi/js";
-import { mdiEmailOutline } from "@mdi/js";
-import { mdiFormatQuoteClose } from "@mdi/js";
-import { mdiPlus } from "@mdi/js";
-import { mdiMinus } from "@mdi/js";
-import { mdiAlertDecagram } from "@mdi/js";
-import { mdiContentCopy } from "@mdi/js";
+import {
+  mdiMenu,
+  mdiStar,
+  mdiMapMarker,
+  mdiMagnify,
+  mdiBed,
+  mdiDelete,
+  mdiCopyright,
+  mdiEmailOutline,
+  mdiFormatQuoteClose,
+  mdiPlus,
+  mdiMinus,
+  // mdiAlertDecagram,
+  mdiContentCopy,
+} from "@mdi/js";
 
-export function MenuIcon() {
-  return <Icon path={mdiMenu} className="menu-icon" color="default" />;
+export function MenuIcon({ color, size }) {
+  return (
+    <Icon path={mdiMenu} className="menu-icon" color={color} size={size} />
+  );
 }
 
-export function PlusIcon() {
-  return <Icon path={mdiPlus} className="plus-icon" color="default" />;
+export function PlusIcon({ color, size }) {
+  return <Icon path={mdiPlus} color={color} size={size} />;
 }
 
-export function MinusIcon() {
-  return <Icon path={mdiMinus} className="minus-icon" color="default" />;
+export function MinusIcon({ color, size }) {
+  return <Icon path={mdiMinus} color={color} size={size} />;
 }
 
-export function StarIcon() {
-  return <Icon path={mdiStar} className="star-icon" color="default" />;
+export function StarIcon({ color, size }) {
+  return <Icon path={mdiStar} color={color} size={size} />;
 }
 
-export function LocationIcon() {
-  return <Icon path={mdiMapMarker} className="location-icon" color="default" />;
+export function LocationIcon({ color, size }) {
+  return <Icon path={mdiMapMarker} color={color} size={size} />;
 }
 
-export function SearchIcon() {
+export function SearchIcon({ color, size }) {
   return (
     <Icon
       path={mdiMagnify}
       // title="Search"
       className="navbar__search-icon"
-      color="default"
+      color={color}
+      size={size}
     />
   );
 }
 
-export function EmailIcon() {
+export function EmailIcon({ color, size }) {
   return (
     <Icon
       path={mdiEmailOutline}
       className="navbar__search-icon"
-      color="default"
+      color={color}
+      size={size}
     />
   );
 }
 
-export function BedIcon() {
-  return <Icon path={mdiBed} className="bed-icon" color="default" />;
+export function BedIcon({ color, size }) {
+  return <Icon path={mdiBed} color={color} size={size} />;
 }
 
-export function BinIcon() {
-  return <Icon path={mdiDelete} className="bin-icon" color="default" />;
-}
-
-export function CopyrightIcon() {
+export function BinIcon({ color, size }) {
   return (
-    <Icon path={mdiCopyright} className="copyright-icon" color="default" />
+    <Icon path={mdiDelete} className="delete__icon" color={color} size={size} />
   );
 }
 
-export function QuoteIcon() {
+export function CopyrightIcon({ color, size }) {
+  return <Icon path={mdiCopyright} color={color} size={size} />;
+}
+
+export function QuoteIcon({ color, size }) {
   return (
-    <Icon path={mdiFormatQuoteClose} className="quote-icon" color="default" />
+    <Icon
+      path={mdiFormatQuoteClose}
+      className="quote-icon"
+      color={color}
+      size={size}
+    />
   );
 }
 
-export function NewIcon() {
-  return <Icon path={mdiAlertDecagram} className="new-icon" color="default" />;
-}
+// export function NewIcon({ color, size }) {
+//   return (
+//     <Icon
+//       path={mdiAlertDecagram}
+//       className="new-icon"
+//       color={color}
+//       size={size}
+//     />
+//   );
+// }
 
-export function CopyIcon() {
-  return <Icon path={mdiContentCopy} className="copy-icon" color="default" />;
+export function CopyIcon({ color, size }) {
+  return (
+    <Icon
+      path={mdiContentCopy}
+      className="copy-icon"
+      color={color}
+      size={size}
+    />
+  );
 }

@@ -28,7 +28,9 @@ function CustomNav() {
                 ></img>
               </Link>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"><MenuIcon /> </Navbar.Toggle>
+            <Navbar.Toggle aria-controls="basic-navbar-nav">
+              <MenuIcon color="#222222" size="2rem" />{" "}
+            </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto navbar__container">
                 <NavLink
@@ -73,7 +75,7 @@ function CustomNav() {
                 </NavLink>
               </Nav>
             </Navbar.Collapse>
-            <div className="navbar__icon-box">
+            <div className="navbar__icon-wrapper">
               <SearchModal />
               {auth ? <LogoutModal /> : <LoginModal />}
             </div>

@@ -16,6 +16,10 @@ input {
     font-family: $input-text;
 }
 
+textarea {
+    font-family: $input-text;
+}
+
 .hero {
     &__heading {
         font-family: $serif-headings;

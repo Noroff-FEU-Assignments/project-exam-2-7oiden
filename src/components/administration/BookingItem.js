@@ -46,7 +46,6 @@ function BookingItem(props) {
               path={mdiAlertDecagram}
               style={{ display: ifNew }}
               className="new-icon"
-              color="default"
             />
             <span className="adm-accordion__title">{establishment}</span>
           </div>

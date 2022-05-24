@@ -34,8 +34,8 @@
 }
 
 .logout-modal__user {
-    // font-style: italic;
     font-size: 1.125rem;
+    padding-bottom: 0.5rem;
 }
 
 .search-modal {
@@ -72,18 +72,6 @@
         color: getColor(textGray)
     }
 }
-
-// .modal {
-//     padding-left: 0px !important;
-// }
-
-// .modal-lg {
-//     max-width: 550px;
-
-//     @media (min-width: getBreakpoint(medium)) {
-//         max-width: 650px;
-//     }
-// }
 
 
 

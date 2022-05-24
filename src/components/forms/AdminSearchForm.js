@@ -18,7 +18,8 @@ function AdminSearchForm({ setQuery, searchType }) {
           <Icon
             path={mdiMagnify}
             className="adm__search-icon"
-            color="default"
+            color="#fff"
+            size="1.375rem"
           />
         </InputGroup.Text>
       </InputGroup>

@@ -39,8 +39,8 @@ function ContactItem(props) {
             <Icon
               path={mdiAlertDecagram}
               style={{ display: ifNew }}
-              className="new-icon"
-              color="default"
+              color="#cc4a45"
+              size="1.25rem"
             />
             <span className="adm-accordion__title">
               {firstName} {lastName}
