@@ -40,7 +40,7 @@
         margin: 0 auto;
         padding-top: 0.5rem;
         order: 3;
-        border-top: 1px solid getColor(subtleGray);
+        border-top: 1px solid getColor(dividers);
 
         @media (min-width: getBreakpoint(small)) {
             width: 100%;

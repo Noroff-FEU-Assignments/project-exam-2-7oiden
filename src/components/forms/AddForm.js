@@ -355,7 +355,7 @@ export default function AddForm() {
               className="copy-msg__icon-box"
               onClick={() => copy(placeholderUrl)}
             >
-              <CopyIcon color="#222222" size="1.5rem" />
+              <CopyIcon color="#fff" size="1.25rem" />
             </Button>
           </div>
           <Alert variant="warning" className="form__warning">

@@ -54,10 +54,6 @@ form {
     position: relative;
     width: 100%;
     margin: 0 auto;
-
-    // @media (min-width: getBreakpoint(small)) {
-    //     min-width: 350px;
-    // }
 }
 
 .search-input-container {
@@ -75,17 +71,6 @@ form {
     padding-left: 1.5rem;
 }
 
-.custom-input-icon-box {
-    width: 3rem;
-    height: 3rem;
-    background-color: getColor(primaryCol);
-    border-radius: 50%;
-    position: absolute;
-    top: -0.09375rem;
-    right: 1.40625rem;
-    transform: translateX(50%);
-}
-
 .form-input-wrapper {
     display: flex;
     flex-direction: column;
@@ -95,28 +80,19 @@ form {
         flex-direction: row;
         gap: 1rem;
     }
-
-    // @media (min-width: getBreakpoint(xsmall)) {
-    //     gap: 2rem;
-    // }
 }
 
 .form-check-fieldset {
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem 0;
-    border-bottom: 1px solid getColor(subtleGray);
+    border-bottom: 1px solid getColor(dividers);
 }
 
 .form-check-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 0rem 0.5rem;
-
-    @media (min-width: getBreakpoint(small)) {
-        // flex-direction: row;
-        // gap: 4rem;
-    }
 }
 
 .form-check {
@@ -132,22 +108,14 @@ legend {
     width: 100%;
 }
 
-// .search-list {
-//     margin-top: 1.5rem;
-//     display: flex;
-//     flex-direction: column;
-//     font-size: 1.125rem;
-//     text-decoration: none;
-// }
-
 .date-picker-wrapper {
     display: flex;
     flex-direction: column;
     gap: 0 2rem;
 
     @media (min-width: getBreakpoint(xsmall)) {
-            flex-direction: row;
-        }
+        flex-direction: row;
+    }
 }
 
 .product-filter__wrapper {

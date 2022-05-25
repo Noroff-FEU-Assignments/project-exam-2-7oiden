@@ -22,11 +22,18 @@ export function MenuIcon({ color, size }) {
 }
 
 export function PlusIcon({ color, size }) {
-  return <Icon path={mdiPlus} color={color} size={size} />;
+  return <Icon path={mdiPlus} className="show-hide-icon" color={color} size={size} />;
 }
 
 export function MinusIcon({ color, size }) {
-  return <Icon path={mdiMinus} color={color} size={size} />;
+  return (
+    <Icon
+      path={mdiMinus}
+      className="show-hide-icon"
+      color={color}
+      size={size}
+    />
+  );
 }
 
 export function StarIcon({ color, size }) {
@@ -42,7 +49,7 @@ export function SearchIcon({ color, size }) {
     <Icon
       path={mdiMagnify}
       // title="Search"
-      className="navbar__search-icon"
+      className="search-icon"
       color={color}
       size={size}
     />
@@ -53,7 +60,7 @@ export function EmailIcon({ color, size }) {
   return (
     <Icon
       path={mdiEmailOutline}
-      className="navbar__search-icon"
+      className="email-icon"
       color={color}
       size={size}
     />

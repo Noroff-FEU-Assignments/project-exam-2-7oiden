@@ -61,7 +61,7 @@ function NewsletterForm() {
             {...register("email")}
           />
           {errors.email && <FormError>{errors.email.message}</FormError>}
-          <button className="custom-input-icon-box newsletter-button">
+          <button className="custom-input__icon-box">
             <EmailIcon color="#ffffff" size="2rem" />
           </button>
         </div>

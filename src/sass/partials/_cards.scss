@@ -82,7 +82,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 1rem;
-        border-top: 1px solid getColor(subtleGray)
+        border-top: 1px solid getColor(dividers)
     }
 
     &__text {
@@ -202,7 +202,7 @@
     position: relative;
 
     &__body {
-        border: 1px solid getColor(subtleGray);
+        border: 1px solid getColor(dividers);
         border-radius: 0 25px 25px 0;
         margin-left: 30px;
         padding: 0 2rem 0 5rem;

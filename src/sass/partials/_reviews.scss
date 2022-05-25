@@ -10,7 +10,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0 2rem;
-        border-bottom: 1px solid getColor(subtleGray);
+        border-bottom: 1px solid getColor(dividers);
     }
 
     &__list-item {

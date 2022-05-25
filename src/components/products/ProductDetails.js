@@ -80,16 +80,8 @@ export default function ProductDetails() {
         <section className="details__column-1">
           <figure className="details__image">
             <img
-              src={
-                product.images[0].src
-                  ? product.images[0].src
-                  : "https://res.cloudinary.com/dhd2paq70/image/upload/v1653334963/pillows_slxmw3.jpg"
-              }
-              alt={
-                product.images[0].alt
-                  ? product.images[0].alt
-                  : "Holidaze placeholder image of a hotel bed"
-              }
+              src={product.images[0].src}
+              alt={product.images[0].alt}
               className="details__image"
             />
           </figure>
@@ -141,7 +133,7 @@ export default function ProductDetails() {
                 onClick={() => setShow(!show)}
                 aria-controls="example-fade-text"
                 aria-expanded={show}
-                className="transparent-button"
+                className="show-hide__icon-box"
               >
                 {show ? <HideButton /> : <ShowButton />}
               </button>

@@ -78,7 +78,7 @@ function AdmContactAccordion() {
 
   let buttonDisplay = "none";
 
-  console.log(orderedMessages.length);
+  // console.log(orderedMessages.length);
 
   if (filteredMessages.length > itemNum || filteredMessages === []) {
     buttonDisplay = "block";

@@ -23,7 +23,7 @@ function Admin() {
           For support please contact helpdesk at{" "}
           <span
             onClick={() => (window.location = "mailto:helpdesk@holidaze.com")}
-            className="adm-accordion__link"
+            className="text-link"
           >
             helpdesk@holidaze.com
           </span>

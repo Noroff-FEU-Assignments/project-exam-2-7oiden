@@ -22,7 +22,6 @@
     position: relative;
 
     @media (min-width: getBreakpoint(small)) {
-        // width: 50%;
         border-radius: 4px;
     }
 }
@@ -69,8 +68,4 @@
     display: block;
     position: absolute;
     transform: translateY(-20px);
-}
-
-.admin-image {
-    
 }

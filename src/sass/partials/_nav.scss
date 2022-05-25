@@ -1,11 +1,11 @@
 .navbar {
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 
-        @media (min-width: getBreakpoint(large)) {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
+    @media (min-width: getBreakpoint(large)) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 
     &__container {
         display: flex;
@@ -69,8 +69,6 @@
         position: absolute;
         top: 0;
         right: 0;
-        // background-color: aqua;
-        // transform: translateY(10%);
 
         @media (min-width: getBreakpoint(large)) {
             gap: 2rem;
@@ -105,19 +103,17 @@
         font-size: 1.125rem;
     }
 
-    
-
     &__link {
-        text-decoration: none;
-        color: getColor(textLight);
-        padding: 0.5rem 1rem;
-        transition: all 0.3s ease;
+    text-decoration: none;
+    color: getColor(textLight);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
 
-        @media (min-width: getBreakpoint(small)) {
-            padding: 0.75rem 1rem;
-        }
+    @media (min-width: getBreakpoint(small)) {
+        padding: 0.75rem 1rem;
+    }
 
-        &:hover {
+    &:hover {
             background-color: getColor(adminCol);
             color: getColor(textLight);
         }

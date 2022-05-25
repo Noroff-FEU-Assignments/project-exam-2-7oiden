@@ -8,7 +8,7 @@ import { useLocation, Outlet } from "react-router-dom";
 function AdminLayout({ children }) {
   const location = useLocation().pathname;
 
-  console.log(location);
+  // console.log(location);
 
   return (
     <>

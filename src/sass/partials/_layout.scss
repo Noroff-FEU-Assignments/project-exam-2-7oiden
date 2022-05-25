@@ -130,7 +130,6 @@
 .reviews__wrapper {
     width: 90%;
     margin: 0 auto;
-    // background-color: pink;
     padding-top: 2rem;
     padding-bottom: 4rem;
 
@@ -163,7 +162,6 @@
 
 .overview__wrapper {
     padding-top: 1.5rem;
-    // background-color: pink;
 
     @media (min-width: getBreakpoint(large)) {
         padding-top: 2rem;
@@ -189,7 +187,6 @@
 
     @media (min-width: getBreakpoint(large)) {
         flex-direction: row;
-        // width: 85%;
         padding-top: 3rem;
     }
 
@@ -213,18 +210,6 @@
         padding-top: 3rem;
     }
 }
-
-// .admin-accordion__wrapper {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     gap: 2rem;
-//     margin: 0 auto;
-
-//     @media (min-width: getBreakpoint(large)) {
-//         flex-direction: row;
-//     }
-// }
 
 .newsletter__wrapper {
     width: 100%;
@@ -253,7 +238,6 @@
 }
 
 .carousel__container {
-    // background-color: lightblue;
     width: 100%;
     margin: 0 auto;
     background-color: getColor(primaryBg);
@@ -264,7 +248,6 @@
 }
 
 .about__container, .support__container {
-    // background-color: lightblue;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -277,7 +260,6 @@
 }
 
 .about__container {
-    // background-color: lightblue;
     @media (min-width: getBreakpoint(large)) {
         gap: 0.5rem;
     }
@@ -289,19 +271,6 @@
     padding-bottom: 6rem;
 }
 
-// .admin-accordion__container {
-//     width: 100%;
-// }
-
-// .admin__container {
-//     width: 100%;
-//     margin: 0 auto;
-
-//     @media (min-width: getBreakpoint(small)) {
-//         width: 80%;
-//     }
-// }
-
 .add__container {
     background-color: getColor(primaryBg);
     padding: 1rem 5% 2rem 5%;
@@ -310,27 +279,6 @@
         border-radius: 4px;
         padding: 1.5rem 10% 2rem 10%;
     }
-    // position: relative;
-
-    // @media (min-width: getBreakpoint(medium)) {
-    //     width: 85%;
-    // }
-
-    // @media (min-width: getBreakpoint(large)) {
-    //     width: 80%;
-    // }
-
-    // @media (min-width: getBreakpoint(xlarge)) {
-    //     width: 75%;
-    // }
-    
-    // @media (min-width: getBreakpoint(xxlarge)) {
-    //     width: 70%;
-    // }
-
-    // @media (min-width: getBreakpoint(xxlarge)) {
-    //     width: 65%;
-    // }
 }
 
 .support__container {
@@ -348,7 +296,6 @@
 
         @media (min-width: getBreakpoint(large)) {
             flex: 1;
-            // padding: 0;
         }
     }
 

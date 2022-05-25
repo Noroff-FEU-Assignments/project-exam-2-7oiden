@@ -17,7 +17,7 @@ $colors: (
     primaryCol: #cc4a45,
     secondaryCol: #084c61,
     adminCol: #25828F,
-    linkCol: #053d4f,
+    linkCol: #053D5A,
     secondaryBtn: #353535,
     primaryBg: #ffffff,
     secondaryBg: #f7f7f7,
@@ -29,7 +29,9 @@ $colors: (
     textGray: #707070,
     headingFooter: #cbc278,
     borderCol: #707070,
-    subtleGray: #d2d2d2,
+    hoverCol: #0744571A,
+    dividers: #d2d2d2,
+    subtleGray: #ebebeb,
     dangerCol: #dc3545,
     warningCol: #ffc107,
     successCol: #198754,
@@ -54,11 +56,6 @@ $breakpoints: (
 }
 
 $fontSizes: (
-    // heroHeadingSmall: 3.5rem,
-    // heroHeadingMedium: 4.5rem,
-    // heroHeadingLarge: 5.5rem,
-    // mainSmall: 2rem,
-    // mainMedium: 2.25rem,
     mainMaxSize: 2.5rem,
     //used on details, about and main-forms
     titleSmall: 1.25rem,
@@ -74,8 +71,6 @@ $fontSizes: (
     modalTitleLarge: 1.5rem,
     reviewFormSmall: 1.25rem,
     reviewFormLarge: 1.5rem,
-    // mainSubHeadingSmall: 1.875rem,
-    // mainSubHeadingLarge: 2.25rem,
     buttonSmall: 1.125rem,
     buttonLarge: 1.25rem,
 );

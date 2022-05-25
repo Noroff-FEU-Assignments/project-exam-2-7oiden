@@ -9,6 +9,7 @@ import AlertMessage from "../common/AlertMessage";
 import Button from "react-bootstrap/Button";
 import { HEROKU_BASE_URL } from "../../constants/api";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 const date = new Date();
 
@@ -102,14 +103,27 @@ export default function BookingForm({ establishment }) {
     }
   }
 
+  if (submitted)
+    return (
+      <>
+        <AlertMessage
+          variant="success"
+          message="Thank you for your booking enquiry! We will get back to you shortly."
+        />
+        <Link to="/" className="text-link">
+          Take me back to homepage
+        </Link>
+      </>
+    );
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {submitted && (
+      {/* {submitted && (
         <AlertMessage
           variant="success"
           message="Thank you for your booking enquiry. We will get back to you shortly."
         />
-      )}
+      )} */}
       {serverError && <AlertMessage variant="danger" message={serverError} />}
       <fieldset disabled={submitting}>
         <div className="date-picker-wrapper">

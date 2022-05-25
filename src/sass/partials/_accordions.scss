@@ -6,7 +6,7 @@
     &__header {
         padding: 1.25rem 5%;
         background-color: getColor(primaryBg);
-        border-bottom: 1px solid getColor(subtleGray);
+        border-bottom: 1px solid getColor(dividers);
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -107,5 +107,18 @@
         @media (min-width: getBreakpoint(large)) {
                 font-size: 1.125rem;
             }
+    }
+}
+
+.accordion-body {
+    border-bottom: 2px solid getColor(dividers);
+}
+
+.accordion-button {
+    background-color: getColor(primaryBg);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: getColor(hoverCol);
     }
 }

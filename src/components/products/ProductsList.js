@@ -30,7 +30,7 @@ function ProductsList() {
     async function getproduct() {
       try {
         const response = await axios.get(url);
-        // console.log("response", response.data);
+        console.log("response", response.data);
         setProduct(response.data);
       } catch (error) {
         console.log(error);
@@ -79,21 +79,7 @@ function ProductsList() {
     filteredProduct = filterByCategory;
   }
 
-  // let displayButton = "none";
-
-  // if (filteredProduct.length >= 2) {
-  //   displayButton = "block";
-  // } else if (filteredProduct.length === numshow) {
-  //   displayButton = "none";
-  // }
-
-  // filteredProduct.forEach((element) => {
-  //   if (element.images === []) {
-  //     element.images.push({ placeholder });
-  //   }
-  // });
-
-  console.log(filteredProduct);
+  // console.log(filteredProduct);
 
   return (
     <>
@@ -122,7 +108,6 @@ function ProductsList() {
           </Form.Select>
         </div>
       </div>
-
       <Container fluid>
         <div className="overview__search-wrapper">
           <SearchForm setQuery={setQuery} />

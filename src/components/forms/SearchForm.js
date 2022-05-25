@@ -13,7 +13,7 @@ function SearchForm({ setQuery, loading }) {
             placeholder={loading ? "Please wait" : "Start typing..."}
             disabled={loading}
           />
-          <div className="custom-input-icon-box">
+          <div className="custom-input__icon-box">
             <SearchIcon color="#fff" size="2rem" />
           </div>
         </div>

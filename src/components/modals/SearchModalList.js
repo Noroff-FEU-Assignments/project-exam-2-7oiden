@@ -72,18 +72,12 @@ export default function SearchModalList() {
               style={{ textDecoration: "none" }}
             >
               <ListGroup.Item className="search-modal__list-item">
-                {/* <div className="search-modal__list-item-wrapper"> */}
-                  <div>
-                    <LocationIcon />
-                    <span className="search-modal__list-item-name">
-                      {item.name}
-                    </span>
-                  </div>
-                  {/* <div className="search-modal__list-item-category">—</div> */}
-                  {/* <span className="search-modal__list-item-category">
-                    {item.categories[0].name}
-                  </span> */}
-                {/* </div> */}
+                <div className="search-modal__list-wrapper">
+                  <LocationIcon color="#053d4f" size="1.25rem" />
+                  <span className="search-modal__list-item-name">
+                    {item.name}
+                  </span>
+                </div>
               </ListGroup.Item>
             </Link>
           ))}
