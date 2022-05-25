@@ -1,5 +1,4 @@
 import NewsletterForm from "../forms/NewsletterForm";
-import Heading from "../common/Heading";
 import Wrapper from "./Wrapper";
 
 function Newsletter() {

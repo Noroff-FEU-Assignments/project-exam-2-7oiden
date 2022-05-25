@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import AddForm from "../forms/AddForm";
 
 function AddEst() {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   if (!auth) {
     return <Navigate to="/" />;

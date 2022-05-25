@@ -5,7 +5,7 @@ import AdminLayout from "../layout/AdminLayout";
 import Heading from "../common/Heading";
 
 function Admin() {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   if (!auth) {
     return <Navigate to="/" />;

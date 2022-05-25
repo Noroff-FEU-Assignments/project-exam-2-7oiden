@@ -46,9 +46,6 @@ function ProductCard(props) {
               </div>
               <BedsBlock beds={beds} />
             </div>
-
-            {/* <BedsBlock beds={beds} /> */}
-            {/* <LocationBlock location={location} /> */}
           </Card.Body>
           <div className="product-card__bottom">{price} NOK</div>
         </Link>

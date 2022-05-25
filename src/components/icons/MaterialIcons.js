@@ -22,7 +22,9 @@ export function MenuIcon({ color, size }) {
 }
 
 export function PlusIcon({ color, size }) {
-  return <Icon path={mdiPlus} className="show-hide-icon" color={color} size={size} />;
+  return (
+    <Icon path={mdiPlus} className="show-hide-icon" color={color} size={size} />
+  );
 }
 
 export function MinusIcon({ color, size }) {

@@ -1,12 +1,11 @@
 import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-
 import AdmBookingAccordion from "../administration/AdmBookingAccordion";
-import AdminLayout from "../layout/AdminLayout";
+
 
 function Bookings() {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   if (!auth) {
     return <Navigate to="/" />;

@@ -32,8 +32,6 @@ export default function ProductDetails() {
 
   const { id } = useParams();
 
-  // console.log(id);
-
   if (!id) {
     history("/");
   }
@@ -71,8 +69,6 @@ export default function ProductDetails() {
         message="An error occured when trying to fetch the page"
       />
     );
-
-  // console.log(product.tags);
 
   return (
     <>

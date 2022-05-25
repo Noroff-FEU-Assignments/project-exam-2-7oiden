@@ -12,7 +12,7 @@ import SearchModal from "../modals/SearchModal";
 import { MenuIcon } from "../icons/MaterialIcons";
 
 function CustomNav() {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   return (
     <header>

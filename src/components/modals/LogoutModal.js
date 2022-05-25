@@ -9,7 +9,7 @@ import AdmProfileIcon from "../icons/AdmProfileIcon";
 export default function LoginModal() {
   const history = useNavigate();
   const [show, setShow] = useState(false);
-  const [auth, setAuth] = useContext(AuthContext);
+  const [, setAuth] = useContext(AuthContext);
  
   function handleLogout() {
     const confirmLogout = window.confirm("Are you sure you want to log out?");

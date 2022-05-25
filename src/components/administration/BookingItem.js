@@ -14,7 +14,6 @@ function BookingItem(props) {
     firstName,
     lastName,
     email,
-    // location,
     message,
     created,
     eventKey,

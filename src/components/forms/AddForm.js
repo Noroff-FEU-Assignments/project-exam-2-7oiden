@@ -80,7 +80,6 @@ export default function AddForm() {
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
   const [show, setShow] = useState(false);
-  const [data, setData] = useState("");
 
   const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET;
 

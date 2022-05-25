@@ -24,8 +24,6 @@ function AdmContactAccordion() {
 
   const location = useLocation().key;
 
-  // console.log(location);
-
   useEffect(
     function () {
       async function getproduct() {
@@ -77,8 +75,6 @@ function AdmContactAccordion() {
   let handleShow = () => setItemNum(itemNum + arrayItems);
 
   let buttonDisplay = "none";
-
-  // console.log(orderedMessages.length);
 
   if (filteredMessages.length > itemNum || filteredMessages === []) {
     buttonDisplay = "block";
@@ -144,4 +140,5 @@ function AdmContactAccordion() {
     </>
   );
 }
+
 export default AdmContactAccordion;

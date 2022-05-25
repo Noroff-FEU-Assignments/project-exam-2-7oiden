@@ -16,7 +16,7 @@ function CustomCarousel() {
       <Heading size="5" cssClass="carousel__heading">
         Customer recommandations
       </Heading>
-      <Carousel interval="99999999">
+      <Carousel interval="5000">
         <Carousel.Item>
           <div className="carousel__item">
             <div className="carousel__block-1">

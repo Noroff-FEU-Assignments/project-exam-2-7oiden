@@ -4,12 +4,12 @@ import { Navigate } from "react-router-dom";
 import AdmContactAccordion from "../administration/AdmContactAccordion";
 
 function ContactEnq() {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   if (!auth) {
     return <Navigate to="/" />;
   }
-  
+
   return (
     <div className="admin__container">
       <AdmContactAccordion />
