@@ -2,28 +2,44 @@
 
 ![image](https://res.cloudinary.com/dhd2paq70/image/upload/v1654681030/holidaze_x4owk1.jpg)
 
-A simple overview of the use/purpose of the project.
+Image of the sites hero at the homepage.
 
 ## Description
 
 Holidaze is an accomodation booking site for a local tourist
-agancy located in Bergen. The site is coded with ReactJS based
+agancy located in Bergen, Norway. The site is coded with ReactJS based
 on React Bootstrap components and styled using Sass. The site
 has a customer facing side with booking functionality, and a
 admin section that can be accessed with the use of JWT tokens.
 In the admin section, contact and booking enquiries can be
-handled as well as adding new establishments. The WP WooCommerce
-API is used for the establishments and customer reviews, while a
+handled as well as adding new establishments.
+
+The WP WooCommerce API is used for the establishments, customer reviews and authentification, while a
 API from Strapi hosted on Heroku is used to store and fetch data
-from booking- and contact enquiries.
+from booking- and contact enquiries. In addition a Google Maps API i used to fetch live map data from hotel addresses.
 
-You can add some bullet points if you'd like to:
+#### Sign in as admin:
 
-- List item 1
-- List item 2
-- List item 3
+- Username: 7oiden
+- Password: Exam_4060
 
-Login details: username: 7oiden password: Exam_4060
+## Assignment requirements:
+
+### Customer side
+
+- Homepage
+- Searchbar typehead
+- A results page with all hotels
+- The hotel specific page which displays all details about the hotel
+- An enquiry page, either modal or separate page
+- A contact page which goes to the admin
+
+### Admin side
+
+- Create a login section that makes use of JWT tokens
+- List of enquiries and new enquiries appear when users submits the form on the enquiry page
+- List of messages from the contact form
+- The admin can create a new establishment.
 
 ## Built With
 
@@ -31,6 +47,20 @@ You can list a the tech stack that you've used over here
 
 - [React.js](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com)
+- [Sass](https://sass-lang.com)
+
+## API
+
+### Created with
+
+- [Strapi](https://strapi.io)
+- [Wordpress](https://wordpress.com)
+- [WooCommerce (WP plugin)](https://woocommerce.com)
+- JWT Authentication (WP plugin)
+
+### Strapi database hosted on
+
+- [Heroku](https://heroku.com)
 
 ## Getting Started
 
@@ -52,26 +82,18 @@ npm install
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
-
 To run the app, run the following commands:
 
 ```bash
 npm run start
 ```
 
-## Contributing
-
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
-
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+Get in touch at:
 
-[My Twitter page](www.twitter.com)
-
-[My LinkedIn page](www.linkedin.com)
+[LinkedIn](https://www.linkedin.com/in/tommy-j-16b56678/)
 
 ## Acknowledgments
 
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
+Thanks to Dennis Alekseev for performing a code review of my code.
