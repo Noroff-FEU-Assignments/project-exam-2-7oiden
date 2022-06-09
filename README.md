@@ -12,11 +12,11 @@ on React Bootstrap components and styled using Sass. The site
 has a customer facing side with booking functionality, and a
 admin section that can be accessed with the use of JWT tokens.
 In the admin section, contact and booking enquiries can be
-handled as well as adding new establishments.
+handled as well the option to add new establishments.
 
-The WP WooCommerce API is used for the establishments, customer reviews and authentification, while a
+The WP WooCommerce API is used for the establishments, customer reviews and authentication, while an
 API from Strapi hosted on Heroku is used to store and fetch data
-from booking- and contact enquiries. In addition a Google Maps API i used to fetch live map data from hotel addresses.
+from booking- and contact enquiries. In addition a Google Maps API is used to fetch live map data from hotel addresses.
 
 #### Sign in as admin:
 
@@ -96,4 +96,4 @@ Get in touch at:
 
 ## Acknowledgments
 
-Thanks to Dennis Alekseev for performing a code review of my code.
+Thanks to my fellow student Dennis Alekseev for performing a code review of my code.
