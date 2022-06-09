@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
 import Form from "react-bootstrap/Form";
 import { EmailIcon } from "../icons/MaterialIcons";
+import FormError from "../common/FormError";
 
 const schema = yup.object().shape({
   email: yup
@@ -28,7 +28,7 @@ function NewsletterForm() {
   });
 
   function onSubmit(data) {
-    // console.log(data);
+    console.log(data);
     setSubmitted(true);
     setShow(true);
     reset();
@@ -51,7 +51,6 @@ function NewsletterForm() {
         />
       )}
       <Form.Group className="mb-3" controlId="formBasicNewsletter">
-        {/* <Form.Label>Email</Form.Label> */}
         <div className="custom-input-container">
           <Form.Control
             className="custom-input"
@@ -61,7 +60,10 @@ function NewsletterForm() {
             {...register("email")}
           />
           {errors.email && <FormError>{errors.email.message}</FormError>}
-          <button className="custom-input__icon-box">
+          <button
+            className="custom-input__icon-box newsletter-button"
+            aria-label="Send button"
+          >
             <EmailIcon color="#ffffff" size="2rem" />
           </button>
         </div>

@@ -1,14 +1,12 @@
-import CopyrightBlock from "../common/CopyrightBlock";
+import { useLocation, Outlet } from "react-router-dom";
+import Wrapper from "./Wrapper";
 import CustomNav from "../navigation/CustomNav";
 import Heading from "../common/Heading";
-import Wrapper from "./Wrapper";
 import AdminNav from "../navigation/AdminNav";
-import { useLocation, Outlet } from "react-router-dom";
+import CopyrightBlock from "../common/CopyrightBlock";
 
 function AdminLayout({ children }) {
   const location = useLocation().pathname;
-
-  // console.log(location);
 
   return (
     <>

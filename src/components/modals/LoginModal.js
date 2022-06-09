@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import LoginForm from "../forms/LoginForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import Modal from "react-bootstrap/Modal";
+import LoginForm from "../forms/LoginForm";
 
 export default function LoginModal() {
   const [show, setShow] = useState(false);

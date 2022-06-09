@@ -60,13 +60,27 @@
     &__info-container {
         @extend .base-margin;
         display: flex;
-        gap: 1rem;
+        flex-wrap: wrap;
+        gap: 0 0.5rem;
+        margin-right: 3rem;
+    }
+
+    &__msg-container {
+        max-width: 650px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem 1rem;  
+        margin-right: 1rem;
     }
 
     &__label {
         @extend .base-margin;
         font-weight: bold;
-        width: 100px;
+        width: 80px;
+
+        @media (min-width: getBreakpoint(large)) {
+            width: 100px;
+        }
     }
 
     &__info {
@@ -105,13 +119,13 @@
         font-size: 1rem;
 
         @media (min-width: getBreakpoint(large)) {
-                font-size: 1.125rem;
-            }
+            font-size: 1.125rem;
+        }
     }
 }
 
 .accordion-body {
-    border-bottom: 2px solid getColor(dividers);
+    border-bottom: 3px solid getColor(dividers);
 }
 
 .accordion-button {

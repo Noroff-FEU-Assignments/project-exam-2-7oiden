@@ -75,8 +75,34 @@
     top: 1rem;
 }
 
-// .transparent-button {
-//     background-color: transparent;
-//     border: none;
-// }
+.log-button {
+    font-size: 1rem;
+    width: 160px;
+    padding: 0.375rem 1.5rem;
+
+    @media (min-width: getBreakpoint(large)) {
+        width: 180px;
+        font-size: 1.125rem;
+    }
+}
+
+.newsletter-button {
+    color: getColor(primaryCol);
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+.show-more-btn {
+    margin-left: 5%;
+
+    @media (min-width: getBreakpoint(medium)) {
+        margin-left: 0;
+    }
+}
+
+
 

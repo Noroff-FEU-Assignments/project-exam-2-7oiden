@@ -184,32 +184,44 @@
     margin: 0 auto;
     background-color: getColor(primaryBg);
     padding: 1.5rem 5% 5rem 5%;
+    z-index: 100;
     
     @media (min-width: getBreakpoint(small)) {
         border-radius: 0 0 25px 25px;
+        padding: 1.5rem 10% 5rem 10%;
+    }
+
+    @media (min-width: getBreakpoint(medium)) {
+        padding: 1.5rem 7.5% 5rem 7.5%;
     }
     
     @media (min-width: getBreakpoint(large)) {
+        position: absolute;
+        width: 60%;
+        right: 0;
+        top: 25px;
         flex: 1;
         border-radius: 0 25px 25px 0;
     }
 }
 
 .about-card {
-    display: flex;
-    margin-top: 3rem;
-    max-width: 400px;
+    margin-top: 1rem;
+    height: 80px;
+    max-width: 600px;
     position: relative;
 
     &__body {
         border: 1px solid getColor(dividers);
         border-radius: 0 25px 25px 0;
-        margin-left: 30px;
-        padding: 0 2rem 0 5rem;
+        margin-left: 1rem;
+        padding: 0 1.5rem 5px 2rem;
         height: 60px;
+        position: absolute;
+        top: 10px;
+        left: 40px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-self: center;
     }
 
     &__quote {
@@ -223,8 +235,12 @@
         display: block;
         font-family: $serif-headings;
         font-weight: 600;
-        font-size: 1.125rem;
+        font-size: 1rem;
         color: getColor(secondaryCol);
+
+        @media (min-width: getBreakpoint(large)) {
+            font-size: 1.125rem;
+        }
     }
 }
 

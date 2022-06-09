@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { HEROKU_BASE_URL } from "../../constants/api";
 import axios from "axios";
-import { BinIcon } from "../icons/MaterialIcons";
 import AlertMessage from "../common/AlertMessage";
-import { useNavigate, useLocation } from "react-router-dom";
+import { BinIcon } from "../icons/MaterialIcons";
 
 export default function DeleteItem({ id, type }) {
   const [error, setError] = useState(null);

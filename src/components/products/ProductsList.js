@@ -6,15 +6,15 @@ import {
   ITEMS_RETURNED,
 } from "../../constants/api";
 import axios from "axios";
+import { filter, capitalize, orderBy, parseInt } from "lodash";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
+import Heading from "../common/Heading";
+import SearchForm from "../forms/SearchForm";
+import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Heading from "../common/Heading";
-import Form from "react-bootstrap/Form";
-import SearchForm from "../forms/SearchForm";
 import ProductItem from "./ProductItem";
-import { filter, capitalize, orderBy, parseInt } from "lodash";
 
 function ProductsList() {
   const [product, setProduct] = useState([]);
@@ -30,7 +30,7 @@ function ProductsList() {
     async function getproduct() {
       try {
         const response = await axios.get(url);
-        console.log("response", response.data);
+        // console.log("response", response.data);
         setProduct(response.data);
       } catch (error) {
         console.log(error);
@@ -78,8 +78,6 @@ function ProductsList() {
   } else {
     filteredProduct = filterByCategory;
   }
-
-  // console.log(filteredProduct);
 
   return (
     <>

@@ -1,8 +1,8 @@
-import Heading from "../common/Heading";
 import Layout from "../layout/Layout";
 import Hero from "../layout/Hero";
-import CategoryCard from "../layout/CategoryCard";
 import Wrapper from "../layout/Wrapper";
+import Heading from "../common/Heading";
+import CategoryCard from "../layout/CategoryCard";
 import CustomCarousel from "../carousels/CustomCarousel";
 import hotels from "../../images/hotels.jpg";
 import hostels from "../../images/hostels.jpg";
@@ -51,12 +51,6 @@ function Home() {
                   Sleep tight with Holidaze
                 </div>
                 <div className="learn-more__quote-wrapper">
-                  {/* <svg viewBox="0 0 24 24" className="about-card__quote-symbol">
-                    <path
-                      fill="currentColor"
-                      d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z"
-                    />
-                  </svg> */}
                   <QuoteIcon color="#084c61" size="1.5rem" />
                   <div className="learn-more__quote">
                     Nobody knows Bergen like us
@@ -76,4 +70,5 @@ function Home() {
     </Layout>
   );
 }
+
 export default Home;

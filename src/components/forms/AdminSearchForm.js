@@ -1,7 +1,7 @@
-import Icon from "@mdi/react";
-import { mdiMagnify } from "@mdi/js";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Icon from "@mdi/react";
+import { mdiMagnify } from "@mdi/js";
 
 function AdminSearchForm({ setQuery, searchType }) {
   return (
@@ -26,4 +26,5 @@ function AdminSearchForm({ setQuery, searchType }) {
     </Form>
   );
 }
+
 export default AdminSearchForm;

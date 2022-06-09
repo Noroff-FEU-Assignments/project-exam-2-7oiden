@@ -6,11 +6,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import AuthContext from "../../context/AuthContext";
 import axios from "axios";
 import { WP_BASE_URL, TOKEN_PATH } from "../../constants/api";
+import AlertMessage from "../common/AlertMessage";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import FormError from "../common/FormError";
 import Button from "react-bootstrap/Button";
-import AlertMessage from "../common/AlertMessage";
+import FormError from "../common/FormError";
 
 const loginUrl = WP_BASE_URL + TOKEN_PATH;
 
@@ -38,8 +38,6 @@ function LoginForm() {
   async function onSubmit(data) {
     setSubmitting(true);
     setLoginError(null);
-
-    // console.log(data);
 
     try {
       const response = await axios.post(loginUrl, data);
@@ -85,7 +83,7 @@ function LoginForm() {
           />
           {errors.password && <FormError>{errors.password.message}</FormError>}
         </FloatingLabel>
-        <Button className="primary-button form-button" type="submit">
+        <Button className="form-button log-button" type="submit">
           {submitting ? "Please wait..." : "Login"}
         </Button>
       </fieldset>

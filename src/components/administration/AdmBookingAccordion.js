@@ -1,23 +1,22 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { HEROKU_BASE_URL } from "../../constants/api";
+import { ARRAY_NUM } from "../../constants/constants";
 import axios from "axios";
+import { orderBy } from "lodash";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
-import Accordion from "react-bootstrap/Accordion";
-import BookingItem from "./BookingItem";
-import { orderBy } from "lodash";
-import { useLocation } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import AdminSearchForm from "../forms/AdminSearchForm";
 import Heading from "../common/Heading";
-
-const arrayItems = 8;
+import AdminSearchForm from "../forms/AdminSearchForm";
+import BookingItem from "./BookingItem";
+import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
 
 function AdmBookingAccordion() {
   const [booking, setBooking] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [itemNum, setItemNum] = useState(arrayItems);
+  const [itemNum, setItemNum] = useState(ARRAY_NUM);
   const [query, setQuery] = useState("");
 
   const url = HEROKU_BASE_URL + "bookings";
@@ -29,7 +28,7 @@ function AdmBookingAccordion() {
       async function getproduct() {
         try {
           const response = await axios.get(url);
-          console.log("response", response.data.data);
+          // console.log("response", response.data.data);
           setBooking(response.data.data);
         } catch (error) {
           console.log(error);
@@ -58,7 +57,7 @@ function AdmBookingAccordion() {
 
   const orderedBookings = orderBy(booking, ["attributes.createdAt"], ["desc"]);
 
-  let handleShow = () => setItemNum(itemNum + arrayItems);
+  let handleShow = () => setItemNum(itemNum + ARRAY_NUM);
 
   let buttonDisplay = "none";
 
@@ -66,10 +65,9 @@ function AdmBookingAccordion() {
     buttonDisplay = "block";
   }
 
-  //check this code
   let indexArray = [];
 
-  orderedBookings.forEach((el, i) => {
+  orderedBookings.forEach((o, i) => {
     indexArray.push(i);
   });
 

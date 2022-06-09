@@ -1,6 +1,6 @@
 import CustomNav from "../navigation/CustomNav";
-import Footer from "../navigation/Footer";
 import Newsletter from "../layout/Newsletter";
+import Footer from "../navigation/Footer";
 
 function Layout({ children }) {
   return (

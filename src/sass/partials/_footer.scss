@@ -27,29 +27,23 @@
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        margin-left: -1rem;
     }
 
     &__icon {
-        list-style: none;
+        list-style: none;     
     }
 
     &__link {
         color: getColor(textLight);
-        opacity: 1;
-        transition: opacity 0.3s ease;
 
         @media (min-width: getBreakpoint(large)) {
             font-size: 1.125rem;
-        }
-
-        &--inactive {
-            pointer-events: none;  
         }
     }
 
     &__link:hover {
         color: getColor(textLight);
-        opacity: 0.75;
     }
 
     &__bottom {

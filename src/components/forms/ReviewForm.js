@@ -1,20 +1,20 @@
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import {
   PRODUCTS_URL,
   CONSUMER_KEY,
   CONSUMER_SECRET,
 } from "../../constants/api";
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Form from "react-bootstrap/Form";
-import FormError from "../common/FormError";
 import AlertMessage from "../common/AlertMessage";
+import Heading from "../common/Heading";
+import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Heading from "../common/Heading";
-import { useNavigate, useLocation } from "react-router-dom";
+import FormError from "../common/FormError";
 
 const schema = yup.object().shape({
   reviewer: yup
@@ -92,14 +92,6 @@ function ReviewForm({ id }) {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)} className="review-form">
-      {submitted && (
-        <AlertMessage
-          variant="success"
-          message="Thank you for your feedback!"
-          show={show}
-        />
-      )}
-      {serverError && <AlertMessage variant="danger" message={serverError} />}
       <Heading size="4" cssClass="review-form__heading">
         Leave a review
       </Heading>
@@ -131,8 +123,8 @@ function ReviewForm({ id }) {
           </Form.Select>
           {errors.rating && <FormError>{errors.rating.message}</FormError>}
         </Form.Group>
-        <Form.Label>Review</Form.Label>
         <Form.Group className="mb-3" controlId="formBasicRating">
+          <Form.Label>Review</Form.Label>
           <Form.Control
             as="textarea"
             placeholder="Start writing your review"
@@ -141,6 +133,14 @@ function ReviewForm({ id }) {
           />
           {errors.review && <FormError>{errors.review.message}</FormError>}
         </Form.Group>
+        {submitted && (
+          <AlertMessage
+            variant="success"
+            message="Thank you for your feedback!"
+            show={show}
+          />
+        )}
+        {serverError && <AlertMessage variant="danger" message={serverError} />}
         <Button className="form-button" type="submit">
           Submit
         </Button>
@@ -148,4 +148,5 @@ function ReviewForm({ id }) {
     </Form>
   );
 }
+
 export default ReviewForm;

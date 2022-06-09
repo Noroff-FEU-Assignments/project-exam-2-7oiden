@@ -1,10 +1,3 @@
-// export const WP_BASE_URL =
-//   "http://localhost/react-crud/wordpress-5.9.2/wordpress/wp-json/";
-
-// export const TOKEN_PATH = "jwt-auth/v1/token";
-
-// const corsFix = "https://noroffcors.herokuapp.com/";
-
 //wordpress API
 export const WP_BASE_URL = "https://holidaze.7oiden.com/wp-json/";
 
@@ -19,22 +12,20 @@ export const CONSUMER_KEY =
 export const CONSUMER_SECRET =
   "&consumer_secret=cs_e2bab28a5350c4b9e4743a32d56c5f7585525190";
 
-export const ITEMS_RETURNED = "&per_page=20"
+export const ITEMS_RETURNED = "&per_page=20";
+export const REVIEWS_RETURNED = "&per_page=40";
 
-//google maps API  
+//google maps API
 export const MAP_URL = "https://www.google.com/maps/embed/v1/place?";
 
-export const MAP_API_KEY = "key=AIzaSyDeBgWNvAla1OxecdgJaF7pBiqBoIPu9I4";
+// export const MAP_API_KEY = "key=AIzaSyDeBgWNvAla1OxecdgJaF7pBiqBoIPu9I4";
 
-//heroku-strapi API
-// export const ESTABLISHMENT_URL = "http://localhost:3005/api/establishments";
+export const MAP_API_KEY = "key=AIzaSyCUKkaKIhG2JIhVXk0I91I_GTcXIPax9Rg";
 
+//heroku
 export const HEROKU_BASE_URL =
   "https://obscure-reaches-62581.herokuapp.com/api/";
 
-// export const CONTACT_URL = "https://obscure-reaches-62581.herokuapp.com/api/contacts";
-
-// export const BOOKING_URL = "http://localhost:3005/api/bookings";
 
 //cloudinary
 export const PLACEHOLDER_IMG_URL =

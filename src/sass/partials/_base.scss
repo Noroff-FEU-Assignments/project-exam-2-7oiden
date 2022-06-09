@@ -65,6 +65,11 @@ img {
     @extend .base-margin;
 }
 
+.disabled {
+    pointer-events: none;
+    color: getColor(semiTransparentBg) !important;
+}
+
 .loader-container {
     padding: 1.5rem;
 }

@@ -11,7 +11,7 @@ function FaqAccordion() {
         </Heading>
         <ul>
           <li className="faq-accordion__list-item">
-            Can't find what you are looking for in our <strong>FAQ?</strong>
+            Can't find what you are looking for in our FAQ?
           </li>
           <li className="faq-accordion__list-item">
             Please drop us a{" "}

@@ -5,18 +5,18 @@ import {
   FacebookIcon,
 } from "../icons/SocialMediaIcons";
 import CopyrightBlock from "../common/CopyrightBlock";
-import { Link } from "react-router-dom";
+import FooterBlock from "../common/FooterBlock";
+import FooterListItem from "../common/FooterListItem";
 
 function Footer() {
   return (
     <footer className="footer">
       <Wrapper cssClass="footer__wrapper">
         <div className="footer__container">
-          <div className="footer__block">
-            <p className="footer__heading">Follow us on</p>
-            <ul className="footer__icon-list">
+          <FooterBlock heading="Follow us on">
+            <div className="footer__icon-list">
               <li className="footer__icon">
-                <InstagramIcon />
+                  <InstagramIcon />
               </li>
               <li className="footer__icon">
                 <FacebookIcon />
@@ -24,48 +24,19 @@ function Footer() {
               <li className="footer__icon">
                 <TwitterIcon />
               </li>
-            </ul>
-          </div>
-          <div className="footer__block">
-            <p className="footer__heading">About</p>
-            <ul className="footer__list">
-              <li>
-                <Link to="/about" className="footer__link">
-                  About us
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="footer__block">
-            <p className="footer__heading">Support</p>
-            <ul className="footer__list">
-              <li>
-                <Link to="/support" className="footer__link">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link to="/support" className="footer__link">
-                  Contact form
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="footer__block">
-            <p className="footer__heading">Legal</p>
-            <ul className="footer__list">
-              <li>
-                <Link to="#" className="footer__link footer__link--inactive">
-                  Terms
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="footer__link footer__link--inactive">
-                  Privacy
-                </Link>
-              </li>
-            </ul>
-          </div>
+            </div>
+          </FooterBlock>
+          <FooterBlock heading="About">
+            <FooterListItem link="/about" title="About" disabled="" />
+          </FooterBlock>
+          <FooterBlock heading="Support">
+            <FooterListItem link="/support" title="FAQ" disabled="" />
+            <FooterListItem link="/support" title="Contact" disabled="" />
+          </FooterBlock>
+          <FooterBlock heading="Legal">
+            <FooterListItem link="/" title="Terms" disabled="disabled" />
+            <FooterListItem link="/" title="Privacy" disabled="disabled" />
+          </FooterBlock>
         </div>
       </Wrapper>
       <CopyrightBlock />

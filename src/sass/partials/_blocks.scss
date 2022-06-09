@@ -24,7 +24,7 @@
 
 .customer {
     &__comment {
-        padding-top: 0.5rem;
+        padding-top: 0.5rem; 
     }
 
     &__header {
@@ -70,4 +70,21 @@
         @extend .base-margin;
         color: getColor(textGray)
     }
+}
+
+.customer-carousel {
+    &__comment {
+        height: 200px;
+        overflow: clip;
+        padding-top: 0.5rem;
+    
+        @media (min-width: getBreakpoint(small)) {
+            height: 150px;
+        }
+    
+        @media (min-width: getBreakpoint(medium)) {
+            height: 270px;
+        }
+    }
+
 }

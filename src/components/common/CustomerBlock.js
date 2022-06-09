@@ -1,13 +1,11 @@
-import { StarIcon } from "../icons/MaterialIcons";
 import moment from "moment";
+import { StarIcon } from "../icons/MaterialIcons";
 
-function CustomerBlock({ avatar, name, date, rating, review }) {
+function CustomerBlock({ cssClass, avatar, name, date, rating, review }) {
   const formattedDate = moment(date).format("MMMM Do YYYY");
 
-  // console.log(rating);
-
   return (
-    <div className="customer">
+    <div className={`customer ${cssClass}`}>
       <div className="customer__header">
         <img
           src={avatar}
@@ -19,7 +17,7 @@ function CustomerBlock({ avatar, name, date, rating, review }) {
           <p className="customer__date">{formattedDate}</p>
         </div>
       </div>
-      {[...Array(rating)].map((x, i) => (
+      {[...Array(rating)].map((o, i) => (
         <StarIcon key={i} color="#cc4a45" size="1.25rem" />
       ))}
       <p

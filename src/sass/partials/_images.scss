@@ -56,16 +56,26 @@
     }
 
     @media (min-width: getBreakpoint(large)) {
+        background-position: center bottom;
         flex: 1;
         height: 440px;
         border-radius: 25px 0 0 25px;
+        margin-right: 40%;
     }
 }
 
 .about-card__image {
-    width: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    display: block;
+    // display: block;
     position: absolute;
-    transform: translateY(-20px);
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    & img {
+        @extend .base-margin;
+        border-radius: 50%;
+    }
 }

@@ -1,34 +1,41 @@
-import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Form from "react-bootstrap/Form";
-import FormError from "../common/FormError";
-import AlertMessage from "../common/AlertMessage";
-import Button from "react-bootstrap/Button";
-import { HEROKU_BASE_URL } from "../../constants/api";
+import axios from "axios";
 import moment from "moment";
-import { Link } from "react-router-dom";
+import { HEROKU_BASE_URL } from "../../constants/api";
+import AlertMessage from "../common/AlertMessage";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import FormError from "../common/FormError";
 
 const date = new Date();
 
-const today = moment(date).format("YYYY-MM-DD");
+let today = moment(date).format("YYYY-MM-DD");
 const tomorrow = moment(date.setDate(date.getDate() + 1)).format("YYYY-MM-DD");
 
 const schema = yup.object().shape({
   from_date: yup
     .date("Please select a date")
     .required("Please select a from date")
-    .min(today, "Date can not be earlier than today")
     .nullable()
+    .min(today, "From date is invalid")
     .typeError("Please select a date"),
 
   to_date: yup
-    .date("Please selevt a date")
-    .required("Please select a to date")
-    .min(tomorrow, "Date can not be earlier than tomorrow")
+    .date()
     .nullable()
+    .test((input, props) => {
+      const earliestDate = moment(input);
+      const enteredDate = moment(props.parent.from_date);
+      const tmpEarliestDate = moment(enteredDate).add(1);
+
+      if (!tmpEarliestDate.isAfter(earliestDate)) {
+        return true;
+      }
+    })
     .typeError("Please select a date"),
 
   guests: yup.string().required("Please select number of guests"),
@@ -37,13 +44,13 @@ const schema = yup.object().shape({
     .string()
     .required("Please enter your firstname")
     .min(3, "Your firstname must be at least 3 characters")
-    .max(10, "Firstname can't be more than 10 characters"),
+    .max(12, "Firstname can't be more than 12 characters"),
 
   last_name: yup
     .string()
     .required("Please enter your lastname")
     .min(4, "Your lastname must be at least 4 characters")
-    .max(12, "Lastname can't be more than 12 characters"),
+    .max(14, "Lastname can't be more than 14 characters"),
 
   email: yup
     .string()
@@ -58,7 +65,6 @@ export default function BookingForm({ establishment }) {
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  // const url = BOOKING_URL;
   const url = HEROKU_BASE_URL + "bookings";
 
   const {
@@ -89,8 +95,6 @@ export default function BookingForm({ establishment }) {
       },
     };
 
-    // console.log(jsonData);
-
     try {
       const response = await axios.post(url, jsonData);
       console.log("response", response.data);
@@ -111,19 +115,13 @@ export default function BookingForm({ establishment }) {
           message="Thank you for your booking enquiry! We will get back to you shortly."
         />
         <Link to="/" className="text-link">
-          Take me back to homepage
+          Take me back to the homepage
         </Link>
       </>
     );
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {/* {submitted && (
-        <AlertMessage
-          variant="success"
-          message="Thank you for your booking enquiry. We will get back to you shortly."
-        />
-      )} */}
       {serverError && <AlertMessage variant="danger" message={serverError} />}
       <fieldset disabled={submitting}>
         <div className="date-picker-wrapper">
@@ -164,7 +162,6 @@ export default function BookingForm({ establishment }) {
           </Form.Select>
           {errors.guests && <FormError>{errors.guests.message}</FormError>}
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicFirstname">
           <Form.Label>Firstname</Form.Label>
           <Form.Control
@@ -176,7 +173,6 @@ export default function BookingForm({ establishment }) {
             <FormError>{errors.first_name.message}</FormError>
           )}
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicLastname">
           <Form.Label>Lastname</Form.Label>
           <Form.Control
@@ -188,7 +184,6 @@ export default function BookingForm({ establishment }) {
             <FormError>{errors.last_name.message}</FormError>
           )}
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -198,7 +193,6 @@ export default function BookingForm({ establishment }) {
           />
           {errors.email && <FormError>{errors.email.message}</FormError>}
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicMessage">
           <Form.Label>Message (optional)</Form.Label>
           <Form.Control
@@ -209,8 +203,7 @@ export default function BookingForm({ establishment }) {
           />
           {errors.message && <FormError>{errors.message.message}</FormError>}
         </Form.Group>
-
-        <Button className="primary-button form-button" type="submit">
+        <Button className="form-button" type="submit">
           Send
         </Button>
       </fieldset>

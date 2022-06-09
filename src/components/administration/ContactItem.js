@@ -1,6 +1,6 @@
-import Accordion from "react-bootstrap/Accordion";
 import moment from "moment";
-import AccInfoBlock from "../common/AccInfoBlock";
+import Accordion from "react-bootstrap/Accordion";
+import AccInfoBlock from "./AccInfoBlock";
 import DeleteAdmItem from "../buttons/DeleteAdmItem";
 import Icon from "@mdi/react";
 import { mdiAlertDecagram } from "@mdi/js";
@@ -43,7 +43,7 @@ function ContactItem(props) {
               size="1.25rem"
             />
             <span className="adm-accordion__title">
-              {firstName} {lastName}
+              {lastName}, {firstName}
             </span>
           </div>
           <span className="adm-accordion__date">{date}</span>
@@ -63,11 +63,15 @@ function ContactItem(props) {
               {email}
             </p>
           </div>
-          <AccInfoBlock label="Message:" info={message} />
+          <div className="adm-accordion__msg-container">
+            <span className="adm-accordion__label">Message:</span>
+            <p>{message}</p>
+          </div>
           <DeleteAdmItem id={id} type={type} />
         </div>
       </Accordion.Body>
     </Accordion.Item>
   );
 }
+
 export default ContactItem;

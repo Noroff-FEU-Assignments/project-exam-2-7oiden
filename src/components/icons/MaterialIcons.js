@@ -11,7 +11,6 @@ import {
   mdiFormatQuoteClose,
   mdiPlus,
   mdiMinus,
-  // mdiAlertDecagram,
   mdiContentCopy,
 } from "@mdi/js";
 
@@ -50,7 +49,6 @@ export function SearchIcon({ color, size }) {
   return (
     <Icon
       path={mdiMagnify}
-      // title="Search"
       className="search-icon"
       color={color}
       size={size}
@@ -93,17 +91,6 @@ export function QuoteIcon({ color, size }) {
     />
   );
 }
-
-// export function NewIcon({ color, size }) {
-//   return (
-//     <Icon
-//       path={mdiAlertDecagram}
-//       className="new-icon"
-//       color={color}
-//       size={size}
-//     />
-//   );
-// }
 
 export function CopyIcon({ color, size }) {
   return (

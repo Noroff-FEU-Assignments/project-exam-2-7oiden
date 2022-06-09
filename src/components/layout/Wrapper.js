@@ -1,7 +1,5 @@
-function Wrapper({cssClass, children}) {
-
-  return (
-    <div className={cssClass}>{children}</div>
-  )
+function Wrapper({ cssClass, children }) {
+  return <div className={cssClass}>{children}</div>;
 }
-export default Wrapper
+
+export default Wrapper;

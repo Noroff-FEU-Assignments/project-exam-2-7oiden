@@ -1,14 +1,14 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Form from "react-bootstrap/Form";
-import FormError from "../common/FormError";
-import AlertMessage from "../common/AlertMessage";
-import Button from "react-bootstrap/Button";
-import Heading from "../common/Heading";
 import { HEROKU_BASE_URL } from "../../constants/api";
+import axios from "axios";
+import AlertMessage from "../common/AlertMessage";
+import Heading from "../common/Heading";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import FormError from "../common/FormError";
 
 const schema = yup.object().shape({
   first_name: yup
@@ -38,7 +38,7 @@ const schema = yup.object().shape({
     .string()
     .required("Please enter your message")
     .min(10, "Your message must be at least 10 characters")
-    .max(400, "Message can't be more than 10 characters"),
+    .max(400, "Message can't be more than 400 characters"),
 });
 
 export default function ContactForm() {
@@ -61,7 +61,7 @@ export default function ContactForm() {
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
+    // console.log(data);
     reset();
 
     const jsonData = {
@@ -73,8 +73,6 @@ export default function ContactForm() {
         message: data.message,
       },
     };
-
-    console.log(jsonData);
 
     try {
       const response = await axios.post(url, jsonData);
@@ -114,7 +112,6 @@ export default function ContactForm() {
               <FormError>{errors.first_name.message}</FormError>
             )}
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicLastname">
             <Form.Label>Lastname</Form.Label>
             <Form.Control
@@ -126,7 +123,6 @@ export default function ContactForm() {
               <FormError>{errors.last_name.message}</FormError>
             )}
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control
@@ -136,7 +132,6 @@ export default function ContactForm() {
             />
             {errors.email && <FormError>{errors.email.message}</FormError>}
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicSubject">
             <Form.Label>Subject</Form.Label>
             <Form.Control
@@ -146,7 +141,6 @@ export default function ContactForm() {
             />
             {errors.subject && <FormError>{errors.subject.message}</FormError>}
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicMessage">
             <Form.Label>Message</Form.Label>
             <Form.Control

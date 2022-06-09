@@ -1,8 +1,8 @@
-import ContactForm from "../forms/ContactForm";
-import FaqAccordion from "../administration/FaqAccordion";
 import Layout from "../layout/Layout";
 import Wrapper from "../layout/Wrapper";
 import Heading from "../common/Heading";
+import FaqAccordion from "../administration/FaqAccordion";
+import ContactForm from "../forms/ContactForm";
 
 function Support() {
   return (
@@ -19,4 +19,5 @@ function Support() {
     </Layout>
   );
 }
+
 export default Support;

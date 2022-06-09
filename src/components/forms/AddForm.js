@@ -1,22 +1,22 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
-import FormError from "../common/FormError";
-import AlertMessage from "../common/AlertMessage";
-import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import Heading from "../common/Heading";
+import axios from "axios";
 import {
   PRODUCTS_URL,
   CONSUMER_KEY,
   CONSUMER_SECRET,
   PLACEHOLDER_IMG_URL,
 } from "../../constants/api";
+import AlertMessage from "../common/AlertMessage";
+import Heading from "../common/Heading";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 import { CopyIcon } from "../icons/MaterialIcons";
+import FormError from "../common/FormError";
 
 const schema = yup.object().shape({
   name: yup
@@ -51,8 +51,9 @@ const schema = yup.object().shape({
 
   image: yup
     .string()
+    .required("Please provide a valid image link")
     .url("Please enter a valid URL")
-    .required("Please provide an image URL"),
+    .matches(".jpg", "Please add a valid JPG file"),
 
   wifi: yup.bool(),
 
@@ -225,7 +226,7 @@ export default function AddForm() {
       setSubmitted(true);
       setShow(true);
     } catch (error) {
-      console.log("error", error.status);
+      console.log("error", error);
       setServerError(
         `${error.toString()} 
         Please make sure to upload a valid image file`
@@ -353,6 +354,7 @@ export default function AddForm() {
               variant="light"
               className="copy-msg__icon-box"
               onClick={() => copy(placeholderUrl)}
+              aria-label="copy placeholder image to clipboard"
             >
               <CopyIcon color="#fff" size="1.25rem" />
             </Button>
@@ -361,6 +363,9 @@ export default function AddForm() {
             <ul className="form__warning-list">
               <li className="form__warning-list-item">
                 Images must have a 3:2 aspect ratio to be displayed correctly
+              </li>
+              <li className="form__warning-list-item">
+                Only JPG file format is accepted
               </li>
               <li className="form__warning-list-item">
                 File size should be no more than 200kB

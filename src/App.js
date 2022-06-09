@@ -17,7 +17,6 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        {/* <ScrollToTop /> */}
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />}></Route>
@@ -28,9 +27,11 @@ function App() {
             <Route path="/admin" element={<Admin />}>
               <Route path="bookings" element={<Bookings />}></Route>
               <Route path="contact-enquiries" element={<ContactEnq />}></Route>
-              <Route path="/admin/add-establishment" element={<AddEst />}></Route>
+              <Route
+                path="/admin/add-establishment"
+                element={<AddEst />}
+              ></Route>
             </Route>
-            {/* <Route path="/admin/add-establishment" element={<Add />}></Route> */}
           </Routes>
         </ScrollToTop>
       </Router>

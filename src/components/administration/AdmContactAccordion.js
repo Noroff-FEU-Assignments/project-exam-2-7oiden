@@ -1,23 +1,22 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { HEROKU_BASE_URL } from "../../constants/api";
+import { ARRAY_NUM } from "../../constants/constants";
 import axios from "axios";
+import { orderBy } from "lodash";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
-import Accordion from "react-bootstrap/Accordion";
-import ContactItem from "./ContactItem";
-import { orderBy } from "lodash";
-import { useLocation } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import Heading from "../common/Heading";
 import AdminSearchForm from "../forms/AdminSearchForm";
-
-const arrayItems = 8;
+import ContactItem from "./ContactItem";
+import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
 
 function AdmContactAccordion() {
   const [message, setMessage] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [itemNum, setItemNum] = useState(arrayItems);
+  const [itemNum, setItemNum] = useState(ARRAY_NUM);
   const [query, setQuery] = useState("");
 
   const url = HEROKU_BASE_URL + "contacts";
@@ -29,7 +28,7 @@ function AdmContactAccordion() {
       async function getproduct() {
         try {
           const response = await axios.get(url);
-          console.log("response", response.data.data);
+          // console.log("response", response.data.data);
           setMessage(response.data.data);
         } catch (error) {
           console.log(error);
@@ -72,7 +71,7 @@ function AdmContactAccordion() {
       }
     });
 
-  let handleShow = () => setItemNum(itemNum + arrayItems);
+  let handleShow = () => setItemNum(itemNum + ARRAY_NUM);
 
   let buttonDisplay = "none";
 
@@ -80,10 +79,9 @@ function AdmContactAccordion() {
     buttonDisplay = "block";
   }
 
-  //check this code
   let indexArray = [];
 
-  filteredMessages.forEach((el, i) => {
+  filteredMessages.forEach((o, i) => {
     indexArray.push(i);
   });
 

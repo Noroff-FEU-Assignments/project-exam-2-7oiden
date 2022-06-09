@@ -1,5 +1,5 @@
-import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 import { Navigate } from "react-router-dom";
 import AdminLayout from "../layout/AdminLayout";
 import Heading from "../common/Heading";
@@ -32,4 +32,5 @@ function Admin() {
     </AdminLayout>
   );
 }
+
 export default Admin;

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import BookingForm from "../forms/BookingForm";
+import Modal from "react-bootstrap/Modal";
 import LocationBlock from "../common/LocationBlock";
+import BookingForm from "../forms/BookingForm";
 
 export default function BookingModal({ name, address }) {
   const [show, setShow] = useState(false);
@@ -13,7 +13,6 @@ export default function BookingModal({ name, address }) {
   return (
     <>
       <Button onClick={handleShow}>Book Now</Button>
-
       <Modal
         show={show}
         onHide={handleClose}

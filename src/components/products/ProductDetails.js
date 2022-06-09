@@ -1,5 +1,5 @@
-import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import {
   PRODUCTS_URL,
   CONSUMER_KEY,
@@ -8,19 +8,18 @@ import {
 import axios from "axios";
 import Loader from "../common/Loader";
 import AlertMessage from "../common/AlertMessage";
+import Wrapper from "../layout/Wrapper";
 import Heading from "../common/Heading";
+import BedsBlock from "../common/BedsBlock";
 import RatingBlock from "../common/RatingBlock";
 import LocationBlock from "../common/LocationBlock";
 import BookingModal from "../modals/BookingModal";
 import FacilitiesIcons from "../icons/FacilitiesIcons";
 import LocationMap from "../layout/LocationMap";
-import BedsBlock from "../common/BedsBlock";
-import ProductReviews from "./ProductReviews";
-import Wrapper from "../layout/Wrapper";
-import ReviewForm from "../forms/ReviewForm";
-import { useLocation } from "react-router-dom";
 import Collapse from "react-bootstrap/Collapse";
-import { HideButton, ShowButton } from "../buttons/DescriptionButtons";
+import { HideButton, ShowButton } from "../buttons/DescriptionToggler";
+import ProductReviews from "./ProductReviews";
+import ReviewForm from "../forms/ReviewForm";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState([]);
@@ -45,7 +44,7 @@ export default function ProductDetails() {
       async function getDetails() {
         try {
           const response = await axios.get(detailsUrl);
-          console.log("response:", response.data);
+          // console.log("response:", response.data);
           setProduct(response.data);
         } catch (error) {
           console.log(error);
@@ -97,7 +96,7 @@ export default function ProductDetails() {
           </div>
           <div className="details__block-2">
             <div>
-              <p className="details__price">{product.price} NOK/night</p>
+              <p className="details__price" aria-label="Price per night">{product.price} NOK/night</p>
             </div>
             <BookingModal name={product.name} address={product.sku} />
           </div>
@@ -129,6 +128,7 @@ export default function ProductDetails() {
                 onClick={() => setShow(!show)}
                 aria-controls="example-fade-text"
                 aria-expanded={show}
+                aria-label="show-hide text"
                 className="show-hide__icon-box"
               >
                 {show ? <HideButton /> : <ShowButton />}

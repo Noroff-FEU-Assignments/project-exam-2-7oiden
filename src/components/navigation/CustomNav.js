@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
+import { NavLink, Link } from "react-router-dom";
+import Wrapper from "../layout/Wrapper";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { NavLink, Link } from "react-router-dom";
-import Wrapper from "../layout/Wrapper";
 import brandLogo from "../../images/holidaze-logo.png";
+import { MenuIcon } from "../icons/MaterialIcons";
+import SearchModal from "../modals/SearchModal";
 import LoginModal from "../modals/LoginModal";
 import LogoutModal from "../modals/LogoutModal";
-import SearchModal from "../modals/SearchModal";
-import { MenuIcon } from "../icons/MaterialIcons";
 
 function CustomNav() {
   const [auth] = useContext(AuthContext);

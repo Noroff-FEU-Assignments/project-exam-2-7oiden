@@ -32,23 +32,25 @@
         color: getColor(secondaryBtn);
         text-decoration: none;
         display: inline-block;
-        font-size: getSize(buttonLarge);
+        font-size: getSize(buttonSmall);
         padding-top: 0.25rem;
         border-bottom: 2px solid transparent;
 
         @media (min-width: getBreakpoint(large)) {
-            &:hover {
-                color: getColor(textDark);
-            }
+        font-size: getSize(buttonLarge);
             
-            &::after {
-                content: "";
-                display: block;
-                border-bottom: 2px solid getColor(primaryCol);
-                border-radius: 4px;
-                transform: scaleX(0);
-                transition: transform 0.4s;
-            }
+        &:hover {
+            color: getColor(textDark);
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            border-bottom: 2px solid getColor(primaryCol);
+            border-radius: 4px;
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
             
             &:hover::after {
                 transform: scaleX(1);
@@ -122,5 +124,13 @@
     &__link--active {
         background-color: getColor(adminCol);
         color: getColor(textLight);
+    }
+}
+
+.navbar-collapse {
+    padding-top: 1rem;
+
+    @media (min-width: getBreakpoint(large)) {
+        padding-top: 0;
     }
 }

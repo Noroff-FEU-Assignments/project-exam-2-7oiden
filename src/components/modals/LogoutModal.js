@@ -1,20 +1,17 @@
-import { useState } from "react";
-import { useContext } from "react";
-import AuthContext from "../../context/AuthContext";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import AdmProfileIcon from "../icons/AdmProfileIcon";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import AdmProfileIcon from "../icons/AdmProfileIcon";
 
 export default function LoginModal() {
   const history = useNavigate();
   const [show, setShow] = useState(false);
   const [, setAuth] = useContext(AuthContext);
- 
+
   function handleLogout() {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
-
-    // console.log(auth);
 
     if (confirmLogout) {
       history("/");
@@ -23,7 +20,7 @@ export default function LoginModal() {
   }
 
   const user = JSON.parse(localStorage.getItem("auth"));
-  
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -50,11 +47,15 @@ export default function LoginModal() {
             <Button
               variant="primary"
               onClick={handleLogout}
-              className="logout-button"
+              className="log-button"
             >
               Log out
             </Button>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button
+              variant="secondary"
+              className="log-button"
+              onClick={handleClose}
+            >
               Stay logged in
             </Button>
           </div>

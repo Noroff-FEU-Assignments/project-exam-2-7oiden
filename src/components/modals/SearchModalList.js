@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   PRODUCTS_URL,
   CONSUMER_KEY,
@@ -6,7 +7,6 @@ import {
   ITEMS_RETURNED,
 } from "../../constants/api";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import AlertMessage from "../common/AlertMessage";
 import SearchForm from "../forms/SearchForm";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -20,13 +20,11 @@ export default function SearchModalList() {
 
   const url = PRODUCTS_URL + CONSUMER_KEY + CONSUMER_SECRET + ITEMS_RETURNED;
 
-  // const navigate = useNavigate();
-
   useEffect(function () {
     async function getproduct() {
       try {
         const response = await axios.get(url);
-        console.log("response", response.data);
+        // console.log("response", response.data);
         setproduct(response.data);
       } catch (error) {
         console.log(error);

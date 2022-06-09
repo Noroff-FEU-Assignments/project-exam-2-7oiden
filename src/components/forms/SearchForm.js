@@ -12,6 +12,7 @@ function SearchForm({ setQuery, loading }) {
             type="text"
             placeholder={loading ? "Please wait" : "Start typing..."}
             disabled={loading}
+            aria-label="Search input"
           />
           <div className="custom-input__icon-box">
             <SearchIcon color="#fff" size="2rem" />
@@ -21,4 +22,5 @@ function SearchForm({ setQuery, loading }) {
     </Form>
   );
 }
+
 export default SearchForm;

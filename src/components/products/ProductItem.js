@@ -1,13 +1,23 @@
-import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import BedsBlock from "../common/BedsBlock";
 import LocationBlock from "../common/LocationBlock";
 import RatingBlock from "../common/RatingBlock";
-import BedsBlock from "../common/BedsBlock";
 
 function ProductCard(props) {
-  const { id, image, altText, name, address, beds, category, price, rating, reviews } =
-    props;
+  const {
+    id,
+    image,
+    altText,
+    name,
+    address,
+    beds,
+    category,
+    price,
+    rating,
+    reviews,
+  } = props;
 
   return (
     <Col
@@ -47,7 +57,9 @@ function ProductCard(props) {
               <BedsBlock beds={beds} />
             </div>
           </Card.Body>
-          <div className="product-card__bottom">{price} NOK</div>
+          <div className="product-card__bottom" aria-label="Price per night">
+            {price} NOK
+          </div>
         </Link>
       </Card>
     </Col>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
 import { SearchIcon } from "../icons/MaterialIcons";
+import Modal from "react-bootstrap/Modal";
 import SearchModalList from "./SearchModalList";
 
 export default function SearchModal() {
@@ -18,7 +18,11 @@ export default function SearchModal() {
 
   return (
     <>
-      <button onClick={handleShow} className="navbar__search-icon-box">
+      <button
+        onClick={handleShow}
+        className="navbar__search-icon-box"
+        aria-label="Open search modal"
+      >
         <SearchIcon color="#fff" size="70%" />
       </button>
       <Modal show={show} onHide={handleClose} className="login">
