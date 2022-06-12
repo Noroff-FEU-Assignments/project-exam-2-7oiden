@@ -72,7 +72,7 @@ You can list a the tech stack that you've used over here
 
 - [Heroku](https://heroku.com)
 
-## NPM packages used
+## NPM packages
 
 - HTTP client: [Axios](https://axios-http.com/docs/intro)
 - Routing: [React Router](https://reactrouter.com/)
