@@ -74,14 +74,16 @@ You can list a the tech stack that you've used over here
 
 ## NPM packages used
 
-- [Axios](https://axios-http.com/docs/intro)
-- [React Router](https://reactrouter.com/)
-- [Loadash](https://lodash.com/)
-- [React Hook Form](https://react-hook-form.com/)
-- [Yup](https://github.com/jquense/yup)
-- [Moment](https://momentjs.com/)
-- [Font Awesome](https://fontawesome.com/v5/docs/web/setup/use-package-managers)
-- [Material Design Icons](https://materialdesignicons.com/)
+- HTTP client: [Axios](https://axios-http.com/docs/intro)
+- Routing: [React Router](https://reactrouter.com/)
+- Components: [React-Bootstrap](https://react-bootstrap.github.io/)
+- Styling: [Node Sass](https://www.npmjs.com/package/node-sass)
+- Array utilities: [Loadash](https://lodash.com/)
+- Form validation: [React Hook Form](https://react-hook-form.com/)
+- Form valdidation: [Yup](https://github.com/jquense/yup)
+- Date formatting: [Moment](https://momentjs.com/)
+- Icons: [Font Awesome](https://fontawesome.com/v5/docs/web/setup/use-package-managers)
+- Icons: [Material Design Icons](https://materialdesignicons.com/)
 
 ## Getting Started
 
