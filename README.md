@@ -52,7 +52,7 @@ This project is an assignment from Noroff's Frontend course second year and was 
 You can list a the tech stack that you've used over here
 
 - [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 - [Sass](https://sass-lang.com)
 
 ## API
@@ -63,6 +63,10 @@ You can list a the tech stack that you've used over here
 - [Wordpress](https://wordpress.com)
 - [WooCommerce (WP plugin)](https://woocommerce.com)
 - JWT Authentication (WP plugin)
+
+### Map API
+
+- [Google Maps Platform](https://developers.google.com/maps)
 
 ### Strapi database hosted on
 
