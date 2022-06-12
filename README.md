@@ -2,7 +2,7 @@
 
 ![image](https://res.cloudinary.com/dhd2paq70/image/upload/v1654681030/holidaze_x4owk1.jpg)
 
-The projects hero at the homepage.
+Screenshot of the projects hero at the homepage.
 
 ## Description
 
