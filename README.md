@@ -72,6 +72,17 @@ You can list a the tech stack that you've used over here
 
 - [Heroku](https://heroku.com)
 
+## NPM packages used
+
+- [Axios](https://axios-http.com/docs/intro)
+- [React Router](https://reactrouter.com/)
+- [Loadash](https://lodash.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup](https://github.com/jquense/yup)
+- [Moment](https://momentjs.com/)
+- [Font Awesome](https://fontawesome.com/v5/docs/web/setup/use-package-managers)
+- [Material Design Icons](https://materialdesignicons.com/)
+
 ## Getting Started
 
 ### Installing
